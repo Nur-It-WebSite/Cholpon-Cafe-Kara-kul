@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cholpon Cafe</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header style="position: fixed; width: 100%; margin-bottom: 10px;">
+        <div class="main-header">
+            <div class="logo">Cholpon</div>
+            <nav class="header-nav">
+                <li class="has-dropdown"><a href="#about">О нас</a>
+                </li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#worktime">Время работы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </nav>
+            <div><button class="button"><a href="https://wa.me/996500350565"><svg xmlns="http://www.w3.org/2000/svg"width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke-width="2"class="ai ai-WhatsappFill"><g clip-path="url(#clip0_615_275)"><path fill-rule="evenodd" clip-rule="evenodd"d="M17.415 14.382c-.298-.149-1.759-.867-2.031-.967-.272-.099-.47-.148-.669.15-.198.296-.767.966-.94 1.164-.174.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.241-.579-.486-.5-.668-.51-.174-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.57-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.422 7.403h-.004a9.87 9.87 0 0 1-5.032-1.378l-.36-.214-3.742.982.999-3.648-.235-.374a9.861 9.861 0 0 1-1.511-5.26c.002-5.45 4.436-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.892 6.993c-.002 5.45-4.436 9.885-9.884 9.885zm8.412-18.297A11.815 11.815 0 0 0 11.992 0C5.438 0 .102 5.335.1 11.892c-.001 2.096.546 4.142 1.587 5.945L0 24l6.304-1.654a11.881 11.881 0 0 0 5.684 1.448h.005c6.554 0 11.89-5.335 11.892-11.893a11.821 11.821 0 0 0-3.48-8.413" /></g><defs><clipPath id="clip0_615_275"><rect width="24" height="24" /></clipPath></defs></svg>
+                 +996 500 350 565</a></button></div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h1 style="position: relative; margin-top: 50px; padding: 30px 40px;">Добро пожаловать в наше кафе "Чолпон"</h1>
+        <h4>Кафе "Чолпон"- это уютное место в городе Кара-Куль, где гостей встречают с теплом и заботой. Мы готовим
+            вкусные блюда национальной кухни, используя свежие продукты и проверенные рецепты.</h4>
+        <h4>У нас можно приятно провести время с семьёй и друзьями, пообедать, поужинать, или отметить важное событие. В
+            кафе царит спокойная атмосфера, а внимательный персонал всегда старается, чтобы каждый гость остался
+            доволен.</h4>
+        <h4>Кафе "Чолпон"- место, куда хочется возвращаться снова и снова</h4>
+    </section>
+        <button id="backMenuBtn"  class="back-menu-btn" style="color: black;"> Назад к меню</button>
+
+    <!-- Cards MENU -->
+    <div id="menu" class="section-menu">
+<li><a style="text-decoration: none;" href="#" id="menuToggle"><h1 style="text-align: center; color: chocolate; font-size: 50px;">Меню</h1></a></li>
+
+        <div class="first">
+            <h2 style="font-size: 40px;">Первые блюда</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://img.povar.ru/mobile/a5/11/49/9f/shorpo-409463.jpg" alt="">
+                    </div>
+                    <h4>Шорпо</h4>
+                    <p>Говядина</p>
+                    <h3>195 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/565/big_564981.jpg"
+                            alt=""></div>
+                    <h4>Сырный суп(фрикадельки)</h4>
+                    <p>Фрикадельки, кукуруза, картошка, на основе сырного соуса</p>
+                    <h3>195 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://dikoed.ru/upload/iblock/66c/48245-sup-s-frikadelkami-iz-myasa-olenya.jpg"
+                            alt=""></div>
+                    <h4>Суп с фрикадельками</h4>
+                    <p>Фрикадельки, цветная капуста, лук, болгарский перец сладкий, картошка</p>
+                    <h3>195 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://lifehacker.ru/wp-content/uploads/2020/06/6_1592925463-scaled.jpg" alt=""></div>
+                    <h4>Солянка</h4>
+                    <p>Соляная, сборная, мясная</p>
+                    <h3>175 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://images.gastronom.ru/vCS5cZKKC-g5xPVK2mETjj-fuFYL2VZwlkUI_pLiIAQ/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzI4NDA1OTE2LTM4ZDMtNDYwMC1hMjYyLTc1NzFkNjc3MDdlZi5qcGc.webp"
+                            alt=""></div>
+                    <h4>Пельмени домашние</h4>
+                    <p>Домашние пельмени</p>
+                    <h3>195 сом</h3>
+                </div>
+            </div>
+        </div>
+         <div class="second">
+            <h2 style="font-size: 40px;">Вторые блюда</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://cooklikemary.ru/sites/default/files/styles/width_700/public/img_3633_0.jpg?itok=e15Ck_hr" alt="">
+                    </div>
+                    <h4>Манты</h4>
+                    <p>Мясо, тесто. лук, картошка</p>
+                    <h3>210 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIZSOvy9EXTWC0WL_znrlVYl4iipeuomNeA&s"
+                            alt=""></div>
+                    <h4>Котлеты</h4>
+                    <p>Яйцо, масло, фарш, лук</p>
+                    <h3>190 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://img.iamcook.ru/old/upl/recipes/zen/u-9d9f7b406881b1dde4c262f9f84bc279.jpg"
+                            alt=""></div>
+                    <h4>Тефтели</h4>
+                    <p>Фарш, масло, лук</p>
+                    <h3>190 сом</h3>
+                </div>
+            </div>
+            <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://s1.webspoon.ru/receipts/2013/7/8738/orig_8738_0_xxl.jpg" alt="">
+                    </div>
+                    <h4>Лагман Уйгрский</h4>
+                    <p>Болгарский перец, морковь, картошка, мясо, тесто</p>
+                    <h3>215 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://cdn.smt.bz/uploads/media/photo/2225664/%D0%BB%D0%B0%D0%B3%D0%BC%D0%B0%D0%BD_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B9.webp"
+                            alt=""></div>
+                    <h4>Лагман Жареный</h4>
+                   <p>Болгарский перец, морковь, картошка, мясо, тесто</p>
+                    <h3>215 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://zira.uz/wp-content/uploads/2023/09/gulyash.jpg"
+                            alt=""></div>
+                    <h4>Гуляш</h4>
+                    <p>Пюре, мясо, укроп</p>
+                    <h3>255 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://i.ytimg.com/vi/VqvgACeyDac/maxresdefault.jpg" alt=""></div>
+                    <h4>Мясо по-королевски</h4>
+                    <p>Помидор, укроп, мясо, плавленный сыр</p>
+                    <h3>235 сом</h3>
+                </div>
+            </div>
+        </div>
+        <div class="zakaz">
+            <h2 style="font-size: 40px;">Заказные блюда</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://static.1000.menu/img/content-v2/09/92/34970/myaso-po-derevenski-v-duxovke-s-kartofelem_1676810570_23_max.jpg" alt="">
+                    </div>
+                    <h4>Мясо по-деревенски</h4>
+                    <p>Мясо, картошка</p>
+                    <h3>480 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://finecooking.ru/images/recipe/steyki-foreli-zapechennye-v-duhovke/photo/960w.jpg"
+                            alt=""></div>
+                    <h4>Стейк форель 3шт</h4>
+                    <p>Рыба, красный перец, черный перец</p>
+                    <h3>520 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://yabpoela.net/uploads/posts/2019-12/1576932448_photo_2019-12-21_14-18-13.jpg"
+                            alt=""></div>
+                    <h4>Стейк форель 2шт</h4>
+                    <p>Рыба, красный перец, черный перец</p>
+                    <h3>420 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://www.koolinar.ru/all_image/recipes/157/157915/recipe_9f002738-7831-484c-ad0a-7294e58d8cba_w450.webp" alt=""></div>
+                    <h4>Адана-Кебаб</h4>
+                    <p>Лук, мясо, паприка</p>
+                    <h3>240 сом</h3>
+                </div>
+            </div>
+            <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://lifehacker.ru/wp-content/uploads/2024/12/shutterstock_2265339147_1_1734602719-e1734602773944.jpg" alt="">
+                    </div>
+                    <h4>Бейти кебаб</h4>
+                    <p>Лаваш, мясо, лук</p>
+                    <h3>295 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://bigasia.ru/wp-content/uploads/2023/04/2435c715734d0d295dc9c342ccf20ab6.jpg"
+                            alt=""></div>
+                    <h4>Турецкий кебаб</h4>
+                    <p>Мясо, лук паприка</p>
+                    <h3>245 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://media.ovkuse.ru/images/recipes/a3ade189-9389-40c7-baaa-3ee8de125985/a3ade189-9389-40c7-baaa-3ee8de125985_420_420.webp"
+                            alt=""></div>
+                    <h4>Бризоль</h4>
+                    <p>Фарш, яйцо, лук, молоко</p>
+                    <h3>230 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://halal-spb.ru/sites/default/files/styles/large/public/jarkoe-v-gorshochkah.jpg?itok=tzEUT5YJ" alt=""></div>
+                    <h4>Мясо в горшочке</h4>
+                    <p>Мясо, картошка, лук, картошка, сливки</p>
+                    <h3>235 сом</h3>
+                </div>
+            </div>
+            <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://s1.eda.ru/StaticContent/Photos/160915225201/160926225652/p_O.jpg" alt="">
+                    </div>
+                    <h4>Куурдак</h4>
+                    <p>Картошка, мясо, приправы</p>
+                    <h3>410 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://www.povarenok.ru/data/cache/2023jan/21/55/3033845_65334-710x550x.jpg"
+                            alt=""></div>
+                    <h4>Курица в кисло-сладком соусе</h4>
+                    <p>Куриное филе, перец, лук, морковь</p>
+                    <h3>245 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://ist.say7.info/img0012/35/1235_0166c21_2455_1024.jpg"
+                            alt=""></div>
+                    <h4>Фрикассе</h4>
+                    <p>Куриное филе , морковь, лук репчатый, сельдерей, масло сливочное</p>
+                    <h3>240 сом</h3>
+                </div>
+                </div>
+            </div>
+            <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://lafoy.ru/photo_l/foto-4456-2.jpg" alt="">
+                    </div>
+                    <h4>Казан кебаб</h4>
+                    <p>Картошка, мясо, морковь, лук</p>
+                    <h3>265 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://img.iamcook.ru/old/upl/recipes/cat/u1169-c8338c700c52d3dc7043abce47bef4fa.JPG"
+                            alt=""></div>
+                    <h4>Курица с овощами</h4>
+                    <p>Куриное филе, перец, лук, морковь</p>
+                    <h3>245 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://bandler.ru/image/catalog/product/recepti/fettuchini-s-semgoj.jpg"
+                            alt=""></div>
+                    <h4>Фетучини с форелью</h4>
+                    <p>Фетучини, форель, лук, сливки</p>
+                    <h3>355 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://здоровое-питание.рф/upload/iblock/6a2/s9gmf27dxsnbjvoap4btpytvdrwikpnh/Pasta-fetuchini-kuritsa-s-gribami-v-slivochnom-souse-5.jpg" alt=""></div>
+                    <h4>Фетучини с курицей</h4>
+                    <p>Фетучини, форель, лук, сливки, куриное филе</p>
+                    <h3>315 сом</h3>
+                </div>
+            </div>
+        </div>
+        <div class="Shashlik" style="background-color: bisque;">
+            <h2 style="font-size: 40px;">Шашлыки</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://restoran-mimi.ru/assets/content/shashlik-iz-govyadini-7.jpg"
+                            alt=""></div>
+                    <h4>Говядина</h4>
+                    
+                    <h3>215 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1ml_CCi-1FvCUye__NUK_6_q0G8ylc91Xg&s"
+                            alt=""></div>
+                    <h4>Наполеон</h4>
+                    
+                    <h3>180 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://a-catering.com/image/1.Dostavka/Gorihie/lyulya-kebab-dostavka-shashlyka-na-dom-i-po-spb-v-lenoblati-kejtering.jpg"
+                            alt=""></div>
+                    <h4>Люля-Кебаб</h4>
+                   
+                    <h3>160 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://edimdoma.ru/data/recipes/0014/5261/145261-ed4_wide.jpg?1759232294" alt="">
+                    </div>
+                    <h4>Крылышки</h4>
+                    
+                    <h3>190 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img
+                            src="https://cdn.tveda.ru/thumbs/3cc/3ccfd856d12bcfb474a1b37e886777b9/08be2c4d446d23e23ba82d5483e2f396.jpg"
+                            alt=""></div>
+                    <h4>Овощной шашлык</h4>
+                    <h3>135 сом</h3>
+                </div>
+            </div>
+        </div>
+        <div class="salad" style="background-color: bisque;">
+            <h2 style="font-size: 40px;">Салаты</h2>
+            <div class="menu-salad">
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg"
+                                alt=""></div>
+                        <h4>Греческий</h4>
+                        <p>Помидоры, огурцы, салат сыр фета</p>
+                        <h3>195 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/68/big_67797.jpg" alt=""></div>
+                        <h4>Столичный</h4>
+                        <p>Зелень, опята корнишоны, говяжий язык, помидоры</p>
+                        <h3>210 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://i.ytimg.com/vi/sGjV5ER10ys/sddefault.jpg" alt=""></div>
+                        <h4>Гасконский</h4>
+                        <p>Помидоры, корнишоны, опята, салат, копченная окорочка</p>
+                        <h3>195 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img
+                                src="https://www.russianfood.com/dycontent/images_upl/555/big_554824.jpg" alt=""></div>
+                        <h4>Витаминка</h4>
+                        <p>Свекла, колбаска, кукуруза, зелень, морковь</p>
+                        <h3>170 сом</h3>
+                    </div>
+                </div>
+                <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                    <div class="menu-card">
+                        <div class="dish-img"><img
+                                src="https://www.russianfood.com/dycontent/images_upl/546/big_545819.jpg" alt=""></div>
+                        <h4>Овощной микс</h4>
+                        <p>Цветная капуста, брокколи, помидоры, огурцы, лук</p>
+                        <h3>205 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img
+                                src="https://cdn.smt.bz/uploads/media/photo/2236799/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.webp"
+                                alt=""></div>
+                        <h4>Свежий</h4>
+                        <p>Помидоры, огурцв, лук</p>
+                        <h3>110 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img
+                                src="https://i.ytimg.com/vi/cZnNPgADKTQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcrWOozEpdooPxEHiHVMmWe6BTfg"
+                                alt=""></div>
+                        <h4>Фунчоза</h4>
+                        <p>Мясо, огурцы, перец, фын-тёз</p>
+                        <h3>195 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://i.ytimg.com/vi/x065ZmRdxBU/maxresdefault.jpg" alt="">
+                        </div>
+                        <h4>Нарезка фирменная овощная</h4>
+                        <p>Огурцы, помидоры, соленные огурцы, квашенная капуста, лук</p>
+                        <h3>270 сом</h3>
+                    </div>
+                </div>
+            
+                <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://images.gastronom.ru/LoVJjeEYXJQ3vR2Yn8WtlivB0eZ78Rtu417zEnX1mZs/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzL2IxMzU5MzRkLWI1OTAtNDQ4Zi05MjA3LWQ5YzEzM2M2ODZlNy5qcGc.webp" alt=""></div>
+                        <h4>Цезарь с курицей</h4>
+                        <p>Листья, курица, помидоры, сыр пармезан, соус цезарь. крутоны</p>
+                        <h3>205 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://foodmood.ru/upload/iblock/bfe/bfe5b51ce6ea8a5f17b59c153ac3fcf9.jpeg" alt=""></div>
+                        <h4>Гнездо кукушки</h4>
+                        <p>Копченка, пай, кукуруз, курица, лук</p>
+                        <h3>210 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/542/big_541650.jpg" alt=""></div>
+                        <h4>Мерло</h4>
+                        <p>Омлет, горох, кукуруза, курица, лук</p>
+                        <h3>175 сом</h3>
+                    </div>
+                </div>
+                <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.moi-povar.ru/upload/iblock/162/IMG_1518.jpg" alt=""></div>
+                        <h4>Салат с грибами</h4>
+                        <p>Сыр, охотница, помидоры, листья, чечел сверху</p>
+                        <h3>245 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/503/big_502335.jpg" alt=""></div>
+                        <h4>Салат с свеклой</h4>
+                        <p>Пай, колбаса, яйцо, огурцы</p>
+                        <h3>215 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://sovkusom.ru/wp-content/uploads/recepty/s/salat-s-shampinyonami/thumb-840x440.jpg" alt=""></div>
+                        <h4>Охотница</h4>
+                        <p>Охотница, корнишоны, черри, листья, шампиньоны, орешки</p>
+                        <h3>215 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/165/big_164344.jpg" alt=""></div>
+                        <h4>Китайский острый</h4>
+                        <p>Помидоры, огурцы, мясо, лук, морковь, перец</p>
+                        <h3>205 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/527/big_526629.jpg" alt=""></div>
+                        <h4>Восточный</h4>
+                        <p>Помидоры, огурцы, мясо, лук, кабачки, баклажан</p>
+                        <h3>205 сом</h3>
+                    </div>
+                </div>
+                <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/733/big_732221.jpg" alt=""></div>
+                        <h4>Баклажан с овощами</h4>
+                        <p>Баклажаны, болгарский перец, помидоры, лук</p>
+                        <h3>215 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/777/big_776231.jpg" alt=""></div>
+                        <h4>Фирменный баклажан</h4>
+                        <p>Баклажан в панировке сезонный</p>
+                        <h3>215 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://www.russianfood.com/dycontent/images_upl/645/big_644398.jpg" alt=""></div>
+                        <h4>Баклажан микс</h4>
+                        <p></p>
+                        <h3>215 сом</h3>
+                    </div>
+                    <div class="menu-card">
+                        <div class="dish-img"><img src="https://images.gastronom.ru/FBJo4dLNHhJ18pXaaPvA5N8ld9PXD_-VQ50vToLsUu4/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp" alt=""></div>
+                        <h4>Курица с ореховым соусом</h4>
+                        <p></p>
+                        <h3>215 сом</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deserts" style="background-color: bisque;">
+            <h2 style="font-size: 40px;">Десерты</h2>
+            <div class="menu-grid" style="display: flex; justify-content: space-around;">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://vkusnoff.com/img/recepty/3985/big.webp" alt=""></div>
+                    <h4>Сан_Себестьян</h4>
+                    <p></p>
+                    <h3>300 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://art-lunch.ru/content/uploads/2014/08/cheesecake-new-york-001x2-1.jpg" alt=""></div>
+                    <h4>Чизкейк</h4>
+                    <p></p>
+                    <h3>330 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://tochkamarket.ru/upload/iblock/5f9/rfprgsonxwxsc8hoaz027ghn0iyllo1u.jpg" alt=""></div>
+                    <h4>Три шоколада</h4>
+                    <p></p>
+                    <h3>250 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://cdn.nur.kz/images/1200x675/aae7343159f27780.jpeg?version=1" alt=""></div>
+                    <h4>Сникерс</h4>
+                    <p></p>
+                    <h3>330 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://content2.flowwow-images.com/data/flowers/1000x1000/63/1740545469_46861463.jpg" alt=""></div>
+                    <h4>Трайфл</h4>
+                    <p></p>
+                    <h3>170 сом</h3>
+                </div>
+            </div>
+        </div>
+        <div class="napitki" style="background-color: bisque;">
+            <h2 style="font-size: 40px;">Напитки</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://img.iamcook.ru/2019/upl/recipes/cat/u-4a903326f8c32bf338e5d2b2cf87a1aa.JPG" alt=""></div>
+                    <h4>Компот 1л, 1,5л</h4>
+                    <h3>85/125</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://neman.kg/images/watermarked/detailed/34/unnamed_n7sb-ck.webp" alt=""></div>
+                    <h4>Кола 1л, 1,5л</h4>
+                    <h3>105/145</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://dostavka-produktov.ru/image/cache/catalog/products_images/3176277-1000x1000.jpg" alt=""></div>
+                    <h4>Фанта 1л, 1,5л</h4>
+                    <h3>105/145</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://3259404.ru/upload/iblock/fb6/nx32auk4u9xu7peyhyvh3ke5lvhigp6z.webp" alt=""></div>
+                    <h4>Любимый 1л, 1,5л</h4>
+                    <h3>135/220</h3>
+                </div>
+            </div>
+        </div>
+        <div class="fast-food" style="background-color: bisque;">
+            <h2 style="font-size: 40px;">Fast-Food</h2>
+            <div class="menu-grid">
+                <div class="menu-card" style="position: relative; margin-top: 20px;">
+                    <div class="dish-img"><img src="https://www.chefmarket.ru/blog/wp-content/uploads/2020/01/fried-chick-2000x1200.jpg" alt=""></div>
+                    <h4>KFS + фри</h4>
+                    <h3>2 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://lefood.menu/wp-content/uploads/w_images/2023/07/recept-76707-1240x827.jpg" alt=""></div>
+                    <h4>Шаурма</h4>
+                    <h3>205 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://zira.uz/wp-content/uploads/2022/06/shaurma-18.jpg" alt=""></div>
+                    <h4>Шаурма с курицей</h4>
+                    <h3>230 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg" alt=""></div>
+                    <h4>Пицца "Пепперони"</h4>
+                    <h3>450 сом </h3>
+                </div>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://cipollino.ua/content/uploads/images/recept-myasnoj-piccy-pod-syrom%281%29.jpg" alt=""></div>
+                    <h4>Пицца "Мясная"</h4>
+                    <h3>505 сом </h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://s3.smartofood.ru/kato/menu/14cce8bc-fddd-5770-9c57-f35c8172513c.webp" alt=""></div>
+                    <h4>Пицца "Курица с грибами"</h4>
+                    <h3>505 сом </h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://opis-cdn.tinkoffjournal.ru/mercury/inramen2.c3mkuj4avtxt..jpg" alt=""></div>
+                    <h4>Рамён</h4>
+                    <h3>235 сом </h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://prostokvashino.ru/upload/resize_cache/iblock/74f/800_800_0/74fe90dd6ef5f047dcadff513c8d75d7.jpg" alt=""></div>
+                    <h4>Пирог</h4>
+                    <h3>40 сом</h3>
+                </div>
+            </div>
+            <div class="menu-grid" style="position: relative; margin-top: 20px;">
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://i.ytimg.com/vi/US6fbAwR_2E/maxresdefault.jpg" alt=""></div>
+                    <h4>Мини самсы песочные (пред. заказ)</h4>
+                    <h3>45 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://img.iamcook.ru/old/upl/recipes/cat/u4142-10b7c9c0972f7a6486ec930a56c01777.jpg" alt=""></div>
+                    <h4>Хлеб</h4>
+                    <h3>40 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="https://img2.goodfon.ru/original/5616x3744/0/63/stol-zavarnik-chay-napitok.jpg" alt=""></div>
+                    <h4>Чай</h4>
+                    <h3>15 сом</h3>
+                </div>
+                <div class="menu-card">
+                    <div class="dish-img"><img src="" alt=""></div>
+                    <h4>Боорсок + каймак</h4>
+                    <h3>145 сом</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <section id="contact">
+    <h1 style="font-size: 50px;">Контакты</h1>
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Phone"><path d="M10.554 6.24L7.171 2.335c-.39-.45-1.105-.448-1.558.006L2.831 5.128c-.828.829-1.065 2.06-.586 3.047a29.207 29.207 0 0 0 13.561 13.58c.986.479 2.216.242 3.044-.587l2.808-2.813c.455-.455.456-1.174.002-1.564l-3.92-3.365c-.41-.352-1.047-.306-1.458.106l-1.364 1.366a.462.462 0 0 1-.553.088 14.557 14.557 0 0 1-5.36-5.367.463.463 0 0 1 .088-.554l1.36-1.361c.412-.414.457-1.054.101-1.465z"/></svg>+996 500 350 565</h2>
+    <h2>Как нас найти</h2>
+
+    <div class="map-wrapper">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.0509237162416!2d72.6622908!3d41.6307442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a31d96c5c8612b%3A0x58ec389fed91812!2z0JrQsNGE0LUgItCn0L7Qu9C_0L7QvSI!5e0!3m2!1sru!2skg!4v1700000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
