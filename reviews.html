@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все отзывы - Cholpon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Cholpon</div>
+                <nav class="nav">
+                    <a href="index.html#menu" data-i18n="nav-menu">Меню</a>
+                    <a href="index.html#about" data-i18n="nav-about">О нас</a>
+                    <a href="index.html#contact" data-i18n="nav-contact">Контакты</a>
+                </nav>
+                <div class="header-controls">
+                    <button class="lang-toggle" id="langToggle" aria-label="Переключить язык">RU</button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <section class="reviews-page-section">
+            <div class="container">
+                <div class="reviews-page-header">
+                    <h1 data-i18n="reviews-all-title">Все отзывы</h1>
+                    <a href="index.html" class="btn btn-secondary" data-i18n="reviews-back">Вернуться на главную</a>
+                </div>
+                
+                <div class="reviews-page-container">
+                    <div class="reviews-grid-full" id="reviewsGridFull">
+                        <!-- Все отзывы будут добавлены через JavaScript -->
+                    </div>
+                    <div class="reviews-empty" id="reviewsEmptyFull" style="display: none;">
+                        <p data-i18n="reviews-empty">Пока нет отзывов. Будьте первым!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer-text">&copy; 2024 Кафе Cholpon. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Инициализация для страницы отзывов
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            initLanguage();
+            initHeaderScroll();
+            
+            // Функция для отображения всех отзывов
+            function displayAllReviews() {
+                const reviews = getAllReviews();
+                const reviewsGridFull = document.getElementById('reviewsGridFull');
+                const reviewsEmptyFull = document.getElementById('reviewsEmptyFull');
+                
+                if (!reviews || reviews.length === 0) {
+                    if (reviewsGridFull) reviewsGridFull.style.display = 'none';
+                    if (reviewsEmptyFull) reviewsEmptyFull.style.display = 'block';
+                    return;
+                }
+                
+                if (reviewsGridFull) reviewsGridFull.style.display = 'grid';
+                if (reviewsEmptyFull) reviewsEmptyFull.style.display = 'none';
+                
+                if (reviewsGridFull) {
+                    reviewsGridFull.innerHTML = '';
+                    reviews.forEach(review => {
+                        const reviewCard = createReviewCard(review);
+                        reviewsGridFull.appendChild(reviewCard);
+                    });
+                }
+            }
+            
+            // Отображение всех отзывов
+            displayAllReviews();
+        });
+    </script>
+</body>
+</html>

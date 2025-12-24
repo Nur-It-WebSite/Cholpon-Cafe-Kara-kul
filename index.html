@@ -21,6 +21,7 @@
           <nav class="nav">
             <a href="#menu" data-i18n="nav-menu">Меню</a>
             <a href="#about" data-i18n="nav-about">О нас</a>
+            <a href="#reviews" data-i18n="nav-reviews">Отзывы</a>
             <a href="#contact" data-i18n="nav-contact">Контакты</a>
           </nav>
           <div class="header-controls">
@@ -157,6 +158,125 @@
 
           <div class="menu-grid" id="menuGrid">
             <!-- Карточки меню будут добавлены через JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция отзывов -->
+      <section id="reviews" class="reviews-section">
+        <div class="container">
+          <h2 data-i18n="reviews-title">Отзывы</h2>
+
+          <!-- Форма добавления отзыва -->
+          <div class="review-form-container">
+            <h3 data-i18n="review-form-title">Оставить отзыв</h3>
+            <form id="reviewForm" class="review-form">
+              <div class="form-group">
+                <label for="reviewerName" data-i18n="review-name"
+                  >Ваше имя</label
+                >
+                <input type="text" id="reviewerName" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="review-rating">Оценка</label>
+                <div class="star-rating" id="starRating">
+                  <span class="star" data-rating="1">★</span>
+                  <span class="star" data-rating="2">★</span>
+                  <span class="star" data-rating="3">★</span>
+                  <span class="star" data-rating="4">★</span>
+                  <span class="star" data-rating="5">★</span>
+                </div>
+                <input
+                  type="hidden"
+                  id="reviewRating"
+                  name="rating"
+                  value="0"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="reviewComment" data-i18n="review-comment"
+                  >Комментарий</label
+                >
+                <textarea
+                  id="reviewComment"
+                  name="comment"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="reviewPhoto" data-i18n="review-photo"
+                  >Фото (необязательно)</label
+                >
+                <div class="photo-upload-container">
+                  <input
+                    type="file"
+                    id="reviewPhoto"
+                    name="photo"
+                    accept="image/*"
+                    capture="environment"
+                  />
+                  <div class="photo-preview" id="photoPreview"></div>
+                  <div class="photo-actions">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      id="takePhotoBtn"
+                      data-i18n="review-take-photo"
+                    >
+                      Сделать фото
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      id="choosePhotoBtn"
+                      data-i18n="review-choose-photo"
+                    >
+                      Выбрать из галереи
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      id="removePhotoBtn"
+                      style="display: none"
+                      data-i18n="review-remove-photo"
+                    >
+                      Удалить фото
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-i18n="review-submit"
+              >
+                Отправить отзыв
+              </button>
+            </form>
+          </div>
+
+          <!-- Отображение последних отзывов -->
+          <div class="reviews-container">
+            <div class="reviews-grid" id="reviewsGrid">
+              <!-- Отзывы будут добавлены через JavaScript -->
+            </div>
+            <div class="reviews-empty" id="reviewsEmpty" style="display: none">
+              <p data-i18n="reviews-empty">Пока нет отзывов. Будьте первым!</p>
+            </div>
+            <div class="reviews-actions">
+              <a
+                href="reviews.html"
+                class="btn btn-primary"
+                data-i18n="reviews-view-all"
+                >Посмотреть все отзывы</a
+              >
+            </div>
           </div>
         </div>
       </section>

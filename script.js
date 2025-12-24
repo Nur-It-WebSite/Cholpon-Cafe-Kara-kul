@@ -115,6 +115,7 @@ const translations = {
     ru: {
         'nav-menu': 'Меню',
         'nav-about': 'О нас',
+        'nav-reviews': 'Отзывы',
         'nav-contact': 'Контакты',
         'about-title': 'Добро пожаловать в кафе "Cholpon"',
         'about-text-1': 'Кафе "Cholpon" - это уютное место в городе Кара-Куль, где гостей встречают с теплом и заботой. Мы готовим вкусные блюда национальной кухни, используя свежие продукты и проверенные рецепты.',
@@ -151,11 +152,26 @@ const translations = {
         'filter-dessert': 'Десерты',
         'filter-drink': 'Напитки',
         'filter-fastfood': 'Fast-Food',
-        'dish-ingredients': 'Ингредиенты:'
+        'dish-ingredients': 'Ингредиенты:',
+        'reviews-title': 'Отзывы',
+        'review-form-title': 'Оставить отзыв',
+        'review-name': 'Ваше имя',
+        'review-rating': 'Оценка',
+        'review-comment': 'Комментарий',
+        'review-photo': 'Фото (необязательно)',
+        'review-take-photo': 'Сделать фото',
+        'review-choose-photo': 'Выбрать из галереи',
+        'review-remove-photo': 'Удалить фото',
+        'review-submit': 'Отправить отзыв',
+        'reviews-empty': 'Пока нет отзывов. Будьте первым!',
+        'reviews-view-all': 'Посмотреть все отзывы',
+        'reviews-all-title': 'Все отзывы',
+        'reviews-back': 'Вернуться на главную'
     },
     kg: {
         'nav-menu': 'Меню',
         'nav-about': 'Биз жөнүндө',
+        'nav-reviews': 'Пикирлер',
         'nav-contact': 'Байланыш',
         'about-title': '"Cholpon" кафесине кош келиңиз',
         'about-text-1': '"Cholpon" кафеси - Кара-Көл шаарындагы жайлуу жер, мында конокторду жылуулук менен кабыл алышат. Биз таза азыктарды жана текшерилген рецептерди колдонуп, улуттук тамактарды даярдайбыз.',
@@ -192,7 +208,21 @@ const translations = {
         'filter-dessert': 'Десерт',
         'filter-drink': 'Ичимдик',
         'filter-fastfood': 'Fast-Food',
-        'dish-ingredients': 'Курамы:'
+        'dish-ingredients': 'Курамы:',
+        'reviews-title': 'Пикирлер',
+        'review-form-title': 'Пикир калтыруу',
+        'review-name': 'Атыңыз',
+        'review-rating': 'Баалоо',
+        'review-comment': 'Комментарий',
+        'review-photo': 'Сүрөт (милдеттүү эмес)',
+        'review-take-photo': 'Сүрөт тартуу',
+        'review-choose-photo': 'Галереядан тандау',
+        'review-remove-photo': 'Сүрөттү өчүрүү',
+        'review-submit': 'Пикирди жөнөтүү',
+        'reviews-empty': 'Азырынча пикирлер жок. Биринчи болуңуз!',
+        'reviews-view-all': 'Бардык пикирлерди көрүү',
+        'reviews-all-title': 'Бардык пикирлер',
+        'reviews-back': 'Башкы бетке кайтуу'
     }
 };
 
@@ -439,6 +469,8 @@ function renderMenu() {
         const card = createMenuCard(item);
         menuGrid.appendChild(card);
     });
+    // Инициализация мобильного слайдера (если экран небольшой)
+    initMenuSlider();
 }
 
 // ============================================
@@ -1025,6 +1057,188 @@ function updateSlider() {
 }
 
 // ============================================
+// Мобильный слайдер для меню
+// ============================================
+
+let menuSliderState = {
+    currentIndex: 0,
+    intervalId: null,
+    initialized: false,
+};
+
+function initMenuSlider() {
+    const menuGrid = document.getElementById('menuGrid');
+    if (!menuGrid) return;
+
+    // Показ только на узких экранах
+    if (window.innerWidth > 768) {
+        destroyMenuSlider();
+        return;
+    }
+
+    if (menuSliderState.initialized) return;
+
+    // Создаем контейнер слайдера
+    const slider = document.createElement('div');
+    slider.id = 'menuSlider';
+    slider.className = 'menu-slider';
+
+    const track = document.createElement('div');
+    track.className = 'menu-slider-track';
+
+    // Перемещаем карточки в слайды
+    while (menuGrid.firstChild) {
+        const slideWrapper = document.createElement('div');
+        slideWrapper.className = 'menu-slide';
+        slideWrapper.appendChild(menuGrid.firstChild);
+        track.appendChild(slideWrapper);
+    }
+
+    slider.appendChild(track);
+
+    // Кнопки навигации
+    const prev = document.createElement('button');
+    prev.className = 'slider-btn slider-prev';
+    prev.innerHTML = '‹';
+    prev.addEventListener('click', () => changeMenuSlide(-1));
+
+    const next = document.createElement('button');
+    next.className = 'slider-btn slider-next';
+    next.innerHTML = '›';
+    next.addEventListener('click', () => changeMenuSlide(1));
+
+    slider.appendChild(prev);
+    slider.appendChild(next);
+
+    // Точки
+    const dots = document.createElement('div');
+    dots.className = 'menu-slider-dots';
+    slider.appendChild(dots);
+
+    // Вставляем слайдер перед меню (menuGrid заменён на пустой контейнер)
+    menuGrid.parentNode.insertBefore(slider, menuGrid);
+
+    // Инициализация точек
+    updateMenuDots();
+
+    // Автопрокрутка
+    menuSliderState.intervalId = setInterval(() => changeMenuSlide(1), 3500);
+
+    // События для свайпа
+    initSliderTouch(track);
+
+    menuSliderState.initialized = true;
+}
+
+function destroyMenuSlider() {
+    const slider = document.getElementById('menuSlider');
+    const menuGrid = document.getElementById('menuGrid');
+    if (!slider || !menuGrid) return;
+
+    const track = slider.querySelector('.menu-slider-track');
+    if (track) {
+        while (track.firstChild) {
+            const slide = track.firstChild;
+            // извлекаем карточку из обертки
+            const card = slide.firstChild;
+            if (card) menuGrid.appendChild(card);
+            track.removeChild(slide);
+        }
+    }
+
+    slider.remove();
+    if (menuSliderState.intervalId) {
+        clearInterval(menuSliderState.intervalId);
+        menuSliderState.intervalId = null;
+    }
+    menuSliderState.currentIndex = 0;
+    menuSliderState.initialized = false;
+}
+
+function changeMenuSlide(direction) {
+    const slider = document.getElementById('menuSlider');
+    if (!slider) return;
+    const track = slider.querySelector('.menu-slider-track');
+    const slides = track ? track.children : [];
+    if (!slides || slides.length === 0) return;
+
+    let idx = menuSliderState.currentIndex + direction;
+    if (idx < 0) idx = slides.length - 1;
+    if (idx >= slides.length) idx = 0;
+
+    goToMenuSlide(idx);
+}
+
+function goToMenuSlide(index) {
+    const slider = document.getElementById('menuSlider');
+    if (!slider) return;
+    const track = slider.querySelector('.menu-slider-track');
+    const dots = slider.querySelectorAll('.menu-slider-dot');
+    const slides = track.children;
+    if (index < 0 || index >= slides.length) return;
+
+    track.style.transform = `translateX(-${index * 100}%)`;
+    menuSliderState.currentIndex = index;
+
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+}
+
+function updateMenuDots() {
+    const slider = document.getElementById('menuSlider');
+    if (!slider) return;
+    const dotsContainer = slider.querySelector('.menu-slider-dots');
+    const track = slider.querySelector('.menu-slider-track');
+    dotsContainer.innerHTML = '';
+    const count = track ? track.children.length : 0;
+    for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'menu-slider-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToMenuSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function initSliderTouch(track) {
+    if (!track) return;
+    let startX = 0;
+    let deltaX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        if (menuSliderState.intervalId) {
+            clearInterval(menuSliderState.intervalId);
+            menuSliderState.intervalId = null;
+        }
+    }, { passive: true });
+
+    track.addEventListener('touchmove', (e) => {
+        deltaX = e.touches[0].clientX - startX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', () => {
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0) changeMenuSlide(-1);
+            else changeMenuSlide(1);
+        }
+        // восстанавливаем автопрокрутку
+        if (!menuSliderState.intervalId) {
+            menuSliderState.intervalId = setInterval(() => changeMenuSlide(1), 3500);
+        }
+        startX = 0; deltaX = 0;
+    });
+}
+
+// Пересоздаем/уничтожаем слайдер при изменении размера окна
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        if (window.innerWidth > 768) destroyMenuSlider();
+        else initMenuSlider();
+    }, 200);
+});
+
+// ============================================
 // Экспорт функций для использования в HTML
 // ============================================
 
@@ -1083,9 +1297,295 @@ function initHeaderScroll() {
 // Экспорт функций для использования в HTML
 // ============================================
 
+// ============================================
+// Система отзывов
+// ============================================
+
+let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+/**
+ * Инициализация системы отзывов
+ */
+function initReviews() {
+    // Инициализация рейтинга звездами
+    initStarRating();
+    
+    // Обработчик формы отзыва
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', handleReviewSubmit);
+    }
+    
+    // Кнопки загрузки фото
+    const takePhotoBtn = document.getElementById('takePhotoBtn');
+    const choosePhotoBtn = document.getElementById('choosePhotoBtn');
+    const removePhotoBtn = document.getElementById('removePhotoBtn');
+    const reviewPhoto = document.getElementById('reviewPhoto');
+    
+    if (takePhotoBtn && reviewPhoto) {
+        takePhotoBtn.addEventListener('click', () => {
+            reviewPhoto.setAttribute('capture', 'environment');
+            reviewPhoto.click();
+        });
+    }
+    
+    if (choosePhotoBtn && reviewPhoto) {
+        choosePhotoBtn.addEventListener('click', () => {
+            reviewPhoto.removeAttribute('capture');
+            reviewPhoto.click();
+        });
+    }
+    
+    if (removePhotoBtn) {
+        removePhotoBtn.addEventListener('click', () => {
+            const photoPreview = document.getElementById('photoPreview');
+            const reviewPhoto = document.getElementById('reviewPhoto');
+            if (photoPreview) photoPreview.innerHTML = '';
+            if (reviewPhoto) reviewPhoto.value = '';
+            removePhotoBtn.style.display = 'none';
+        });
+    }
+    
+    if (reviewPhoto) {
+        reviewPhoto.addEventListener('change', handlePhotoSelect);
+    }
+    
+    // Отображение отзывов
+    displayReviews();
+}
+
+/**
+ * Инициализация рейтинга звездами
+ */
+function initStarRating() {
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('reviewRating');
+    
+    if (!stars.length || !ratingInput) return;
+    
+    stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+            const rating = index + 1;
+            ratingInput.value = rating;
+            updateStarRating(rating);
+        });
+        
+        star.addEventListener('mouseenter', () => {
+            updateStarRating(index + 1, true);
+        });
+    });
+    
+    const starContainer = document.getElementById('starRating');
+    if (starContainer) {
+        starContainer.addEventListener('mouseleave', () => {
+            const currentRating = parseInt(ratingInput.value) || 0;
+            updateStarRating(currentRating);
+        });
+    }
+}
+
+/**
+ * Обновление отображения звезд рейтинга
+ */
+function updateStarRating(rating, isHover = false) {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+        if (index < rating) {
+            star.classList.add('active');
+        } else {
+            star.classList.remove('active');
+        }
+    });
+}
+
+/**
+ * Обработка выбора фото
+ */
+function handlePhotoSelect(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    if (!file.type.startsWith('image/')) {
+        alert(currentLang === 'ru' ? 'Пожалуйста, выберите изображение' : 'Сураныч, сүрөт тандаңыз');
+        return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        const photoPreview = document.getElementById('photoPreview');
+        const removePhotoBtn = document.getElementById('removePhotoBtn');
+        
+        if (photoPreview) {
+            photoPreview.innerHTML = `
+                <img src="${event.target.result}" alt="Preview" class="photo-preview-image">
+            `;
+        }
+        
+        if (removePhotoBtn) {
+            removePhotoBtn.style.display = 'block';
+        }
+    };
+    
+    reader.readAsDataURL(file);
+}
+
+/**
+ * Обработка отправки отзыва
+ */
+function handleReviewSubmit(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('reviewerName').value.trim();
+    const rating = parseInt(document.getElementById('reviewRating').value);
+    const comment = document.getElementById('reviewComment').value.trim();
+    const photoInput = document.getElementById('reviewPhoto');
+    
+    if (!name || !rating || !comment) {
+        alert(currentLang === 'ru' 
+            ? 'Заполните все обязательные поля' 
+            : 'Бардык милдеттүү талааларды толтуруңуз');
+        return;
+    }
+    
+    if (rating === 0) {
+        alert(currentLang === 'ru' 
+            ? 'Пожалуйста, выберите оценку' 
+            : 'Сураныч, баалоо тандаңыз');
+        return;
+    }
+    
+    // Получаем фото, если есть
+    let photoData = null;
+    if (photoInput && photoInput.files && photoInput.files[0]) {
+        const file = photoInput.files[0];
+        const reader = new FileReader();
+        
+        reader.onload = (event) => {
+            photoData = event.target.result;
+            saveReview(name, rating, comment, photoData);
+        };
+        
+        reader.readAsDataURL(file);
+    } else {
+        saveReview(name, rating, comment, null);
+    }
+}
+
+/**
+ * Сохранение отзыва
+ */
+function saveReview(name, rating, comment, photoData) {
+    const review = {
+        id: Date.now(),
+        name: name,
+        rating: rating,
+        comment: comment,
+        photo: photoData,
+        date: new Date().toLocaleString('ru-RU', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+        }),
+        timestamp: Date.now()
+    };
+    
+    reviews.unshift(review); // Добавляем в начало
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+    
+    // Очищаем форму
+    document.getElementById('reviewForm').reset();
+    document.getElementById('photoPreview').innerHTML = '';
+    document.getElementById('removePhotoBtn').style.display = 'none';
+    updateStarRating(0);
+    
+    // Обновляем отображение
+    displayReviews();
+    
+    // Показываем сообщение об успехе
+    alert(currentLang === 'ru' 
+        ? 'Спасибо за ваш отзыв!' 
+        : 'Пикириңиз үчүн рахмат!');
+}
+
+/**
+ * Отображение отзывов
+ */
+function displayReviews(limit = 6) {
+    const reviewsGrid = document.getElementById('reviewsGrid');
+    const reviewsEmpty = document.getElementById('reviewsEmpty');
+    
+    if (!reviewsGrid || !reviewsEmpty) return;
+    
+    if (reviews.length === 0) {
+        reviewsGrid.style.display = 'none';
+        reviewsEmpty.style.display = 'block';
+        return;
+    }
+    
+    reviewsGrid.style.display = 'grid';
+    reviewsEmpty.style.display = 'none';
+    reviewsGrid.innerHTML = '';
+    
+    const reviewsToShow = reviews.slice(0, limit);
+    
+    reviewsToShow.forEach(review => {
+        const reviewCard = createReviewCard(review);
+        reviewsGrid.appendChild(reviewCard);
+    });
+}
+
+/**
+ * Создание карточки отзыва
+ */
+function createReviewCard(review) {
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        starsHTML += `<span class="review-star ${i <= review.rating ? 'active' : ''}">★</span>`;
+    }
+    
+    let photoHTML = '';
+    if (review.photo) {
+        photoHTML = `<img src="${review.photo}" alt="Review photo" class="review-photo">`;
+    }
+    
+    card.innerHTML = `
+        <div class="review-header">
+            <div class="review-author">
+                <strong>${review.name}</strong>
+                <span class="review-date">${review.date}</span>
+            </div>
+            <div class="review-stars">${starsHTML}</div>
+        </div>
+        <div class="review-content">
+            <p class="review-comment">${review.comment}</p>
+            ${photoHTML}
+        </div>
+    `;
+    
+    return card;
+}
+
+/**
+ * Получение всех отзывов
+ */
+function getAllReviews() {
+    return reviews.sort((a, b) => b.timestamp - a.timestamp); // Сортировка по дате (новые сначала)
+}
+
+// ============================================
+// Экспорт функций для использования в HTML
+// ============================================
+
 window.addToCart = addToCart;
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
 window.removeFromCart = removeFromCart;
 window.showDishDetails = showDishDetails;
 window.filterByCategory = filterByCategory;
+window.getAllReviews = getAllReviews;
+window.createReviewCard = createReviewCard;
