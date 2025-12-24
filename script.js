@@ -474,22 +474,29 @@ function createMenuCard(item) {
             <p class="dish-description">${description}</p>
             <div class="dish-footer">
                 <span class="dish-price">${price} <span data-i18n="currency">сом</span></span>
-                ${quantity === 0 
-                    ? `<button class="btn-add-cart" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
-                    : `<div class="quantity-controls">
-                        <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
-                        <span class="quantity-value">${quantity}</span>
-                        <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
-                    </div>`
-                }
+                <div class="dish-actions">
+                    <button class="btn-details" onclick="showDishDetails(${item.id})" title="${translations[currentLang]['details'] || 'Подробнее'}" data-i18n="details">Подробнее</button>
+                    ${quantity === 0 
+                        ? `<button class="btn-add-cart" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
+                        : `<div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                            <span class="quantity-value">${quantity}</span>
+                            <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
+                        </div>`
+                    }
+                </div>
             </div>
         </div>
     `;
 
-    // Переводим кнопку
+    // Переводим кнопки и элементы
     const addBtn = card.querySelector('[data-i18n="add-to-cart"]');
     if (addBtn) {
         addBtn.textContent = translations[currentLang]['add-to-cart'];
+    }
+    const detailsBtn = card.querySelector('[data-i18n="details"]');
+    if (detailsBtn) {
+        detailsBtn.textContent = translations[currentLang]['details'];
     }
     const currency = card.querySelector('[data-i18n="currency"]');
     if (currency) {
@@ -606,7 +613,6 @@ function updateCartUI() {
                     <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
                 </div>
                 <div class="cart-item-total">${itemTotal} ${translations[currentLang]['currency']}</div>
-                <button class="btn-details" onclick="showDishDetails(${item.id})" title="${translations[currentLang]['details'] || 'Подробнее'}">ℹ️</button>
                 <button class="quantity-btn" onclick="removeFromCart(${item.id})" style="background: #dc3545;" title="${translations[currentLang]['remove']}">×</button>
             `;
             cartItems.appendChild(cartItem);
