@@ -248,7 +248,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let currentCategory = 'all'; // Текущая выбранная категория
 let currentSliderIndex = 0; // Индекс текущего фото в слайдере
 // Endpoint для общих отзывов (Apps Script Web App URL)
-const REVIEWS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwNn-8xAo3Zvw8mqdf_K44ddLfSMZNqhORjQJfqwJinW5k8XMLbxUiS88bgssSd1Ig8/exec';
+const REVIEWS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyYVg9L5UtQISuiSDvzxcleVKqN4mLN4b3to64DRukMGMN6kTCnYhX3F5BfSSwA85hUWg/exec';
 
 // ============================================
 // Инициализация приложения
