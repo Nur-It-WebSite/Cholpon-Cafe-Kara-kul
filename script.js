@@ -4,14 +4,14 @@
 
 const menuData = [
     // Первые блюда
-    { 
-        id: 1, 
-        name: 'Шорпо', 
-        nameKg: 'Шорпо', 
-        description: 'Говядина', 
-        descriptionKg: 'Жылкы эти', 
-        price: 195, 
-        image: 'https://img.povar.ru/mobile/a5/11/49/9f/shorpo-409463.jpg', 
+    {
+        id: 1,
+        name: 'Шорпо',
+        nameKg: 'Шорпо',
+        description: 'Говядина',
+        descriptionKg: 'Жылкы эти',
+        price: 195,
+        image: 'https://img.povar.ru/mobile/a5/11/49/9f/shorpo-409463.jpg',
         category: 'first',
         images: [
             'https://img.povar.ru/mobile/a5/11/49/9f/shorpo-409463.jpg',
@@ -24,7 +24,7 @@ const menuData = [
     { id: 3, name: 'Суп с фрикадельками', nameKg: 'Фрикаделькалуу суп', description: 'Фрикадельки, цветная капуста, лук, болгарский перец сладкий, картошка', descriptionKg: 'Фрикадельки, түстүү капуста, пияз, болгар калемпири, картөшкө', price: 195, image: 'https://dikoed.ru/upload/iblock/66c/48245-sup-s-frikadelkami-iz-myasa-olenya.jpg', category: 'first' },
     { id: 4, name: 'Солянка', nameKg: 'Солянка', description: 'Соляная, сборная, мясная', descriptionKg: 'Туздуу, аралаш, эттүү', price: 175, image: 'https://lifehacker.ru/wp-content/uploads/2020/06/6_1592925463-scaled.jpg', category: 'first' },
     { id: 5, name: 'Пельмени домашние', nameKg: 'Үй пельмениси', description: 'Домашние пельмени', descriptionKg: 'Үй пельмениси', price: 195, image: 'https://images.gastronom.ru/vCS5cZKKC-g5xPVK2mETjj-fuFYL2VZwlkUI_pLiIAQ/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzI4NDA1OTE2LTM4ZDMtNDYwMC1hMjYyLTc1NzFkNjc3MDdlZi5qcGc.webp', category: 'first' },
-    
+
     // Вторые блюда
     { id: 6, name: 'Манты', nameKg: 'Манты', description: 'Мясо, тесто, лук, картошка', descriptionKg: 'Эт, камыр, пияз, картөшкө', price: 210, image: 'https://cooklikemary.ru/sites/default/files/styles/width_700/public/img_3633_0.jpg?itok=e15Ck_hr', category: 'second' },
     { id: 7, name: 'Котлеты', nameKg: 'Котлета', description: 'Яйцо, масло, фарш, лук', descriptionKg: 'Жумуртка, май, фарш, пияз', price: 190, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIZSOvy9EXTWC0WL_znrlVYl4iipeuomNeA&s', category: 'second' },
@@ -33,7 +33,7 @@ const menuData = [
     { id: 10, name: 'Лагман Жареный', nameKg: 'Куурулган лагман', description: 'Болгарский перец, морковь, картошка, мясо, тесто', descriptionKg: 'Болгар калемпири, сабиз, картөшкө, эт, камыр', price: 215, image: 'https://cdn.smt.bz/uploads/media/photo/2225664/%D0%BB%D0%B0%D0%B3%D0%BC%D0%B0%D0%BD_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B9.webp', category: 'second' },
     { id: 11, name: 'Гуляш', nameKg: 'Гуляш', description: 'Пюре, мясо, укроп', descriptionKg: 'Пюре, эт, укроп', price: 255, image: 'https://zira.uz/wp-content/uploads/2023/09/gulyash.jpg', category: 'second' },
     { id: 12, name: 'Мясо по-королевски', nameKg: 'Королдук эти', description: 'Помидор, укроп, мясо, плавленный сыр', descriptionKg: 'Помидор, укроп, эт, эритилген сыр', price: 235, image: 'https://i.ytimg.com/vi/VqvgACeyDac/maxresdefault.jpg', category: 'second' },
-    
+
     // Заказные блюда
     { id: 13, name: 'Мясо по-деревенски', nameKg: 'Айылдык эти', description: 'Мясо, картошка', descriptionKg: 'Эт, картөшкө', price: 480, image: 'https://static.1000.menu/img/content-v2/09/92/34970/myaso-po-derevenski-v-duxovke-s-kartofelem_1676810570_23_max.jpg', category: 'special' },
     { id: 14, name: 'Стейк форель 3шт', nameKg: 'Форель стейк 3дөн', description: 'Рыба, красный перец, черный перец', descriptionKg: 'Балык, кызыл мурч, кара мурч', price: 520, image: 'https://finecooking.ru/images/recipe/steyki-foreli-zapechennye-v-duhovke/photo/960w.jpg', category: 'special' },
@@ -50,14 +50,14 @@ const menuData = [
     { id: 25, name: 'Курица с овощами', nameKg: 'Жашылчалуу тоок', description: 'Куриное филе, перец, лук, морковь', descriptionKg: 'Тоок филеси, мурч, пияз, сабиз', price: 245, image: 'https://img.iamcook.ru/old/upl/recipes/cat/u1169-c8338c700c52d3dc7043abce47bef4fa.JPG', category: 'special' },
     { id: 26, name: 'Фетучини с форелью', nameKg: 'Форель менен фетучини', description: 'Фетучини, форель, лук, сливки', descriptionKg: 'Фетучини, форель, пияз, каймак', price: 355, image: 'https://bandler.ru/image/catalog/product/recepti/fettuchini-s-semgoj.jpg', category: 'special' },
     { id: 27, name: 'Фетучини с курицей', nameKg: 'Тоок менен фетучини', description: 'Фетучини, куриное филе, лук, сливки', descriptionKg: 'Фетучини, тоок филеси, пияз, каймак', price: 315, image: 'https://здоровое-питание.рф/upload/iblock/6a2/s9gmf27dxsnbjvoap4btpytvdrwikpnh/Pasta-fetuchini-kuritsa-s-gribami-v-slivochnom-souse-5.jpg', category: 'special' },
-    
+
     // Шашлыки
     { id: 28, name: 'Говядина', nameKg: 'Жылкы эти', description: 'Шашлык из говядины', descriptionKg: 'Жылкы этинен шашлык', price: 215, image: 'https://restoran-mimi.ru/assets/content/shashlik-iz-govyadini-7.jpg', category: 'shashlik' },
     { id: 29, name: 'Наполеон', nameKg: 'Наполеон', description: 'Шашлык Наполеон', descriptionKg: 'Наполеон шашлык', price: 180, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1ml_CCi-1FvCUye__NUK_6_q0G8ylc91Xg&s', category: 'shashlik' },
     { id: 30, name: 'Люля-Кебаб', nameKg: 'Люля-Кебаб', description: 'Люля-кебаб', descriptionKg: 'Люля-кебаб', price: 160, image: 'https://a-catering.com/image/1.Dostavka/Gorihie/lyulya-kebab-dostavka-shashlyka-na-dom-i-po-spb-v-lenoblati-kejtering.jpg', category: 'shashlik' },
     { id: 31, name: 'Крылышки', nameKg: 'Канаттар', description: 'Куриные крылышки', descriptionKg: 'Тоок канаттары', price: 190, image: 'https://edimdoma.ru/data/recipes/0014/5261/145261-ed4_wide.jpg?1759232294', category: 'shashlik' },
     { id: 32, name: 'Овощной шашлык', nameKg: 'Жашылчалуу шашлык', description: 'Шашлык из овощей', descriptionKg: 'Жашылчадан шашлык', price: 135, image: 'https://cdn.tveda.ru/thumbs/3cc/3ccfd856d12bcfb474a1b37e886777b9/08be2c4d446d23e23ba82d5483e2f396.jpg', category: 'shashlik' },
-    
+
     // Салаты
     { id: 33, name: 'Греческий', nameKg: 'Грек', description: 'Помидоры, огурцы, салат, сыр фета', descriptionKg: 'Помидор, бадыраң, салат, фета сыры', price: 195, image: 'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg', category: 'salad' },
     { id: 34, name: 'Столичный', nameKg: 'Борбордук', description: 'Зелень, опята, корнишоны, говяжий язык, помидоры', descriptionKg: 'Жашылча, опята, корнишон, жылкы тили, помидор', price: 210, image: 'https://www.russianfood.com/dycontent/images_upl/68/big_67797.jpg', category: 'salad' },
@@ -79,20 +79,20 @@ const menuData = [
     { id: 50, name: 'Фирменный баклажан', nameKg: 'Фирмалык баклажан', description: 'Баклажан в панировке сезонный', descriptionKg: 'Панировкада баклажан сезондук', price: 215, image: 'https://www.russianfood.com/dycontent/images_upl/777/big_776231.jpg', category: 'salad' },
     { id: 51, name: 'Баклажан микс', nameKg: 'Баклажан микси', description: 'Баклажан микс', descriptionKg: 'Баклажан микси', price: 215, image: 'https://www.russianfood.com/dycontent/images_upl/645/big_644398.jpg', category: 'salad' },
     { id: 52, name: 'Курица с ореховым соусом', nameKg: 'Орех соусу менен тоок', description: 'Курица с ореховым соусом', descriptionKg: 'Орех соусу менен тоок', price: 215, image: 'https://images.gastronom.ru/FBJo4dLNHhJ18pXaaPvA5N8ld9PXD_-VQ50vToLsUu4/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp', category: 'salad' },
-    
+
     // Десерты
     { id: 53, name: 'Сан-Себестьян', nameKg: 'Сан-Себестьян', description: 'Десерт Сан-Себестьян', descriptionKg: 'Сан-Себестьян десерти', price: 300, image: 'https://vkusnoff.com/img/recepty/3985/big.webp', category: 'dessert' },
     { id: 54, name: 'Чизкейк', nameKg: 'Чизкейк', description: 'Чизкейк', descriptionKg: 'Чизкейк', price: 330, image: 'https://art-lunch.ru/content/uploads/2014/08/cheesecake-new-york-001x2-1.jpg', category: 'dessert' },
     { id: 55, name: 'Три шоколада', nameKg: 'Үч шоколад', description: 'Торт три шоколада', descriptionKg: 'Үч шоколад торт', price: 250, image: 'https://tochkamarket.ru/upload/iblock/5f9/rfprgsonxwxsc8hoaz027ghn0iyllo1u.jpg', category: 'dessert' },
     { id: 56, name: 'Сникерс', nameKg: 'Сникерс', description: 'Десерт Сникерс', descriptionKg: 'Сникерс десерти', price: 330, image: 'https://cdn.nur.kz/images/1200x675/aae7343159f27780.jpeg?version=1', category: 'dessert' },
     { id: 57, name: 'Трайфл', nameKg: 'Трайфл', description: 'Десерт Трайфл', descriptionKg: 'Трайфл десерти', price: 170, image: 'https://content2.flowwow-images.com/data/flowers/1000x1000/63/1740545469_46861463.jpg', category: 'dessert' },
-    
+
     // Напитки
     { id: 58, name: 'Компот 1л / 1,5л', nameKg: 'Компот 1л / 1,5л', description: 'Компот', descriptionKg: 'Компот', price: 85, price2: 125, image: 'https://img.iamcook.ru/2019/upl/recipes/cat/u-4a903326f8c32bf338e5d2b2cf87a1aa.JPG', category: 'drink' },
     { id: 59, name: 'Кола 1л / 1,5л', nameKg: 'Кола 1л / 1,5л', description: 'Кола', descriptionKg: 'Кола', price: 105, price2: 145, image: 'https://neman.kg/images/watermarked/detailed/34/unnamed_n7sb-ck.webp', category: 'drink' },
     { id: 60, name: 'Фанта 1л / 1,5л', nameKg: 'Фанта 1л / 1,5л', description: 'Фанта', descriptionKg: 'Фанта', price: 105, price2: 145, image: 'https://dostavka-produktov.ru/image/cache/catalog/products_images/3176277-1000x1000.jpg', category: 'drink' },
     { id: 61, name: 'Любимый 1л / 1,5л', nameKg: 'Сүйүктүү 1л / 1,5л', description: 'Любимый сок', descriptionKg: 'Сүйүктүү ширеп', price: 135, price2: 220, image: 'https://3259404.ru/upload/iblock/fb6/nx32auk4u9xu7peyhyvh3ke5lvhigp6z.webp', category: 'drink' },
-    
+
     // Fast-Food
     { id: 62, name: 'KFS + фри', nameKg: 'KFS + фри', description: 'Курица и картошка фри', descriptionKg: 'Тоок жана фри картөшкө', price: 2, image: 'https://www.chefmarket.ru/blog/wp-content/uploads/2020/01/fried-chick-2000x1200.jpg', category: 'fastfood' },
     { id: 63, name: 'Шаурма', nameKg: 'Шаурма', description: 'Шаурма', descriptionKg: 'Шаурма', price: 205, image: 'https://lefood.menu/wp-content/uploads/w_images/2023/07/recept-76707-1240x827.jpg', category: 'fastfood' },
@@ -125,7 +125,7 @@ const translations = {
         'contact-title': 'Контакты',
         'contact-location': 'Кара-Куль',
         'contact-hours': '10:00 - 22:00, без выходных',
-        'footer-text': '© 2024 Кафе Cholpon. Все права защищены.',
+        'footer-text': '© 2025 Кафе Cholpon. Все права защищены.',
         'cart-title': 'Корзина',
         'cart-empty': 'Корзина пуста',
         'cart-total': 'Итого:',
@@ -181,7 +181,7 @@ const translations = {
         'contact-title': 'Байланыш',
         'contact-location': 'Кара-Көл',
         'contact-hours': '10:00 - 22:00, дем алыш жок',
-        'footer-text': '© 2024 Cholpon кафеси. Бардык укуктар корголгон.',
+        'footer-text': '© 2025 Cholpon кафеси. Бардык укуктар корголгон.',
         'cart-title': 'Себет',
         'cart-empty': 'Себет бош',
         'cart-total': 'Баары:',
@@ -259,7 +259,71 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     initEventListeners();
     initHeaderScroll();
+    initReviews();
+    animateWelcome();
+    // Lightbox init
+    const closeLb = document.getElementById('closeLightbox');
+    const lb = document.getElementById('imageLightbox');
+    if (closeLb) closeLb.addEventListener('click', closeImageLightbox);
+    if (lb) lb.addEventListener('click', (e) => { if (e.target === lb) closeImageLightbox(); });
 });
+
+function openImageLightbox(src, alt) {
+    const lb = document.getElementById('imageLightbox');
+    const lbImg = document.getElementById('lightboxImage');
+    if (!lb || !lbImg) return;
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('active');
+}
+
+function closeImageLightbox() {
+    const lb = document.getElementById('imageLightbox');
+    const lbImg = document.getElementById('lightboxImage');
+    if (!lb || !lbImg) return;
+    lb.classList.remove('active');
+    lbImg.src = '';
+    lbImg.alt = '';
+}
+
+// Анимация печатающегося приветствия
+function animateWelcome() {
+    const el = document.getElementById('animatedWelcome');
+    if (!el) return;
+    const text = 'Добро пожаловать в кафе "Cholpon"';
+    let idx = 0;
+    let forward = true;
+    el.textContent = '';
+
+    function step() {
+        if (forward) {
+            el.textContent = text.slice(0, idx + 1);
+            idx++;
+            if (idx >= text.length) {
+                forward = false;
+                setTimeout(step, 1200);
+                return;
+            }
+        } else {
+            el.textContent = text.slice(0, idx - 1);
+            idx--;
+            if (idx <= 0) {
+                forward = true;
+                setTimeout(step, 400);
+                return;
+            }
+        }
+        setTimeout(step, forward ? 60 : 30);
+    }
+
+    step();
+
+    // CTA buttons behavior
+    const viewMenuBtn = document.getElementById('viewMenuBtn');
+    const viewContactsBtn = document.getElementById('viewContactsBtn');
+    if (viewMenuBtn) viewMenuBtn.addEventListener('click', () => document.getElementById('menu').scrollIntoView({ behavior: 'smooth' }));
+    if (viewContactsBtn) viewContactsBtn.addEventListener('click', () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
+}
 
 // ============================================
 // Инициализация темы
@@ -324,6 +388,33 @@ function initEventListeners() {
         });
     }
 
+    // Мобильное меню (гамбургер)
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+            const expanded = mainNav.classList.contains('open');
+            mobileMenuBtn.setAttribute('aria-expanded', expanded);
+        });
+
+        // Закрываем меню при клике вне навигации
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mainNav.classList.remove('open');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Закрываем мобильное меню при изменении размера экрана
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992) {
+                mainNav.classList.remove('open');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     // Закрытие модальных окон
     const closeCartModal = document.getElementById('closeCartModal');
     if (closeCartModal) {
@@ -373,8 +464,8 @@ function initEventListeners() {
         checkoutBtn.addEventListener('click', () => {
             // Защита от пустой корзины
             if (cart.length === 0) {
-                alert(currentLang === 'ru' 
-                    ? 'Корзина пуста. Добавьте блюда в корзину.' 
+                alert(currentLang === 'ru'
+                    ? 'Корзина пуста. Добавьте блюда в корзину.'
                     : 'Себет бош. Себетке тамак кошуңуз.');
                 return;
             }
@@ -394,7 +485,7 @@ function initEventListeners() {
         btn.addEventListener('click', () => {
             const category = btn.getAttribute('data-category');
             filterByCategory(category);
-            
+
             // Обновляем активную кнопку
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -458,11 +549,15 @@ function renderMenu() {
     const menuGrid = document.getElementById('menuGrid');
     if (!menuGrid) return;
 
+    // Убедимся, что старый мобильный слайдер удалён перед перерисовкой
+    // чтобы при смене фильтра не оставались старые карточки в слайдере.
+    try { destroyMenuSlider(); } catch (e) { /* ignore */ }
+
     menuGrid.innerHTML = '';
 
     // Фильтруем блюда по категории
-    const filteredItems = currentCategory === 'all' 
-        ? menuData 
+    const filteredItems = currentCategory === 'all'
+        ? menuData
         : menuData.filter(item => item.category === currentCategory);
 
     filteredItems.forEach(item => {
@@ -480,7 +575,7 @@ function renderMenu() {
 function filterByCategory(category) {
     currentCategory = category;
     renderMenu();
-    
+
     // Прокручиваем к меню
     document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
 }
@@ -492,16 +587,16 @@ function filterByCategory(category) {
 function createMenuCard(item) {
     const card = document.createElement('div');
     card.className = 'menu-card';
-    
+
     const name = currentLang === 'ru' ? item.name : item.nameKg;
     const description = currentLang === 'ru' ? item.description : item.descriptionKg;
     const price = item.price2 ? `${item.price} / ${item.price2}` : item.price;
-    
+
     const cartItem = cart.find(ci => ci.id === item.id);
     const quantity = cartItem ? cartItem.quantity : 0;
 
     card.innerHTML = `
-        <img src="${item.image}" alt="${name}" class="dish-image" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+        <img src="${item.image}" alt="${name}" class="dish-image" onclick="openImageLightbox('${item.image}','${name}')" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
         <div class="dish-info">
             <h3 class="dish-name">${name}</h3>
             <p class="dish-description">${description}</p>
@@ -509,14 +604,14 @@ function createMenuCard(item) {
                 <span class="dish-price">${price} <span data-i18n="currency">сом</span></span>
                 <div class="dish-actions">
                     <button class="btn-details" onclick="showDishDetails(${item.id})" title="${translations[currentLang]['details'] || 'Подробнее'}" data-i18n="details">Подробнее</button>
-                    ${quantity === 0 
-                        ? `<button class="btn-add-cart" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
-                        : `<div class="quantity-controls">
+                    ${quantity === 0
+            ? `<button class="btn-add-cart" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
+            : `<div class="quantity-controls">
                             <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
                             <span class="quantity-value">${quantity}</span>
                             <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
                         </div>`
-                    }
+        }
                 </div>
             </div>
         </div>
@@ -534,6 +629,24 @@ function createMenuCard(item) {
     const currency = card.querySelector('[data-i18n="currency"]');
     if (currency) {
         currency.textContent = translations[currentLang]['currency'];
+    }
+
+    // Надёжная загрузка изображения: используем объект Image чтобы обработать ошибки
+    const imgEl = card.querySelector('.dish-image');
+    if (imgEl) {
+        const placeholder = 'https://via.placeholder.com/300x200?text=No+Image';
+        const loader = new Image();
+        loader.onload = () => {
+            imgEl.src = loader.src;
+        };
+        loader.onerror = () => {
+            imgEl.src = placeholder;
+        };
+        // Начинаем загрузку
+        loader.src = item.image || placeholder;
+
+        // Навешиваем обработчик открытия lightbox
+        imgEl.addEventListener('click', () => openImageLightbox(imgEl.src, name));
     }
 
     return card;
@@ -713,7 +826,7 @@ function createOrderText(name, phone, comment) {
     }
 
     // Заголовок заказа (без звездочек для лучшей читаемости)
-    const header = currentLang === 'ru' 
+    const header = currentLang === 'ru'
         ? '🍽 Новый заказ из кафе Cholpon\n\n'
         : '🍽 Cholpon кафесинен жаңы заказ\n\n';
 
@@ -750,7 +863,7 @@ function createOrderText(name, phone, comment) {
 function sendToWhatsApp(orderText) {
     // Формируем URL для WhatsApp
     const whatsappUrl = `https://wa.me/${CAFE_PHONE_NUMBER}?text=${encodeURIComponent(orderText)}`;
-    
+
     // Открываем WhatsApp в новой вкладке
     window.open(whatsappUrl, '_blank');
 }
@@ -803,7 +916,7 @@ async function sendToExcel(name, phone, comment) {
             },
             body: JSON.stringify(orderData)
         });
-        
+
         console.log('Заказ успешно отправлен в Google Sheets');
         return Promise.resolve();
     } catch (error) {
@@ -839,16 +952,16 @@ async function placeOrder(e) {
 
     // Валидация: проверка на пустую корзину
     if (cart.length === 0) {
-        alert(currentLang === 'ru' 
-            ? 'Корзина пуста. Добавьте блюда в корзину.' 
+        alert(currentLang === 'ru'
+            ? 'Корзина пуста. Добавьте блюда в корзину.'
             : 'Себет бош. Себетке тамак кошуңуз.');
         return;
     }
 
     // Валидация: проверка обязательных полей
     if (!name || !phone) {
-        alert(currentLang === 'ru' 
-            ? 'Заполните все обязательные поля' 
+        alert(currentLang === 'ru'
+            ? 'Заполните все обязательные поля'
             : 'Бардык милдеттүү талааларды толтуруңуз');
         return;
     }
@@ -857,10 +970,10 @@ async function placeOrder(e) {
     // Принимаем форматы: +996 998 252 023, 0998252023, 996998252023
     const cleanPhone = phone.replace(/[\s-]/g, ''); // Убираем пробелы и дефисы
     const phoneRegex = /^(\+?996|0)?[0-9]{9}$/;
-    
+
     if (!phoneRegex.test(cleanPhone)) {
-        alert(currentLang === 'ru' 
-            ? 'Введите корректный номер телефона\nПример: +996 998 252 023 или 0998252023' 
+        alert(currentLang === 'ru'
+            ? 'Введите корректный номер телефона\nПример: +996 998 252 023 или 0998252023'
             : 'Туура телефон номурун киргизиңиз\nМисал: +996 998 252 023 же 0998252023');
         return;
     }
@@ -872,7 +985,7 @@ async function placeOrder(e) {
         // Параллельно отправляем в WhatsApp и Google Sheets
         // WhatsApp открывается сразу, Google Sheets отправляется в фоне
         sendToWhatsApp(orderText);
-        
+
         // Отправляем в Google Sheets (не блокируем процесс)
         sendToExcel(name, phone, comment).catch(error => {
             console.error('Ошибка при отправке в Google Sheets:', error);
@@ -889,14 +1002,14 @@ async function placeOrder(e) {
         }
 
         // Показываем сообщение об успехе
-        alert(currentLang === 'ru' 
-            ? '✅ Заказ отправлен! Мы свяжемся с вами в ближайшее время.' 
+        alert(currentLang === 'ru'
+            ? '✅ Заказ отправлен! Мы свяжемся с вами в ближайшее время.'
             : '✅ Заказ жөнөтүлдү! Биз жакынкы убакта сиз менен байланышабыз.');
 
     } catch (error) {
         console.error('Ошибка при оформлении заказа:', error);
-        alert(currentLang === 'ru' 
-            ? `❌ Произошла ошибка: ${error.message}. Пожалуйста, попробуйте еще раз.` 
+        alert(currentLang === 'ru'
+            ? `❌ Произошла ошибка: ${error.message}. Пожалуйста, попробуйте еще раз.`
             : `❌ Ката кетти: ${error.message}. Сураныч, кайра аракет кылыңыз.`);
     }
 }
@@ -960,7 +1073,7 @@ function showDishDetails(dishId) {
     images.forEach((img, index) => {
         const slide = document.createElement('div');
         slide.className = 'slider-slide';
-        slide.innerHTML = `<img src="${img}" alt="${dishName}" onerror="this.src='https://via.placeholder.com/600x400?text=No+Image'">`;
+        slide.innerHTML = `<img src="${img}" alt="${dishName}" onclick="openImageLightbox('${img}','${dishName}')" onerror="this.src='https://via.placeholder.com/600x400?text=No+Image'">`;
         slider.appendChild(slide);
 
         // Добавляем точку для навигации
@@ -1309,33 +1422,33 @@ let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 function initReviews() {
     // Инициализация рейтинга звездами
     initStarRating();
-    
+
     // Обработчик формы отзыва
     const reviewForm = document.getElementById('reviewForm');
     if (reviewForm) {
         reviewForm.addEventListener('submit', handleReviewSubmit);
     }
-    
+
     // Кнопки загрузки фото
     const takePhotoBtn = document.getElementById('takePhotoBtn');
     const choosePhotoBtn = document.getElementById('choosePhotoBtn');
     const removePhotoBtn = document.getElementById('removePhotoBtn');
     const reviewPhoto = document.getElementById('reviewPhoto');
-    
+
     if (takePhotoBtn && reviewPhoto) {
         takePhotoBtn.addEventListener('click', () => {
             reviewPhoto.setAttribute('capture', 'environment');
             reviewPhoto.click();
         });
     }
-    
+
     if (choosePhotoBtn && reviewPhoto) {
         choosePhotoBtn.addEventListener('click', () => {
             reviewPhoto.removeAttribute('capture');
             reviewPhoto.click();
         });
     }
-    
+
     if (removePhotoBtn) {
         removePhotoBtn.addEventListener('click', () => {
             const photoPreview = document.getElementById('photoPreview');
@@ -1345,11 +1458,11 @@ function initReviews() {
             removePhotoBtn.style.display = 'none';
         });
     }
-    
+
     if (reviewPhoto) {
         reviewPhoto.addEventListener('change', handlePhotoSelect);
     }
-    
+
     // Отображение отзывов
     displayReviews();
 }
@@ -1360,21 +1473,21 @@ function initReviews() {
 function initStarRating() {
     const stars = document.querySelectorAll('.star');
     const ratingInput = document.getElementById('reviewRating');
-    
+
     if (!stars.length || !ratingInput) return;
-    
+
     stars.forEach((star, index) => {
         star.addEventListener('click', () => {
             const rating = index + 1;
             ratingInput.value = rating;
             updateStarRating(rating);
         });
-        
+
         star.addEventListener('mouseenter', () => {
             updateStarRating(index + 1, true);
         });
     });
-    
+
     const starContainer = document.getElementById('starRating');
     if (starContainer) {
         starContainer.addEventListener('mouseleave', () => {
@@ -1404,28 +1517,28 @@ function updateStarRating(rating, isHover = false) {
 function handlePhotoSelect(e) {
     const file = e.target.files[0];
     if (!file) return;
-    
+
     if (!file.type.startsWith('image/')) {
         alert(currentLang === 'ru' ? 'Пожалуйста, выберите изображение' : 'Сураныч, сүрөт тандаңыз');
         return;
     }
-    
+
     const reader = new FileReader();
     reader.onload = (event) => {
         const photoPreview = document.getElementById('photoPreview');
         const removePhotoBtn = document.getElementById('removePhotoBtn');
-        
+
         if (photoPreview) {
             photoPreview.innerHTML = `
                 <img src="${event.target.result}" alt="Preview" class="photo-preview-image">
             `;
         }
-        
+
         if (removePhotoBtn) {
             removePhotoBtn.style.display = 'block';
         }
     };
-    
+
     reader.readAsDataURL(file);
 }
 
@@ -1434,37 +1547,37 @@ function handlePhotoSelect(e) {
  */
 function handleReviewSubmit(e) {
     e.preventDefault();
-    
+
     const name = document.getElementById('reviewerName').value.trim();
     const rating = parseInt(document.getElementById('reviewRating').value);
     const comment = document.getElementById('reviewComment').value.trim();
     const photoInput = document.getElementById('reviewPhoto');
-    
+
     if (!name || !rating || !comment) {
-        alert(currentLang === 'ru' 
-            ? 'Заполните все обязательные поля' 
+        alert(currentLang === 'ru'
+            ? 'Заполните все обязательные поля'
             : 'Бардык милдеттүү талааларды толтуруңуз');
         return;
     }
-    
+
     if (rating === 0) {
-        alert(currentLang === 'ru' 
-            ? 'Пожалуйста, выберите оценку' 
+        alert(currentLang === 'ru'
+            ? 'Пожалуйста, выберите оценку'
             : 'Сураныч, баалоо тандаңыз');
         return;
     }
-    
+
     // Получаем фото, если есть
     let photoData = null;
     if (photoInput && photoInput.files && photoInput.files[0]) {
         const file = photoInput.files[0];
         const reader = new FileReader();
-        
+
         reader.onload = (event) => {
             photoData = event.target.result;
             saveReview(name, rating, comment, photoData);
         };
-        
+
         reader.readAsDataURL(file);
     } else {
         saveReview(name, rating, comment, null);
@@ -1490,22 +1603,22 @@ function saveReview(name, rating, comment, photoData) {
         }),
         timestamp: Date.now()
     };
-    
+
     reviews.unshift(review); // Добавляем в начало
     localStorage.setItem('reviews', JSON.stringify(reviews));
-    
+
     // Очищаем форму
     document.getElementById('reviewForm').reset();
     document.getElementById('photoPreview').innerHTML = '';
     document.getElementById('removePhotoBtn').style.display = 'none';
     updateStarRating(0);
-    
+
     // Обновляем отображение
     displayReviews();
-    
+
     // Показываем сообщение об успехе
-    alert(currentLang === 'ru' 
-        ? 'Спасибо за ваш отзыв!' 
+    alert(currentLang === 'ru'
+        ? 'Спасибо за ваш отзыв!'
         : 'Пикириңиз үчүн рахмат!');
 }
 
@@ -1515,21 +1628,21 @@ function saveReview(name, rating, comment, photoData) {
 function displayReviews(limit = 6) {
     const reviewsGrid = document.getElementById('reviewsGrid');
     const reviewsEmpty = document.getElementById('reviewsEmpty');
-    
+
     if (!reviewsGrid || !reviewsEmpty) return;
-    
+
     if (reviews.length === 0) {
         reviewsGrid.style.display = 'none';
         reviewsEmpty.style.display = 'block';
         return;
     }
-    
+
     reviewsGrid.style.display = 'grid';
     reviewsEmpty.style.display = 'none';
     reviewsGrid.innerHTML = '';
-    
+
     const reviewsToShow = reviews.slice(0, limit);
-    
+
     reviewsToShow.forEach(review => {
         const reviewCard = createReviewCard(review);
         reviewsGrid.appendChild(reviewCard);
@@ -1542,17 +1655,17 @@ function displayReviews(limit = 6) {
 function createReviewCard(review) {
     const card = document.createElement('div');
     card.className = 'review-card';
-    
+
     let starsHTML = '';
     for (let i = 1; i <= 5; i++) {
         starsHTML += `<span class="review-star ${i <= review.rating ? 'active' : ''}">★</span>`;
     }
-    
+
     let photoHTML = '';
     if (review.photo) {
         photoHTML = `<img src="${review.photo}" alt="Review photo" class="review-photo">`;
     }
-    
+
     card.innerHTML = `
         <div class="review-header">
             <div class="review-author">
@@ -1566,7 +1679,7 @@ function createReviewCard(review) {
             ${photoHTML}
         </div>
     `;
-    
+
     return card;
 }
 

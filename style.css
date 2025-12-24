@@ -78,13 +78,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0; /* compact header */
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 1px;
@@ -94,6 +94,55 @@ body {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+/* Mobile hamburger and responsive nav */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.9rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.75rem;
+    box-shadow: 0 8px 24px var(--shadow);
+    display: none;
+    z-index: 1100;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 0.9rem 1.1rem;
+    border-radius: 10px;
+    margin: 0.35rem 0;
+    background: transparent;
+    font-size: 1.15rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .header-controls {
+    gap: 0.5rem;
+  }
 }
 
 .nav a {
@@ -218,6 +267,85 @@ section {
   line-height: 1.8;
 }
 
+/* Welcome animation and CTA */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 0;
+}
+
+.welcome-title {
+  font-size: 2.25rem;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  min-height: 3rem;
+}
+
+.welcome-typing {
+  display: inline-block;
+  border-right: 2px solid rgba(61, 40, 23, 0.4);
+  padding-right: 4px;
+}
+
+.welcome-cta {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Compact contacts */
+.contact-compact {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.contact-btn {
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.contact-hours {
+  color: var(--text-secondary);
+  padding: 0.4rem 0.6rem;
+}
+.compact-map {
+  max-width: 800px;
+  height: 260px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.compact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 1.6rem;
+  }
+  .welcome-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  .welcome-cta .btn {
+    width: 100%;
+  }
+  .compact-map {
+    height: 180px;
+  }
+}
+
 .menu-section {
   background: var(--bg-primary);
 }
@@ -273,7 +401,9 @@ section {
     padding: 0.5rem 0;
   }
 
-  .category-filter::-webkit-scrollbar { display: none; }
+  .category-filter::-webkit-scrollbar {
+    display: none;
+  }
 
   .filter-btn {
     white-space: nowrap;
@@ -323,7 +453,7 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
     width: 40px;
@@ -337,8 +467,12 @@ section {
     z-index: 10;
   }
 
-  .slider-prev { left: 8px; }
-  .slider-next { right: 8px; }
+  .slider-prev {
+    left: 8px;
+  }
+  .slider-next {
+    right: 8px;
+  }
 
   .menu-slider-dots {
     display: flex;
@@ -432,6 +566,51 @@ section {
   .menu-slide .menu-card {
     height: 380px;
   }
+}
+
+/* Lightbox styles for full-size images */
+.image-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 1rem;
+}
+.image-lightbox.active {
+  display: flex;
+}
+.image-lightbox .lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+}
+.image-lightbox img#lightboxImage {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.lightbox-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Make card images clickable and clearly visible */
+.menu-card .dish-image {
+  cursor: pointer;
 }
 
 .dish-info {
@@ -819,6 +998,112 @@ section {
 .btn-secondary:hover {
   background: var(--bg-primary);
   transform: translateY(-2px);
+}
+
+/* ============================================
+   Link-in-bio (Taplink-like) page styles
+   ============================================ */
+.link-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: 3rem 0;
+}
+
+.link-container {
+  max-width: 460px;
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px var(--shadow);
+  padding: 2rem;
+  text-align: center;
+}
+
+.link-profile-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.75rem;
+  border: 6px solid var(--bg-secondary);
+}
+
+.link-name {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.link-bio {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1rem 0 0.75rem;
+}
+
+.link-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--bg-card);
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px var(--shadow-hover);
+}
+
+.link-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.link-socials {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.link-socials .social {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  padding: 0.45rem 0.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.link-footer {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .link-container {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  .link-profile-image {
+    width: 92px;
+    height: 92px;
+  }
+  .link-btn {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
 }
 
 /* ============================================
