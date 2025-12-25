@@ -226,6 +226,35 @@ const translations = {
     }
 };
 
+// Дополнительные строки для переводов (используются в уведомлениях и кнопках)
+translations.ru['adding'] = 'Добавление…';
+translations.kg['adding'] = 'Кошулууда…';
+translations.ru['added'] = 'Добавлено:';
+translations.kg['added'] = 'Кошулду:';
+translations.ru['order_sent_success'] = '✅ Заказ отправлен! Мы свяжемся с вами в ближайшее время.';
+translations.kg['order_sent_success'] = '✅ Заказ жөнөтүлдү! Биз жакынкы убакта сиз менен байланышабыз.';
+translations.ru['min_order_msg'] = 'Минимальная сумма для доставки {min} сом. Текущая сумма: {current} сом.';
+translations.kg['min_order_msg'] = 'Доставка үчүн минималдуу сумма {min} сом. Учурдагы сумма: {current} сом.';
+translations.ru['fill_required'] = 'Заполните все обязательные поля';
+translations.kg['fill_required'] = 'Бардык милдеттүү талааларды толтуруңуз';
+translations.ru['confirm_clear_cart'] = 'Очистить корзину?';
+translations.kg['confirm_clear_cart'] = 'Себетти тазалоо?';
+translations.ru['cart_empty_msg'] = 'Корзина пуста. Добавьте блюда в корзину.';
+translations.kg['cart_empty_msg'] = 'Себет бош. Себетке тамак кошуңуз.';
+translations.ru['invalid_phone'] = 'Введите корректный номер телефона\nПример: +996 998 252 023 или 0998252023';
+translations.kg['invalid_phone'] = 'Туура телефон номурун киргизиңиз\nМисал: +996 998 252 023 же 0998252023';
+translations.ru['select_image'] = 'Пожалуйста, выберите изображение';
+translations.kg['select_image'] = 'Сураныч, сүрөт тандаңыз';
+translations.ru['select_rating'] = 'Пожалуйста, выберите оценку';
+translations.kg['select_rating'] = 'Сураныч, баалоо тандаңыз';
+translations.ru['review_thanks'] = 'Спасибо за ваш отзыв!';
+translations.kg['review_thanks'] = 'Пикириңиз үчүн рахмат!';
+translations.ru['order_error'] = '❌ Произошла ошибка: {msg}. Пожалуйста, попробуйте еще раз.';
+translations.kg['order_error'] = '❌ Ката кетти: {msg}. Сураныч, кайра аракет кылыңыз.';
+// CTA / header small keys
+translations.ru['view-menu'] = 'Посмотреть меню';
+translations.kg['view-menu'] = 'Менюну караңыз';
+
 // ============================================
 // Константы для заказов
 // ============================================
@@ -292,7 +321,7 @@ function closeImageLightbox() {
 function animateWelcome() {
     const el = document.getElementById('animatedWelcome');
     if (!el) return;
-    const text = 'Добро пожаловать в кафе "Cholpon"';
+    const text = (translations[currentLang] && translations[currentLang]['about-title']) ? translations[currentLang]['about-title'] : 'Добро пожаловать в кафе "Cholpon"';
     let idx = 0;
     let forward = true;
     el.textContent = '';
@@ -359,8 +388,15 @@ function translatePage() {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[currentLang] && translations[currentLang][key]) {
-            el.textContent = translations[currentLang][key];
+        const txt = translations[currentLang] && translations[currentLang][key];
+        if (txt) {
+            // основной текст
+            el.textContent = txt;
+            // placeholder, title, aria-label, value
+            if (el.hasAttribute('placeholder')) el.setAttribute('placeholder', txt);
+            if (el.hasAttribute('title')) el.setAttribute('title', txt);
+            if (el.hasAttribute('aria-label')) el.setAttribute('aria-label', txt);
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.value = el.value || '';
         }
     });
 }
@@ -452,7 +488,8 @@ function initEventListeners() {
     const clearCart = document.getElementById('clearCart');
     if (clearCart) {
         clearCart.addEventListener('click', () => {
-            if (confirm(currentLang === 'ru' ? 'Очистить корзину?' : 'Себетти тазалоо?')) {
+            const confText = translations[currentLang] && translations[currentLang]['confirm_clear_cart'] ? translations[currentLang]['confirm_clear_cart'] : (currentLang === 'ru' ? 'Очистить корзину?' : 'Себетти тазалоо?');
+            if (confirm(confText)) {
                 cart = [];
                 saveCart();
                 updateCartUI();
@@ -466,9 +503,8 @@ function initEventListeners() {
         checkoutBtn.addEventListener('click', () => {
             // Защита от пустой корзины
             if (cart.length === 0) {
-                alert(currentLang === 'ru'
-                    ? 'Корзина пуста. Добавьте блюда в корзину.'
-                    : 'Себет бош. Себетке тамак кошуңуз.');
+                const cmsg = translations[currentLang] && translations[currentLang]['cart_empty_msg'] ? translations[currentLang]['cart_empty_msg'] : (currentLang === 'ru' ? 'Корзина пуста. Добавьте блюда в корзину.' : 'Себет бош. Себетке тамак кошуңуз.');
+                alert(cmsg);
                 return;
             }
             showOrderForm();
@@ -605,13 +641,13 @@ function createMenuCard(item) {
             <div class="dish-footer">
                 <span class="dish-price">${price} <span data-i18n="currency">сом</span></span>
                 <div class="dish-actions">
-                    <button class="btn-details" onclick="showDishDetails(${item.id})" title="${translations[currentLang]['details'] || 'Подробнее'}" data-i18n="details">Подробнее</button>
-                    ${quantity === 0
-            ? `<button class="btn-add-cart" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
+                        <button type="button" class="btn-details" onclick="showDishDetails(${item.id})" title="${translations[currentLang]['details'] || 'Подробнее'}" data-i18n="details">Подробнее</button>
+                        ${quantity === 0
+            ? `<button type="button" class="btn-add-cart" data-item-id="${item.id}" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
             : `<div class="quantity-controls">
-                            <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                            <button type="button" class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
                             <span class="quantity-value">${quantity}</span>
-                            <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
+                            <button type="button" class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
                         </div>`
         }
                 </div>
@@ -662,22 +698,44 @@ function addToCart(itemId) {
     const item = menuData.find(i => i.id === itemId);
     if (!item) return;
 
-    const existingItem = cart.find(ci => ci.id === itemId);
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            id: item.id,
-            name: currentLang === 'ru' ? item.name : item.nameKg,
-            price: item.price,
-            image: item.image,
-            quantity: 1
-        });
+    // Найдём кнопку, если она есть (карточка меню)
+    const btn = document.querySelector(`button.btn-add-cart[data-item-id="${itemId}"]`);
+    const addingText = translations[currentLang] && translations[currentLang]['adding'] ? translations[currentLang]['adding'] : (currentLang === 'ru' ? 'Добавление…' : 'Кошулууда…');
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = addingText;
+        btn.classList.add('loading');
     }
 
-    saveCart();
-    updateCartUI();
-    renderMenu(); // Обновляем меню для отображения количества
+    // Небольшая имитация загрузки для UX (можно убрать или уменьшить)
+    setTimeout(() => {
+        const existingItem = cart.find(ci => ci.id === itemId);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                id: item.id,
+                name: currentLang === 'ru' ? item.name : item.nameKg,
+                price: item.price,
+                image: item.image,
+                quantity: 1
+            });
+        }
+
+        saveCart();
+        updateCartUI();
+        renderMenu(); // Обновляем меню для отображения количества
+
+        // Авто-открытие корзины при добавлении
+        const cartModalEl = document.getElementById('cartModal');
+        if (cartModalEl) cartModalEl.classList.add('active');
+
+        // Показ уведомления
+        const addedLabel = translations[currentLang] && translations[currentLang]['added'] ? translations[currentLang]['added'] : (currentLang === 'ru' ? 'Добавлено:' : 'Кошулду:');
+        const itemName = currentLang === 'ru' ? item.name : (item.nameKg || item.name);
+        showToast(`${addedLabel} ${itemName}`);
+
+    }, 350);
 }
 
 function increaseQuantity(itemId) {
@@ -756,12 +814,12 @@ function updateCartUI() {
                     <div class="cart-item-price">${item.price} ${translations[currentLang]['currency']} × ${item.quantity}</div>
                 </div>
                 <div class="cart-item-controls">
-                    <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                    <button type="button" class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
                     <span class="quantity-value">${item.quantity}</span>
-                    <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
+                    <button type="button" class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
                 </div>
                 <div class="cart-item-total">${itemTotal} ${translations[currentLang]['currency']}</div>
-                <button class="quantity-btn" onclick="removeFromCart(${item.id})" style="background: #dc3545;" title="${translations[currentLang]['remove']}">×</button>
+                <button type="button" class="quantity-btn" onclick="removeFromCart(${item.id})" style="background: #dc3545;" title="${translations[currentLang]['remove']}">×</button>
             `;
             cartItems.appendChild(cartItem);
         });
@@ -1415,6 +1473,22 @@ function initHeaderScroll() {
 // ============================================
 // Система отзывов
 // ============================================
+
+// Утилита: простой toast для уведомлений
+function showToast(message, timeout = 3000) {
+    const toast = document.createElement('div');
+    toast.className = 'cf-toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    // force reflow for animation
+    void toast.offsetWidth;
+    toast.classList.add('visible');
+    setTimeout(() => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.remove(), 400);
+    }, timeout);
+}
+
 
 let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 

@@ -240,6 +240,26 @@ body {
   font-weight: 600;
 }
 
+/* Текст рядом с иконкой корзины */
+.cart-icon-btn .cart-text {
+  margin-left: 0.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .cart-icon-btn .cart-text {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+  .header-content {
+    gap: 0.25rem;
+  }
+}
+
 /* ============================================
    Секции
    ============================================ */
@@ -635,18 +655,17 @@ section {
   line-height: 1.5;
 }
 
-/* Скрываем описание, цену и контролы количества на карточках,
-   чтобы на карточке отображались только фото, название и кнопки */
-.menu-card .dish-description,
-.menu-card .dish-price,
-.menu-card .quantity-controls {
+/* Скрываем только описание на компактной карточке; показываем цену и контролы */
+.menu-card .dish-description {
   display: none;
 }
 
 .dish-footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
   margin-top: auto;
 }
 
@@ -658,9 +677,49 @@ section {
 }
 
 .dish-price {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: var(--accent);
+  background: linear-gradient(90deg, rgba(201, 168, 130, 0.12), transparent);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .dish-price {
+    font-size: 1.3rem;
+  }
+  .dish-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Toast уведомления */
+.cf-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  color: var(--bg-card);
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  z-index: 4000;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.cf-toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-add-cart.loading {
+  opacity: 0.8;
 }
 
 .btn-add-cart {

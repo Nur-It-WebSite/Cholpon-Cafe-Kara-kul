@@ -61,6 +61,7 @@
                 <path d="M16 10a4 4 0 0 1-8 0"></path>
               </svg>
               <span class="cart-badge" id="cartBadge">0</span>
+              <span class="cart-text" data-i18n="cart-title">Корзина</span>
             </button>
           </div>
         </div>
@@ -77,10 +78,18 @@
               Добро пожаловать в кафе "Cholpon"
             </h1>
             <div class="welcome-cta">
-              <button class="btn btn-primary" id="viewMenuBtn">
+              <button
+                class="btn btn-primary"
+                id="viewMenuBtn"
+                data-i18n="view-menu"
+              >
                 Посмотреть меню
               </button>
-              <button class="btn btn-secondary" id="viewContactsBtn">
+              <button
+                class="btn btn-secondary"
+                id="viewContactsBtn"
+                data-i18n="nav-contact"
+              >
                 Контакты
               </button>
             </div>
@@ -165,7 +174,6 @@
           </div>
         </div>
       </section>
-
 
       <!-- Секция контактов -->
       <section id="contact" class="contact-section">
@@ -351,6 +359,7 @@
             <!-- Кнопка добавить в корзину -->
             <div class="dish-details-actions">
               <button
+                type="button"
                 class="btn btn-primary"
                 id="addToCartFromDetails"
                 data-i18n="add-to-cart"
