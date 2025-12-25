@@ -1070,8 +1070,10 @@ section {
 .payment-option img.payment-icon {
   width: 28px;
   height: 28px;
+  max-width: 100%;
   object-fit: contain;
   border-radius: 4px;
+  display: inline-block;
 }
 .payment-label {
   font-weight: 600;
@@ -1082,16 +1084,34 @@ section {
   .payment-option {
     padding: 0.7rem 1rem;
   }
-  .payment-icon { width: 30px; height: 30px; }
-  .btn { padding: 1rem; font-size: 1.05rem; }
+  .payment-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .btn {
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Smaller MBank image on very small screens */
+@media (max-width: 480px) {
+  .payment-option img.payment-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* Selected payment option */
 .payment-option.selected {
-  background: linear-gradient(90deg, var(--accent-hover), rgba(150,110,70,1));
+  background: linear-gradient(
+    90deg,
+    var(--accent-hover),
+    rgba(150, 110, 70, 1)
+  );
   color: var(--on-accent);
-  border-color: rgba(0,0,0,0.06);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 .payment-option.selected .payment-label {
   color: var(--on-accent);
@@ -1102,8 +1122,13 @@ section {
 
 /* Make payment options more prominent on desktop */
 @media (min-width: 769px) {
-  .payment-options { gap: 1rem; }
-  .payment-option { padding: 0.9rem 1.1rem; border-radius: 12px; }
+  .payment-options {
+    gap: 1rem;
+  }
+  .payment-option {
+    padding: 0.9rem 1.1rem;
+    border-radius: 12px;
+  }
 }
 
 .btn-primary {
@@ -1127,15 +1152,22 @@ section {
 
 /* Ready/active submit glow */
 .btn-primary.ready {
-  box-shadow: 0 8px 28px rgba(201,168,130,0.28), 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 28px rgba(201, 168, 130, 0.28),
+    0 2px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
   animation: pulse 2.2s infinite;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 6px 20px rgba(201,168,130,0.12); }
-  50% { box-shadow: 0 10px 30px rgba(201,168,130,0.18); }
-  100% { box-shadow: 0 6px 20px rgba(201,168,130,0.12); }
+  0% {
+    box-shadow: 0 6px 20px rgba(201, 168, 130, 0.12);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(201, 168, 130, 0.18);
+  }
+  100% {
+    box-shadow: 0 6px 20px rgba(201, 168, 130, 0.12);
+  }
 }
 
 .btn-secondary {

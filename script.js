@@ -1004,8 +1004,8 @@ function createOrderText(name, phone, comment, paymentMethod) {
     if (paymentMethod) {
         let pmLabel = paymentMethod === 'cash' ? (translations[currentLang]['payment-cash'] || (currentLang === 'ru' ? 'Наличными' : 'Накта'))
             : paymentMethod === 'card' ? (translations[currentLang]['payment-card'] || (currentLang === 'ru' ? 'Картой' : 'Карта менен'))
-            : paymentMethod === 'mbank' ? (translations[currentLang]['payment-mbank'] || 'MBank')
-            : paymentMethod;
+                : paymentMethod === 'mbank' ? (translations[currentLang]['payment-mbank'] || 'MBank')
+                    : paymentMethod;
         paymentText = `\n💳 ${currentLang === 'ru' ? 'Способ оплаты' : 'Төлөө ыкмасы'}: ${pmLabel}`;
     }
 
