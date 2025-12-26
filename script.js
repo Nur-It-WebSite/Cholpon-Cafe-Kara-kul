@@ -778,15 +778,36 @@ function animateWelcome() {
 
 // ============================================
 // Инициализация темы
-// ============================================
+// ============================================// 1. Создаем элемент изображения
+const moon = document.createElement('img');
+const sun = document.createElement('img');
+
+// Исправлено: src вместо scr
+sun.src = 'icons/brightness.svg';
+sun.alt = 'light mode';
+sun.style.width = '20px';
+
+moon.src = 'icons/moon-stars.svg';
+moon.alt = 'Dark mode';
+moon.style.width = '20px';
 
 function initTheme() {
     document.documentElement.setAttribute('data-theme', currentTheme);
     const themeIcon = document.querySelector('.theme-icon');
+
     if (themeIcon) {
-        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        // Очищаем содержимое, чтобы иконки не дублировались при повторном клике
+        themeIcon.textContent = ''; 
+        
+        if (currentTheme === 'dark') {
+            themeIcon.appendChild(sun);
+        } else {
+            themeIcon.appendChild(moon); 
+        }
     }
 }
+
+
 
 // ============================================
 // Инициализация языка
@@ -1318,12 +1339,14 @@ function createOrderText(name, phone, comment, paymentMethod) {
     if (cart.length === 0) {
         throw new Error(currentLang === 'ru' ? 'Корзина пуста' : 'Себет бош');
     }
-
-    // Заголовок заказа (без звездочек для лучшей читаемости)
-    const header = currentLang === 'ru'
-        ? '🍽 Новый заказ из кафе Cholpon\n\n'
-        : '🍽 Cholpon кафесинен жаңы заказ\n\n';
-
+    const headerContainer = document.getElementById('order-header');
+    const logo = document.createElement('img');
+    logo.src = 'icons/plate-eating.svg';
+    logo.style.width = '30px';
+    
+    const text = currentLang === 'ru'
+        ? ' 🍽 Новый заказ из кафе Cholpon'
+        : ' 🍽 Cholpon кафесинен жаңы заказ';
     // Формируем список блюд
     let itemsText = '';
     let total = 0;

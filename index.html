@@ -43,7 +43,7 @@
               id="themeToggle"
               aria-label="Переключить тему"
             >
-              <span class="theme-icon">🌙</span>
+              <span class="theme-icon"><img src="./icons/moon-stars.svg" alt="moon" style="width: 20px; height: 20px;"></span>
             </button>
             <button class="cart-icon-btn" id="cartIconBtn" aria-label="Корзина">
               <svg
@@ -181,15 +181,15 @@
           <h2 data-i18n="contact-title">Контакты</h2>
           <div class="contact-compact">
             <a class="contact-btn" href="tel:+996998252023"
-              >📞 +996 998 252 023</a
+              ><img src="./icons/phone-call.svg" alt="phone" style="width: 16px; height: 16px;"> +996 998 252 023</a
             >
             <a
               class="contact-btn"
               href="https://maps.google.com/?q=41.6307442,72.6622908"
               target="_blank"
-              >📍 Кара-Куль, Боконбаева</a
+              ><img src="./icons/land-layer-location.svg" alt="" width="16px" height="16px"> Кара-Куль, Боконбаева</a
             >
-            <div class="contact-hours">⏰ 10:00 - 22:00 (без выходных)</div>
+            <div class="contact-hours"><img src="./icons/clock-three.svg" alt="clock" style="width: 16px; height: 16px;"> 10:00 - 22:00 (без выходных)</div>
           </div>
           <div class="map-wrapper compact-map">
             <iframe
@@ -308,14 +308,14 @@
               <div class="payment-options">
                 <label class="payment-option"
                   ><input type="radio" name="paymentMethod" value="cash" />
-                  <span class="payment-icon">💵</span>
+                  <span class="payment-icon"><img src="./icons/money-bills-simple.svg" alt="cash" style="width: 20px; height: 20px;"></span>
                   <span class="payment-label" data-i18n="payment-cash"
                     >Наличными</span
                   ></label
                 >
                 <label class="payment-option"
                   ><input type="radio" name="paymentMethod" value="card" />
-                  <span class="payment-icon">💳</span>
+                  <span class="payment-icon"><img src="./icons/credit-card.svg" alt="card" style="width: 20px; height: 20px;"></span>
                   <span class="payment-label" data-i18n="payment-card"
                     >Картой</span
                   ></label
@@ -425,30 +425,24 @@
     <div class="modal-overlay active" id="orderTypeModal">
       <div class="modal-content order-type-modal">
         <div class="modal-header">
-          <!-- Выбор языка -->
-          <div class="lang-select-buttons" id="langSelectButtons">
-            <button class="lang-btn active" data-lang="ru">Русский</button>
-            <button class="lang-btn" data-lang="kg">Кыргызча</button>
-          </div>
-          <br>
-          <h2 data-i18n="order-type-title">Как вы хотите заказать?</h2>
+          <h2  style="margin-left: 40px;" data-i18n="order-type-title">Как вы хотите заказать?</h2>
         </div>
         <div class="modal-body">
           <div class="order-type-buttons">
             <button class="order-type-btn" id="orderTypeCafe" data-type="cafe">
-              <span class="order-type-icon">🍽️</span>
+              <span class="order-type-icon"><img src="./icons/plate-eating.svg" alt="plate-eating" style="width: 20px; height: 20px;"></span>
               <span class="order-type-label" data-i18n="order-type-cafe">Я в кафе</span>
             </button>
             <button class="order-type-btn" id="orderTypePickup" data-type="pickup">
-              <span class="order-type-icon">🥡</span>
+              <span class="order-type-icon"><img src="./icons/truck-pickup.svg" alt="pickup" style="width: 20px; height: 20px;"></span>
               <span class="order-type-label" data-i18n="order-type-pickup">Самовывоз</span>
             </button>
             <button class="order-type-btn" id="orderTypeDelivery" data-type="delivery">
-              <span class="order-type-icon">🚗</span>
+              <span class="order-type-icon"><img src="./icons/shipping-fast.svg" alt="delivery" style="width: 20px; height: 20px;"></span>
               <span class="order-type-label" data-i18n="order-type-delivery">Доставка</span>
             </button>
             <button class="order-type-btn order-type-browse" id="orderTypeBrowse" data-type="browse">
-              <span class="order-type-icon">👀</span>
+              <span class="order-type-icon"><img src="./icons/eyes.svg" alt=" "style="width: 20px; height: 20px;"></span>
               <span class="order-type-label" data-i18n="order-type-browse">Просто посмотреть меню</span>
             </button>
           </div>
