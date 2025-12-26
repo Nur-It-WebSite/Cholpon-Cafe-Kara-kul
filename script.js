@@ -135,7 +135,7 @@ const translations = {
         'order-title': 'Оформление заказа',
         'order-name': 'Имя',
         'order-phone': 'Телефон',
-        'order-phone-hint': 'Пример: +996 998 252 023 или 0998252023',
+        'order-phone-hint': 'Введите номер без 0, например: 998 25 20 23',
         'order-comment': 'Комментарий к заказу (необязательно)',
         'order-summary': 'Состав заказа:',
         'order-cancel': 'Отмена',
@@ -191,7 +191,7 @@ const translations = {
         'order-title': 'Заказ берүү',
         'order-name': 'Аты',
         'order-phone': 'Телефон',
-        'order-phone-hint': 'Мисал: +996 998 252 023 же 0998252023',
+        'order-phone-hint': 'Номурду 0сүз жазыңыз, мисалы: 998 25 20 23',
         'order-comment': 'Заказга комментарий (милдеттүү эмес)',
         'order-summary': 'Заказдын курамы:',
         'order-cancel': 'Жокко чыгаруу',
@@ -223,6 +223,62 @@ const translations = {
         'reviews-view-all': 'Бардык пикирлерди көрүү',
         'reviews-all-title': 'Бардык пикирлер',
         'reviews-back': 'Башкы бетке кайтуу'
+    },
+    en: {
+        'nav-menu': 'Menu',
+        'nav-about': 'About',
+        'nav-reviews': 'Reviews',
+        'nav-contact': 'Contacts',
+        'about-title': 'Welcome to Cholpon Cafe',
+        'about-text-1': 'Cholpon Cafe is a cozy place in Kara-Kul where guests are welcomed with warmth and care. We prepare delicious national cuisine using fresh products and proven recipes.',
+        'about-text-2': 'You can spend quality time with family and friends, have lunch, dinner, or celebrate an important event. The cafe has a calm atmosphere, and the attentive staff always strives to ensure every guest is satisfied.',
+        'about-text-3': 'Cholpon Cafe is a place you want to return to again and again.',
+        'menu-title': 'Menu',
+        'contact-title': 'Contacts',
+        'contact-location': 'Kara-Kul',
+        'contact-hours': '10:00 - 22:00, no days off',
+        'footer-text': '© 2025 Cholpon Cafe. All rights reserved.',
+        'cart-title': 'Cart',
+        'cart-empty': 'Cart is empty',
+        'cart-total': 'Total:',
+        'currency': 'som',
+        'cart-clear': 'Clear cart',
+        'cart-checkout': 'Checkout',
+        'order-title': 'Checkout',
+        'order-name': 'Name',
+        'order-phone': 'Phone',
+        'order-phone-hint': 'Enter number without 0, e.g.: 998 25 20 23',
+        'order-comment': 'Comment (optional)',
+        'order-summary': 'Order summary:',
+        'order-cancel': 'Cancel',
+        'order-submit': 'Submit order',
+        'add-to-cart': 'Add to cart',
+        'remove': 'Remove',
+        'details': 'Details',
+        'filter-all': 'All',
+        'filter-first': 'Soups',
+        'filter-second': 'Main dishes',
+        'filter-special': 'Special',
+        'filter-shashlik': 'Shashlik',
+        'filter-salad': 'Salads',
+        'filter-dessert': 'Desserts',
+        'filter-drink': 'Drinks',
+        'filter-fastfood': 'Fast-Food',
+        'dish-ingredients': 'Ingredients:',
+        'reviews-title': 'Reviews',
+        'review-form-title': 'Leave a review',
+        'review-name': 'Your name',
+        'review-rating': 'Rating',
+        'review-comment': 'Comment',
+        'review-photo': 'Photo (optional)',
+        'review-take-photo': 'Take photo',
+        'review-choose-photo': 'Choose from gallery',
+        'review-remove-photo': 'Remove photo',
+        'review-submit': 'Submit review',
+        'reviews-empty': 'No reviews yet. Be the first!',
+        'reviews-view-all': 'View all reviews',
+        'reviews-all-title': 'All reviews',
+        'reviews-back': 'Back to main'
     }
 };
 
@@ -285,6 +341,35 @@ translations.ru['back'] = 'Назад';
 translations.kg['back'] = 'Артка';
 translations.ru['continue'] = 'Продолжить';
 translations.kg['continue'] = 'Улантуу';
+
+// Английские переводы для дополнительных строк
+translations.en['adding'] = 'Adding…';
+translations.en['added'] = 'Added:';
+translations.en['order_sent_success'] = '✅ Order sent! We will contact you soon.';
+translations.en['min_order_msg'] = 'Minimum order for delivery is {min} som. Current total: {current} som.';
+translations.en['fill_required'] = 'Please fill in all required fields';
+translations.en['confirm_clear_cart'] = 'Clear cart?';
+translations.en['cart_empty_msg'] = 'Cart is empty. Add dishes to your cart.';
+translations.en['invalid_phone'] = 'Please enter a valid phone number';
+translations.en['select_image'] = 'Please select an image';
+translations.en['select_rating'] = 'Please select a rating';
+translations.en['review_thanks'] = 'Thank you for your review!';
+translations.en['order_error'] = '❌ Error occurred: {msg}. Please try again.';
+translations.en['view-menu'] = 'View menu';
+translations.en['payment-method-label'] = 'Payment method';
+translations.en['payment-cash'] = 'Cash';
+translations.en['payment-card'] = 'Card';
+translations.en['payment-mbank'] = 'MBank';
+translations.en['order-type-title'] = 'How would you like to order?';
+translations.en['order-type-cafe'] = 'I\'m at the cafe';
+translations.en['order-type-pickup'] = 'Pickup';
+translations.en['order-type-delivery'] = 'Delivery';
+translations.en['order-type-browse'] = 'Just browse the menu';
+translations.en['table-select-title'] = 'Select your table';
+translations.en['order-address'] = 'Delivery address';
+translations.en['delivery-form-title'] = 'Delivery information';
+translations.en['back'] = 'Back';
+translations.en['continue'] = 'Continue';
 
 // ============================================
 // Константы для заказов
@@ -385,12 +470,11 @@ function validateOrderForm() {
 
     const payment = document.querySelector('input[name="paymentMethod"]:checked');
 
-    // Простой валидатор телефона (та же логика что и в placeOrder)
+    // Валидатор телефона - только 9 цифр без префикса
     const phoneVal = phone ? phone.value.trim().replace(/[\s-]/g, '') : '';
-    const phoneRegex = /^(\+?996|0)?[0-9]{9}$/;
+    const phoneOk = phoneVal.length === 9 && /^[0-9]{9}$/.test(phoneVal);
 
     const nameOk = name && name.value.trim().length > 0;
-    const phoneOk = phone && phoneVal.length > 0 && phoneRegex.test(phoneVal);
     const paymentOk = !!payment;
 
     const formReady = cartNotEmpty && nameOk && phoneOk && paymentOk;
@@ -404,14 +488,57 @@ function validateOrderForm() {
     }
 }
 
+// Форматирование номера телефона: 998 25 20 23
+function formatPhoneInput(input) {
+    let value = input.value.replace(/\D/g, ''); // только цифры
+    
+    // Ограничиваем до 9 цифр
+    if (value.length > 9) {
+        value = value.slice(0, 9);
+    }
+    
+    // Форматируем: 998 25 20 23
+    let formatted = '';
+    if (value.length > 0) {
+        formatted = value.slice(0, 3);
+    }
+    if (value.length > 3) {
+        formatted += ' ' + value.slice(3, 5);
+    }
+    if (value.length > 5) {
+        formatted += ' ' + value.slice(5, 7);
+    }
+    if (value.length > 7) {
+        formatted += ' ' + value.slice(7, 9);
+    }
+    
+    input.value = formatted;
+}
+
 // Подключаем слушатели на инпуты формы, чтобы валидировать в реальном времени
 function initOrderFormValidation() {
     const name = document.getElementById('customerName');
     const phone = document.getElementById('customerPhone');
+    const deliveryPhone = document.getElementById('deliveryPhone');
     const radios = document.querySelectorAll('input[name="paymentMethod"]');
 
     if (name) name.addEventListener('input', validateOrderForm);
-    if (phone) phone.addEventListener('input', validateOrderForm);
+    
+    // Форматирование и валидация телефона
+    if (phone) {
+        phone.addEventListener('input', () => {
+            formatPhoneInput(phone);
+            validateOrderForm();
+        });
+    }
+    
+    // Форматирование телефона в форме доставки
+    if (deliveryPhone) {
+        deliveryPhone.addEventListener('input', () => {
+            formatPhoneInput(deliveryPhone);
+        });
+    }
+    
     radios.forEach(r => r.addEventListener('change', validateOrderForm));
 
     // ensure validation runs when cart changes
@@ -423,13 +550,50 @@ function initOrderFormValidation() {
 // Модальное окно выбора типа заказа
 // ============================================
 
+function initLangSelectButtons() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    // Устанавливаем активную кнопку по текущему языку
+    langButtons.forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            if (lang && translations[lang]) {
+                currentLang = lang;
+                localStorage.setItem('lang', lang);
+                
+                // Обновляем активную кнопку
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Обновляем интерфейс
+                updateLanguage();
+                renderMenu();
+                
+                // Обновляем кнопку языка в шапке
+                const langToggle = document.getElementById('langToggle');
+                if (langToggle) {
+                    langToggle.textContent = lang.toUpperCase();
+                }
+            }
+        });
+    });
+}
+
 function initOrderTypeModal() {
     const modal = document.getElementById('orderTypeModal');
     const tableModal = document.getElementById('tableSelectModal');
     const deliveryModal = document.getElementById('deliveryFormModal');
     const tableGrid = document.getElementById('tableGrid');
     
-
+    // Инициализация кнопок выбора языка
+    initLangSelectButtons();
+    
     
     // Генерируем кнопки столов 1-11
     if (tableGrid) {
@@ -1173,8 +1337,9 @@ function createOrderText(name, phone, comment, paymentMethod) {
     // Итоговая сумма (с пустой строкой перед итогом)
     const totalText = `\n💰 Итого: ${total} ${translations[currentLang]['currency']}\n`;
 
-    // Информация о клиенте
-    const customerInfo = `👤 ${currentLang === 'ru' ? 'Клиент' : 'Клиент'}: ${name}\n📞 ${currentLang === 'ru' ? 'Телефон' : 'Телефон'}: ${phone}`;
+    // Информация о клиенте (добавляем +996 к номеру)
+    const fullPhone = '+996 ' + phone;
+    const customerInfo = `👤 ${currentLang === 'ru' ? 'Клиент' : 'Клиент'}: ${name}\n📞 ${currentLang === 'ru' ? 'Телефон' : 'Телефон'}: ${fullPhone}`;
 
     // Способ оплаты
     let paymentText = '';

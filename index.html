@@ -273,15 +273,19 @@
             </div>
             <div class="form-group">
               <label for="customerPhone" data-i18n="order-phone">Телефон</label>
-              <input
-                type="tel"
-                id="customerPhone"
-                name="phone"
-                placeholder="+996 998 252 023 или 0998252023"
-                required
-              />
+              <div class="phone-input-wrapper">
+                <span class="phone-prefix">+996</span>
+                <input
+                  type="tel"
+                  id="customerPhone"
+                  name="phone"
+                  placeholder="998 25 20 23"
+                  maxlength="12"
+                  required
+                />
+              </div>
               <small class="phone-hint" data-i18n="order-phone-hint"
-                >Пример: +996 998 252 023 или 0998252023</small
+                >Введите номер без 0, например: 998 25 20 23</small
               >
             </div>
             <!-- Поле адреса для доставки (показывается только при выборе доставки) -->
@@ -421,6 +425,12 @@
     <div class="modal-overlay active" id="orderTypeModal">
       <div class="modal-content order-type-modal">
         <div class="modal-header">
+          <!-- Выбор языка -->
+          <div class="lang-select-buttons" id="langSelectButtons">
+            <button class="lang-btn active" data-lang="ru">Русский</button>
+            <button class="lang-btn" data-lang="kg">Кыргызча</button>
+          </div>
+          <br>
           <h2 data-i18n="order-type-title">Как вы хотите заказать?</h2>
         </div>
         <div class="modal-body">
@@ -476,7 +486,10 @@
             </div>
             <div class="form-group">
               <label for="deliveryPhone" data-i18n="order-phone">Телефон</label>
-              <input type="tel" id="deliveryPhone" name="phone" placeholder="+996 998 252 023" required />
+              <div class="phone-input-wrapper">
+                <span class="phone-prefix">+996</span>
+                <input type="tel" id="deliveryPhone" name="phone" placeholder="998 25 20 23" maxlength="12" required />
+              </div>
             </div>
             <div class="form-group">
               <label for="deliveryAddressInput" data-i18n="order-address">Адрес доставки</label>
