@@ -408,37 +408,16 @@ function closeImageLightbox() {
     lbImg.alt = '';
 }
 
-// Анимация печатающегося приветствия
+// Плавное появление приветствия
 function animateWelcome() {
     const el = document.getElementById('animatedWelcome');
     if (!el) return;
     const text = (translations[currentLang] && translations[currentLang]['about-title']) ? translations[currentLang]['about-title'] : 'Добро пожаловать в кафе "Cholpon"';
-    let idx = 0;
-    let forward = true;
-    el.textContent = '';
-
-    function step() {
-        if (forward) {
-            el.textContent = text.slice(0, idx + 1);
-            idx++;
-            if (idx >= text.length) {
-                forward = false;
-                setTimeout(step, 1200);
-                return;
-            }
-        } else {
-            el.textContent = text.slice(0, idx - 1);
-            idx--;
-            if (idx <= 0) {
-                forward = true;
-                setTimeout(step, 400);
-                return;
-            }
-        }
-        setTimeout(step, forward ? 60 : 30);
-    }
-
-    step();
+    el.textContent = text;
+    // Запускаем анимацию сразу после загрузки
+    requestAnimationFrame(() => {
+        el.classList.add('fade-in');
+    });
 
     // CTA buttons behavior
     const viewMenuBtn = document.getElementById('viewMenuBtn');

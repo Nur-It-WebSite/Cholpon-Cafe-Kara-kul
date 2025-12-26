@@ -241,7 +241,6 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
 }
-
 /* Текст рядом с иконкой корзины */
 .cart-icon-btn .cart-text {
   margin-left: 0.5rem;
@@ -261,11 +260,6 @@ body {
     gap: 0.25rem;
   }
 }
-
-/* ============================================
-   Секции
-   ============================================ */
-
 section {
   padding: 4rem 0;
 }
@@ -288,8 +282,7 @@ section {
   margin: 0 auto 1.5rem;
   line-height: 1.8;
 }
-
-/* Welcome animation and CTA */
+/* Welcome animation and CTA */         
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -305,10 +298,16 @@ section {
   min-height: 3rem;
 }
 
-.welcome-typing {
-  display: inline-block;
-  border-right: 2px solid rgba(61, 40, 23, 0.4);
-  padding-right: 4px;
+/* Плавное появление */
+.welcome-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.welcome-title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .welcome-cta {
