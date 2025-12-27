@@ -1385,8 +1385,9 @@ function createOrderText(name, phone, comment, paymentMethod) {
     const orderTypeText = orderTypeInfo ? `\n${orderTypeInfo}` : '';
 
     // Собираем полный текст заказа
-    return header + itemsText + totalText + customerInfo + paymentText + orderTypeText + commentText;
-}
+const headerText = '🍽 ' + (currentLang === 'ru' ? 'Новый заказ из кафе Cholpon' : 'Cholpon кафесинен жаңы заказ') + '\n\n';
+
+return headerText + itemsText + totalText + customerInfo + paymentText + orderTypeText + commentText;}
 
 /**
  * Отправляет заказ в WhatsApp
