@@ -534,12 +534,12 @@ function validateOrderForm() {
 // Форматирование номера телефона: 998 25 20 23
 function formatPhoneInput(input) {
     let value = input.value.replace(/\D/g, ''); // только цифры
-    
+
     // Ограничиваем до 9 цифр
     if (value.length > 9) {
         value = value.slice(0, 9);
     }
-    
+
     // Форматируем: 998 25 20 23
     let formatted = '';
     if (value.length > 0) {
@@ -554,7 +554,7 @@ function formatPhoneInput(input) {
     if (value.length > 7) {
         formatted += ' ' + value.slice(7, 9);
     }
-    
+
     input.value = formatted;
 }
 
@@ -566,7 +566,7 @@ function initOrderFormValidation() {
     const radios = document.querySelectorAll('input[name="paymentMethod"]');
 
     if (name) name.addEventListener('input', validateOrderForm);
-    
+
     // Форматирование и валидация телефона
     if (phone) {
         phone.addEventListener('input', () => {
@@ -574,14 +574,14 @@ function initOrderFormValidation() {
             validateOrderForm();
         });
     }
-    
+
     // Форматирование телефона в форме доставки
     if (deliveryPhone) {
         deliveryPhone.addEventListener('input', () => {
             formatPhoneInput(deliveryPhone);
         });
     }
-    
+
     radios.forEach(r => r.addEventListener('change', validateOrderForm));
 
     // ensure validation runs when cart changes
@@ -595,7 +595,7 @@ function initOrderFormValidation() {
 
 function initLangSelectButtons() {
     const langButtons = document.querySelectorAll('.lang-btn');
-    
+
     // Устанавливаем активную кнопку по текущему языку
     langButtons.forEach(btn => {
         if (btn.dataset.lang === currentLang) {
@@ -603,21 +603,21 @@ function initLangSelectButtons() {
         } else {
             btn.classList.remove('active');
         }
-        
+
         btn.addEventListener('click', () => {
             const lang = btn.dataset.lang;
             if (lang && translations[lang]) {
                 currentLang = lang;
                 localStorage.setItem('lang', lang);
-                
+
                 // Обновляем активную кнопку
                 langButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 // Обновляем интерфейс
                 updateLanguage();
                 renderMenu();
-                
+
                 // Обновляем кнопку языка в шапке
                 const langToggle = document.getElementById('langToggle');
                 if (langToggle) {
@@ -633,11 +633,11 @@ function initOrderTypeModal() {
     const tableModal = document.getElementById('tableSelectModal');
     const deliveryModal = document.getElementById('deliveryFormModal');
     const tableGrid = document.getElementById('tableGrid');
-    
+
     // Инициализация кнопок выбора языка
     initLangSelectButtons();
-    
-    
+
+
     // Генерируем кнопки столов 1-11
     if (tableGrid) {
         tableGrid.innerHTML = '';
@@ -650,7 +650,7 @@ function initOrderTypeModal() {
             tableGrid.appendChild(btn);
         }
     }
-    
+
     // Обработчики кнопок типа заказа
     const cafeBtn = document.getElementById('orderTypeCafe');
     const pickupBtn = document.getElementById('orderTypePickup');
@@ -660,27 +660,27 @@ function initOrderTypeModal() {
     const closeDeliveryBtn = document.getElementById('closeDeliveryModal');
     const backToOrderTypeBtn = document.getElementById('backToOrderType');
     const deliveryForm = document.getElementById('deliveryInfoForm');
-    
+
     if (cafeBtn) cafeBtn.addEventListener('click', () => showTableSelect());
     if (pickupBtn) pickupBtn.addEventListener('click', () => setOrderType('pickup'));
     if (deliveryBtn) deliveryBtn.addEventListener('click', () => showDeliveryForm());
     if (browseBtn) browseBtn.addEventListener('click', () => setOrderType('browse'));
-    
+
     if (closeTableBtn) closeTableBtn.addEventListener('click', () => {
         tableModal.classList.remove('active');
         modal.classList.add('active');
     });
-    
+
     if (closeDeliveryBtn) closeDeliveryBtn.addEventListener('click', () => {
         deliveryModal.classList.remove('active');
         modal.classList.add('active');
     });
-    
+
     if (backToOrderTypeBtn) backToOrderTypeBtn.addEventListener('click', () => {
         deliveryModal.classList.remove('active');
         modal.classList.add('active');
     });
-    
+
     // Обработка формы доставки
     if (deliveryForm) {
         deliveryForm.addEventListener('submit', (e) => {
@@ -688,18 +688,18 @@ function initOrderTypeModal() {
             const name = document.getElementById('deliveryName').value.trim();
             const phone = document.getElementById('deliveryPhone').value.trim();
             const address = document.getElementById('deliveryAddressInput').value.trim();
-            
+
             if (name && phone && address) {
                 deliveryInfo = { name, phone, address };
                 // Сохраняем временно введённые данные доставки, чтобы они были доступны
                 // при переходе к форме оформления заказа
-                try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) {}
+                try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) { }
                 setOrderType('delivery');
                 deliveryModal.classList.remove('active');
             }
         });
     }
-    
+
     // Закрытие по клику вне модального окна стола
     if (tableModal) {
         tableModal.addEventListener('click', (e) => {
@@ -709,7 +709,7 @@ function initOrderTypeModal() {
             }
         });
     }
-    
+
     // Закрытие по клику вне модального окна доставки
     if (deliveryModal) {
         deliveryModal.addEventListener('click', (e) => {
@@ -767,12 +767,12 @@ function selectTable(num) {
 
 function setOrderType(type) {
     orderType = type;
-    
+
     const modal = document.getElementById('orderTypeModal');
     const tableModal = document.getElementById('tableSelectModal');
     if (modal) modal.classList.remove('active');
     if (tableModal) tableModal.classList.remove('active');
-    
+
     applyOrderTypeMode();
     // После выбора снимаем блокировку и разрешаем взаимодействие с сайтом
     disableModalLock();
@@ -792,16 +792,16 @@ function applyOrderTypeMode() {
 
 function getOrderTypeText() {
     if (!orderType || orderType === 'browse') return '';
-    
+
     if (orderType === 'cafe' && tableNumber) {
-        return currentLang === 'ru' 
-            ? `📍 Стол №${tableNumber}` 
+        return currentLang === 'ru'
+            ? `📍 Стол №${tableNumber}`
             : `📍 Стол №${tableNumber}`;
     } else if (orderType === 'pickup') {
         return currentLang === 'ru' ? '📍 Самовывоз' : '📍 Өзү алып кетүү';
     } else if (orderType === 'delivery' && deliveryInfo) {
-        return currentLang === 'ru' 
-            ? `📍 Доставка: ${deliveryInfo.address}` 
+        return currentLang === 'ru'
+            ? `📍 Доставка: ${deliveryInfo.address}`
             : `📍 Жеткирүү: ${deliveryInfo.address}`;
     }
     return '';
@@ -871,12 +871,12 @@ function initTheme() {
 
     if (themeIcon) {
         // Очищаем содержимое, чтобы иконки не дублировались при повторном клике
-        themeIcon.textContent = ''; 
-        
+        themeIcon.textContent = '';
+
         if (currentTheme === 'dark') {
             themeIcon.appendChild(sun);
         } else {
-            themeIcon.appendChild(moon); 
+            themeIcon.appendChild(moon);
         }
     }
 }
@@ -1163,14 +1163,13 @@ function createMenuCard(item) {
     const quantity = cartItem ? cartItem.quantity : 0;
 
     card.innerHTML = `
-        <img src="${item.image}" alt="${name}" class="dish-image" onclick="openImageLightbox('${item.image}','${name}')" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+        <img src="${item.image}" alt="${name}" class="dish-image" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
         <div class="dish-info">
             <h3 class="dish-name">${name}</h3>
             <p class="dish-description">${description}</p>
             <div class="dish-footer">
                 <span class="dish-price">${price} <span data-i18n="currency">сом</span></span>
                 <div class="dish-actions">
-                        <button type="button" class="btn-details" onclick="showDishDetails(${item.id})" title="${translations[currentLang]['details'] || 'Подробнее'}" data-i18n="details">Подробнее</button>
                         ${quantity === 0
             ? `<button type="button" class="btn-add-cart" data-item-id="${item.id}" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
             : `<div class="quantity-controls">
@@ -1212,9 +1211,19 @@ function createMenuCard(item) {
         // Начинаем загрузку
         loader.src = item.image || placeholder;
 
-        // Навешиваем обработчик открытия lightbox
-        imgEl.addEventListener('click', () => openImageLightbox(imgEl.src, name));
+        // Навешиваем обработчик: клик по изображению открывает окно деталей
+        imgEl.addEventListener('click', () => showDishDetails(item.id));
     }
+
+    // Делаем всю карточку кликабельной — клик по карточке открывает детали.
+    // Исключаем клики по кнопкам, контролам количества и по самому изображению.
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('button') || e.target.closest('.dish-image') || e.target.closest('.dish-actions')) {
+            // Если клик по кнопке/изображению/областям действий — не открываем детали здесь
+            return;
+        }
+        showDishDetails(item.id);
+    });
 
     return card;
 }
@@ -1371,7 +1380,7 @@ function showOrderForm() {
 
     // Очищаем форму
     orderForm.reset();
-    
+
     // Если есть данные доставки, заполняем форму
     if (orderType === 'delivery' && deliveryInfo) {
         const nameInput = document.getElementById('customerName');
@@ -1406,14 +1415,14 @@ function showOrderForm() {
     `;
 
     orderSummary.innerHTML = summaryHTML;
-    
+
     // Показываем/скрываем поле адреса в зависимости от типа заказа
     updateDeliveryAddressVisibility();
     // Обновляем видимость способов оплаты и QR
     adjustPaymentOptionsForDelivery();
     const checked = document.querySelector('input[name="paymentMethod"]:checked');
     toggleMbankQr(checked ? checked.value : null);
-    
+
     orderModal.classList.add('active');
 }
 
@@ -1437,7 +1446,7 @@ function createOrderText(name, phone, comment, paymentMethod) {
     const logo = document.createElement('img');
     logo.src = 'icons/plate-eating.svg';
     logo.style.width = '30px';
-    
+
     const text = currentLang === 'ru'
         ? ' 🍽 Новый заказ из кафе Cholpon'
         : ' 🍽 Cholpon кафесинен жаңы заказ';
@@ -1479,9 +1488,10 @@ function createOrderText(name, phone, comment, paymentMethod) {
     const orderTypeText = orderTypeInfo ? `\n${orderTypeInfo}` : '';
 
     // Собираем полный текст заказа
-const headerText = '🍽 ' + (currentLang === 'ru' ? 'Новый заказ из кафе Cholpon' : 'Cholpon кафесинен жаңы заказ') + '\n\n';
+    const headerText = '🍽 ' + (currentLang === 'ru' ? 'Новый заказ из кафе Cholpon' : 'Cholpon кафесинен жаңы заказ') + '\n\n';
 
-return headerText + itemsText + totalText + customerInfo + paymentText + orderTypeText + commentText;}
+    return headerText + itemsText + totalText + customerInfo + paymentText + orderTypeText + commentText;
+}
 
 /**
  * Отправляет заказ в WhatsApp
@@ -1618,7 +1628,7 @@ async function placeOrder(e) {
             const addrVal = addrInput ? addrInput.value.trim() : (deliveryInfo ? deliveryInfo.address : '');
             if (!deliveryInfo) deliveryInfo = {};
             deliveryInfo.address = addrVal || deliveryInfo.address;
-            try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) {}
+            try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) { }
         }
 
         const orderText = createOrderText(name, phone, comment, paymentMethod);

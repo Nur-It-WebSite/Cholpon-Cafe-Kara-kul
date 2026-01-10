@@ -19,19 +19,19 @@
           <div class="logo">Cholpon</div>
           <button
             class="mobile-menu-btn"
-            id="mobileMenuBtn"    
+            id="mobileMenuBtn"
             aria-label="Открыть меню"
           >
             ☰
           </button>
-          <nav class="nav" id="mainNav">  
+          <nav class="nav" id="mainNav">
             <a href="#menu" data-i18n="nav-menu">Меню</a>
             <a href="#contact" data-i18n="nav-contact">Контакты</a>
           </nav>
           <div class="header-controls">
             <button
               class="lang-toggle"
-              id="langToggle"   
+              id="langToggle"
               aria-label="Переключить язык"
             >
               RU
@@ -41,7 +41,12 @@
               id="themeToggle"
               aria-label="Переключить тему"
             >
-              <span class="theme-icon"><img src="./icons/moon-stars.svg" alt="moon" style="width: 20px; height: 20px;"></span>
+              <span class="theme-icon"
+                ><img
+                  src="./icons/moon-stars.svg"
+                  alt="moon"
+                  style="width: 20px; height: 20px"
+              /></span>
             </button>
             <button class="cart-icon-btn" id="cartIconBtn" aria-label="Корзина">
               <svg
@@ -179,15 +184,33 @@
           <h2 data-i18n="contact-title">Контакты</h2>
           <div class="contact-compact">
             <a class="contact-btn" href="tel:+996998252023"
-              ><img src="./icons/phone-call.svg" alt="phone" style="width: 16px; height: 16px;"> +996 998 252 023</a
+              ><img
+                src="./icons/phone-call.svg"
+                alt="phone"
+                style="width: 16px; height: 16px"
+              />
+              +996 998 252 023</a
             >
             <a
               class="contact-btn"
               href="https://maps.google.com/?q=41.6307442,72.6622908"
               target="_blank"
-              ><img src="./icons/land-layer-location.svg" alt="" width="16px" height="16px"> Кара-Куль, Боконбаева</a
+              ><img
+                src="./icons/land-layer-location.svg"
+                alt=""
+                width="16px"
+                height="16px"
+              />
+              Кара-Куль, Боконбаева</a
             >
-            <div class="contact-hours"><img src="./icons/clock-three.svg" alt="clock" style="width: 16px; height: 16px;"> 10:00 - 22:00 (без выходных)</div>
+            <div class="contact-hours">
+              <img
+                src="./icons/clock-three.svg"
+                alt="clock"
+                style="width: 16px; height: 16px"
+              />
+              10:00 - 22:00 (без выходных)
+            </div>
           </div>
           <div class="map-wrapper compact-map">
             <iframe
@@ -287,9 +310,20 @@
               >
             </div>
             <!-- Поле адреса для доставки (показывается только при выборе доставки) -->
-            <div class="form-group delivery-address-group" id="deliveryAddressGroup" style="display: none;">
-              <label for="deliveryAddress" data-i18n="order-address">Адрес доставки</label>
-              <input type="text" id="deliveryAddress" name="address" placeholder="ул. Боконбаева, дом 5" />
+            <div
+              class="form-group delivery-address-group"
+              id="deliveryAddressGroup"
+              style="display: none"
+            >
+              <label for="deliveryAddress" data-i18n="order-address"
+                >Адрес доставки</label
+              >
+              <input
+                type="text"
+                id="deliveryAddress"
+                name="address"
+                placeholder="ул. Боконбаева, дом 5"
+              />
             </div>
             <div class="form-group">
               <label for="orderComment" data-i18n="order-comment"
@@ -306,14 +340,24 @@
               <div class="payment-options">
                 <label class="payment-option"
                   ><input type="radio" name="paymentMethod" value="cash" />
-                  <span class="payment-icon"><img src="./icons/money-bills-simple.svg" alt="cash" style="width: 20px; height: 20px;"></span>
+                  <span class="payment-icon"
+                    ><img
+                      src="./icons/money-bills-simple.svg"
+                      alt="cash"
+                      style="width: 20px; height: 20px"
+                  /></span>
                   <span class="payment-label" data-i18n="payment-cash"
                     >Наличными</span
                   ></label
                 >
                 <label class="payment-option"
                   ><input type="radio" name="paymentMethod" value="card" />
-                  <span class="payment-icon"><img src="./icons/credit-card.svg" alt="card" style="width: 20px; height: 20px;"></span>
+                  <span class="payment-icon"
+                    ><img
+                      src="./icons/credit-card.svg"
+                      alt="card"
+                      style="width: 20px; height: 20px"
+                  /></span>
                   <span class="payment-label" data-i18n="payment-card"
                     >Картой</span
                   ></label
@@ -331,9 +375,31 @@
                 >
               </div>
               <!-- Контейнер для показа QR при выборе MBank (по умолчанию скрыт) -->
-              <div id="mbankQrContainer" style="display:none; margin-top:0.75rem; text-align:center;">
-                <img id="mbankQrImage" src="./qr/photo_5366081055741381388_x.svg" alt="MBank QR" style="max-width:200px; width:60%; height:auto; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.12);">
-                <div style="font-size:0.9rem; color:var(--text-secondary); margin-top:0.4rem;">Отсканируйте QR для оплаты в MBank</div>
+              <div
+                id="mbankQrContainer"
+                style="display: none; margin-top: 0.75rem; text-align: center"
+              >
+                <img
+                  id="mbankQrImage"
+                  src="./qr/photo_5366081055741381388_x.svg"
+                  alt="MBank QR"
+                  style="
+                    max-width: 200px;
+                    width: 60%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+                  "
+                />
+                <div
+                  style="
+                    font-size: 0.9rem;
+                    color: var(--text-secondary);
+                    margin-top: 0.4rem;
+                  "
+                >
+                  Отсканируйте QR для оплаты в MBank
+                </div>
               </div>
             </div>
             <div class="form-actions">
@@ -427,78 +493,139 @@
     <div class="modal-overlay active" id="orderTypeModal">
       <div class="modal-content order-type-modal">
         <div class="modal-header">
-          <h2  style="margin-left: 40px;" data-i18n="order-type-title">Как вы хотите заказать?</h2>
+          <h2 style="margin-left: 40px" data-i18n="order-type-title">
+            Как вы хотите заказать?
+          </h2>
         </div>
         <div class="modal-body">
           <div class="order-type-buttons">
             <button class="order-type-btn" id="orderTypeCafe" data-type="cafe">
-              <span class="order-type-icon"><img src="./icons/plate-eating.svg" alt="plate-eating" style="width: 20px; height: 20px;"></span>
-              <span class="order-type-label" data-i18n="order-type-cafe">Я в кафе</span>
-            </button>
-            <button class="order-type-btn" id="orderTypePickup" data-type="pickup">
-              <span class="order-type-icon"><img src="./icons/truck-pickup.svg" alt="pickup" style="width: 20px; height: 20px;"></span>
-              <span class="order-type-label" data-i18n="order-type-pickup">Самовывоз</span>
-            </button>
-            <button class="order-type-btn" id="orderTypeDelivery" data-type="delivery">
-              <span class="order-type-icon"><img src="./icons/shipping-fast.svg" alt="delivery" style="width: 20px; height: 20px;"></span>
-              <span class="order-type-label" data-i18n="order-type-delivery">Доставка</span>
-            </button>
-            <button class="order-type-btn order-type-browse" id="orderTypeBrowse" data-type="browse">
-              <span class="order-type-icon"><img src="./icons/eyes.svg" alt=" "style="width: 20px; height: 20px;"></span>
-              <span class="order-type-label" data-i18n="order-type-browse">Просто посмотреть меню</span>
-            </button>
+              <span class="order-type-icon"
+                ><img
+                  src="./icons/plate-eating.svg"
+                  alt="plate-eating"
+                  style="width: 20px; height: 20px"
+              /></span>
+              <span class="order-type-label" data-i18n="order-type-cafe"
+            >Я в кафе</span
+          >
+        </button>
+        <button
+          class="order-type-btn"
+          id="orderTypePickup"
+          data-type="pickup"
+        >
+          <span class="order-type-icon"
+            ><img
+              src="./icons/truck-pickup.svg"
+              alt="pickup"
+              style="width: 20px; height: 20px"
+          /></span>
+          <span class="order-type-label" data-i18n="order-type-pickup"
+            >Самовывоз</span
+          >
+        </button>
+        <button
+          class="order-type-btn"
+          id="orderTypeDelivery"
+          data-type="delivery"
+        >
+          <span class="order-type-icon"
+            ><img
+              src="./icons/shipping-fast.svg"
+              alt="delivery"
+              style="width: 20px; height: 20px"
+          /></span>
+          <span class="order-type-label" data-i18n="order-type-delivery"
+            >Доставка</span
+          >
+        </button>
+        <button
+          class="order-type-btn order-type-browse"
+          id="orderTypeBrowse"
+          data-type="browse"
+        >
+          <span class="order-type-icon"
+            ><img
+              src="./icons/eyes.svg"
+              alt=" "
+              style="width: 20px; height: 20px"
+          /></span>
+          <span class="order-type-label" data-i18n="order-type-browse"
+            >Просто посмотреть меню</span
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+</div
+<!-- Модальное окно выбора стола -->
+<div class="modal-overlay" id="tableSelectModal">
+  <div class="modal-content table-select-modal">
+    <div class="modal-header">
+      <h2 data-i18n="table-select-title">Выберите номер стола</h2>
+      <button class="modal-close" id="closeTableModal" aria-label="Закрыть">
+        &times;
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="table-grid" id="tableGrid">
+        <!-- Столы 1-11 будут добавлены через JavaScript -->
+      </div>
+    </div>
+  </div>
+</div
+<!-- Модальное окно для данных доставки -->
+<div class="modal-overlay" id="deliveryFormModal">
+  <div class="modal-content delivery-form-modal">
+    <div class="modal-header">
+      <h2 data-i18n="delivery-form-title">Данные для доставки</h2>
+      <button
+        class="modal-close"
+        id="closeDeliveryModal"
+        aria-label="Закрыть"
+      >
+        &times;
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="deliveryInfoForm" class="delivery-info-form">
+        <div class="form-group">
+          <label for="deliveryName" data-i18n="order-name">Ваше имя</label>
+          <input type="text" id="deliveryName" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="deliveryPhone" data-i18n="order-phone">Телефон</label>
+          <div class="phone-input-wrapper">
+            <span class="phone-prefix">+996</span>
+            <input
+              type="tel"
+              id="deliveryPhone"
+              name="phone"
+              placeholder="998 25 20 23"
+              maxlength="12"
+              required
+            />
           </div>
         </div>
-      </div>
+        <div class="form-group">
+          <label for="deliveryAddressInput" data-i18n="order-address"
+            >Адрес доставки</label
+          >
+          <input
+            type="text"
+            id="deliveryAddressInput"
+            name="address"
+            placeholder="ул. Боконбаева, дом 5"
+            required
+          />
+        </div>
+        <div class="form-actions"><button  type="button"  class="btn btn-secondary"  id="backToOrderType"  data-i18n="back">  Назад</button><button  type="submit"  class="btn btn-primary"  data-i18n="continue">  Продолжить</button>
+        </div>
+      </form>
     </div>
-
-    <!-- Модальное окно выбора стола -->
-    <div class="modal-overlay" id="tableSelectModal">
-      <div class="modal-content table-select-modal">
-        <div class="modal-header">
-          <h2 data-i18n="table-select-title">Выберите номер стола</h2>
-          <button class="modal-close" id="closeTableModal" aria-label="Закрыть">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="table-grid" id="tableGrid">
-            <!-- Столы 1-11 будут добавлены через JavaScript -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Модальное окно для данных доставки -->
-    <div class="modal-overlay" id="deliveryFormModal">
-      <div class="modal-content delivery-form-modal">
-        <div class="modal-header">
-          <h2 data-i18n="delivery-form-title">Данные для доставки</h2>
-          <button class="modal-close" id="closeDeliveryModal" aria-label="Закрыть">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="deliveryInfoForm" class="delivery-info-form">
-            <div class="form-group">
-              <label for="deliveryName" data-i18n="order-name">Ваше имя</label>
-              <input type="text" id="deliveryName" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="deliveryPhone" data-i18n="order-phone">Телефон</label>
-              <div class="phone-input-wrapper">
-                <span class="phone-prefix">+996</span>
-                <input type="tel" id="deliveryPhone" name="phone" placeholder="998 25 20 23" maxlength="12" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="deliveryAddressInput" data-i18n="order-address">Адрес доставки</label>
-              <input type="text" id="deliveryAddressInput" name="address" placeholder="ул. Боконбаева, дом 5" required />
-            </div>
-            <div class="form-actions">
-              <button type="button" class="btn btn-secondary" id="backToOrderType" data-i18n="back">Назад</button>
-              <button type="submit" class="btn btn-primary" data-i18n="continue">Продолжить</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 
     <script src="script.js"></script>
   </body>
