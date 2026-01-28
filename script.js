@@ -431,8 +431,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     initOrderFormValidation();
     // Init order type modal
     initOrderTypeModal();
-    // Если стол передан через параметр ?table=, сразу выбираем его
-    initTableFromUrl();
+    // Если стол передан через параметр ?table=, сразу выбираем его и не показываем модалку
+    const handledByUrl = initTableFromUrl();
+    // Если стол не передан в URL, показываем модалку выбора типа заказа
+    if (!handledByUrl) {
+        const orderTypeModal = document.getElementById('orderTypeModal');
+        if (orderTypeModal) {
+            orderTypeModal.classList.add('active');
+            enableModalLock();
+        }
+    }
 });
 
 // Set selected class on payment option labels for clear visual state
@@ -729,15 +737,16 @@ function initOrderTypeModal() {
 }
 
 // Если в URL есть параметр ?table=, автоматически выбираем этот стол и режим "Я в кафе"
+// Возвращает true, если номер стола успешно установлен, иначе false
 function initTableFromUrl() {
     try {
         const params = new URLSearchParams(window.location.search);
         const tableParam = params.get('table');
-        if (!tableParam) return;
+        if (!tableParam) return false;
 
         const num = parseInt(tableParam, 10);
         // Валидация номера стола (1–11, как в модалке выбора стола)
-        if (!Number.isFinite(num) || num < 1 || num > 11) return;
+        if (!Number.isFinite(num) || num < 1 || num > 11) return false;
 
         tableNumber = num;
         orderType = 'cafe';
@@ -757,8 +766,10 @@ function initTableFromUrl() {
         // Применяем режим заказа и разблокируем фон
         applyOrderTypeMode();
         disableModalLock();
+        return true;
     } catch (err) {
         console.error('Failed to init table from URL', err);
+        return false;
     }
 }
 
