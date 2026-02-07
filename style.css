@@ -39,12 +39,18 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -52,18 +58,15 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-
-/* ============================================
-   Шапка сайта
-   ============================================ */
-
 .header {
   background-color: var(--bg-card);
   box-shadow: 0 2px 10px var(--shadow);
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: transform 0.3s ease, background-color 0.3s ease,
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
     box-shadow 0.3s ease;
   transform: translateY(0);
 }
@@ -281,7 +284,7 @@ section {
   margin: 0 auto 1.5rem;
   line-height: 1.8;
 }
-/* Welcome animation and CTA */         
+/* Welcome animation and CTA */
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -301,7 +304,9 @@ section {
 .welcome-title {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .welcome-title.fade-in {
@@ -708,7 +713,9 @@ section {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
   z-index: 4000;
   font-weight: 600;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -726,13 +733,14 @@ section {
   background: var(--accent);
   color: var(--bg-card);
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   flex: 1;
+  min-height: 48px;
 }
 
 .btn-add-cart:hover {
@@ -823,7 +831,9 @@ body.modal-blocked .modal-overlay.active {
 }
 
 @media (max-width: 480px) {
-  #mbankQrContainer img { max-width: 180px; }
+  #mbankQrContainer img {
+    max-width: 180px;
+  }
 }
 
 .modal-overlay.active {
@@ -1179,7 +1189,8 @@ body.modal-blocked .modal-overlay.active {
 
 /* Ready/active submit glow */
 .btn-primary.ready {
-  box-shadow: 0 8px 28px rgba(201, 168, 130, 0.28),
+  box-shadow:
+    0 8px 28px rgba(201, 168, 130, 0.28),
     0 2px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
   animation: pulse 2.2s infinite;
@@ -2110,6 +2121,7 @@ body.modal-blocked .modal-overlay.active {
 .order-type-modal .modal-header {
   border-bottom: none;
   padding-bottom: 0;
+  justify-content: center;
 }
 
 .order-type-modal .modal-header h2 {
@@ -2117,7 +2129,9 @@ body.modal-blocked .modal-overlay.active {
   color: var(--accent);
   word-wrap: break-word;
   overflow-wrap: break-word;
+  text-align: center;
 }
+
 
 .order-type-buttons {
   display: flex;
@@ -2172,6 +2186,44 @@ body.modal-blocked .modal-overlay.active {
 .order-type-browse .order-type-label {
   font-weight: 400;
   color: var(--text-secondary);
+}
+
+/* Кнопки выбора языка в модальном окне */
+.lang-selector-modal {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0 0.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.lang-btn-modal {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.lang-btn-modal:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.lang-btn-modal.active {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
 /* Модальное окно выбора стола */
@@ -2420,12 +2472,18 @@ body.browse-mode .modal-footer {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -2444,7 +2502,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: transform 0.3s ease, background-color 0.3s ease,
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
     box-shadow 0.3s ease;
   transform: translateY(0);
 }
@@ -2662,7 +2722,7 @@ section {
   margin: 0 auto 1.5rem;
   line-height: 1.8;
 }
-/* Welcome animation and CTA */         
+/* Welcome animation and CTA */
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -2682,7 +2742,9 @@ section {
 .welcome-title {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .welcome-title.fade-in {
@@ -3089,7 +3151,9 @@ section {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
   z-index: 4000;
   font-weight: 600;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -3107,13 +3171,14 @@ section {
   background: var(--accent);
   color: var(--bg-card);
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   flex: 1;
+  min-height: 48px;
 }
 
 .btn-add-cart:hover {
@@ -3531,7 +3596,8 @@ section {
 
 /* Ready/active submit glow */
 .btn-primary.ready {
-  box-shadow: 0 8px 28px rgba(201, 168, 130, 0.28),
+  box-shadow:
+    0 8px 28px rgba(201, 168, 130, 0.28),
     0 2px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
   animation: pulse 2.2s infinite;
@@ -4461,6 +4527,7 @@ section {
 .order-type-modal .modal-header {
   border-bottom: none;
   padding-bottom: 0;
+  justify-content: center;
 }
 
 .order-type-modal .modal-header h2 {
@@ -4468,7 +4535,9 @@ section {
   color: var(--accent);
   word-wrap: break-word;
   overflow-wrap: break-word;
+  text-align: center;
 }
+
 
 .order-type-buttons {
   display: flex;
@@ -4523,6 +4592,44 @@ section {
 .order-type-browse .order-type-label {
   font-weight: 400;
   color: var(--text-secondary);
+}
+
+/* Кнопки выбора языка в модальном окне */
+.lang-selector-modal {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0 0.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.lang-btn-modal {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.lang-btn-modal:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.lang-btn-modal.active {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
 /* Модальное окно выбора стола */
@@ -4771,12 +4878,18 @@ body.browse-mode .modal-footer {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -4795,7 +4908,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: transform 0.3s ease, background-color 0.3s ease,
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
     box-shadow 0.3s ease;
   transform: translateY(0);
 }
@@ -5013,7 +5128,7 @@ section {
   margin: 0 auto 1.5rem;
   line-height: 1.8;
 }
-/* Welcome animation and CTA */         
+/* Welcome animation and CTA */
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -5033,7 +5148,9 @@ section {
 .welcome-title {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .welcome-title.fade-in {
@@ -5440,7 +5557,9 @@ section {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
   z-index: 4000;
   font-weight: 600;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -5458,13 +5577,14 @@ section {
   background: var(--accent);
   color: var(--bg-card);
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   flex: 1;
+  min-height: 48px;
 }
 
 .btn-add-cart:hover {
@@ -5882,7 +6002,8 @@ section {
 
 /* Ready/active submit glow */
 .btn-primary.ready {
-  box-shadow: 0 8px 28px rgba(201, 168, 130, 0.28),
+  box-shadow:
+    0 8px 28px rgba(201, 168, 130, 0.28),
     0 2px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
   animation: pulse 2.2s infinite;
@@ -6813,6 +6934,7 @@ section {
 .order-type-modal .modal-header {
   border-bottom: none;
   padding-bottom: 0;
+  justify-content: center;
 }
 
 .order-type-modal .modal-header h2 {
@@ -6820,7 +6942,9 @@ section {
   color: var(--accent);
   word-wrap: break-word;
   overflow-wrap: break-word;
+  text-align: center;
 }
+
 
 .order-type-buttons {
   display: flex;
@@ -6875,6 +6999,44 @@ section {
 .order-type-browse .order-type-label {
   font-weight: 400;
   color: var(--text-secondary);
+}
+
+/* Кнопки выбора языка в модальном окне */
+.lang-selector-modal {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0 0.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.lang-btn-modal {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.lang-btn-modal:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.lang-btn-modal.active {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
 /* Модальное окно выбора стола */
@@ -7081,4 +7243,254 @@ body.browse-mode .modal-footer {
   background: var(--accent);
   color: var(--on-accent);
   border-color: var(--accent);
+}
+
+/* ============================================
+   МАКСИМАЛЬНОЕ УВЕЛИЧЕНИЕ КАРТОЧЕК - ЧТОБЫ ВСЁ БЫЛО ВИДНО
+   ============================================ */
+
+/* УВЕЛИЧИВАЕМ ВСЕ КАРТОЧКИ МЕНЮ */
+.menu-card {
+  height: 520px !important; /* МАКСИМАЛЬНО увеличено с 420px */
+}
+
+/* УВЕЛИЧИВАЕМ ИЗОБРАЖЕНИЕ - ЧТОБЫ ВСЯ ФОТКА БЫЛА ВИДНА */
+.menu-card .dish-image {
+  height: 280px !important; /* Увеличено */
+  min-height: 280px !important;
+  max-height: 320px !important; /* Увеличено */
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+/* УВЕЛИЧИВАЕМ БЛОК С ЦЕНОЙ ДЛЯ НАПИТКОВ (85 / 125) */
+.menu-card .dish-price {
+  font-size: 1.8rem !important;
+  font-weight: 800;
+  color: var(--accent);
+  background: linear-gradient(90deg, rgba(201, 168, 130, 0.15), transparent);
+  padding: 0.6rem 0.8rem !important;
+  border-radius: 10px;
+  min-height: 4rem !important; /* ДОСТАТОЧНО ДЛЯ ДВУХ СТРОК */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+/* ОБЛАСТЬ С ИНФОРМАЦИЕЙ О БЛЮДЕ - БОЛЬШЕ МЕСТА */
+.menu-card .dish-info {
+  padding: 1.5rem !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ИМЯ БЛЮДА - БОЛЬШЕ МЕСТА */
+.menu-card .dish-name {
+  font-size: 1.4rem !important;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+  min-height: 3rem !important;
+  display: flex;
+  align-items: center;
+}
+
+/* ОПИСАНИЕ (скрыто, но на всякий случай даем место) */
+.menu-card .dish-description {
+  min-height: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ФУТЕР КАРТОЧКИ - БОЛЬШЕ МЕСТА ДЛЯ КНОПОК */
+.menu-card .dish-footer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  min-height: 4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   ДЛЯ СЛАЙДЕРА НА МОБИЛЬНЫХ
+   ============================================ */
+
+@media (max-width: 768px) {
+  .menu-card {
+    height: 480px !important; /* Все еще много места */
+  }
+
+  .menu-slide .menu-card {
+    height: 480px !important;
+  }
+
+  .menu-card .dish-image {
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 280px !important;
+  }
+
+  .menu-card .dish-price {
+    font-size: 1.6rem !important;
+    min-height: 3.5rem !important;
+    padding: 0.5rem 0.7rem !important;
+  }
+
+  .menu-card .dish-name {
+    font-size: 1.3rem !important;
+    min-height: 2.8rem !important;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .menu-card {
+    height: 460px !important;
+  }
+
+  .menu-slide .menu-card {
+    height: 460px !important;
+  }
+
+  .menu-card .dish-price {
+    font-size: 1.5rem !important;
+    min-height: 3.2rem !important;
+  }
+}
+
+.menu-card.drink-item .dish-price {
+  font-size: 1.9rem !important;
+  min-height: 4.5rem !important;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 130, 0.2),
+    rgba(201, 168, 130, 0.05)
+  );
+  border: 2px solid rgba(201, 168, 130, 0.3);
+}
+
+.menu-card * {
+  box-sizing: border-box;
+  overflow: visible !important;
+}
+
+.menu-card .dish-price span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ============================================
+   Нижнее мобильное меню
+   ============================================ */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px var(--shadow);
+}
+
+.bottom-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  flex: 1;
+  max-width: 50%;
+}
+
+.bottom-nav-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+.bottom-nav-btn span:not(.bottom-nav-badge) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.125rem;
+}
+
+.bottom-nav-btn:hover {
+  color: var(--accent);
+}
+
+.bottom-nav-btn.active {
+  color: var(--accent);
+}
+
+.bottom-nav-btn.active svg {
+  stroke: var(--accent);
+}
+
+.bottom-nav-badge {
+  position: absolute;
+  top: 0.25rem;
+  left: calc(50% + 14px);
+  background: var(--accent);
+  color: var(--bg-card);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 20px;
+}
+
+/* Показываем нижнее меню только на мобильных */
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: flex;
+  }
+  
+  /* Добавляем отступ снизу для контента, чтобы он не перекрывался нижним меню */
+  body {
+    padding-bottom: 70px;
+  }
+  
+  main {
+    padding-bottom: 1rem;
+  }
+  
+  /* Скрываем кнопку корзины в хедере на мобильных, так как она есть в нижнем меню */
+  .cart-icon-btn {
+    display: none !important;
+  }
+  
+  /* Увеличиваем кнопку "Добавить в корзину" на мобильных */
+  .btn-add-cart {
+    padding: 1rem 2rem !important;
+    font-size: 1.15rem !important;
+    min-height: 52px !important;
+    width: 100%;
+    font-weight: 600;
+  }
 }

@@ -21,8 +21,7 @@
             class="mobile-menu-btn"
             id="mobileMenuBtn"
             aria-label="Открыть меню"
-          >
-            
+          >  
           </button>
           <nav class="nav" id="mainNav">
             <a href="#menu" data-i18n="nav-menu">Меню</a>
@@ -171,13 +170,11 @@
               Fast-Food
             </button>
           </div>
-
           <div class="menu-grid" id="menuGrid">
             <!-- Карточки меню будут добавлены через JavaScript -->
           </div>
         </div>
       </section>
-
       <!-- Секция контактов -->
       <section id="contact" class="contact-section">
         <div class="container">
@@ -186,7 +183,7 @@
             <a class="contact-btn" href="tel:+996998252023"
               ><img
                 src="./icons/phone-call.svg"
-                alt="phone"
+                alt="phone icon call us now    "
                 style="width: 16px; height: 16px"
               />
               +996 998 252 023</a
@@ -197,7 +194,7 @@
               target="_blank"
               ><img
                 src="./icons/land-layer-location.svg"
-                alt=""
+                alt="icon check location"
                 width="16px"
                 height="16px"
               />
@@ -207,8 +204,7 @@
               <img
                 src="./icons/clock-three.svg"
                 alt="clock"
-                style="width: 16px; height: 16px"
-              />
+                style="width: 16px; height: 16px"/>
               10:00 - 22:00 (без выходных)
             </div>
           </div>
@@ -224,7 +220,6 @@
         </div>
       </section>
     </main>
-
     <!-- Футер -->
     <footer class="footer">
       <div class="container">
@@ -233,7 +228,6 @@
         </p>
       </div>
     </footer>
-
     <!-- Модальное окно корзины -->
     <div class="modal-overlay" id="cartModal">
       <div class="modal-content">
@@ -276,7 +270,6 @@
         </div>
       </div>
     </div>
-
     <!-- Модальное окно формы заказа -->
     <div class="modal-overlay" id="orderModal">
       <div class="modal-content">
@@ -493,7 +486,7 @@
     <div class="modal-overlay" id="orderTypeModal">
       <div class="modal-content order-type-modal">
         <div class="modal-header">
-          <h2 style="margin-left: 40px" data-i18n="order-type-title">
+          <h2 data-i18n="order-type-title">
             Как вы хотите заказать?
           </h2>
         </div>
@@ -554,6 +547,25 @@
           <span class="order-type-label" data-i18n="order-type-browse"
             >Просто посмотреть меню</span
           >
+        </button>
+      </div>
+      <!-- Кнопки выбора языка -->
+      <div class="lang-selector-modal">
+        <button
+          class="lang-btn-modal"
+          id="langBtnRu"
+          data-lang="ru"
+          aria-label="Русский язык"
+        >
+          RU
+        </button>
+        <button
+          class="lang-btn-modal"
+          id="langBtnKg"
+          data-lang="kg"
+          aria-label="Кыргызский язык"
+        >
+          Кыргызский
         </button>
       </div>
     </div>
@@ -626,6 +638,43 @@
     </div>
   </div>
 </div>
+
+    <!-- Нижнее мобильное меню -->
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="bottom-nav-btn" id="bottomNavMenu" data-section="menu">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span data-i18n="nav-menu">Меню</span>
+      </button>
+      <button class="bottom-nav-btn" id="bottomNavCart" data-section="cart">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+          ></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span data-i18n="cart-title">Корзина</span>
+        <span class="bottom-nav-badge" id="bottomNavBadge">0</span>
+      </button>
+    </nav>
 
     <script src="script.js"></script>
   </body>

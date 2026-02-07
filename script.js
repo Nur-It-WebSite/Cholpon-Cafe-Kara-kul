@@ -1,9 +1,5 @@
-// ============================================
-// Данные меню кафе Cholpon
-// ============================================
-
 const menuData = [
-    // Первые блюда
+    // ==================== ПЕРВЫЕ БЛЮДА ====================
     {
         id: 1,
         name: 'Шорпо',
@@ -20,91 +16,798 @@ const menuData = [
         ingredients: ['Говядина', 'Лук', 'Морковь', 'Картошка', 'Помидоры', 'Зелень', 'Специи'],
         ingredientsKg: ['Жылкы эти', 'Пияз', 'Сабиз', 'Картөшкө', 'Помидор', 'Жашылча', 'Азыктар']
     },
-    { id: 2, name: 'Сырный суп (фрикадельки)', nameKg: 'Сырный суп (фрикадельки)', description: 'Фрикадельки, кукуруза, картошка, на основе сырного соуса', descriptionKg: 'Фрикадельки, жүгөрү, картөшкө, сыр соусунун негизинде', price: 195, image: 'https://www.russianfood.com/dycontent/images_upl/565/big_564981.jpg', category: 'first' },
-    { id: 3, name: 'Суп с фрикадельками', nameKg: 'Фрикаделькалуу суп', description: 'Фрикадельки, цветная капуста, лук, болгарский перец сладкий, картошка', descriptionKg: 'Фрикадельки, түстүү капуста, пияз, болгар калемпири, картөшкө', price: 195, image: 'https://dikoed.ru/upload/iblock/66c/48245-sup-s-frikadelkami-iz-myasa-olenya.jpg', category: 'first' },
-    { id: 4, name: 'Солянка', nameKg: 'Солянка', description: 'Соляная, сборная, мясная', descriptionKg: 'Туздуу, аралаш, эттүү', price: 175, image: 'https://lifehacker.ru/wp-content/uploads/2020/06/6_1592925463-scaled.jpg', category: 'first' },
-    { id: 5, name: 'Пельмени домашние', nameKg: 'Үй пельмениси', description: 'Домашние пельмени', descriptionKg: 'Үй пельмениси', price: 195, image: 'https://images.gastronom.ru/vCS5cZKKC-g5xPVK2mETjj-fuFYL2VZwlkUI_pLiIAQ/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzI4NDA1OTE2LTM4ZDMtNDYwMC1hMjYyLTc1NzFkNjc3MDdlZi5qcGc.webp', category: 'first' },
+    
+    {
+        id: 2,
+        name: 'Сырный суп (фрикадельки)',
+        nameKg: 'Сырный суп (фрикадельки)',
+        description: 'Фрикадельки, кукуруза, картошка, на основе сырного соуса',
+        descriptionKg: 'Фрикадельки, жүгөрү, картөшкө, сыр соусунун негизинде',
+        price: 195,
+        image: 'https://www.russianfood.com/dycontent/images_upl/565/big_564981.jpg',
+        category: 'first'
+    },
+    
+    {
+        id: 3,
+        name: 'Суп с фрикадельками',
+        nameKg: 'Фрикаделькалуу суп',
+        description: 'Фрикадельки, цветная капуста, лук, болгарский перец сладкий, картошка',
+        descriptionKg: 'Фрикадельки, түстүү капуста, пияз, болгар калемпири, картөшкө',
+        price: 195,
+        image: 'https://dikoed.ru/upload/iblock/66c/48245-sup-s-frikadelkami-iz-myasa-olenya.jpg',
+        category: 'first'
+    },
+    
+    {
+        id: 4,
+        name: 'Солянка',
+        nameKg: 'Солянка',
+        description: 'Соляная, сборная, мясная',
+        descriptionKg: 'Туздуу, аралаш, эттүү',
+        price: 175,
+        image: 'https://lifehacker.ru/wp-content/uploads/2020/06/6_1592925463-scaled.jpg',
+        category: 'first'
+    },
+    
+    {
+        id: 5,
+        name: 'Пельмени домашние',
+        nameKg: 'Үй пельмениси',
+        description: 'Домашние пельмени',
+        descriptionKg: 'Үй пельмениси',
+        price: 195,
+        image: 'https://images.gastronom.ru/vCS5cZKKC-g5xPVK2mETjj-fuFYL2VZwlkUI_pLiIAQ/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzI4NDA1OTE2LTM4ZDMtNDYwMC1hMjYyLTc1NzFkNjc3MDdlZi5qcGc.webp',
+        category: 'first'
+    },
 
-    // Вторые блюда
-    { id: 6, name: 'Манты', nameKg: 'Манты', description: 'Мясо, тесто, лук, картошка', descriptionKg: 'Эт, камыр, пияз, картөшкө', price: 210, image: 'https://cooklikemary.ru/sites/default/files/styles/width_700/public/img_3633_0.jpg?itok=e15Ck_hr', category: 'second' },
-    { id: 7, name: 'Котлеты', nameKg: 'Котлета', description: 'Яйцо, масло, фарш, лук', descriptionKg: 'Жумуртка, май, фарш, пияз', price: 190, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIZSOvy9EXTWC0WL_znrlVYl4iipeuomNeA&s', category: 'second' },
-    { id: 8, name: 'Тефтели', nameKg: 'Тефтель', description: 'Фарш, масло, лук', descriptionKg: 'Фарш, май, пияз', price: 190, image: 'https://img.iamcook.ru/old/upl/recipes/zen/u-9d9f7b406881b1dde4c262f9f84bc279.jpg', category: 'second' },
-    { id: 9, name: 'Лагман Уйгурский', nameKg: 'Уйгур лагманы', description: 'Болгарский перец, морковь, картошка, мясо, тесто', descriptionKg: 'Болгар калемпири, сабиз, картөшкө, эт, камыр', price: 215, image: 'https://s1.webspoon.ru/receipts/2013/7/8738/orig_8738_0_xxl.jpg', category: 'second' },
-    { id: 10, name: 'Лагман Жареный', nameKg: 'Куурулган лагман', description: 'Болгарский перец, морковь, картошка, мясо, тесто', descriptionKg: 'Болгар калемпири, сабиз, картөшкө, эт, камыр', price: 215, image: 'https://cdn.smt.bz/uploads/media/photo/2225664/%D0%BB%D0%B0%D0%B3%D0%BC%D0%B0%D0%BD_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B9.webp', category: 'second' },
-    { id: 11, name: 'Гуляш', nameKg: 'Гуляш', description: 'Пюре, мясо, укроп', descriptionKg: 'Пюре, эт, укроп', price: 255, image: 'https://zira.uz/wp-content/uploads/2023/09/gulyash.jpg', category: 'second' },
-    { id: 12, name: 'Мясо по-королевски', nameKg: 'Королдук эти', description: 'Помидор, укроп, мясо, плавленный сыр', descriptionKg: 'Помидор, укроп, эт, эритилген сыр', price: 235, image: 'https://i.ytimg.com/vi/VqvgACeyDac/maxresdefault.jpg', category: 'second' },
+    // ==================== ВТОРЫЕ БЛЮДА ====================
+    {
+        id: 6,
+        name: 'Манты',
+        nameKg: 'Манты',
+        description: 'Мясо, тесто, лук, картошка',
+        descriptionKg: 'Эт, камыр, пияз, картөшкө',
+        price: 210,
+        image: 'https://cooklikemary.ru/sites/default/files/styles/width_700/public/img_3633_0.jpg?itok=e15Ck_hr',
+        category: 'second'
+    },
+    
+    {
+        id: 7,
+        name: 'Котлеты',
+        nameKg: 'Котлета',
+        description: 'Яйцо, масло, фарш, лук',
+        descriptionKg: 'Жумуртка, май, фарш, пияз',
+        price: 190,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIZSOvy9EXTWC0WL_znrlVYl4iipeuomNeA&s',
+        category: 'second'
+    },
+    
+    {
+        id: 8,
+        name: 'Тефтели',
+        nameKg: 'Тефтель',
+        description: 'Фарш, масло, лук',
+        descriptionKg: 'Фарш, май, пияз',
+        price: 190,
+        image: 'https://img.iamcook.ru/old/upl/recipes/zen/u-9d9f7b406881b1dde4c262f9f84bc279.jpg',
+        category: 'second'
+    },
+    
+    {
+        id: 9,
+        name: 'Лагман Уйгурский',
+        nameKg: 'Уйгур лагманы',
+        description: 'Болгарский перец, морковь, картошка, мясо, тесто',
+        descriptionKg: 'Болгар калемпири, сабиз, картөшкө, эт, камыр',
+        price: 215,
+        image: 'https://s1.webspoon.ru/receipts/2013/7/8738/orig_8738_0_xxl.jpg',
+        category: 'second'
+    },
+    
+    {
+        id: 10,
+        name: 'Лагман Жареный',
+        nameKg: 'Куурулган лагман',
+        description: 'Болгарский перец, морковь, картошка, мясо, тесто',
+        descriptionKg: 'Болгар калемпири, сабиз, картөшкө, эт, камыр',
+        price: 215,
+        image: 'https://cdn.smt.bz/uploads/media/photo/2225664/%D0%BB%D0%B0%D0%B3%D0%BC%D0%B0%D0%BD_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B9.webp',
+        category: 'second'
+    },
+    
+    {
+        id: 11,
+        name: 'Гуляш',
+        nameKg: 'Гуляш',
+        description: 'Пюре, мясо, укроп',
+        descriptionKg: 'Пюре, эт, укроп',
+        price: 255,
+        image: 'https://zira.uz/wp-content/uploads/2023/09/gulyash.jpg',
+        category: 'second'
+    },
+    
+    {
+        id: 12,
+        name: 'Мясо по-королевски',
+        nameKg: 'Королдук эти',
+        description: 'Помидор, укроп, мясо, плавленный сыр',
+        descriptionKg: 'Помидор, укроп, эт, эритилген сыр',
+        price: 235,
+        image: 'https://i.ytimg.com/vi/VqvgACeyDac/maxresdefault.jpg',
+        category: 'second'
+    },
 
-    // Заказные блюда
-    { id: 13, name: 'Мясо по-деревенски', nameKg: 'Айылдык эти', description: 'Мясо, картошка', descriptionKg: 'Эт, картөшкө', price: 480, image: 'https://static.1000.menu/img/content-v2/09/92/34970/myaso-po-derevenski-v-duxovke-s-kartofelem_1676810570_23_max.jpg', category: 'special' },
-    { id: 14, name: 'Стейк форель 3шт', nameKg: 'Форель стейк 3дөн', description: 'Рыба, красный перец, черный перец', descriptionKg: 'Балык, кызыл мурч, кара мурч', price: 520, image: 'https://finecooking.ru/images/recipe/steyki-foreli-zapechennye-v-duhovke/photo/960w.jpg', category: 'special' },
-    { id: 15, name: 'Стейк форель 2шт', nameKg: 'Форель стейк 2дөн', description: 'Рыба, красный перец, черный перец', descriptionKg: 'Балык, кызыл мурч, кара мурч', price: 420, image: 'https://yabpoela.net/uploads/posts/2019-12/1576932448_photo_2019-12-21_14-18-13.jpg', category: 'special' },
-    { id: 16, name: 'Адана-Кебаб', nameKg: 'Адана-Кебаб', description: 'Лук, мясо, паприка', descriptionKg: 'Пияз, эт, паприка', price: 240, image: 'https://www.koolinar.ru/all_image/recipes/157/157915/recipe_9f002738-7831-484c-ad0a-7294e58d8cba_w450.webp', category: 'special' },
-    { id: 17, name: 'Бейти кебаб', nameKg: 'Бейти кебаб', description: 'Лаваш, мясо, лук', descriptionKg: 'Лаваш, эт, пияз', price: 295, image: 'https://lifehacker.ru/wp-content/uploads/2024/12/shutterstock_2265339147_1_1734602719-e1734602773944.jpg', category: 'special' },
-    { id: 18, name: 'Турецкий кебаб', nameKg: 'Түрк кебабы', description: 'Мясо, лук, паприка', descriptionKg: 'Эт, пияз, паприка', price: 245, image: 'https://bigasia.ru/wp-content/uploads/2023/04/2435c715734d0d295dc9c342ccf20ab6.jpg', category: 'special' },
-    { id: 19, name: 'Бризоль', nameKg: 'Бризоль', description: 'Фарш, яйцо, лук, молоко', descriptionKg: 'Фарш, жумуртка, пияз, сүт', price: 230, image: 'https://media.ovkuse.ru/images/recipes/a3ade189-9389-40c7-baaa-3ee8de125985/a3ade189-9389-40c7-baaa-3ee8de125985_420_420.webp', category: 'special' },
-    { id: 20, name: 'Мясо в горшочке', nameKg: 'Кыштектеги эт', description: 'Мясо, картошка, лук, сливки', descriptionKg: 'Эт, картөшкө, пияз, каймак', price: 235, image: 'https://halal-spb.ru/sites/default/files/styles/large/public/jarkoe-v-gorshochkah.jpg?itok=tzEUT5YJ', category: 'special' },
-    { id: 21, name: 'Куурдак', nameKg: 'Куурдак', description: 'Картошка, мясо, приправы', descriptionKg: 'Картөшкө, эт, азыктары', price: 410, image: 'https://s1.eda.ru/StaticContent/Photos/160915225201/160926225652/p_O.jpg', category: 'special' },
-    { id: 22, name: 'Курица в кисло-сладком соусе', nameKg: 'Кышкыл-таттуу соустагы тоок', description: 'Куриное филе, перец, лук, морковь', descriptionKg: 'Тоок филеси, мурч, пияз, сабиз', price: 245, image: 'https://www.povarenok.ru/data/cache/2023jan/21/55/3033845_65334-710x550x.jpg', category: 'special' },
-    { id: 23, name: 'Фрикассе', nameKg: 'Фрикассе', description: 'Куриное филе, морковь, лук репчатый, сельдерей, масло сливочное', descriptionKg: 'Тоок филеси, сабиз, пияз, сельдерей, май', price: 240, image: 'https://ist.say7.info/img0012/35/1235_0166c21_2455_1024.jpg', category: 'special' },
-    { id: 24, name: 'Казан кебаб', nameKg: 'Казан кебабы', description: 'Картошка, мясо, морковь, лук', descriptionKg: 'Картөшкө, эт, сабиз, пияз', price: 265, image: 'https://lafoy.ru/photo_l/foto-4456-2.jpg', category: 'special' },
-    { id: 25, name: 'Курица с овощами', nameKg: 'Жашылчалуу тоок', description: 'Куриное филе, перец, лук, морковь', descriptionKg: 'Тоок филеси, мурч, пияз, сабиз', price: 245, image: 'https://img.iamcook.ru/old/upl/recipes/cat/u1169-c8338c700c52d3dc7043abce47bef4fa.JPG', category: 'special' },
-    { id: 26, name: 'Фетучини с форелью', nameKg: 'Форель менен фетучини', description: 'Фетучини, форель, лук, сливки', descriptionKg: 'Фетучини, форель, пияз, каймак', price: 355, image: 'https://bandler.ru/image/catalog/product/recepti/fettuchini-s-semgoj.jpg', category: 'special' },
-    { id: 27, name: 'Фетучини с курицей', nameKg: 'Тоок менен фетучини', description: 'Фетучини, куриное филе, лук, сливки', descriptionKg: 'Фетучини, тоок филеси, пияз, каймак', price: 315, image: 'https://здоровое-питание.рф/upload/iblock/6a2/s9gmf27dxsnbjvoap4btpytvdrwikpnh/Pasta-fetuchini-kuritsa-s-gribami-v-slivochnom-souse-5.jpg', category: 'special' },
+    // ==================== ЗАКАЗНЫЕ БЛЮДА ====================
+    {
+        id: 13,
+        name: 'Мясо по-деревенски',
+        nameKg: 'Айылдык эти',
+        description: 'Мясо, картошка',
+        descriptionKg: 'Эт, картөшкө',
+        price: 480,
+        image: 'https://static.1000.menu/img/content-v2/09/92/34970/myaso-po-derevenski-v-duxovke-s-kartofelem_1676810570_23_max.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 14,
+        name: 'Стейк форель 3шт',
+        nameKg: 'Форель стейк 3дөн',
+        description: 'Рыба, красный перец, черный перец',
+        descriptionKg: 'Балык, кызыл мурч, кара мурч',
+        price: 520,
+        image: 'https://finecooking.ru/images/recipe/steyki-foreli-zapechennye-v-duhovke/photo/960w.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 15,
+        name: 'Стейк форель 2шт',
+        nameKg: 'Форель стейк 2дөн',
+        description: 'Рыба, красный перец, черный перец',
+        descriptionKg: 'Балык, кызыл мурч, кара мурч',
+        price: 420,
+        image: 'https://yabpoela.net/uploads/posts/2019-12/1576932448_photo_2019-12-21_14-18-13.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 16,
+        name: 'Адана-Кебаб',
+        nameKg: 'Адана-Кебаб',
+        description: 'Лук, мясо, паприка',
+        descriptionKg: 'Пияз, эт, паприка',
+        price: 240,
+        image: 'https://www.koolinar.ru/all_image/recipes/157/157915/recipe_9f002738-7831-484c-ad0a-7294e58d8cba_w450.webp',
+        category: 'special'
+    },
+    
+    {
+        id: 17,
+        name: 'Бейти кебаб',
+        nameKg: 'Бейти кебаб',
+        description: 'Лаваш, мясо, лук',
+        descriptionKg: 'Лаваш, эт, пияз',
+        price: 295,
+        image: 'https://lifehacker.ru/wp-content/uploads/2024/12/shutterstock_2265339147_1_1734602719-e1734602773944.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 18,
+        name: 'Турецкий кебаб',
+        nameKg: 'Түрк кебабы',
+        description: 'Мясо, лук, паприка',
+        descriptionKg: 'Эт, пияз, паприка',
+        price: 245,
+        image: 'https://bigasia.ru/wp-content/uploads/2023/04/2435c715734d0d295dc9c342ccf20ab6.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 19,
+        name: 'Бризоль',
+        nameKg: 'Бризоль',
+        description: 'Фарш, яйцо, лук, молоко',
+        descriptionKg: 'Фарш, жумуртка, пияз, сүт',
+        price: 230,
+        image: 'https://media.ovkuse.ru/images/recipes/a3ade189-9389-40c7-baaa-3ee8de125985/a3ade189-9389-40c7-baaa-3ee8de125985_420_420.webp',
+        category: 'special'
+    },
+    
+    {
+        id: 20,
+        name: 'Мясо в горшочке',
+        nameKg: 'Кыштектеги эт',
+        description: 'Мясо, картошка, лук, сливки',
+        descriptionKg: 'Эт, картөшкө, пияз, каймак',
+        price: 235,
+        image: 'https://halal-spb.ru/sites/default/files/styles/large/public/jarkoe-v-gorshochkah.jpg?itok=tzEUT5YJ',
+        category: 'special'
+    },
+    
+    {
+        id: 21,
+        name: 'Куурдак',
+        nameKg: 'Куурдак',
+        description: 'Картошка, мясо, приправы',
+        descriptionKg: 'Картөшкө, эт, азыктары',
+        price: 410,
+        image: 'https://s1.eda.ru/StaticContent/Photos/160915225201/160926225652/p_O.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 22,
+        name: 'Курица в кисло-сладком соусе',
+        nameKg: 'Кышкыл-таттуу соустагы тоок',
+        description: 'Куриное филе, перец, лук, морковь',
+        descriptionKg: 'Тоок филеси, мурч, пияз, сабиз',
+        price: 245,
+        image: 'https://www.povarenok.ru/data/cache/2023jan/21/55/3033845_65334-710x550x.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 23,
+        name: 'Фрикассе',
+        nameKg: 'Фрикассе',
+        description: 'Куриное филе, морковь, лук репчатый, сельдерей, масло сливочное',
+        descriptionKg: 'Тоок филеси, сабиз, пияз, сельдерей, май',
+        price: 240,
+        image: 'https://ist.say7.info/img0012/35/1235_0166c21_2455_1024.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 24,
+        name: 'Казан кебаб',
+        nameKg: 'Казан кебабы',
+        description: 'Картошка, мясо, морковь, лук',
+        descriptionKg: 'Картөшкө, эт, сабиз, пияз',
+        price: 265,
+        image: 'https://lafoy.ru/photo_l/foto-4456-2.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 25,
+        name: 'Курица с овощами',
+        nameKg: 'Жашылчалуу тоок',
+        description: 'Куриное филе, перец, лук, морковь',
+        descriptionKg: 'Тоок филеси, мурч, пияз, сабиз',
+        price: 245,
+        image: 'https://img.iamcook.ru/old/upl/recipes/cat/u1169-c8338c700c52d3dc7043abce47bef4fa.JPG',
+        category: 'special'
+    },
+    
+    {
+        id: 26,
+        name: 'Фетучини с форелью',
+        nameKg: 'Форель менен фетучини',
+        description: 'Фетучини, форель, лук, сливки',
+        descriptionKg: 'Фетучини, форель, пияз, каймак',
+        price: 355,
+        image: 'https://bandler.ru/image/catalog/product/recepti/fettuchini-s-semgoj.jpg',
+        category: 'special'
+    },
+    
+    {
+        id: 27,
+        name: 'Фетучини с курицей',
+        nameKg: 'Тоок менен фетучини',
+        description: 'Фетучини, куриное филе, лук, сливки',
+        descriptionKg: 'Фетучини, тоок филеси, пияз, каймак',
+        price: 315,
+        image: 'https://здоровое-питание.рф/upload/iblock/6a2/s9gmf27dxsnbjvoap4btpytvdrwikpnh/Pasta-fetuchini-kuritsa-s-gribami-v-slivochnom-souse-5.jpg',
+        category: 'special'
+    },
 
-    // Шашлыки
-    { id: 28, name: 'Говядина', nameKg: 'Жылкы эти', description: 'Шашлык из говядины', descriptionKg: 'Жылкы этинен шашлык', price: 215, image: 'https://restoran-mimi.ru/assets/content/shashlik-iz-govyadini-7.jpg', category: 'shashlik' },
-    { id: 29, name: 'Наполеон', nameKg: 'Наполеон', description: 'Шашлык Наполеон', descriptionKg: 'Наполеон шашлык', price: 180, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1ml_CCi-1FvCUye__NUK_6_q0G8ylc91Xg&s', category: 'shashlik' },
-    { id: 30, name: 'Люля-Кебаб', nameKg: 'Люля-Кебаб', description: 'Люля-кебаб', descriptionKg: 'Люля-кебаб', price: 160, image: 'https://a-catering.com/image/1.Dostavka/Gorihie/lyulya-kebab-dostavka-shashlyka-na-dom-i-po-spb-v-lenoblati-kejtering.jpg', category: 'shashlik' },
-    { id: 31, name: 'Крылышки', nameKg: 'Канаттар', description: 'Куриные крылышки', descriptionKg: 'Тоок канаттары', price: 190, image: 'https://edimdoma.ru/data/recipes/0014/5261/145261-ed4_wide.jpg?1759232294', category: 'shashlik' },
-    { id: 32, name: 'Овощной шашлык', nameKg: 'Жашылчалуу шашлык', description: 'Шашлык из овощей', descriptionKg: 'Жашылчадан шашлык', price: 135, image: 'https://cdn.tveda.ru/thumbs/3cc/3ccfd856d12bcfb474a1b37e886777b9/08be2c4d446d23e23ba82d5483e2f396.jpg', category: 'shashlik' },
+    // ==================== ШАШЛЫКИ ====================
+    {
+        id: 28,
+        name: 'Говядина',
+        nameKg: 'Жылкы эти',
+        description: 'Шашлык из говядины',
+        descriptionKg: 'Жылкы этинен шашлык',
+        price: 215,
+        image: 'https://restoran-mimi.ru/assets/content/shashlik-iz-govyadini-7.jpg',
+        category: 'shashlik'
+    },
+    
+    {
+        id: 29,
+        name: 'Наполеон',
+        nameKg: 'Наполеон',
+        description: 'Шашлык Наполеон',
+        descriptionKg: 'Наполеон шашлык',
+        price: 180,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1ml_CCi-1FvCUye__NUK_6_q0G8ylc91Xg&s',
+        category: 'shashlik'
+    },
+    
+    {
+        id: 30,
+        name: 'Люля-Кебаб',
+        nameKg: 'Люля-Кебаб',
+        description: 'Люля-кебаб',
+        descriptionKg: 'Люля-кебаб',
+        price: 160,
+        image: 'https://a-catering.com/image/1.Dostavka/Gorihie/lyulya-kebab-dostavka-shashlyka-na-dom-i-po-spb-v-lenoblati-kejtering.jpg',
+        category: 'shashlik'
+    },
+    
+    {
+        id: 31,
+        name: 'Крылышки',
+        nameKg: 'Канаттар',
+        description: 'Куриные крылышки',
+        descriptionKg: 'Тоок канаттары',
+        price: 190,
+        image: 'https://edimdoma.ru/data/recipes/0014/5261/145261-ed4_wide.jpg?1759232294',
+        category: 'shashlik'
+    },
+    
+    {
+        id: 32,
+        name: 'Овощной шашлык',
+        nameKg: 'Жашылчалуу шашлык',
+        description: 'Шашлык из овощей',
+        descriptionKg: 'Жашылчадан шашлык',
+        price: 135,
+        image: 'https://cdn.tveda.ru/thumbs/3cc/3ccfd856d12bcfb474a1b37e886777b9/08be2c4d446d23e23ba82d5483e2f396.jpg',
+        category: 'shashlik'
+    },
 
-    // Салаты
-    { id: 33, name: 'Греческий', nameKg: 'Грек', description: 'Помидоры, огурцы, салат, сыр фета', descriptionKg: 'Помидор, бадыраң, салат, фета сыры', price: 195, image: 'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg', category: 'salad' },
-    { id: 34, name: 'Столичный', nameKg: 'Борбордук', description: 'Зелень, опята, корнишоны, говяжий язык, помидоры', descriptionKg: 'Жашылча, опята, корнишон, жылкы тили, помидор', price: 210, image: 'https://www.russianfood.com/dycontent/images_upl/68/big_67797.jpg', category: 'salad' },
-    { id: 35, name: 'Гасконский', nameKg: 'Гаскон', description: 'Помидоры, корнишоны, опята, салат, копченная окорочка', descriptionKg: 'Помидор, корнишон, опята, салат, копченка', price: 195, image: 'https://i.ytimg.com/vi/sGjV5ER10ys/sddefault.jpg', category: 'salad' },
-    { id: 36, name: 'Витаминка', nameKg: 'Витаминка', description: 'Свекла, колбаска, кукуруза, зелень, морковь', descriptionKg: 'Кызылча, колбаса, жүгөрү, жашылча, сабиз', price: 170, image: 'https://www.russianfood.com/dycontent/images_upl/555/big_554824.jpg', category: 'salad' },
-    { id: 37, name: 'Овощной микс', nameKg: 'Жашылча микси', description: 'Цветная капуста, брокколи, помидоры, огурцы, лук', descriptionKg: 'Түстүү капуста, брокколи, помидор, бадыраң, пияз', price: 205, image: 'https://www.russianfood.com/dycontent/images_upl/546/big_545819.jpg', category: 'salad' },
-    { id: 38, name: 'Свежий', nameKg: 'Жаңы', description: 'Помидоры, огурцы, лук', descriptionKg: 'Помидор, бадыраң, пияз', price: 110, image: 'https://cdn.smt.bz/uploads/media/photo/2236799/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.webp', category: 'salad' },
-    { id: 39, name: 'Фунчоза', nameKg: 'Фунчоза', description: 'Мясо, огурцы, перец, фын-тёз', descriptionKg: 'Эт, бадыраң, мурч, фын-тёз', price: 195, image: 'https://i.ytimg.com/vi/cZnNPgADKTQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcrWOozEpdooPxEHiHVMmWe6BTfg', category: 'salad' },
-    { id: 40, name: 'Нарезка фирменная овощная', nameKg: 'Фирмалык жашылча нарезкасы', description: 'Огурцы, помидоры, соленные огурцы, квашенная капуста, лук', descriptionKg: 'Бадыраң, помидор, туздалган бадыраң, кычкыл капуста, пияз', price: 270, image: 'https://i.ytimg.com/vi/x065ZmRdxBU/maxresdefault.jpg', category: 'salad' },
-    { id: 41, name: 'Цезарь с курицей', nameKg: 'Тоок менен Цезарь', description: 'Листья, курица, помидоры, сыр пармезан, соус цезарь, крутоны', descriptionKg: 'Жалбырактар, тоок, помидор, пармезан сыры, цезарь соусу, крутон', price: 205, image: 'https://images.gastronom.ru/LoVJjeEYXJQ3vR2Yn8WtlivB0eZ78Rtu417zEnX1mZs/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp', category: 'salad' },
-    { id: 42, name: 'Гнездо кукушки', nameKg: 'Кукушка уясы', description: 'Копченка, пай, кукуруза, курица, лук', descriptionKg: 'Копченка, пай, жүгөрү, тоок, пияз', price: 210, image: 'https://foodmood.ru/upload/iblock/bfe/bfe5b51ce6ea8a5f17b59c153ac3fcf9.jpeg', category: 'salad' },
-    { id: 43, name: 'Мерло', nameKg: 'Мерло', description: 'Омлет, горох, кукуруза, курица, лук', descriptionKg: 'Омлет, буурчак, жүгөрү, тоок, пияз', price: 175, image: 'https://www.russianfood.com/dycontent/images_upl/542/big_541650.jpg', category: 'salad' },
-    { id: 44, name: 'Салат с грибами', nameKg: 'Козу карын менен салат', description: 'Сыр, охотница, помидоры, листья, чечел сверху', descriptionKg: 'Сыр, охотница, помидор, жалбырактар, чечел', price: 245, image: 'https://www.moi-povar.ru/upload/iblock/162/IMG_1518.jpg', category: 'salad' },
-    { id: 45, name: 'Салат с свеклой', nameKg: 'Кызылча менен салат', description: 'Пай, колбаса, яйцо, огурцы', descriptionKg: 'Пай, колбаса, жумуртка, бадыраң', price: 215, image: 'https://www.russianfood.com/dycontent/images_upl/503/big_502335.jpg', category: 'salad' },
-    { id: 46, name: 'Охотница', nameKg: 'Охотница', description: 'Охотница, корнишоны, черри, листья, шампиньоны, орешки', descriptionKg: 'Охотница, корнишон, черри, жалбырактар, шампиньон, орех', price: 215, image: 'https://sovkusom.ru/wp-content/uploads/recepty/s/salat-s-shampinyonami/thumb-840x440.jpg', category: 'salad' },
-    { id: 47, name: 'Китайский острый', nameKg: 'Кытайлык ачтуу', description: 'Помидоры, огурцы, мясо, лук, морковь, перец', descriptionKg: 'Помидор, бадыраң, эт, пияз, сабиз, мурч', price: 205, image: 'https://www.russianfood.com/dycontent/images_upl/165/big_164344.jpg', category: 'salad' },
-    { id: 48, name: 'Восточный', nameKg: 'Чыгыштык', description: 'Помидоры, огурцы, мясо, лук, кабачки, баклажан', descriptionKg: 'Помидор, бадыраң, эт, пияз, кабачок, баклажан', price: 205, image: 'https://www.russianfood.com/dycontent/images_upl/527/big_526629.jpg', category: 'salad' },
-    { id: 49, name: 'Баклажан с овощами', nameKg: 'Жашылчалуу баклажан', description: 'Баклажаны, болгарский перец, помидоры, лук', descriptionKg: 'Баклажан, болгар калемпири, помидор, пияз', price: 215, image: 'https://www.russianfood.com/dycontent/images_upl/733/big_732221.jpg', category: 'salad' },
-    { id: 50, name: 'Фирменный баклажан', nameKg: 'Фирмалык баклажан', description: 'Баклажан в панировке сезонный', descriptionKg: 'Панировкада баклажан сезондук', price: 215, image: 'https://www.russianfood.com/dycontent/images_upl/777/big_776231.jpg', category: 'salad' },
-    { id: 51, name: 'Баклажан микс', nameKg: 'Баклажан микси', description: 'Баклажан микс', descriptionKg: 'Баклажан микси', price: 215, image: 'https://www.russianfood.com/dycontent/images_upl/645/big_644398.jpg', category: 'salad' },
-    { id: 52, name: 'Курица с ореховым соусом', nameKg: 'Орех соусу менен тоок', description: 'Курица с ореховым соусом', descriptionKg: 'Орех соусу менен тоок', price: 215, image: 'https://images.gastronom.ru/FBJo4dLNHhJ18pXaaPvA5N8ld9PXD_-VQ50vToLsUu4/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp', category: 'salad' },
+    // ==================== САЛАТЫ ====================
+    {
+        id: 33,
+        name: 'Греческий',
+        nameKg: 'Грек',
+        description: 'Помидоры, огурцы, салат, сыр фета',
+        descriptionKg: 'Помидор, бадыраң, салат, фета сыры',
+        price: 195,
+        image: 'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 34,
+        name: 'Столичный',
+        nameKg: 'Борбордук',
+        description: 'Зелень, опята, корнишоны, говяжий язык, помидоры',
+        descriptionKg: 'Жашылча, опята, корнишон, жылкы тили, помидор',
+        price: 210,
+        image: 'https://www.russianfood.com/dycontent/images_upl/68/big_67797.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 35,
+        name: 'Гасконский',
+        nameKg: 'Гаскон',
+        description: 'Помидоры, корнишоны, опята, салат, копченная окорочка',
+        descriptionKg: 'Помидор, корнишон, опята, салат, копченка',
+        price: 195,
+        image: 'https://i.ytimg.com/vi/sGjV5ER10ys/sddefault.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 36,
+        name: 'Витаминка',
+        nameKg: 'Витаминка',
+        description: 'Свекла, колбаска, кукуруза, зелень, морковь',
+        descriptionKg: 'Кызылча, колбаса, жүгөрү, жашылча, сабиз',
+        price: 170,
+        image: 'https://www.russianfood.com/dycontent/images_upl/555/big_554824.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 37,
+        name: 'Овощной микс',
+        nameKg: 'Жашылча микси',
+        description: 'Цветная капуста, брокколи, помидоры, огурцы, лук',
+        descriptionKg: 'Түстүү капуста, брокколи, помидор, бадыраң, пияз',
+        price: 205,
+        image: 'https://www.russianfood.com/dycontent/images_upl/546/big_545819.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 38,
+        name: 'Свежий',
+        nameKg: 'Жаңы',
+        description: 'Помидоры, огурцы, лук',
+        descriptionKg: 'Помидор, бадыраң, пияз',
+        price: 110,
+        image: 'https://cdn.smt.bz/uploads/media/photo/2236799/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.webp',
+        category: 'salad'
+    },
+    
+    {
+        id: 39,
+        name: 'Фунчоза',
+        nameKg: 'Фунчоза',
+        description: 'Мясо, огурцы, перец, фын-тёз',
+        descriptionKg: 'Эт, бадыраң, мурч, фын-тёз',
+        price: 195,
+        image: 'https://i.ytimg.com/vi/cZnNPgADKTQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcrWOozEpdooPxEHiHVMmWe6BTfg',
+        category: 'salad'
+    },
+    
+    {
+        id: 40,
+        name: 'Нарезка фирменная овощная',
+        nameKg: 'Фирмалык жашылча нарезкасы',
+        description: 'Огурцы, помидоры, соленные огурцы, квашенная капуста, лук',
+        descriptionKg: 'Бадыраң, помидор, туздалган бадыраң, кычкыл капуста, пияз',
+        price: 270,
+        image: 'https://i.ytimg.com/vi/x065ZmRdxBU/maxresdefault.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 41,
+        name: 'Цезарь с курицей',
+        nameKg: 'Тоок менен Цезарь',
+        description: 'Листья, курица, помидоры, сыр пармезан, соус цезарь, крутоны',
+        descriptionKg: 'Жалбырактар, тоок, помидор, пармезан сыры, цезарь соусу, крутон',
+        price: 205,
+        image: 'https://images.gastronom.ru/LoVJjeEYXJQ3vR2Yn8WtlivB0eZ78Rtu417zEnX1mZs/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp',
+        category: 'salad'
+    },
+    
+    {
+        id: 42,
+        name: 'Гнездо кукушки',
+        nameKg: 'Кукушка уясы',
+        description: 'Копченка, пай, кукуруза, курица, лук',
+        descriptionKg: 'Копченка, пай, жүгөрү, тоок, пияз',
+        price: 210,
+        image: 'https://foodmood.ru/upload/iblock/bfe/bfe5b51ce6ea8a5f17b59c153ac3fcf9.jpeg',
+        category: 'salad'
+    },
+    
+    {
+        id: 43,
+        name: 'Мерло',
+        nameKg: 'Мерло',
+        description: 'Омлет, горох, кукуруза, курица, лук',
+        descriptionKg: 'Омлет, буурчак, жүгөрү, тоок, пияз',
+        price: 175,
+        image: 'https://www.russianfood.com/dycontent/images_upl/542/big_541650.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 44,
+        name: 'Салат с грибами',
+        nameKg: 'Козу карын менен салат',
+        description: 'Сыр, охотница, помидоры, листья, чечел сверху',
+        descriptionKg: 'Сыр, охотница, помидор, жалбырактар, чечел',
+        price: 245,
+        image: 'https://www.moi-povar.ru/upload/iblock/162/IMG_1518.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 45,
+        name: 'Салат с свеклой',
+        nameKg: 'Кызылча менен салат',
+        description: 'Пай, колбаса, яйцо, огурцы',
+        descriptionKg: 'Пай, колбаса, жумуртка, бадыраң',
+        price: 215,
+        image: 'https://www.russianfood.com/dycontent/images_upl/503/big_502335.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 46,
+        name: 'Охотница',
+        nameKg: 'Охотница',
+        description: 'Охотница, корнишоны, черри, листья, шампиньоны, орешки',
+        descriptionKg: 'Охотница, корнишон, черри, жалбырактар, шампиньон, орех',
+        price: 215,
+        image: 'https://sovkusom.ru/wp-content/uploads/recepty/s/salat-s-shampinyonami/thumb-840x440.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 47,
+        name: 'Китайский острый',
+        nameKg: 'Кытайлык ачтуу',
+        description: 'Помидоры, огурцы, мясо, лук, морковь, перец',
+        descriptionKg: 'Помидор, бадыраң, эт, пияз, сабиз, мурч',
+        price: 205,
+        image: 'https://www.russianfood.com/dycontent/images_upl/165/big_164344.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 48,
+        name: 'Восточный',
+        nameKg: 'Чыгыштык',
+        description: 'Помидоры, огурцы, мясо, лук, кабачки, баклажан',
+        descriptionKg: 'Помидор, бадыраң, эт, пияз, кабачок, баклажан',
+        price: 205,
+        image: 'https://www.russianfood.com/dycontent/images_upl/527/big_526629.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 49,
+        name: 'Баклажан с овощами',
+        nameKg: 'Жашылчалуу баклажан',
+        description: 'Баклажаны, болгарский перец, помидоры, лук',
+        descriptionKg: 'Баклажан, болгар калемпири, помидор, пияз',
+        price: 215,
+        image: 'https://www.russianfood.com/dycontent/images_upl/733/big_732221.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 50,
+        name: 'Фирменный баклажан',
+        nameKg: 'Фирмалык баклажан',
+        description: 'Баклажан в панировке сезонный',
+        descriptionKg: 'Панировкада баклажан сезондук',
+        price: 215,
+        image: 'https://www.russianfood.com/dycontent/images_upl/777/big_776231.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 51,
+        name: 'Баклажан микс',
+        nameKg: 'Баклажан микси',
+        description: 'Баклажан микс',
+        descriptionKg: 'Баклажан микси',
+        price: 215,
+        image: 'https://www.russianfood.com/dycontent/images_upl/645/big_644398.jpg',
+        category: 'salad'
+    },
+    
+    {
+        id: 52,
+        name: 'Курица с ореховым соусом',
+        nameKg: 'Орех соусу менен тоок',
+        description: 'Курица с ореховым соусом',
+        descriptionKg: 'Орех соусу менен тоок',
+        price: 215,
+        image: 'https://images.gastronom.ru/FBJo4dLNHhJ18pXaaPvA5N8ld9PXD_-VQ50vToLsUu4/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp',
+        category: 'salad'
+    },
 
-    // Десерты
-    { id: 53, name: 'Сан-Себестьян', nameKg: 'Сан-Себестьян', description: 'Десерт Сан-Себестьян', descriptionKg: 'Сан-Себестьян десерти', price: 300, image: 'https://vkusnoff.com/img/recepty/3985/big.webp', category: 'dessert' },
-    { id: 54, name: 'Чизкейк', nameKg: 'Чизкейк', description: 'Чизкейк', descriptionKg: 'Чизкейк', price: 330, image: 'https://art-lunch.ru/content/uploads/2014/08/cheesecake-new-york-001x2-1.jpg', category: 'dessert' },
-    { id: 55, name: 'Три шоколада', nameKg: 'Үч шоколад', description: 'Торт три шоколада', descriptionKg: 'Үч шоколад торт', price: 250, image: 'https://tochkamarket.ru/upload/iblock/5f9/rfprgsonxwxsc8hoaz027ghn0iyllo1u.jpg', category: 'dessert' },
-    { id: 56, name: 'Сникерс', nameKg: 'Сникерс', description: 'Десерт Сникерс', descriptionKg: 'Сникерс десерти', price: 330, image: 'https://cdn.nur.kz/images/1200x675/aae7343159f27780.jpeg?version=1', category: 'dessert' },
-    { id: 57, name: 'Трайфл', nameKg: 'Трайфл', description: 'Десерт Трайфл', descriptionKg: 'Трайфл десерти', price: 170, image: 'https://content2.flowwow-images.com/data/flowers/1000x1000/63/1740545469_46861463.jpg', category: 'dessert' },
+    // ==================== ДЕСЕРТЫ ====================
+    {
+        id: 53,
+        name: 'Сан-Себестьян',
+        nameKg: 'Сан-Себестьян',
+        description: 'Десерт Сан-Себестьян',
+        descriptionKg: 'Сан-Себестьян десерти',
+        price: 300,
+        image: 'https://vkusnoff.com/img/recepty/3985/big.webp',
+        category: 'dessert'
+    },
+    
+    {
+        id: 54,
+        name: 'Чизкейк',
+        nameKg: 'Чизкейк',
+        description: 'Чизкейк',
+        descriptionKg: 'Чизкейк',
+        price: 330,
+        image: 'https://art-lunch.ru/content/uploads/2014/08/cheesecake-new-york-001x2-1.jpg',
+        category: 'dessert'
+    },
+    
+    {
+        id: 55,
+        name: 'Три шоколада',
+        nameKg: 'Үч шоколад',
+        description: 'Торт три шоколада',
+        descriptionKg: 'Үч шоколад торт',
+        price: 250,
+        image: 'https://tochkamarket.ru/upload/iblock/5f9/rfprgsonxwxsc8hoaz027ghn0iyllo1u.jpg',
+        category: 'dessert'
+    },
+    
+    {
+        id: 56,
+        name: 'Сникерс',
+        nameKg: 'Сникерс',
+        description: 'Десерт Сникерс',
+        descriptionKg: 'Сникерс десерти',
+        price: 330,
+        image: 'https://cdn.nur.kz/images/1200x675/aae7343159f27780.jpeg?version=1',
+        category: 'dessert'
+    },
+    
+    {
+        id: 57,
+        name: 'Трайфл',
+        nameKg: 'Трайфл',
+        description: 'Десерт Трайфл',
+        descriptionKg: 'Трайфл десерти',
+        price: 170,
+        image: 'https://content2.flowwow-images.com/data/flowers/1000x1000/63/1740545469_46861463.jpg',
+        category: 'dessert'
+    },
 
-    // Напитки
-    { id: 58, name: 'Компот 1л / 1,5л', nameKg: 'Компот 1л / 1,5л', description: 'Компот', descriptionKg: 'Компот', price: 85, price2: 125, image: 'https://img.iamcook.ru/2019/upl/recipes/cat/u-4a903326f8c32bf338e5d2b2cf87a1aa.JPG', category: 'drink' },
-    { id: 59, name: 'Кола 1л / 1,5л', nameKg: 'Кола 1л / 1,5л', description: 'Кола', descriptionKg: 'Кола', price: 105, price2: 145, image: 'https://neman.kg/images/watermarked/detailed/34/unnamed_n7sb-ck.webp', category: 'drink' },
-    { id: 60, name: 'Фанта 1л / 1,5л', nameKg: 'Фанта 1л / 1,5л', description: 'Фанта', descriptionKg: 'Фанта', price: 105, price2: 145, image: 'https://dostavka-produktov.ru/image/cache/catalog/products_images/3176277-1000x1000.jpg', category: 'drink' },
-    { id: 61, name: 'Любимый 1л / 1,5л', nameKg: 'Сүйүктүү 1л / 1,5л', description: 'Любимый сок', descriptionKg: 'Сүйүктүү ширеп', price: 135, price2: 220, image: 'https://3259404.ru/upload/iblock/fb6/nx32auk4u9xu7peyhyvh3ke5lvhigp6z.webp', category: 'drink' },
+    // ==================== НАПИТКИ ====================
+    {
+        id: 58,
+        name: 'Компот 1л / 1,5л',
+        nameKg: 'Компот 1л / 1,5л',
+        description: 'Компот',
+        descriptionKg: 'Компот',
+        price: 85,
+        price2: 125,
+        image: 'https://img.iamcook.ru/2019/upl/recipes/cat/u-4a903326f8c32bf338e5d2b2cf87a1aa.JPG',
+        category: 'drink'
+    },
+    
+    {
+        id: 59,
+        name: 'Кола 1л / 1,5л',
+        nameKg: 'Кола 1л / 1,5л',
+        description: 'Кола',
+        descriptionKg: 'Кола',
+        price: 105,
+        price2: 145,
+        image: 'https://neman.kg/images/watermarked/detailed/34/unnamed_n7sb-ck.webp',
+        category: 'drink'
+    },
+    
+    {
+        id: 60,
+        name: 'Фанта 1л / 1,5л',
+        nameKg: 'Фанта 1л / 1,5л',
+        description: 'Фанта',
+        descriptionKg: 'Фанта',
+        price: 105,
+        price2: 145,
+        image: 'https://dostavka-produktov.ru/image/cache/catalog/products_images/3176277-1000x1000.jpg',
+        category: 'drink'
+    },
+    
+    {
+        id: 61,
+        name: 'Любимый 1л / 1,5л',
+        nameKg: 'Сүйүктүү 1л / 1,5л',
+        description: 'Любимый сок',
+        descriptionKg: 'Сүйүктүү ширеп',
+        price: 135,
+        price2: 220,
+        image: 'https://3259404.ru/upload/iblock/fb6/nx32auk4u9xu7peyhyvh3ke5lvhigp6z.webp',
+        category: 'drink'
+    },
 
-    // Fast-Food
-    { id: 62, name: 'KFS + фри', nameKg: 'KFS + фри', description: 'Курица и картошка фри', descriptionKg: 'Тоок жана фри картөшкө', price: 2, image: 'https://www.chefmarket.ru/blog/wp-content/uploads/2020/01/fried-chick-2000x1200.jpg', category: 'fastfood' },
-    { id: 63, name: 'Шаурма', nameKg: 'Шаурма', description: 'Шаурма', descriptionKg: 'Шаурма', price: 205, image: 'https://lefood.menu/wp-content/uploads/w_images/2023/07/recept-76707-1240x827.jpg', category: 'fastfood' },
-    { id: 64, name: 'Шаурма с курицей', nameKg: 'Тоок менен шаурма', description: 'Шаурма с курицей', descriptionKg: 'Тоок менен шаурма', price: 230, image: 'https://zira.uz/wp-content/uploads/2022/06/shaurma-18.jpg', category: 'fastfood' },
-    { id: 65, name: 'Пицца "Пепперони"', nameKg: 'Пицца "Пепперони"', description: 'Пицца Пепперони', descriptionKg: 'Пепперони пиццасы', price: 450, image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg', category: 'fastfood' },
-    { id: 66, name: 'Пицца "Мясная"', nameKg: 'Пицца "Эттүү"', description: 'Пицца Мясная', descriptionKg: 'Эттүү пицца', price: 505, image: 'https://cipollino.ua/content/uploads/images/recept-myasnoj-piccy-pod-syrom%281%29.jpg', category: 'fastfood' },
-    { id: 67, name: 'Пицца "Курица с грибами"', nameKg: 'Пицца "Козу карын менен тоок"', description: 'Пицца с курицей и грибами', descriptionKg: 'Тоок жана козу карын менен пицца', price: 505, image: 'https://s3.smartofood.ru/kato/menu/14cce8bc-fddd-5770-9c57-f35c8172513c.webp', category: 'fastfood' },
-    { id: 68, name: 'Рамён', nameKg: 'Рамён', description: 'Рамён', descriptionKg: 'Рамён', price: 235, image: 'https://opis-cdn.tinkoffjournal.ru/mercury/inramen2.c3mkuj4avtxt..jpg', category: 'fastfood' },
-    { id: 69, name: 'Пирог', nameKg: 'Пирог', description: 'Пирог', descriptionKg: 'Пирог', price: 40, image: 'https://prostokvashino.ru/upload/resize_cache/iblock/74f/800_800_0/74fe90dd6ef5f047dcadff513c8d75d7.jpg', category: 'fastfood' },
-    { id: 70, name: 'Мини самсы песочные', nameKg: 'Мини кум самсы', description: 'Мини самсы песочные (пред. заказ)', descriptionKg: 'Мини кум самсы (алдын ала заказ)', price: 45, image: 'https://i.ytimg.com/vi/US6fbAwR_2E/maxresdefault.jpg', category: 'fastfood' },
-    { id: 71, name: 'Хлеб', nameKg: 'Наан', description: 'Хлеб', descriptionKg: 'Наан', price: 40, image: 'https://img.iamcook.ru/old/upl/recipes/cat/u4142-10b7c9c0972f7a6486ec930a56c01777.jpg', category: 'fastfood' },
-    { id: 72, name: 'Чай', nameKg: 'Чай', description: 'Чай', descriptionKg: 'Чай', price: 15, image: 'https://img2.goodfon.ru/original/5616x3744/0/63/stol-zavarnik-chay-napitok.jpg', category: 'fastfood' }
+    // ==================== FAST-FOOD ====================
+    {
+        id: 62,
+        name: 'KFS + фри',
+        nameKg: 'KFS + фри',
+        description: 'Курица и картошка фри',
+        descriptionKg: 'Тоок жана фри картөшкө',
+        price: 200,
+        image: 'https://www.chefmarket.ru/blog/wp-content/uploads/2020/01/fried-chick-2000x1200.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 63,
+        name: 'Шаурма',
+        nameKg: 'Шаурма',
+        description: 'Шаурма',
+        descriptionKg: 'Шаурма',
+        price: 205,
+        image: 'https://lefood.menu/wp-content/uploads/w_images/2023/07/recept-76707-1240x827.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 64,
+        name: 'Шаурма с курицей',
+        nameKg: 'Тоок менен шаурма',
+        description: 'Шаурма с курицей',
+        descriptionKg: 'Тоок менен шаурма',
+        price: 230,
+        image: 'https://zira.uz/wp-content/uploads/2022/06/shaurma-18.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 65,
+        name: 'Пицца "Пепперони"',
+        nameKg: 'Пицца "Пепперони"',
+        description: 'Пицца Пепперони',
+        descriptionKg: 'Пепперони пиццасы',
+        price: 450,
+        image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 66,
+        name: 'Пицца "Мясная"',
+        nameKg: 'Пицца "Эттүү"',
+        description: 'Пицца Мясная',
+        descriptionKg: 'Эттүү пицца',
+        price: 505,
+        image: 'https://cipollino.ua/content/uploads/images/recept-myasnoj-piccy-pod-syrom%281%29.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 67,
+        name: 'Пицца "Курица с грибами"',
+        nameKg: 'Пицца "Козу карын менен тоок"',
+        description: 'Пицца с курицей и грибами',
+        descriptionKg: 'Тоок жана козу карын менен пицца',
+        price: 505,
+        image: 'https://s3.smartofood.ru/kato/menu/14cce8bc-fddd-5770-9c57-f35c8172513c.webp',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 68,
+        name: 'Рамён',
+        nameKg: 'Рамён',
+        description: 'Рамён',
+        descriptionKg: 'Рамён',
+        price: 235,
+        image: 'https://opis-cdn.tinkoffjournal.ru/mercury/inramen2.c3mkuj4avtxt..jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 69,
+        name: 'Пирог',
+        nameKg: 'Пирог',
+        description: 'Пирог',
+        descriptionKg: 'Пирог',
+        price: 40,
+        image: 'https://prostokvashino.ru/upload/resize_cache/iblock/74f/800_800_0/74fe90dd6ef5f047dcadff513c8d75d7.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 70,
+        name: 'Мини самсы песочные',
+        nameKg: 'Мини кум самсы',
+        description: 'Мини самсы песочные (пред. заказ)',
+        descriptionKg: 'Мини кум самсы (алдын ала заказ)',
+        price: 45,
+        image: 'https://i.ytimg.com/vi/US6fbAwR_2E/maxresdefault.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 71,
+        name: 'Хлеб',
+        nameKg: 'Наан',
+        description: 'Хлеб',
+        descriptionKg: 'Наан',
+        price: 40,
+        image: 'https://img.iamcook.ru/old/upl/recipes/cat/u4142-10b7c9c0972f7a6486ec930a56c01777.jpg',
+        category: 'fastfood'
+    },
+    
+    {
+        id: 72,
+        name: 'Чай',
+        nameKg: 'Чай',
+        description: 'Чай',
+        descriptionKg: 'Чай',
+        price: 15,
+        image: 'https://img2.goodfon.ru/original/5616x3744/0/63/stol-zavarnik-chay-napitok.jpg',
+        category: 'fastfood'
+    }
 ];
 
 // ============================================
@@ -634,6 +1337,15 @@ function initLangSelectButtons() {
                 if (langToggle) {
                     langToggle.textContent = lang.toUpperCase();
                 }
+                // Обновляем состояние кнопок языка в модальном окне
+                const langBtnRu = document.getElementById('langBtnRu');
+                const langBtnKg = document.getElementById('langBtnKg');
+                if (langBtnRu) {
+                    langBtnRu.classList.toggle('active', lang === 'ru');
+                }
+                if (langBtnKg) {
+                    langBtnKg.classList.toggle('active', lang === 'kg');
+                }
             }
         });
     });
@@ -937,6 +1649,15 @@ function initLanguage() {
     if (langToggle) {
         langToggle.textContent = currentLang.toUpperCase();
     }
+    // Обновляем состояние кнопок языка в модальном окне
+    const langBtnRu = document.getElementById('langBtnRu');
+    const langBtnKg = document.getElementById('langBtnKg');
+    if (langBtnRu) {
+        langBtnRu.classList.toggle('active', currentLang === 'ru');
+    }
+    if (langBtnKg) {
+        langBtnKg.classList.toggle('active', currentLang === 'kg');
+    }
     translatePage();
 }
 
@@ -977,12 +1698,48 @@ function initEventListeners() {
     if (langToggle) {
         langToggle.addEventListener('click', toggleLanguage);
     }
+    // Кнопки выбора языка в модальном окне
+    const langBtnRu = document.getElementById('langBtnRu');
+    const langBtnKg = document.getElementById('langBtnKg');
+    if (langBtnRu) {
+        langBtnRu.addEventListener('click', () => setLanguage('ru'));
+    }
+    if (langBtnKg) {
+        langBtnKg.addEventListener('click', () => setLanguage('kg'));
+    }
+
+    // Нижнее мобильное меню (объявляем раньше, чтобы использовать в других обработчиках)
+    const bottomNavMenu = document.getElementById('bottomNavMenu');
+    const bottomNavCart = document.getElementById('bottomNavCart');
+    
+    function updateBottomNavActive() {
+        // Определяем текущую секцию на основе позиции скролла
+        const menuSection = document.getElementById('menu');
+        const scrollPosition = window.pageYOffset + window.innerHeight / 2;
+        
+        if (menuSection) {
+            const menuTop = menuSection.offsetTop;
+            const menuBottom = menuTop + menuSection.offsetHeight;
+            
+            if (scrollPosition >= menuTop && scrollPosition < menuBottom) {
+                bottomNavMenu?.classList.add('active');
+                bottomNavCart?.classList.remove('active');
+            } else {
+                bottomNavMenu?.classList.remove('active');
+            }
+        }
+    }
 
     // Открытие корзины
     const cartIconBtn = document.getElementById('cartIconBtn');
     if (cartIconBtn) {
         cartIconBtn.addEventListener('click', () => {
             document.getElementById('cartModal').classList.add('active');
+            // Обновляем активное состояние нижнего меню
+            if (bottomNavCart) {
+                bottomNavCart.classList.add('active');
+                bottomNavMenu?.classList.remove('active');
+            }
         });
     }
 
@@ -1012,12 +1769,59 @@ function initEventListeners() {
             }
         });
     }
+    
+    if (bottomNavMenu) {
+        bottomNavMenu.addEventListener('click', () => {
+            const menuSection = document.getElementById('menu');
+            if (menuSection) {
+                menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                bottomNavMenu.classList.add('active');
+                bottomNavCart?.classList.remove('active');
+            }
+        });
+    }
+    
+    if (bottomNavCart) {
+        bottomNavCart.addEventListener('click', () => {
+            const cartModal = document.getElementById('cartModal');
+            if (cartModal) {
+                cartModal.classList.add('active');
+                bottomNavCart.classList.add('active');
+                bottomNavMenu?.classList.remove('active');
+            }
+        });
+    }
+    
+    // Обновляем активное состояние при скролле
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            updateBottomNavActive();
+        }, 100);
+    });
+    
+    // Инициализируем активное состояние при загрузке
+    updateBottomNavActive();
 
     // Закрытие модальных окон
     const closeCartModal = document.getElementById('closeCartModal');
     if (closeCartModal) {
         closeCartModal.addEventListener('click', () => {
             document.getElementById('cartModal').classList.remove('active');
+            // Обновляем активное состояние нижнего меню
+            updateBottomNavActive();
+        });
+    }
+    
+    // Закрытие корзины при клике на overlay
+    const cartModalOverlay = document.getElementById('cartModal');
+    if (cartModalOverlay) {
+        cartModalOverlay.addEventListener('click', (e) => {
+            if (e.target === cartModalOverlay) {
+                cartModalOverlay.classList.remove('active');
+                updateBottomNavActive();
+            }
         });
     }
 
@@ -1147,6 +1951,11 @@ function toggleTheme() {
 
 function toggleLanguage() {
     currentLang = currentLang === 'ru' ? 'kg' : 'ru';
+    setLanguage(currentLang);
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
     localStorage.setItem('lang', currentLang);
     initLanguage();
     renderMenu(); // Перерисовываем меню с новым языком
@@ -1308,11 +2117,7 @@ function addToCart(itemId) {
         updateCartUI();
         renderMenu(); // Обновляем меню для отображения количества
 
-        // Авто-открытие корзины при добавлении
-        const cartModalEl = document.getElementById('cartModal');
-        if (cartModalEl) cartModalEl.classList.add('active');
-
-        // Показ уведомления
+        // Показ уведомления о добавлении (без открытия корзины)
         const addedLabel = translations[currentLang] && translations[currentLang]['added'] ? translations[currentLang]['added'] : (currentLang === 'ru' ? 'Добавлено:' : 'Кошулду:');
         const itemName = currentLang === 'ru' ? item.name : (item.nameKg || item.name);
         showToast(`${addedLabel} ${itemName}`);
@@ -1361,6 +2166,14 @@ function updateCartUI() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartBadge.textContent = totalItems;
         cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+    
+    // Обновляем бейдж корзины в нижнем меню
+    const bottomNavBadge = document.getElementById('bottomNavBadge');
+    if (bottomNavBadge) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        bottomNavBadge.textContent = totalItems;
+        bottomNavBadge.style.display = totalItems > 0 ? 'flex' : 'none';
     }
 
     // Обновляем содержимое корзины
@@ -2435,7 +3248,6 @@ async function fetchReviewsFromServer() {
     }
 }
 
-// Отправка отзыва на сервер (если настроен). Возвращает сохранённый объект или false.
 async function postReviewToServer(review) {
     if (!REVIEWS_ENDPOINT) return false;
     try {
@@ -2452,11 +3264,6 @@ async function postReviewToServer(review) {
         return false;
     }
 }
-
-// ============================================
-// Экспорт функций для использования в HTML
-// ============================================
-
 window.addToCart = addToCart;
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
