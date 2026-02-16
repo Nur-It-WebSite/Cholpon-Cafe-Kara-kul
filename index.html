@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cholpon - Кафе</title>
+    <!-- В конце <head> добавьте: -->
+<script type="module" src="firebase-app.js">
+</script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
   </head>
   <body>
     <header class="header">
@@ -20,8 +22,7 @@
           <button
             class="mobile-menu-btn"
             id="mobileMenuBtn"
-            aria-label="Открыть меню"
-          >  
+            aria-label="Открыть меню">  
           </button>
           <nav class="nav" id="mainNav">
             <a href="#menu" data-i18n="nav-menu">Меню</a>
@@ -563,14 +564,14 @@
           class="lang-btn-modal"
           id="langBtnKg"
           data-lang="kg"
-          aria-label="Кыргызский язык"
+          aria-label="KG"
         >
-          Кыргызский
+          KG
         </button>
       </div>
     </div>
   </div>
-</div
+</div>
 <!-- Модальное окно выбора стола -->
 <div class="modal-overlay" id="tableSelectModal">
   <div class="modal-content table-select-modal">
@@ -638,7 +639,6 @@
     </div>
   </div>
 </div>
-
     <!-- Нижнее мобильное меню -->
     <nav class="bottom-nav" id="bottomNav">
       <button class="bottom-nav-btn" id="bottomNavMenu" data-section="menu">
@@ -648,8 +648,7 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-        >
+          stroke-width="2">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -663,8 +662,7 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-        >
+          stroke-width="2">
           <path
             d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
           ></path>
@@ -675,7 +673,6 @@
         <span class="bottom-nav-badge" id="bottomNavBadge">0</span>
       </button>
     </nav>
-
     <script src="script.js"></script>
   </body>
 </html>

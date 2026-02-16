@@ -7320,10 +7320,6 @@ body.browse-mode .modal-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* ============================================
-   ДЛЯ СЛАЙДЕРА НА МОБИЛЬНЫХ
-   ============================================ */
-
 @media (max-width: 768px) {
   .menu-card {
     height: 480px !important; /* Все еще много места */
