@@ -1,678 +1,367 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cholpon - Кафе</title>
-    <!-- В конце <head> добавьте: -->
-<script type="module" src="firebase-app.js">
-</script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"/>
-  </head>
-  <body>
-    <header class="header">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SushiDom</title>
+  <link rel="icon" type="image/png" href="./image.png">
+  <link rel="stylesheet" href="style.css" />
+  <!-- DM Serif Display + Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Logo -->
+        <a class="logo" href="#">
+          <img src="./image.png" class="logoo" alt="SushiDom" />
+          <span class="logo-name">SushiDom</span>
+        </a>
+
+        <!-- Nav -->
+        <nav class="nav" id="mainNav">
+          <a href="#menu" data-i18n="nav-menu">Меню</a>
+          <a href="#contact" data-i18n="nav-contact">Контакты</a>
+        </nav>
+
+        <!-- Controls -->
+        <div class="header-controls">
+          <button class="lang-toggle" id="langToggle" aria-label="Переключить язык">RU</button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <span class="theme-icon">
+              <img src="./icons/moon-stars.svg" alt="тема" style="width:18px;height:18px" />
+            </span>
+          </button>
+          <button class="cart-icon-btn" id="cartIconBtn" aria-label="Корзина">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+            <span class="cart-text" data-i18n="cart-title">Корзина</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="about" class="about-section">
       <div class="container">
-        <div class="header-content">
-          <div class="logo">Cholpon</div>
-          <button
-            class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            aria-label="Открыть меню">  
-          </button>
-          <nav class="nav" id="mainNav">
-            <a href="#menu" data-i18n="nav-menu">Меню</a>
-            <a href="#contact" data-i18n="nav-contact">Контакты</a>
-          </nav>
-          <div class="header-controls">
-            <button
-              class="lang-toggle"
-              id="langToggle"
-              aria-label="Переключить язык"
-            >
-              RU
-            </button>
-            <button
-              class="theme-toggle"
-              id="themeToggle"
-              aria-label="Переключить тему"
-            >
-              <span class="theme-icon"
-                ><img
-                  src="./icons/moon-stars.svg"
-                  alt="moon"
-                  style="width: 20px; height: 20px"
-              /></span>
-            </button>
-            <button class="cart-icon-btn" id="cartIconBtn" aria-label="Корзина">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-                ></path>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <path d="M16 10a4 4 0 0 1-8 0"></path>
-              </svg>
-              <span class="cart-badge" id="cartBadge">0</span>
-              <span class="cart-text" data-i18n="cart-title">Корзина</span>
-            </button>
+        <div class="welcome-container">
+          <div class="welcome-badge">🍣 Кара-Куль · Свежие роллы</div>
+          <h1 id="animatedWelcome" class="welcome-title">
+            Добро пожаловать в <em>SushiDom</em>
+          </h1>
+          <p class="welcome-subtitle">Свежие роллы, сеты и напитки с доставкой и самовывозом. Закажите прямо сейчас.</p>
+          <div class="welcome-cta">
+            <button class="btn btn-primary" id="viewMenuBtn" data-i18n="view-menu">Посмотреть меню</button>
+            <button class="btn btn-secondary" id="viewContactsBtn" data-i18n="nav-contact">Контакты</button>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <!-- Основной контент -->
-    <main>
-      <!-- Секция "О нас" -->
-      <section id="about" class="about-section">
-        <div class="container">
-          <div class="welcome-container">
-            <h1 id="animatedWelcome" class="welcome-title">
-              Добро пожаловать в кафе "Cholpon"
-            </h1>
-            <div class="welcome-cta">
-              <button
-                class="btn btn-primary"
-                id="viewMenuBtn"
-                data-i18n="view-menu"
-              >
-                Посмотреть меню
-              </button>
-              <button
-                class="btn btn-secondary"
-                id="viewContactsBtn"
-                data-i18n="nav-contact"
-              >
-                Контакты
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Секция меню -->
-      <section id="menu" class="menu-section">
-        <div class="container">
-          <h2 data-i18n="menu-title">Меню</h2>
-
-          <!-- Фильтр категорий -->
-          <div class="category-filter" id="categoryFilter">
-            <button
-              class="filter-btn active"
-              data-category="all"
-              data-i18n="filter-all"
-            >
-              Все
-            </button>
-            <button
-              class="filter-btn"
-              data-category="first"
-              data-i18n="filter-first"
-            >
-              Первые блюда
-            </button>
-            <button
-              class="filter-btn"
-              data-category="second"
-              data-i18n="filter-second"
-            >
-              Вторые блюда
-            </button>
-            <button
-              class="filter-btn"
-              data-category="special"
-              data-i18n="filter-special"
-            >
-              Заказные
-            </button>
-            <button
-              class="filter-btn"
-              data-category="shashlik"
-              data-i18n="filter-shashlik"
-            >
-              Шашлыки
-            </button>
-            <button
-              class="filter-btn"
-              data-category="salad"
-              data-i18n="filter-salad"
-            >
-              Салаты
-            </button>
-            <button
-              class="filter-btn"
-              data-category="dessert"
-              data-i18n="filter-dessert"
-            >
-              Десерты
-            </button>
-            <button
-              class="filter-btn"
-              data-category="drink"
-              data-i18n="filter-drink"
-            >
-              Напитки
-            </button>
-            <button
-              class="filter-btn"
-              data-category="fastfood"
-              data-i18n="filter-fastfood"
-            >
-              Fast-Food
-            </button>
-          </div>
-          <div class="menu-grid" id="menuGrid">
-            <!-- Карточки меню будут добавлены через JavaScript -->
-          </div>
-        </div>
-      </section>
-      <!-- Секция контактов -->
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <h2 data-i18n="contact-title">Контакты</h2>
-          <div class="contact-compact">
-            <a class="contact-btn" href="tel:+996998252023"
-              ><img
-                src="./icons/phone-call.svg"
-                alt="phone icon call us now    "
-                style="width: 16px; height: 16px"
-              />
-              +996 998 252 023</a
-            >
-            <a
-              class="contact-btn"
-              href="https://maps.google.com/?q=41.6307442,72.6622908"
-              target="_blank"
-              ><img
-                src="./icons/land-layer-location.svg"
-                alt="icon check location"
-                width="16px"
-                height="16px"
-              />
-              Кара-Куль, Боконбаева</a
-            >
-            <div class="contact-hours">
-              <img
-                src="./icons/clock-three.svg"
-                alt="clock"
-                style="width: 16px; height: 16px"/>
-              10:00 - 22:00 (без выходных)
-            </div>
-          </div>
-          <div class="map-wrapper compact-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.0509237162416!2d72.6622908!3d41.6307442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a31d96c5c8612b%3A0x58ec389fed91812!2z0JrQsNGE0LUgItCn0L7Qu9C_0L7QvSI!5e0!3m2!1sru!2skg!4v1700000000000"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            >
-            </iframe>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- Футер -->
-    <footer class="footer">
+    <!-- MENU -->
+    <section id="menu" class="menu-section">
       <div class="container">
-        <p data-i18n="footer-text">
-          &copy; 2025 Кафе Cholpon. Все права защищены.
-        </p>
-      </div>
-    </footer>
-    <!-- Модальное окно корзины -->
-    <div class="modal-overlay" id="cartModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 data-i18n="cart-title">Корзина</h2>
-          <button class="modal-close" id="closeCartModal" aria-label="Закрыть">
-            &times;
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="cart-items" id="cartItems">
-            <!-- Элементы корзины будут добавлены через JavaScript -->
-          </div>
-          <div class="cart-empty" id="cartEmpty">
-            <p data-i18n="cart-empty">Корзина пуста</p>
-          </div>
-          <div class="cart-total" id="cartTotal">
-            <p>
-              <strong data-i18n="cart-total">Итого:</strong>
-              <span id="totalPrice">0</span>
-              <span data-i18n="currency">сом</span>
-            </p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            class="btn btn-secondary"
-            id="clearCart"
-            data-i18n="cart-clear"
-          >
-            Очистить корзину
-          </button>
-          <button
-            class="btn btn-primary"
-            id="checkoutBtn"
-            data-i18n="cart-checkout"
-          >
-            Оформить заказ
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- Модальное окно формы заказа -->
-    <div class="modal-overlay" id="orderModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 data-i18n="order-title">Оформление заказа</h2>
-          <button class="modal-close" id="closeOrderModal" aria-label="Закрыть">
-            &times;
-          </button>
-        </div>
-        <div class="modal-body">
-          <form id="orderForm" class="order-form">
-            <div class="form-group">
-              <label for="customerName" data-i18n="order-name">Имя</label>
-              <input type="text" id="customerName" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="customerPhone" data-i18n="order-phone">Телефон</label>
-              <div class="phone-input-wrapper">
-                <span class="phone-prefix">+996</span>
-                <input
-                  type="tel"
-                  id="customerPhone"
-                  name="phone"
-                  placeholder="998 25 20 23"
-                  maxlength="12"
-                  required
-                />
-              </div>
-              <small class="phone-hint" data-i18n="order-phone-hint"
-                >Введите номер без 0, например: 998 25 20 23</small
-              >
-            </div>
-            <!-- Поле адреса для доставки (показывается только при выборе доставки) -->
-            <div
-              class="form-group delivery-address-group"
-              id="deliveryAddressGroup"
-              style="display: none"
-            >
-              <label for="deliveryAddress" data-i18n="order-address"
-                >Адрес доставки</label
-              >
-              <input
-                type="text"
-                id="deliveryAddress"
-                name="address"
-                placeholder="ул. Боконбаева, дом 5"
-              />
-            </div>
-            <div class="form-group">
-              <label for="orderComment" data-i18n="order-comment"
-                >Комментарий к заказу (необязательно)</label
-              >
-              <textarea id="orderComment" name="comment" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-              <label data-i18n="order-summary">Состав заказа:</label>
-              <div id="orderSummary" class="order-summary"></div>
-            </div>
-            <div class="form-group">
-              <label data-i18n="payment-method-label">Способ оплаты</label>
-              <div class="payment-options">
-                <label class="payment-option"
-                  ><input type="radio" name="paymentMethod" value="cash" />
-                  <span class="payment-icon"
-                    ><img
-                      src="./icons/money-bills-simple.svg"
-                      alt="cash"
-                      style="width: 20px; height: 20px"
-                  /></span>
-                  <span class="payment-label" data-i18n="payment-cash"
-                    >Наличными</span
-                  ></label
-                >
-                <label class="payment-option"
-                  ><input type="radio" name="paymentMethod" value="card" />
-                  <span class="payment-icon"
-                    ><img
-                      src="./icons/credit-card.svg"
-                      alt="card"
-                      style="width: 20px; height: 20px"
-                  /></span>
-                  <span class="payment-label" data-i18n="payment-card"
-                    >Картой</span
-                  ></label
-                >
-                <label class="payment-option"
-                  ><input type="radio" name="paymentMethod" value="mbank" />
-                  <img
-                    class="payment-icon"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSaA9lxNhWl5EMtyoEB1WtKzSdhhKHAo4J3g&s"
-                    alt="MBank"
-                  />
-                  <span class="payment-label" data-i18n="payment-mbank"
-                    >MBank</span
-                  ></label
-                >
-              </div>
-              <!-- Контейнер для показа QR при выборе MBank (по умолчанию скрыт) -->
-              <div
-                id="mbankQrContainer"
-                style="display: none; margin-top: 0.75rem; text-align: center"
-              >
-                <img
-                  id="mbankQrImage"
-                  src="./qr/photo_5366081055741381388_x.svg"
-                  alt="MBank QR"
-                  style="
-                    max-width: 200px;
-                    width: 60%;
-                    height: auto;
-                    border-radius: 8px;
-                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-                  "
-                />
-                <div
-                  style="
-                    font-size: 0.9rem;
-                    color: var(--text-secondary);
-                    margin-top: 0.4rem;
-                  "
-                >
-                  Отсканируйте QR для оплаты в MBank
-                </div>
-              </div>
-            </div>
-            <div class="form-actions">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                id="cancelOrder"
-                data-i18n="order-cancel"
-              >
-                Отмена
-              </button>
-              <button
-                type="submit"
-                id="submitOrderBtn"
-                class="btn btn-primary"
-                data-i18n="order-submit"
-                disabled
-              >
-                Отправить заказ
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+        <h2>Наше <span>Меню</span></h2>
 
-    <!-- Модальное окно деталей блюда -->
-    <div class="modal-overlay" id="dishDetailsModal">
-      <div class="modal-content dish-details-modal">
-        <div class="modal-header">
-          <h2 id="dishDetailsTitle">Детали блюда</h2>
-          <button
-            class="modal-close"
-            id="closeDishDetailsModal"
-            aria-label="Закрыть"
-          >
-            &times;
-          </button>
+        <!-- Category filter -->
+        <div class="category-filter">
+          <button class="filter-btn active" data-category="all" data-i18n="filter-all">Все</button>
+          <button class="filter-btn" data-category="fastfood" data-i18n="filter-fastfood">Фаст Фуд</button>
+          <button class="filter-btn" data-category="rolls" data-i18n="filter-rolls">Суши и Роллы</button>
+          <button class="filter-btn" data-category="sets" data-i18n="filter-sets">Сеты</button>
+          <button class="filter-btn" data-category="wok" data-i18n="filter-wok">WOK (Соба)</button>
+          <button class="filter-btn" data-category="drinks" data-i18n="filter-drinks">Напитки</button>
         </div>
-        <div class="modal-body">
-          <!-- Слайдер фото -->
-          <div class="dish-slider-container">
-            <div class="dish-slider" id="dishSlider">
-              <!-- Фото будут добавлены через JavaScript -->
+      </div>
+
+      <!-- Menu grid — NO slider, always grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Наши <span>Контакты</span></h2>
+        <div class="contact-compact">
+          <a class="contact-btn" href="tel:0507007031">
+            <img src="./icons/phone-call.svg" alt="phone" />
+            0507 007 031
+          </a>
+          <a class="contact-btn" href="https://2gis.kg/kara-kul/firm/70000001091199018" target="_blank">
+            <img src="./icons/land-layer-location.svg" alt="location" />
+            ул. Ленина 24, Кара-Куль
+          </a>
+          <div class="contact-hours">
+            <img src="./icons/clock-three.svg" alt="hours" />
+            10:00 – 22:00 · без выходных
+          </div>
+        </div>
+        <div class="compact-map">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer-text">&copy; 2025 SushiDom. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Cart modal -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 data-i18n="cart-title">Корзина</h2>
+        <button class="modal-close" id="closeCartModal" aria-label="Закрыть">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-empty" id="cartEmpty">
+          <p data-i18n="cart-empty">Корзина пуста</p>
+        </div>
+        <div class="cart-total" id="cartTotal">
+          <strong data-i18n="cart-total">Итого:</strong>
+          <span id="totalPrice">0</span>
+          <span data-i18n="currency">сом</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="clearCart" data-i18n="cart-clear">Очистить</button>
+        <button class="btn btn-primary" id="checkoutBtn" data-i18n="cart-checkout">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order form modal -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 data-i18n="order-title">Оформление заказа</h2>
+        <button class="modal-close" id="closeOrderModal" aria-label="Закрыть">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="orderForm" class="order-form">
+          <div class="form-group">
+            <label for="customerName" data-i18n="order-name">Имя</label>
+            <input type="text" id="customerName" name="name" required placeholder="Ваше имя" />
+          </div>
+          <div class="form-group">
+            <label for="customerPhone" data-i18n="order-phone">Телефон</label>
+            <div class="phone-input-wrapper">
+              <span class="phone-prefix">+996</span>
+              <input type="tel" id="customerPhone" name="phone" placeholder="700 123 456" maxlength="12" required />
             </div>
-            <button class="slider-btn slider-btn-prev" id="sliderPrev">
-              ‹
+            <small class="phone-hint" data-i18n="order-phone-hint">Без нуля, например: 700 123 456</small>
+          </div>
+          <div class="form-group delivery-address-group" id="deliveryAddressGroup" style="display:none">
+            <label for="deliveryAddress" data-i18n="order-address">Адрес доставки</label>
+            <input type="text" id="deliveryAddress" name="address" placeholder="ул. Ленина, дом 5" />
+          </div>
+          <div class="form-group">
+            <label for="orderComment" data-i18n="order-comment">Комментарий (необязательно)</label>
+            <textarea id="orderComment" name="comment" rows="3" placeholder="Пожелания к заказу…"></textarea>
+          </div>
+          <div class="form-group">
+            <label data-i18n="order-summary">Состав заказа:</label>
+            <div id="orderSummary" class="order-summary"></div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="payment-method-label">Способ оплаты</label>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cash" />
+                <span class="payment-icon"><img src="./icons/money-bills-simple.svg" alt="cash" /></span>
+                <span class="payment-label" data-i18n="payment-cash">Наличными</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="card" />
+                <span class="payment-icon"><img src="./icons/credit-card.svg" alt="card" /></span>
+                <span class="payment-label" data-i18n="payment-card">Картой</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="mbank" />
+                <img class="payment-icon"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSaA9lxNhWl5EMtyoEB1WtKzSdhhKHAo4J3g&s"
+                  alt="MBank" style="width:22px;height:22px;border-radius:4px" />
+                <span class="payment-label" data-i18n="payment-mbank">MBank</span>
+              </label>
+            </div>
+            <div id="mbankQrContainer" style="display:none;margin-top:14px;text-align:center">
+              <img id="mbankQrImage" src="./qr/photo_5366081055741381388_x.svg" alt="MBank QR"
+                style="max-width:200px;width:60%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12)" />
+              <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px">Отсканируйте QR для оплаты</div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="cancelOrder" data-i18n="order-cancel">Отмена</button>
+            <button type="submit" id="submitOrderBtn" class="btn btn-primary" data-i18n="order-submit" disabled>
+              Отправить заказ
             </button>
-            <button class="slider-btn slider-btn-next" id="sliderNext">
-              ›
-            </button>
-            <div class="slider-dots" id="sliderDots"></div>
           </div>
-          <!-- Информация о блюде -->
-          <div class="dish-details-info">
-            <h3 id="dishDetailsName"></h3>
-            <p class="dish-details-description" id="dishDetailsDescription"></p>
-            <div class="dish-details-price" id="dishDetailsPrice"></div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-            <!-- Ингредиенты -->
-            <div class="dish-ingredients">
-              <h4 data-i18n="dish-ingredients">Ингредиенты:</h4>
-              <ul id="dishIngredientsList"></ul>
+  <!-- Dish details modal -->
+  <div class="modal-overlay" id="dishDetailsModal">
+    <div class="modal-content dish-details-modal">
+      <div class="modal-header">
+        <h2 id="dishDetailsTitle">Детали блюда</h2>
+        <button class="modal-close" id="closeDishDetailsModal" aria-label="Закрыть">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="dish-slider-container">
+          <div class="dish-slider" id="dishSlider"></div>
+          <button class="slider-btn slider-btn-prev" id="sliderPrev">‹</button>
+          <button class="slider-btn slider-btn-next" id="sliderNext">›</button>
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+        <div class="dish-details-info">
+          <h3 id="dishDetailsName"></h3>
+          <p class="dish-details-description" id="dishDetailsDescription"></p>
+          <div class="dish-details-price" id="dishDetailsPrice"></div>
+          <div class="dish-ingredients">
+            <h4 data-i18n="dish-ingredients">Ингредиенты:</h4>
+            <ul id="dishIngredientsList"></ul>
+          </div>
+          <div class="dish-details-actions">
+            <button type="button" class="btn btn-primary" id="addToCartFromDetails" data-i18n="add-to-cart">В
+              корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="image-lightbox" id="imageLightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="closeLightbox">×</button>
+      <img src="" alt="" id="lightboxImage" />
+    </div>
+  </div>
+
+  <!-- Order type modal -->
+  <div class="modal-overlay" id="orderTypeModal">
+    <div class="modal-content order-type-modal">
+      <div class="modal-header">
+        <h2 data-i18n="order-type-title">Как хотите заказать?</h2>
+      </div>
+      <div class="modal-body">
+        <div class="order-type-buttons">
+          <button class="order-type-btn" id="orderTypePickup" data-type="pickup">
+            <span class="order-type-icon"><img src="./icons/truck-pickup.svg" alt="pickup" /></span>
+            <span class="order-type-label" data-i18n="order-type-pickup">Самовывоз</span>
+          </button>
+          <button class="order-type-btn" id="orderTypeDelivery" data-type="delivery">
+            <span class="order-type-icon"><img src="./icons/shipping-fast.svg" alt="delivery" /></span>
+            <span class="order-type-label" data-i18n="order-type-delivery">Доставка</span>
+          </button>
+          <button class="order-type-btn order-type-browse" id="orderTypeBrowse" data-type="browse">
+            <span class="order-type-icon"><img src="./icons/eyes.svg" alt="browse" /></span>
+            <span class="order-type-label" data-i18n="order-type-browse">Просто посмотреть меню</span>
+          </button>
+        </div>
+        <div class="lang-selector-modal">
+          <button class="lang-btn-modal" id="langBtnRu" data-lang="ru">RU</button>
+          <button class="lang-btn-modal" id="langBtnKg" data-lang="kg">KG</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delivery form modal -->
+  <div class="modal-overlay" id="deliveryFormModal">
+    <div class="modal-content delivery-form-modal">
+      <div class="modal-header">
+        <h2 data-i18n="delivery-form-title">Данные для доставки</h2>
+        <button class="modal-close" id="closeDeliveryModal" aria-label="Закрыть">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="deliveryInfoForm" class="delivery-info-form">
+          <div class="form-group">
+            <label for="deliveryName" data-i18n="order-name">Ваше имя</label>
+            <input type="text" id="deliveryName" name="name" required placeholder="Ваше имя" />
+          </div>
+          <div class="form-group">
+            <label for="deliveryPhone" data-i18n="order-phone">Телефон</label>
+            <div class="phone-input-wrapper">
+              <span class="phone-prefix">+996</span>
+              <input type="tel" id="deliveryPhone" name="phone" placeholder="700 123 456" maxlength="12" required />
             </div>
-
-            <!-- Кнопка добавить в корзину -->
-            <div class="dish-details-actions">
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="addToCartFromDetails"
-                data-i18n="add-to-cart"
-              >
-                В корзину
-              </button>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lightbox для полноразмерных фото -->
-    <div class="image-lightbox" id="imageLightbox">
-      <div class="lightbox-content">
-        <button class="lightbox-close" id="closeLightbox">×</button>
-        <img src="" alt="" id="lightboxImage" />
-      </div>
-    </div>
-
-    <!-- Модальное окно выбора типа заказа (по умолчанию скрыто, показывается через JS) -->
-    <div class="modal-overlay" id="orderTypeModal">
-      <div class="modal-content order-type-modal">
-        <div class="modal-header">
-          <h2 data-i18n="order-type-title">
-            Как вы хотите заказать?
-          </h2>
-        </div>
-        <div class="modal-body">
-          <div class="order-type-buttons">
-            <button class="order-type-btn" id="orderTypeCafe" data-type="cafe">
-              <span class="order-type-icon"
-                ><img
-                  src="./icons/plate-eating.svg"
-                  alt="plate-eating"
-                  style="width: 20px; height: 20px"
-              /></span>
-              <span class="order-type-label" data-i18n="order-type-cafe"
-            >Я в кафе</span
-          >
-        </button>
-        <button
-          class="order-type-btn"
-          id="orderTypePickup"
-          data-type="pickup"
-        >
-          <span class="order-type-icon"
-            ><img
-              src="./icons/truck-pickup.svg"
-              alt="pickup"
-              style="width: 20px; height: 20px"
-          /></span>
-          <span class="order-type-label" data-i18n="order-type-pickup"
-            >Самовывоз</span
-          >
-        </button>
-        <button
-          class="order-type-btn"
-          id="orderTypeDelivery"
-          data-type="delivery"
-        >
-          <span class="order-type-icon"
-            ><img
-              src="./icons/shipping-fast.svg"
-              alt="delivery"
-              style="width: 20px; height: 20px"
-          /></span>
-          <span class="order-type-label" data-i18n="order-type-delivery"
-            >Доставка</span
-          >
-        </button>
-        <button
-          class="order-type-btn order-type-browse"
-          id="orderTypeBrowse"
-          data-type="browse"
-        >
-          <span class="order-type-icon"
-            ><img
-              src="./icons/eyes.svg"
-              alt=" "
-              style="width: 20px; height: 20px"
-          /></span>
-          <span class="order-type-label" data-i18n="order-type-browse"
-            >Просто посмотреть меню</span
-          >
-        </button>
-      </div>
-      <!-- Кнопки выбора языка -->
-      <div class="lang-selector-modal">
-        <button
-          class="lang-btn-modal"
-          id="langBtnRu"
-          data-lang="ru"
-          aria-label="Русский язык"
-        >
-          RU
-        </button>
-        <button
-          class="lang-btn-modal"
-          id="langBtnKg"
-          data-lang="kg"
-          aria-label="KG"
-        >
-          KG
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Модальное окно выбора стола -->
-<div class="modal-overlay" id="tableSelectModal">
-  <div class="modal-content table-select-modal">
-    <div class="modal-header">
-      <h2 data-i18n="table-select-title">Выберите номер стола</h2>
-      <button class="modal-close" id="closeTableModal" aria-label="Закрыть">
-        &times;
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="table-grid" id="tableGrid">
-        <!-- Столы 1-11 будут добавлены через JavaScript -->
-      </div>
-    </div>
-  </div>
-</div
-<!-- Модальное окно для данных доставки -->
-<div class="modal-overlay" id="deliveryFormModal">
-  <div class="modal-content delivery-form-modal">
-    <div class="modal-header">
-      <h2 data-i18n="delivery-form-title">Данные для доставки</h2>
-      <button
-        class="modal-close"
-        id="closeDeliveryModal"
-        aria-label="Закрыть"
-      >
-        &times;
-      </button>
-    </div>
-    <div class="modal-body">
-      <form id="deliveryInfoForm" class="delivery-info-form">
-        <div class="form-group">
-          <label for="deliveryName" data-i18n="order-name">Ваше имя</label>
-          <input type="text" id="deliveryName" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="deliveryPhone" data-i18n="order-phone">Телефон</label>
-          <div class="phone-input-wrapper">
-            <span class="phone-prefix">+996</span>
-            <input
-              type="tel"
-              id="deliveryPhone"
-              name="phone"
-              placeholder="998 25 20 23"
-              maxlength="12"
-              required
-            />
+          <div class="form-group">
+            <label for="deliveryAddressInput" data-i18n="order-address">Адрес доставки</label>
+            <input type="text" id="deliveryAddressInput" name="address" placeholder="ул. Боконбаева, дом 5" required />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="deliveryAddressInput" data-i18n="order-address"
-            >Адрес доставки</label
-          >
-          <input
-            type="text"
-            id="deliveryAddressInput"
-            name="address"
-            placeholder="ул. Боконбаева, дом 5"
-            required
-          />
-        </div>
-        <div class="form-actions"><button  type="button"  class="btn btn-secondary"  id="backToOrderType"  data-i18n="back">  Назад</button><button  type="submit"  class="btn btn-primary"  data-i18n="continue">  Продолжить</button>
-        </div>
-      </form>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="backToOrderType" data-i18n="back">Назад</button>
+            <button type="submit" class="btn btn-primary" data-i18n="continue">Продолжить</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-    <!-- Нижнее мобильное меню -->
-    <nav class="bottom-nav" id="bottomNav">
-      <button class="bottom-nav-btn" id="bottomNavMenu" data-section="menu">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <span data-i18n="nav-menu">Меню</span>
-      </button>
-      <button class="bottom-nav-btn" id="bottomNavCart" data-section="cart">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2">
-          <path
-            d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-          ></path>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <span data-i18n="cart-title">Корзина</span>
-        <span class="bottom-nav-badge" id="bottomNavBadge">0</span>
-      </button>
-    </nav>
-    <script src="script.js"></script>
-  </body>
+
+  <!-- Bottom mobile nav -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="bottom-nav-btn" id="bottomNavMenu" data-section="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      <span data-i18n="nav-menu">Меню</span>
+    </button>
+    <button class="bottom-nav-btn" id="bottomNavCart" data-section="cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </svg>
+      <span data-i18n="cart-title">Корзина</span>
+      <span class="bottom-nav-badge" id="bottomNavBadge">0</span>
+    </button>
+  </nav>
+
+  <!-- 2GIS map loader and init -->
+  <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+  <script>
+    DG.then(function () {
+      const map = DG.map('map', {
+        center: [41.634671, 72.664919],
+        zoom: 16
+      });
+
+      DG.marker([41.634671, 72.664919])
+        .addTo(map)
+        .bindPopup('SushiDom — мы здесь!');
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
