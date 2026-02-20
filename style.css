@@ -541,7 +541,6 @@ body {
   color: var(--text-2);
   line-height: 1.5;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -705,6 +704,10 @@ body {
   }
 
   .category-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dish-description {
     display: none;
   }
 }
@@ -1829,10 +1832,21 @@ body.browse-mode .modal-footer {
   .dish-details-modal {
     border-radius: var(--radius) var(--radius) 0 0 !important;
   }
+
+  /* Order Type Modal should be centered */
+  #orderTypeModal .modal-content {
+    align-self: center;
+    border-radius: var(--radius);
+    max-height: 90vh;
+  }
+  #orderTypeModal.modal-overlay {
+    align-items: center;
+    padding: 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  .modal-overlay.active {
+  .modal-overlay.active:not(#orderTypeModal) {
     align-items: flex-end;
   }
 }

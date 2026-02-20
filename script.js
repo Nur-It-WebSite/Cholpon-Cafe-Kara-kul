@@ -16,7 +16,7 @@ const menuData = [
         ingredients: ['Говядина', 'Лук', 'Морковь', 'Картошка', 'Помидоры', 'Зелень', 'Специи'],
         ingredientsKg: ['Жылкы эти', 'Пияз', 'Сабиз', 'Картөшкө', 'Помидор', 'Жашылча', 'Азыктар']
     },
-    
+
     {
         id: 2,
         name: 'Сырный суп (фрикадельки)',
@@ -27,7 +27,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/565/big_564981.jpg',
         category: 'first'
     },
-    
+
     {
         id: 3,
         name: 'Суп с фрикадельками',
@@ -38,7 +38,7 @@ const menuData = [
         image: 'https://dikoed.ru/upload/iblock/66c/48245-sup-s-frikadelkami-iz-myasa-olenya.jpg',
         category: 'first'
     },
-    
+
     {
         id: 4,
         name: 'Солянка',
@@ -49,7 +49,7 @@ const menuData = [
         image: 'https://lifehacker.ru/wp-content/uploads/2020/06/6_1592925463-scaled.jpg',
         category: 'first'
     },
-    
+
     {
         id: 5,
         name: 'Пельмени домашние',
@@ -72,7 +72,7 @@ const menuData = [
         image: 'https://cooklikemary.ru/sites/default/files/styles/width_700/public/img_3633_0.jpg?itok=e15Ck_hr',
         category: 'second'
     },
-    
+
     {
         id: 7,
         name: 'Котлеты',
@@ -83,7 +83,7 @@ const menuData = [
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIZSOvy9EXTWC0WL_znrlVYl4iipeuomNeA&s',
         category: 'second'
     },
-    
+
     {
         id: 8,
         name: 'Тефтели',
@@ -94,7 +94,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/old/upl/recipes/zen/u-9d9f7b406881b1dde4c262f9f84bc279.jpg',
         category: 'second'
     },
-    
+
     {
         id: 9,
         name: 'Лагман Уйгурский',
@@ -105,7 +105,7 @@ const menuData = [
         image: 'https://s1.webspoon.ru/receipts/2013/7/8738/orig_8738_0_xxl.jpg',
         category: 'second'
     },
-    
+
     {
         id: 10,
         name: 'Лагман Жареный',
@@ -116,7 +116,7 @@ const menuData = [
         image: 'https://cdn.smt.bz/uploads/media/photo/2225664/%D0%BB%D0%B0%D0%B3%D0%BC%D0%B0%D0%BD_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B9.webp',
         category: 'second'
     },
-    
+
     {
         id: 11,
         name: 'Гуляш',
@@ -127,7 +127,7 @@ const menuData = [
         image: 'https://zira.uz/wp-content/uploads/2023/09/gulyash.jpg',
         category: 'second'
     },
-    
+
     {
         id: 12,
         name: 'Мясо по-королевски',
@@ -150,7 +150,7 @@ const menuData = [
         image: 'https://static.1000.menu/img/content-v2/09/92/34970/myaso-po-derevenski-v-duxovke-s-kartofelem_1676810570_23_max.jpg',
         category: 'special'
     },
-    
+
     {
         id: 14,
         name: 'Стейк форель 3шт',
@@ -161,7 +161,7 @@ const menuData = [
         image: 'https://finecooking.ru/images/recipe/steyki-foreli-zapechennye-v-duhovke/photo/960w.jpg',
         category: 'special'
     },
-    
+
     {
         id: 15,
         name: 'Стейк форель 2шт',
@@ -172,7 +172,7 @@ const menuData = [
         image: 'https://yabpoela.net/uploads/posts/2019-12/1576932448_photo_2019-12-21_14-18-13.jpg',
         category: 'special'
     },
-    
+
     {
         id: 16,
         name: 'Адана-Кебаб',
@@ -183,7 +183,7 @@ const menuData = [
         image: 'https://www.koolinar.ru/all_image/recipes/157/157915/recipe_9f002738-7831-484c-ad0a-7294e58d8cba_w450.webp',
         category: 'special'
     },
-    
+
     {
         id: 17,
         name: 'Бейти кебаб',
@@ -194,7 +194,7 @@ const menuData = [
         image: 'https://lifehacker.ru/wp-content/uploads/2024/12/shutterstock_2265339147_1_1734602719-e1734602773944.jpg',
         category: 'special'
     },
-    
+
     {
         id: 18,
         name: 'Турецкий кебаб',
@@ -205,7 +205,7 @@ const menuData = [
         image: 'https://bigasia.ru/wp-content/uploads/2023/04/2435c715734d0d295dc9c342ccf20ab6.jpg',
         category: 'special'
     },
-    
+
     {
         id: 19,
         name: 'Бризоль',
@@ -216,7 +216,7 @@ const menuData = [
         image: 'https://media.ovkuse.ru/images/recipes/a3ade189-9389-40c7-baaa-3ee8de125985/a3ade189-9389-40c7-baaa-3ee8de125985_420_420.webp',
         category: 'special'
     },
-    
+
     {
         id: 20,
         name: 'Мясо в горшочке',
@@ -227,7 +227,7 @@ const menuData = [
         image: 'https://halal-spb.ru/sites/default/files/styles/large/public/jarkoe-v-gorshochkah.jpg?itok=tzEUT5YJ',
         category: 'special'
     },
-    
+
     {
         id: 21,
         name: 'Куурдак',
@@ -238,7 +238,7 @@ const menuData = [
         image: 'https://s1.eda.ru/StaticContent/Photos/160915225201/160926225652/p_O.jpg',
         category: 'special'
     },
-    
+
     {
         id: 22,
         name: 'Курица в кисло-сладком соусе',
@@ -249,7 +249,7 @@ const menuData = [
         image: 'https://www.povarenok.ru/data/cache/2023jan/21/55/3033845_65334-710x550x.jpg',
         category: 'special'
     },
-    
+
     {
         id: 23,
         name: 'Фрикассе',
@@ -260,7 +260,7 @@ const menuData = [
         image: 'https://ist.say7.info/img0012/35/1235_0166c21_2455_1024.jpg',
         category: 'special'
     },
-    
+
     {
         id: 24,
         name: 'Казан кебаб',
@@ -271,7 +271,7 @@ const menuData = [
         image: 'https://lafoy.ru/photo_l/foto-4456-2.jpg',
         category: 'special'
     },
-    
+
     {
         id: 25,
         name: 'Курица с овощами',
@@ -282,7 +282,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/old/upl/recipes/cat/u1169-c8338c700c52d3dc7043abce47bef4fa.JPG',
         category: 'special'
     },
-    
+
     {
         id: 26,
         name: 'Фетучини с форелью',
@@ -293,7 +293,7 @@ const menuData = [
         image: 'https://bandler.ru/image/catalog/product/recepti/fettuchini-s-semgoj.jpg',
         category: 'special'
     },
-    
+
     {
         id: 27,
         name: 'Фетучини с курицей',
@@ -316,7 +316,7 @@ const menuData = [
         image: 'https://restoran-mimi.ru/assets/content/shashlik-iz-govyadini-7.jpg',
         category: 'shashlik'
     },
-    
+
     {
         id: 29,
         name: 'Наполеон',
@@ -327,7 +327,7 @@ const menuData = [
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1ml_CCi-1FvCUye__NUK_6_q0G8ylc91Xg&s',
         category: 'shashlik'
     },
-    
+
     {
         id: 30,
         name: 'Люля-Кебаб',
@@ -338,7 +338,7 @@ const menuData = [
         image: 'https://a-catering.com/image/1.Dostavka/Gorihie/lyulya-kebab-dostavka-shashlyka-na-dom-i-po-spb-v-lenoblati-kejtering.jpg',
         category: 'shashlik'
     },
-    
+
     {
         id: 31,
         name: 'Крылышки',
@@ -349,7 +349,7 @@ const menuData = [
         image: 'https://edimdoma.ru/data/recipes/0014/5261/145261-ed4_wide.jpg?1759232294',
         category: 'shashlik'
     },
-    
+
     {
         id: 32,
         name: 'Овощной шашлык',
@@ -372,7 +372,7 @@ const menuData = [
         image: 'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 34,
         name: 'Столичный',
@@ -383,7 +383,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/68/big_67797.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 35,
         name: 'Гасконский',
@@ -394,7 +394,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/sGjV5ER10ys/sddefault.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 36,
         name: 'Витаминка',
@@ -405,7 +405,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/555/big_554824.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 37,
         name: 'Овощной микс',
@@ -416,7 +416,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/546/big_545819.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 38,
         name: 'Свежий',
@@ -427,7 +427,7 @@ const menuData = [
         image: 'https://cdn.smt.bz/uploads/media/photo/2236799/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.webp',
         category: 'salad'
     },
-    
+
     {
         id: 39,
         name: 'Фунчоза',
@@ -438,7 +438,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/cZnNPgADKTQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcrWOozEpdooPxEHiHVMmWe6BTfg',
         category: 'salad'
     },
-    
+
     {
         id: 40,
         name: 'Нарезка фирменная овощная',
@@ -449,7 +449,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/x065ZmRdxBU/maxresdefault.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 41,
         name: 'Цезарь с курицей',
@@ -460,7 +460,7 @@ const menuData = [
         image: 'https://images.gastronom.ru/LoVJjeEYXJQ3vR2Yn8WtlivB0eZ78Rtu417zEnX1mZs/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp',
         category: 'salad'
     },
-    
+
     {
         id: 42,
         name: 'Гнездо кукушки',
@@ -471,7 +471,7 @@ const menuData = [
         image: 'https://foodmood.ru/upload/iblock/bfe/bfe5b51ce6ea8a5f17b59c153ac3fcf9.jpeg',
         category: 'salad'
     },
-    
+
     {
         id: 43,
         name: 'Мерло',
@@ -482,7 +482,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/542/big_541650.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 44,
         name: 'Салат с грибами',
@@ -493,7 +493,7 @@ const menuData = [
         image: 'https://www.moi-povar.ru/upload/iblock/162/IMG_1518.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 45,
         name: 'Салат с свеклой',
@@ -504,7 +504,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/503/big_502335.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 46,
         name: 'Охотница',
@@ -515,7 +515,7 @@ const menuData = [
         image: 'https://sovkusom.ru/wp-content/uploads/recepty/s/salat-s-shampinyonami/thumb-840x440.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 47,
         name: 'Китайский острый',
@@ -526,7 +526,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/165/big_164344.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 48,
         name: 'Восточный',
@@ -537,7 +537,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/527/big_526629.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 49,
         name: 'Баклажан с овощами',
@@ -548,7 +548,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/733/big_732221.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 50,
         name: 'Фирменный баклажан',
@@ -559,7 +559,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/777/big_776231.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 51,
         name: 'Баклажан микс',
@@ -570,7 +570,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/645/big_644398.jpg',
         category: 'salad'
     },
-    
+
     {
         id: 52,
         name: 'Курица с ореховым соусом',
@@ -593,7 +593,7 @@ const menuData = [
         image: 'https://vkusnoff.com/img/recepty/3985/big.webp',
         category: 'dessert'
     },
-    
+
     {
         id: 54,
         name: 'Чизкейк',
@@ -604,7 +604,7 @@ const menuData = [
         image: 'https://art-lunch.ru/content/uploads/2014/08/cheesecake-new-york-001x2-1.jpg',
         category: 'dessert'
     },
-    
+
     {
         id: 55,
         name: 'Три шоколада',
@@ -615,7 +615,7 @@ const menuData = [
         image: 'https://tochkamarket.ru/upload/iblock/5f9/rfprgsonxwxsc8hoaz027ghn0iyllo1u.jpg',
         category: 'dessert'
     },
-    
+
     {
         id: 56,
         name: 'Сникерс',
@@ -626,7 +626,7 @@ const menuData = [
         image: 'https://cdn.nur.kz/images/1200x675/aae7343159f27780.jpeg?version=1',
         category: 'dessert'
     },
-    
+
     {
         id: 57,
         name: 'Трайфл',
@@ -638,53 +638,65 @@ const menuData = [
         category: 'dessert'
     },
 
-    // ==================== НАПИТКИ ====================
+    //====================НАПИТКИ====================
     {
         id: 58,
-        name: 'Компот 1л / 1,5л',
-        nameKg: 'Компот 1л / 1,5л',
+        name: 'Компот',
+        nameKg: 'Компот',
         description: 'Компот',
         descriptionKg: 'Компот',
-        price: 85,
-        price2: 125,
         image: 'https://img.iamcook.ru/2019/upl/recipes/cat/u-4a903326f8c32bf338e5d2b2cf87a1aa.JPG',
-        category: 'drink'
+        category: 'drink',
+        variants: [
+            { label: '1 л', price: 85 },
+            { label: '1.5 л', price: 125 },
+            { label: '2 л', price: 160 }
+        ]
     },
-    
+
     {
         id: 59,
-        name: 'Кола 1л / 1,5л',
-        nameKg: 'Кола 1л / 1,5л',
+        name: 'Кола',
+        nameKg: 'Кола',
         description: 'Кола',
         descriptionKg: 'Кола',
-        price: 105,
-        price2: 145,
         image: 'https://neman.kg/images/watermarked/detailed/34/unnamed_n7sb-ck.webp',
-        category: 'drink'
+        category: 'drink',
+        variants: [
+            { label: '1 л', price: 105 },
+            { label: '1.5 л', price: 145 },
+            { label: '2 л', price: 180 }
+        ]
     },
-    
+
     {
         id: 60,
-        name: 'Фанта 1л / 1,5л',
-        nameKg: 'Фанта 1л / 1,5л',
+        name: 'Фанта',
+        nameKg: 'Фанта',
         description: 'Фанта',
         descriptionKg: 'Фанта',
-        price: 105,
-        price2: 145,
         image: 'https://dostavka-produktov.ru/image/cache/catalog/products_images/3176277-1000x1000.jpg',
-        category: 'drink'
+        category: 'drink',
+        variants: [
+            { label: '1 л', price: 105 },
+            { label: '1.5 л', price: 145 },
+            { label: '2 л', price: 180 }
+        ]
     },
-    
+
     {
         id: 61,
-        name: 'Любимый 1л / 1,5л',
-        nameKg: 'Сүйүктүү 1л / 1,5л',
+        name: 'Любимый',
+        nameKg: 'Сүйүктүү',
         description: 'Любимый сок',
         descriptionKg: 'Сүйүктүү ширеп',
-        price: 135,
-        price2: 220,
         image: 'https://3259404.ru/upload/iblock/fb6/nx32auk4u9xu7peyhyvh3ke5lvhigp6z.webp',
-        category: 'drink'
+        category: 'drink',
+        variants: [
+            { label: '1 л', price: 135 },
+            { label: '1.5 л', price: 220 },
+            { label: '2 л', price: 280 }
+        ]
     },
 
     // ==================== FAST-FOOD ====================
@@ -698,7 +710,7 @@ const menuData = [
         image: 'https://www.chefmarket.ru/blog/wp-content/uploads/2020/01/fried-chick-2000x1200.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 63,
         name: 'Шаурма',
@@ -709,7 +721,7 @@ const menuData = [
         image: 'https://lefood.menu/wp-content/uploads/w_images/2023/07/recept-76707-1240x827.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 64,
         name: 'Шаурма с курицей',
@@ -720,7 +732,7 @@ const menuData = [
         image: 'https://zira.uz/wp-content/uploads/2022/06/shaurma-18.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 65,
         name: 'Пицца "Пепперони"',
@@ -731,7 +743,7 @@ const menuData = [
         image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 66,
         name: 'Пицца "Мясная"',
@@ -742,7 +754,7 @@ const menuData = [
         image: 'https://cipollino.ua/content/uploads/images/recept-myasnoj-piccy-pod-syrom%281%29.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 67,
         name: 'Пицца "Курица с грибами"',
@@ -753,7 +765,7 @@ const menuData = [
         image: 'https://s3.smartofood.ru/kato/menu/14cce8bc-fddd-5770-9c57-f35c8172513c.webp',
         category: 'fastfood'
     },
-    
+
     {
         id: 68,
         name: 'Рамён',
@@ -764,7 +776,7 @@ const menuData = [
         image: 'https://opis-cdn.tinkoffjournal.ru/mercury/inramen2.c3mkuj4avtxt..jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 69,
         name: 'Пирог',
@@ -775,7 +787,7 @@ const menuData = [
         image: 'https://prostokvashino.ru/upload/resize_cache/iblock/74f/800_800_0/74fe90dd6ef5f047dcadff513c8d75d7.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 70,
         name: 'Мини самсы песочные',
@@ -786,7 +798,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/US6fbAwR_2E/maxresdefault.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 71,
         name: 'Хлеб',
@@ -797,7 +809,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/old/upl/recipes/cat/u4142-10b7c9c0972f7a6486ec930a56c01777.jpg',
         category: 'fastfood'
     },
-    
+
     {
         id: 72,
         name: 'Чай',
@@ -1106,13 +1118,13 @@ function loadWaiterConfig() {
         const cfg = JSON.parse(raw);
         if (cfg.waiters) WAITERS = cfg.waiters;
         if (cfg.waiterTables) WAITER_TABLES = cfg.waiterTables;
-    } catch (e) {}
+    } catch (e) { }
 }
 
 function saveWaiterConfig() {
     try {
         localStorage.setItem('waiterConfig', JSON.stringify({ waiters: WAITERS, waiterTables: WAITER_TABLES }));
-    } catch (e) {}
+    } catch (e) { }
 }
 
 function getWaiterForTable(num) {
@@ -1177,7 +1189,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 currentWaiter = JSON.parse(savedWaiter);
                 setTimeout(() => notifyAssignedWaiter(), 300);
             }
-        } catch (e) {}
+        } catch (e) { }
 
         const orderTypeModal = document.getElementById('orderTypeModal');
         if (orderTypeModal) {
@@ -1377,7 +1389,7 @@ function updateCartUI() {
         totalPrice.textContent = `${total} ${translations[currentLang]?.currency || 'сом'}`;
     }
 
-    try { validateOrderForm(); } catch (e) {}
+    try { validateOrderForm(); } catch (e) { }
 }
 
 // ============================================
@@ -1450,15 +1462,15 @@ function createMenuCard(item) {
                 <div class="dish-price">${priceDisplay} <small>${translations[currentLang]?.currency || 'сом'}</small></div>
                 <div class="dish-actions">
                     ${(item.variants && item.variants.length > 0)
-                        ? `<button class="btn-add-cart" onclick="addToCart(${item.id})">${translations[currentLang]?.['add-to-cart'] || 'В корзину'}</button>`
-                        : qty === 0
-                            ? `<button class="btn-add-cart" data-item-id="${item.id}" onclick="addToCart(${item.id})">${translations[currentLang]?.['add-to-cart'] || 'В корзину'}</button>`
-                            : `<div class="quantity-controls">
+            ? `<button class="btn-add-cart" onclick="addToCart(${item.id})">${translations[currentLang]?.['add-to-cart'] || 'В корзину'}</button>`
+            : qty === 0
+                ? `<button class="btn-add-cart" data-item-id="${item.id}" onclick="addToCart(${item.id})">${translations[currentLang]?.['add-to-cart'] || 'В корзину'}</button>`
+                : `<div class="quantity-controls">
                                 <button class="quantity-btn" onclick="decreaseQuantity('${item.id}')">−</button>
                                 <span class="quantity-value">${qty}</span>
                                 <button class="quantity-btn" onclick="increaseQuantity('${item.id}')">+</button>
                                </div>`
-                    }
+        }
                 </div>
             </div>
         </div>
@@ -1700,7 +1712,7 @@ function initOrderTypeModal() {
         const tableParam = params.get('table');
         const cafeBtn = document.getElementById('orderTypeCafe');
         if (cafeBtn && !tableParam) cafeBtn.style.display = 'none';
-    } catch (e) {}
+    } catch (e) { }
 
     const cafeBtn = document.getElementById('orderTypeCafe');
     const pickupBtn = document.getElementById('orderTypePickup');
@@ -1739,7 +1751,7 @@ function initOrderTypeModal() {
             const address = document.getElementById('deliveryAddressInput').value.trim();
             if (name && phone && address) {
                 deliveryInfo = { name, phone, address };
-                try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) {}
+                try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) { }
                 setOrderType('delivery');
                 deliveryModal?.classList.remove('active');
             }
@@ -1787,7 +1799,7 @@ function selectTable(num) {
     const waiter = getWaiterForTable(num);
     if (waiter) {
         currentWaiter = waiter;
-        try { localStorage.setItem('currentWaiter', JSON.stringify(currentWaiter)); } catch (e) {}
+        try { localStorage.setItem('currentWaiter', JSON.stringify(currentWaiter)); } catch (e) { }
     }
     setOrderType('cafe');
     document.getElementById('tableSelectModal')?.classList.remove('active');
@@ -1843,12 +1855,12 @@ function initTableFromUrl() {
 
         tableNumber = num;
         orderType = 'cafe';
-        try { localStorage.setItem('currentTableNumber', String(num)); } catch (e) {}
+        try { localStorage.setItem('currentTableNumber', String(num)); } catch (e) { }
 
         const waiter = getWaiterForTable(num);
         if (waiter) {
             currentWaiter = waiter;
-            try { localStorage.setItem('currentWaiter', JSON.stringify(waiter)); } catch (e) {}
+            try { localStorage.setItem('currentWaiter', JSON.stringify(waiter)); } catch (e) { }
         }
 
         applyOrderTypeMode();
@@ -1961,7 +1973,7 @@ function createOrderText(name, phone, comment, paymentMethod) {
     if (paymentMethod) {
         const pm = paymentMethod === 'cash' ? (translations[currentLang]?.['payment-cash'] || 'Наличными')
             : paymentMethod === 'card' ? (translations[currentLang]?.['payment-card'] || 'Картой')
-            : 'MBank';
+                : 'MBank';
         paymentText = `\n💳 ${pm}`;
     }
 
@@ -1977,7 +1989,7 @@ function sendToWhatsApp(text) {
 
 function sendToWhatsAppTo(text, phone) {
     if (!phone) return sendToWhatsApp(text);
-    window.open(`https://wa.me/${phone.replace(/\D/g,'')}?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`, '_blank');
 }
 
 async function sendToExcel(name, phone, comment, paymentMethod, address) {
@@ -2021,7 +2033,7 @@ async function placeOrder(e) {
         const addrInput = document.getElementById('deliveryAddress');
         if (!deliveryInfo) deliveryInfo = {};
         deliveryInfo.address = addrInput?.value.trim() || deliveryInfo.address;
-        try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) {}
+        try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) { }
     }
 
     const orderText = createOrderText(name, phone, comment, paymentMethod);
@@ -2029,7 +2041,7 @@ async function placeOrder(e) {
     sendToWhatsAppTo(orderText, targetPhone);
 
     const deliveryAddr = (orderType === 'delivery' && deliveryInfo?.address) ? deliveryInfo.address : '';
-    sendToExcel(name, phone, comment, paymentMethod, deliveryAddr).catch(() => {});
+    sendToExcel(name, phone, comment, paymentMethod, deliveryAddr).catch(() => { });
 
     clearCart();
     document.getElementById('orderModal')?.classList.remove('active');
@@ -2133,6 +2145,8 @@ function initEventListeners() {
     document.getElementById('closeOrderModal')?.addEventListener('click', () => document.getElementById('orderModal')?.classList.remove('active'));
     document.getElementById('cancelOrder')?.addEventListener('click', () => document.getElementById('orderModal')?.classList.remove('active'));
     document.getElementById('closeDishDetailsModal')?.addEventListener('click', () => document.getElementById('dishDetailsModal')?.classList.remove('active'));
+
+    document.getElementById('variantModalClose')?.addEventListener('click', closeVariantModal);
 
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
         overlay.addEventListener('click', e => {
@@ -2389,7 +2403,7 @@ function saveReview(name, rating, comment, photo) {
     displayReviews();
     alert(currentLang === 'ru' ? 'Спасибо за ваш отзыв!' : 'Пикириңиз үчүн рахмат!');
 
-    postReviewToServer(review).catch(() => {});
+    postReviewToServer(review).catch(() => { });
 }
 
 function displayReviews(limit = 6) {
@@ -2444,7 +2458,7 @@ async function fetchReviewsFromServer() {
             reviews = data.sort((a, b) => b.timestamp - a.timestamp);
             localStorage.setItem('reviews', JSON.stringify(reviews));
         }
-    } catch (e) {}
+    } catch (e) { }
 }
 
 async function postReviewToServer(review) {

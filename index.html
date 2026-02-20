@@ -17,7 +17,6 @@
     <div class="header-content">
       <div class="logo">Cholpon</div>
 
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">☰</button>
 
       <nav class="nav" id="mainNav">
         <a href="#menu" data-i18n="nav-menu">Меню</a>
@@ -224,6 +223,20 @@
           <button type="button" class="btn btn-primary" id="addToCartFromDetails" data-i18n="add-to-cart">В корзину</button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- VARIANT MODAL -->
+<div class="modal-overlay" id="variantModalOverlay">
+  <div class="modal-content variant-modal">
+    <div class="modal-header">
+      <h2 id="variantModalTitle">Выберите вариант</h2>
+      <button class="modal-close" id="variantModalClose">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p id="variantModalHint">Выберите объём или вариант:</p>
+      <div class="variant-options" id="variantOptions"></div>
     </div>
   </div>
 </div>
