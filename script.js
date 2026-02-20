@@ -16,7 +16,7 @@ const menuData = [
         ingredients: ['Говядина', 'Лук', 'Морковь', 'Картошка', 'Помидоры', 'Зелень', 'Специи'],
         ingredientsKg: ['Жылкы эти', 'Пияз', 'Сабиз', 'Картөшкө', 'Помидор', 'Жашылча', 'Азыктар']
     },
-
+    
     {
         id: 2,
         name: 'Сырный суп (фрикадельки)',
@@ -27,7 +27,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/565/big_564981.jpg',
         category: 'first'
     },
-
+    
     {
         id: 3,
         name: 'Суп с фрикадельками',
@@ -38,7 +38,7 @@ const menuData = [
         image: 'https://dikoed.ru/upload/iblock/66c/48245-sup-s-frikadelkami-iz-myasa-olenya.jpg',
         category: 'first'
     },
-
+    
     {
         id: 4,
         name: 'Солянка',
@@ -49,7 +49,7 @@ const menuData = [
         image: 'https://lifehacker.ru/wp-content/uploads/2020/06/6_1592925463-scaled.jpg',
         category: 'first'
     },
-
+    
     {
         id: 5,
         name: 'Пельмени домашние',
@@ -72,7 +72,7 @@ const menuData = [
         image: 'https://cooklikemary.ru/sites/default/files/styles/width_700/public/img_3633_0.jpg?itok=e15Ck_hr',
         category: 'second'
     },
-
+    
     {
         id: 7,
         name: 'Котлеты',
@@ -83,7 +83,7 @@ const menuData = [
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIZSOvy9EXTWC0WL_znrlVYl4iipeuomNeA&s',
         category: 'second'
     },
-
+    
     {
         id: 8,
         name: 'Тефтели',
@@ -94,7 +94,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/old/upl/recipes/zen/u-9d9f7b406881b1dde4c262f9f84bc279.jpg',
         category: 'second'
     },
-
+    
     {
         id: 9,
         name: 'Лагман Уйгурский',
@@ -105,7 +105,7 @@ const menuData = [
         image: 'https://s1.webspoon.ru/receipts/2013/7/8738/orig_8738_0_xxl.jpg',
         category: 'second'
     },
-
+    
     {
         id: 10,
         name: 'Лагман Жареный',
@@ -116,7 +116,7 @@ const menuData = [
         image: 'https://cdn.smt.bz/uploads/media/photo/2225664/%D0%BB%D0%B0%D0%B3%D0%BC%D0%B0%D0%BD_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B9.webp',
         category: 'second'
     },
-
+    
     {
         id: 11,
         name: 'Гуляш',
@@ -127,7 +127,7 @@ const menuData = [
         image: 'https://zira.uz/wp-content/uploads/2023/09/gulyash.jpg',
         category: 'second'
     },
-
+    
     {
         id: 12,
         name: 'Мясо по-королевски',
@@ -150,7 +150,7 @@ const menuData = [
         image: 'https://static.1000.menu/img/content-v2/09/92/34970/myaso-po-derevenski-v-duxovke-s-kartofelem_1676810570_23_max.jpg',
         category: 'special'
     },
-
+    
     {
         id: 14,
         name: 'Стейк форель 3шт',
@@ -161,7 +161,7 @@ const menuData = [
         image: 'https://finecooking.ru/images/recipe/steyki-foreli-zapechennye-v-duhovke/photo/960w.jpg',
         category: 'special'
     },
-
+    
     {
         id: 15,
         name: 'Стейк форель 2шт',
@@ -172,7 +172,7 @@ const menuData = [
         image: 'https://yabpoela.net/uploads/posts/2019-12/1576932448_photo_2019-12-21_14-18-13.jpg',
         category: 'special'
     },
-
+    
     {
         id: 16,
         name: 'Адана-Кебаб',
@@ -183,7 +183,7 @@ const menuData = [
         image: 'https://www.koolinar.ru/all_image/recipes/157/157915/recipe_9f002738-7831-484c-ad0a-7294e58d8cba_w450.webp',
         category: 'special'
     },
-
+    
     {
         id: 17,
         name: 'Бейти кебаб',
@@ -194,7 +194,7 @@ const menuData = [
         image: 'https://lifehacker.ru/wp-content/uploads/2024/12/shutterstock_2265339147_1_1734602719-e1734602773944.jpg',
         category: 'special'
     },
-
+    
     {
         id: 18,
         name: 'Турецкий кебаб',
@@ -205,7 +205,7 @@ const menuData = [
         image: 'https://bigasia.ru/wp-content/uploads/2023/04/2435c715734d0d295dc9c342ccf20ab6.jpg',
         category: 'special'
     },
-
+    
     {
         id: 19,
         name: 'Бризоль',
@@ -216,7 +216,7 @@ const menuData = [
         image: 'https://media.ovkuse.ru/images/recipes/a3ade189-9389-40c7-baaa-3ee8de125985/a3ade189-9389-40c7-baaa-3ee8de125985_420_420.webp',
         category: 'special'
     },
-
+    
     {
         id: 20,
         name: 'Мясо в горшочке',
@@ -227,7 +227,7 @@ const menuData = [
         image: 'https://halal-spb.ru/sites/default/files/styles/large/public/jarkoe-v-gorshochkah.jpg?itok=tzEUT5YJ',
         category: 'special'
     },
-
+    
     {
         id: 21,
         name: 'Куурдак',
@@ -238,7 +238,7 @@ const menuData = [
         image: 'https://s1.eda.ru/StaticContent/Photos/160915225201/160926225652/p_O.jpg',
         category: 'special'
     },
-
+    
     {
         id: 22,
         name: 'Курица в кисло-сладком соусе',
@@ -249,7 +249,7 @@ const menuData = [
         image: 'https://www.povarenok.ru/data/cache/2023jan/21/55/3033845_65334-710x550x.jpg',
         category: 'special'
     },
-
+    
     {
         id: 23,
         name: 'Фрикассе',
@@ -260,7 +260,7 @@ const menuData = [
         image: 'https://ist.say7.info/img0012/35/1235_0166c21_2455_1024.jpg',
         category: 'special'
     },
-
+    
     {
         id: 24,
         name: 'Казан кебаб',
@@ -271,7 +271,7 @@ const menuData = [
         image: 'https://lafoy.ru/photo_l/foto-4456-2.jpg',
         category: 'special'
     },
-
+    
     {
         id: 25,
         name: 'Курица с овощами',
@@ -282,7 +282,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/old/upl/recipes/cat/u1169-c8338c700c52d3dc7043abce47bef4fa.JPG',
         category: 'special'
     },
-
+    
     {
         id: 26,
         name: 'Фетучини с форелью',
@@ -293,7 +293,7 @@ const menuData = [
         image: 'https://bandler.ru/image/catalog/product/recepti/fettuchini-s-semgoj.jpg',
         category: 'special'
     },
-
+    
     {
         id: 27,
         name: 'Фетучини с курицей',
@@ -316,7 +316,7 @@ const menuData = [
         image: 'https://restoran-mimi.ru/assets/content/shashlik-iz-govyadini-7.jpg',
         category: 'shashlik'
     },
-
+    
     {
         id: 29,
         name: 'Наполеон',
@@ -327,7 +327,7 @@ const menuData = [
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1ml_CCi-1FvCUye__NUK_6_q0G8ylc91Xg&s',
         category: 'shashlik'
     },
-
+    
     {
         id: 30,
         name: 'Люля-Кебаб',
@@ -338,7 +338,7 @@ const menuData = [
         image: 'https://a-catering.com/image/1.Dostavka/Gorihie/lyulya-kebab-dostavka-shashlyka-na-dom-i-po-spb-v-lenoblati-kejtering.jpg',
         category: 'shashlik'
     },
-
+    
     {
         id: 31,
         name: 'Крылышки',
@@ -349,7 +349,7 @@ const menuData = [
         image: 'https://edimdoma.ru/data/recipes/0014/5261/145261-ed4_wide.jpg?1759232294',
         category: 'shashlik'
     },
-
+    
     {
         id: 32,
         name: 'Овощной шашлык',
@@ -372,7 +372,7 @@ const menuData = [
         image: 'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 34,
         name: 'Столичный',
@@ -383,7 +383,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/68/big_67797.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 35,
         name: 'Гасконский',
@@ -394,7 +394,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/sGjV5ER10ys/sddefault.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 36,
         name: 'Витаминка',
@@ -405,7 +405,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/555/big_554824.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 37,
         name: 'Овощной микс',
@@ -416,7 +416,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/546/big_545819.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 38,
         name: 'Свежий',
@@ -427,7 +427,7 @@ const menuData = [
         image: 'https://cdn.smt.bz/uploads/media/photo/2236799/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B9.webp',
         category: 'salad'
     },
-
+    
     {
         id: 39,
         name: 'Фунчоза',
@@ -438,7 +438,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/cZnNPgADKTQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcrWOozEpdooPxEHiHVMmWe6BTfg',
         category: 'salad'
     },
-
+    
     {
         id: 40,
         name: 'Нарезка фирменная овощная',
@@ -449,7 +449,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/x065ZmRdxBU/maxresdefault.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 41,
         name: 'Цезарь с курицей',
@@ -460,7 +460,7 @@ const menuData = [
         image: 'https://images.gastronom.ru/LoVJjeEYXJQ3vR2Yn8WtlivB0eZ78Rtu417zEnX1mZs/pr:content-group-preview-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzk1YTg3ZTcxLTI0MjQtNGM3MC04MjllLTA2MTYyOTRjOGFhMi5qcGc.webp',
         category: 'salad'
     },
-
+    
     {
         id: 42,
         name: 'Гнездо кукушки',
@@ -471,7 +471,7 @@ const menuData = [
         image: 'https://foodmood.ru/upload/iblock/bfe/bfe5b51ce6ea8a5f17b59c153ac3fcf9.jpeg',
         category: 'salad'
     },
-
+    
     {
         id: 43,
         name: 'Мерло',
@@ -482,7 +482,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/542/big_541650.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 44,
         name: 'Салат с грибами',
@@ -493,7 +493,7 @@ const menuData = [
         image: 'https://www.moi-povar.ru/upload/iblock/162/IMG_1518.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 45,
         name: 'Салат с свеклой',
@@ -504,7 +504,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/503/big_502335.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 46,
         name: 'Охотница',
@@ -515,7 +515,7 @@ const menuData = [
         image: 'https://sovkusom.ru/wp-content/uploads/recepty/s/salat-s-shampinyonami/thumb-840x440.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 47,
         name: 'Китайский острый',
@@ -526,7 +526,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/165/big_164344.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 48,
         name: 'Восточный',
@@ -537,7 +537,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/527/big_526629.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 49,
         name: 'Баклажан с овощами',
@@ -548,7 +548,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/733/big_732221.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 50,
         name: 'Фирменный баклажан',
@@ -559,7 +559,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/777/big_776231.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 51,
         name: 'Баклажан микс',
@@ -570,7 +570,7 @@ const menuData = [
         image: 'https://www.russianfood.com/dycontent/images_upl/645/big_644398.jpg',
         category: 'salad'
     },
-
+    
     {
         id: 52,
         name: 'Курица с ореховым соусом',
@@ -593,7 +593,7 @@ const menuData = [
         image: 'https://vkusnoff.com/img/recepty/3985/big.webp',
         category: 'dessert'
     },
-
+    
     {
         id: 54,
         name: 'Чизкейк',
@@ -604,7 +604,7 @@ const menuData = [
         image: 'https://art-lunch.ru/content/uploads/2014/08/cheesecake-new-york-001x2-1.jpg',
         category: 'dessert'
     },
-
+    
     {
         id: 55,
         name: 'Три шоколада',
@@ -615,7 +615,7 @@ const menuData = [
         image: 'https://tochkamarket.ru/upload/iblock/5f9/rfprgsonxwxsc8hoaz027ghn0iyllo1u.jpg',
         category: 'dessert'
     },
-
+    
     {
         id: 56,
         name: 'Сникерс',
@@ -626,7 +626,7 @@ const menuData = [
         image: 'https://cdn.nur.kz/images/1200x675/aae7343159f27780.jpeg?version=1',
         category: 'dessert'
     },
-
+    
     {
         id: 57,
         name: 'Трайфл',
@@ -650,7 +650,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/2019/upl/recipes/cat/u-4a903326f8c32bf338e5d2b2cf87a1aa.JPG',
         category: 'drink'
     },
-
+    
     {
         id: 59,
         name: 'Кола 1л / 1,5л',
@@ -662,7 +662,7 @@ const menuData = [
         image: 'https://neman.kg/images/watermarked/detailed/34/unnamed_n7sb-ck.webp',
         category: 'drink'
     },
-
+    
     {
         id: 60,
         name: 'Фанта 1л / 1,5л',
@@ -674,7 +674,7 @@ const menuData = [
         image: 'https://dostavka-produktov.ru/image/cache/catalog/products_images/3176277-1000x1000.jpg',
         category: 'drink'
     },
-
+    
     {
         id: 61,
         name: 'Любимый 1л / 1,5л',
@@ -698,7 +698,7 @@ const menuData = [
         image: 'https://www.chefmarket.ru/blog/wp-content/uploads/2020/01/fried-chick-2000x1200.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 63,
         name: 'Шаурма',
@@ -709,7 +709,7 @@ const menuData = [
         image: 'https://lefood.menu/wp-content/uploads/w_images/2023/07/recept-76707-1240x827.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 64,
         name: 'Шаурма с курицей',
@@ -720,7 +720,7 @@ const menuData = [
         image: 'https://zira.uz/wp-content/uploads/2022/06/shaurma-18.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 65,
         name: 'Пицца "Пепперони"',
@@ -731,7 +731,7 @@ const menuData = [
         image: 'https://s1.eda.ru/StaticContent/Photos/Upscaled/120131085053/171027192707/p_O.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 66,
         name: 'Пицца "Мясная"',
@@ -742,7 +742,7 @@ const menuData = [
         image: 'https://cipollino.ua/content/uploads/images/recept-myasnoj-piccy-pod-syrom%281%29.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 67,
         name: 'Пицца "Курица с грибами"',
@@ -753,7 +753,7 @@ const menuData = [
         image: 'https://s3.smartofood.ru/kato/menu/14cce8bc-fddd-5770-9c57-f35c8172513c.webp',
         category: 'fastfood'
     },
-
+    
     {
         id: 68,
         name: 'Рамён',
@@ -764,7 +764,7 @@ const menuData = [
         image: 'https://opis-cdn.tinkoffjournal.ru/mercury/inramen2.c3mkuj4avtxt..jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 69,
         name: 'Пирог',
@@ -775,7 +775,7 @@ const menuData = [
         image: 'https://prostokvashino.ru/upload/resize_cache/iblock/74f/800_800_0/74fe90dd6ef5f047dcadff513c8d75d7.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 70,
         name: 'Мини самсы песочные',
@@ -786,7 +786,7 @@ const menuData = [
         image: 'https://i.ytimg.com/vi/US6fbAwR_2E/maxresdefault.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 71,
         name: 'Хлеб',
@@ -797,7 +797,7 @@ const menuData = [
         image: 'https://img.iamcook.ru/old/upl/recipes/cat/u4142-10b7c9c0972f7a6486ec930a56c01777.jpg',
         category: 'fastfood'
     },
-
+    
     {
         id: 72,
         name: 'Чай',
@@ -828,7 +828,7 @@ const translations = {
         'contact-title': 'Контакты',
         'contact-location': 'Кара-Куль',
         'contact-hours': '10:00 - 22:00, без выходных',
-        'footer-text': '©️ 2025 Кафе Cholpon. Все права защищены.',
+        'footer-text': '© 2025 Кафе Cholpon. Все права защищены.',
         'cart-title': 'Корзина',
         'cart-empty': 'Корзина пуста',
         'cart-total': 'Итого:',
@@ -884,7 +884,7 @@ const translations = {
         'contact-title': 'Байланыш',
         'contact-location': 'Кара-Көл',
         'contact-hours': '10:00 - 22:00, дем алыш жок',
-        'footer-text': '©️ 2025 Cholpon кафеси. Бардык укуктар корголгон.',
+        'footer-text': '© 2025 Cholpon кафеси. Бардык укуктар корголгон.',
         'cart-title': 'Себет',
         'cart-empty': 'Себет бош',
         'cart-total': 'Баары:',
@@ -909,7 +909,7 @@ const translations = {
         'filter-shashlik': 'Шашлык',
         'filter-salad': 'Салат',
         'filter-dessert': 'Десерт',
-        'filter-drink': 'Суусундуктар',
+        'filter-drink': 'Ичимдик',
         'filter-fastfood': 'Fast-Food',
         'dish-ingredients': 'Курамы:',
         'reviews-title': 'Пикирлер',
@@ -940,7 +940,7 @@ const translations = {
         'contact-title': 'Contacts',
         'contact-location': 'Kara-Kul',
         'contact-hours': '10:00 - 22:00, no days off',
-        'footer-text': '©️ 2025 Cholpon Cafe. All rights reserved.',
+        'footer-text': '© 2025 Cholpon Cafe. All rights reserved.',
         'cart-title': 'Cart',
         'cart-empty': 'Cart is empty',
         'cart-total': 'Total:',
@@ -1073,23 +1073,24 @@ translations.en['order-address'] = 'Delivery address';
 translations.en['delivery-form-title'] = 'Delivery information';
 translations.en['back'] = 'Back';
 translations.en['continue'] = 'Continue';
-
 // ============================================
-// Константы для заказов
+// Константы
 // ============================================
 
-// Номер телефона кафе для WhatsApp (без + и пробелов)
 const CAFE_PHONE_NUMBER = '996998252023';
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwRZDDKK04OEv-ySYHz6XbskBZXp7vGYcWxp7fYiLSmrVe0fjHi7KgDEIGIFnIEFYrn/exec';
+const REVIEWS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyYVg9L5UtQISuiSDvzxcleVKqN4mLN4b3to64DRukMGMN6kTCnYhX3F5BfSSwA85hUWg/exec';
 
-// Официанты: сначала определяем список официантов по ID
-// Пример: WAITERS['w1'] = { id: 'w1', name: 'Альмурза', phone: '996700000001', photo: './icons/waiter1.jpg' }
+// ============================================
+// Официанты
+// ============================================
+
 let WAITERS = {
     'w1': { id: 'w1', name: 'Альмурза', phone: '996700000001', photo: './icons/waiter1.jpg' },
-    'w2': { id: 'w2', name: 'Назбийке', phone: '996998252023', photo: './icons/waiter2.jpg' },
+    'w2': { id: 'w2', name: 'Нурсултан', phone: '996700000002', photo: './icons/waiter2.jpg' },
     'w3': { id: 'w3', name: 'Айзада', phone: '996700000003', photo: './icons/waiter3.jpg' }
 };
 
-// Привязки: waiterId -> массив номеров столов
 let WAITER_TABLES = {
     'w1': [1, 2, 7, 10],
     'w2': [3, 8, 11],
@@ -1105,44 +1106,23 @@ function loadWaiterConfig() {
         const cfg = JSON.parse(raw);
         if (cfg.waiters) WAITERS = cfg.waiters;
         if (cfg.waiterTables) WAITER_TABLES = cfg.waiterTables;
-    } catch (e) { }
+    } catch (e) {}
 }
 
 function saveWaiterConfig() {
     try {
         localStorage.setItem('waiterConfig', JSON.stringify({ waiters: WAITERS, waiterTables: WAITER_TABLES }));
-    } catch (e) { }
+    } catch (e) {}
 }
 
-// Возвращает объект официанта для данного стола (или null)
 function getWaiterForTable(num) {
     for (const wid in WAITER_TABLES) {
-        const arr = WAITER_TABLES[wid] || [];
-        if (arr.indexOf(Number(num)) !== -1) return WAITERS[wid] || null;
+        if ((WAITER_TABLES[wid] || []).indexOf(Number(num)) !== -1) return WAITERS[wid] || null;
     }
     return null;
 }
 
-function getTablesForWaiter(wid) {
-    return WAITER_TABLES[wid] ? WAITER_TABLES[wid].slice() : [];
-}
-
-function setTablesForWaiter(wid, arr) {
-    WAITER_TABLES[wid] = Array.isArray(arr) ? arr.map(Number) : [];
-    saveWaiterConfig();
-}
-
-function setWaiter(wid, waiterObj) {
-    WAITERS[wid] = waiterObj;
-    saveWaiterConfig();
-}
-
 loadWaiterConfig();
-
-// URL Google Apps Script Web App для сохранения в Google Sheets
-// ВАЖНО: Замените на ваш URL после настройки Google Apps Script
-// Инструкция в файле GOOGLE_SHEETS_SETUP.md
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwRZDDKK04OEv-ySYHz6XbskBZXp7vGYcWxp7fYiLSmrVe0fjHi7KgDEIGIFnIEFYrn/exec';
 
 // ============================================
 // Глобальные переменные
@@ -1151,18 +1131,15 @@ const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwRZDDKK04OEv
 let currentLang = localStorage.getItem('lang') || 'ru';
 let currentTheme = localStorage.getItem('theme') || 'light';
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let currentCategory = 'all'; // Текущая выбранная категория
-let currentSliderIndex = 0; // Индекс текущего фото в слайдере
-
-// Тип заказа: 'cafe', 'pickup', 'delivery', 'browse'
+let currentCategory = 'all';
+let currentSliderIndex = 0;
 let orderType = null;
 let tableNumber = null;
 let deliveryInfo = null;
-// Endpoint для общих отзывов (Apps Script Web App URL)
-const REVIEWS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyYVg9L5UtQISuiSDvzxcleVKqN4mLN4b3to64DRukMGMN6kTCnYhX3F5BfSSwA85hUWg/exec';
+let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
 // ============================================
-// Инициализация приложения
+// INIT
 // ============================================
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -1172,40 +1149,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateCartUI();
     initEventListeners();
     initHeaderScroll();
+    initVariantModal();
     await initReviews();
-    // Восстанавливаем данные доставки, если они были введены ранее
+
     try {
         const savedDelivery = localStorage.getItem('deliveryInfo');
         if (savedDelivery) deliveryInfo = JSON.parse(savedDelivery);
-    } catch (err) {
-        deliveryInfo = null;
-    }
+    } catch (e) { deliveryInfo = null; }
+
     animateWelcome();
-    // Lightbox init
+
+    // Lightbox
     const closeLb = document.getElementById('closeLightbox');
     const lb = document.getElementById('imageLightbox');
     if (closeLb) closeLb.addEventListener('click', closeImageLightbox);
-    if (lb) lb.addEventListener('click', (e) => { if (e.target === lb) closeImageLightbox(); });
-    // Init payment option visual state
+    if (lb) lb.addEventListener('click', e => { if (e.target === lb) closeImageLightbox(); });
+
     initPaymentOptions();
-    // Init order form validation listeners
     initOrderFormValidation();
-    // Init order type modal (только навешиваем обработчики, не показываем сразу)
     initOrderTypeModal();
-    // Если стол передан через параметр ?table=, сразу выбираем его.
-    // В этом случае окно "Как вы хотите заказать?" не показываем вообще.
+
     const handledByUrl = initTableFromUrl();
-    // Если стол НЕ передан в URL, показываем модалку выбора типа заказа
     if (!handledByUrl) {
-        // Если в localStorage сохранён официант/стол — восстановим баннер
         try {
             const savedWaiter = localStorage.getItem('currentWaiter');
             if (savedWaiter && !currentWaiter) {
                 currentWaiter = JSON.parse(savedWaiter);
-                // Отложенно показываем баннер
-                setTimeout(() => { notifyAssignedWaiter(); }, 300);
+                setTimeout(() => notifyAssignedWaiter(), 300);
             }
-        } catch (e) { }
+        } catch (e) {}
 
         const orderTypeModal = document.getElementById('orderTypeModal');
         if (orderTypeModal) {
@@ -1215,1494 +1187,303 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Set selected class on payment option labels for clear visual state
-function initPaymentOptions() {
-    const options = document.querySelectorAll('.payment-option');
-    if (!options || options.length === 0) return;
-
-    function refresh() {
-        options.forEach(opt => opt.classList.remove('selected'));
-        const checked = document.querySelector('input[name="paymentMethod"]:checked');
-        if (checked && checked.closest('.payment-option')) {
-            checked.closest('.payment-option').classList.add('selected');
-        } else if (checked) {
-            // if input not wrapped by .payment-option, try to find label
-            const lbl = document.querySelector(`label[for="${checked.id}"]`);
-            if (lbl) lbl.classList.add('selected');
-        }
-    }
-
-    // initial state
-    refresh();
-
-    // listen for changes
-    const radios = document.querySelectorAll('input[name="paymentMethod"]');
-    radios.forEach(r => r.addEventListener('change', (ev) => { refresh(); toggleMbankQr(ev.target.value); }));
-    // Also support click on label to toggle
-    options.forEach(opt => opt.addEventListener('click', () => {
-        const inp = opt.querySelector('input[name="paymentMethod"]');
-        if (inp) {
-            inp.checked = true;
-            inp.dispatchEvent(new Event('change', { bubbles: true }));
-            // Обновляем показ QR при клике по варианту
-            toggleMbankQr(inp.value);
-        }
-    }));
-
-    // Инициализируем видимость QR по текущему выбранному способу
-    const checked = document.querySelector('input[name="paymentMethod"]:checked');
-    toggleMbankQr(checked ? checked.value : null);
-}
-
-// Показывает/скрывает QR-контейнер MBank
-function toggleMbankQr(selectedValue) {
-    const container = document.getElementById('mbankQrContainer');
-    if (!container) return;
-    if (selectedValue === 'mbank') {
-        container.style.display = 'block';
-    } else {
-        container.style.display = 'none';
-    }
-}
-
-// Скрывает опцию оплаты картой при доставке, иначе показывает все опции
-function adjustPaymentOptionsForDelivery() {
-    const cardInput = document.querySelector('input[name="paymentMethod"][value="card"]');
-    const cardLabel = cardInput ? cardInput.closest('.payment-option') : null;
-    if (orderType === 'delivery') {
-        if (cardLabel) cardLabel.style.display = 'none';
-        const checked = document.querySelector('input[name="paymentMethod"]:checked');
-        if (checked && checked.value === 'card') {
-            const cash = document.querySelector('input[name="paymentMethod"][value="cash"]');
-            if (cash) {
-                cash.checked = true;
-                cash.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-        }
-    } else {
-        if (cardLabel) cardLabel.style.display = '';
-    }
-}
-
-// Проверка валидности формы заказа и активация кнопки отправки
-function validateOrderForm() {
-    const submitBtn = document.getElementById('submitOrderBtn');
-    if (!submitBtn) return;
-
-    const name = document.getElementById('customerName');
-    const phone = document.getElementById('customerPhone');
-    const cartNotEmpty = cart && cart.length > 0;
-
-    const payment = document.querySelector('input[name="paymentMethod"]:checked');
-
-    // Валидатор телефона - только 9 цифр без префикса
-    const phoneVal = phone ? phone.value.trim().replace(/[\s-]/g, '') : '';
-    const phoneOk = phoneVal.length === 9 && /^[0-9]{9}$/.test(phoneVal);
-
-    const nameOk = name && name.value.trim().length > 0;
-    const paymentOk = !!payment;
-
-    const formReady = cartNotEmpty && nameOk && phoneOk && paymentOk;
-
-    if (formReady) {
-        submitBtn.disabled = false;
-        submitBtn.classList.add('ready');
-    } else {
-        submitBtn.disabled = true;
-        submitBtn.classList.remove('ready');
-    }
-}
-
-// Форматирование номера телефона: 998 25 20 23
-function formatPhoneInput(input) {
-    let value = input.value.replace(/\D/g, ''); // только цифры
-
-    // Ограничиваем до 9 цифр
-    if (value.length > 9) {
-        value = value.slice(0, 9);
-    }
-
-    // Форматируем: 998 25 20 23
-    let formatted = '';
-    if (value.length > 0) {
-        formatted = value.slice(0, 3);
-    }
-    if (value.length > 3) {
-        formatted += ' ' + value.slice(3, 5);
-    }
-    if (value.length > 5) {
-        formatted += ' ' + value.slice(5, 7);
-    }
-    if (value.length > 7) {
-        formatted += ' ' + value.slice(7, 9);
-    }
-
-    input.value = formatted;
-}
-
-// Подключаем слушатели на инпуты формы, чтобы валидировать в реальном времени
-function initOrderFormValidation() {
-    const name = document.getElementById('customerName');
-    const phone = document.getElementById('customerPhone');
-    const deliveryPhone = document.getElementById('deliveryPhone');
-    const radios = document.querySelectorAll('input[name="paymentMethod"]');
-
-    if (name) name.addEventListener('input', validateOrderForm);
-
-    // Форматирование и валидация телефона
-    if (phone) {
-        phone.addEventListener('input', () => {
-            formatPhoneInput(phone);
-            validateOrderForm();
-        });
-    }
-
-    // Форматирование телефона в форме доставки
-    if (deliveryPhone) {
-        deliveryPhone.addEventListener('input', () => {
-            formatPhoneInput(deliveryPhone);
-        });
-    }
-
-    radios.forEach(r => r.addEventListener('change', validateOrderForm));
-
-    // ensure validation runs when cart changes
-    // updateCartUI() will call validateOrderForm at the end
-    validateOrderForm();
-}
-
 // ============================================
-// Модальное окно выбора типа заказа
+// VARIANT MODAL (для позиций с несколькими объёмами)
 // ============================================
 
-function initLangSelectButtons() {
-    const langButtons = document.querySelectorAll('.lang-btn');
+let variantCallback = null;
 
-    // Устанавливаем активную кнопку по текущему языку
-    langButtons.forEach(btn => {
-        if (btn.dataset.lang === currentLang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
+function initVariantModal() {
+    // Создаём модал если его нет
+    if (document.getElementById('variantModal')) return;
 
+    const overlay = document.createElement('div');
+    overlay.className = 'variant-modal-overlay';
+    overlay.id = 'variantModalOverlay';
+
+    overlay.innerHTML = `
+        <div class="variant-modal" id="variantModal">
+            <button class="variant-modal-close" id="variantModalClose">&times;</button>
+            <h3 id="variantModalTitle"></h3>
+            <p class="variant-hint" id="variantModalHint"></p>
+            <div class="variant-options" id="variantOptions"></div>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    document.getElementById('variantModalClose').addEventListener('click', closeVariantModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeVariantModal(); });
+}
+
+function openVariantModal(item, onSelect) {
+    variantCallback = onSelect;
+
+    const overlay = document.getElementById('variantModalOverlay');
+    const title = document.getElementById('variantModalTitle');
+    const hint = document.getElementById('variantModalHint');
+    const options = document.getElementById('variantOptions');
+
+    const name = currentLang === 'ru' ? item.name : (item.nameKg || item.name);
+    title.textContent = name;
+    hint.textContent = currentLang === 'ru' ? 'Выберите объём или вариант:' : 'Көлөмдү же вариантты тандаңыз:';
+
+    options.innerHTML = '';
+
+    (item.variants || []).forEach(v => {
+        const btn = document.createElement('button');
+        btn.className = 'variant-option';
+        btn.innerHTML = `
+            <span class="vo-label">${v.label}</span>
+            <span class="vo-price">${v.price} <span style="font-size:0.8em;font-weight:400">${translations[currentLang]?.currency || 'сом'}</span></span>
+        `;
         btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            if (lang && translations[lang]) {
-                currentLang = lang;
-                localStorage.setItem('lang', lang);
-
-                // Обновляем активную кнопку
-                langButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // Обновляем интерфейс
-                updateLanguage();
-                renderMenu();
-
-                // Обновляем кнопку языка в шапке
-                const langToggle = document.getElementById('langToggle');
-                if (langToggle) {
-                    langToggle.textContent = lang.toUpperCase();
-                }
-                // Обновляем состояние кнопок языка в модальном окне
-                const langBtnRu = document.getElementById('langBtnRu');
-                const langBtnKg = document.getElementById('langBtnKg');
-                if (langBtnRu) {
-                    langBtnRu.classList.toggle('active', lang === 'ru');
-                }
-                if (langBtnKg) {
-                    langBtnKg.classList.toggle('active', lang === 'kg');
-                }
-            }
+            closeVariantModal();
+            if (variantCallback) variantCallback(v);
         });
+        options.appendChild(btn);
     });
+
+    overlay.classList.add('active');
 }
 
-function initOrderTypeModal() {
-    const modal = document.getElementById('orderTypeModal');
-    const tableModal = document.getElementById('tableSelectModal');
-    const deliveryModal = document.getElementById('deliveryFormModal');
-    const tableGrid = document.getElementById('tableGrid');
+function closeVariantModal() {
+    const overlay = document.getElementById('variantModalOverlay');
+    if (overlay) overlay.classList.remove('active');
+    variantCallback = null;
+}
 
-    // Инициализация кнопок выбора языка
-    initLangSelectButtons();
+// ============================================
+// CART
+// ============================================
 
+function addToCart(itemId) {
+    const item = menuData.find(i => i.id === itemId);
+    if (!item) return;
 
-    // Генерируем кнопки столов 1-11
-    if (tableGrid) {
-        tableGrid.innerHTML = '';
-        for (let i = 1; i <= 11; i++) {
-            const btn = document.createElement('button');
-            btn.className = 'table-btn';
-            btn.textContent = i;
-            btn.dataset.table = i;
-            btn.addEventListener('click', () => selectTable(i));
-            tableGrid.appendChild(btn);
-        }
-    }
-
-    // Обработчики кнопок типа заказа
-    const cafeBtn = document.getElementById('orderTypeCafe');
-    const pickupBtn = document.getElementById('orderTypePickup');
-    const deliveryBtn = document.getElementById('orderTypeDelivery');
-    const browseBtn = document.getElementById('orderTypeBrowse');
-    const closeTableBtn = document.getElementById('closeTableModal');
-    const closeDeliveryBtn = document.getElementById('closeDeliveryModal');
-    const backToOrderTypeBtn = document.getElementById('backToOrderType');
-    const deliveryForm = document.getElementById('deliveryInfoForm');
-
-    // Если в URL НЕТ номера стола (?table=...), скрываем кнопку "Я в кафе"
-    // Это значит, что гость не из зала, а просто зашёл на сайт
-    try {
-        const params = new URLSearchParams(window.location.search);
-        const tableParam = params.get('table');
-        if (cafeBtn && !tableParam) {
-            cafeBtn.style.display = 'none';
-        }
-    } catch (e) { }
-
-    if (cafeBtn) cafeBtn.addEventListener('click', () => showTableSelect());
-    if (pickupBtn) pickupBtn.addEventListener('click', () => setOrderType('pickup'));
-    if (deliveryBtn) deliveryBtn.addEventListener('click', () => showDeliveryForm());
-    if (browseBtn) browseBtn.addEventListener('click', () => setOrderType('browse'));
-
-    if (closeTableBtn) closeTableBtn.addEventListener('click', () => {
-        tableModal.classList.remove('active');
-        modal.classList.add('active');
-    });
-
-    if (closeDeliveryBtn) closeDeliveryBtn.addEventListener('click', () => {
-        deliveryModal.classList.remove('active');
-        modal.classList.add('active');
-    });
-
-    if (backToOrderTypeBtn) backToOrderTypeBtn.addEventListener('click', () => {
-        deliveryModal.classList.remove('active');
-        modal.classList.add('active');
-    });
-
-    // Обработка формы доставки
-    if (deliveryForm) {
-        deliveryForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('deliveryName').value.trim();
-            const phone = document.getElementById('deliveryPhone').value.trim();
-            const address = document.getElementById('deliveryAddressInput').value.trim();
-
-            if (name && phone && address) {
-                deliveryInfo = { name, phone, address };
-                // Сохраняем временно введённые данные доставки, чтобы они были доступны
-                // при переходе к форме оформления заказа
-                try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) { }
-                setOrderType('delivery');
-                deliveryModal.classList.remove('active');
-            }
+    // Если у позиции есть варианты — показываем модал
+    if (item.variants && item.variants.length > 0) {
+        openVariantModal(item, (variant) => {
+            addCartItem(item, variant);
         });
+        return;
     }
 
-    // Закрытие по клику вне модального окна стола
-    if (tableModal) {
-        tableModal.addEventListener('click', (e) => {
-            if (e.target === tableModal) {
-                tableModal.classList.remove('active');
-                modal.classList.add('active');
-            }
-        });
-    }
-
-    // Закрытие по клику вне модального окна доставки
-    if (deliveryModal) {
-        deliveryModal.addEventListener('click', (e) => {
-            if (e.target === deliveryModal) {
-                deliveryModal.classList.remove('active');
-                modal.classList.add('active');
-            }
-        });
-    }
+    // Обычное добавление
+    addCartItem(item, null);
 }
 
-// Если в URL есть параметр ?table=, автоматически выбираем этот стол и режим "Я в кафе"
-// Возвращает true, если номер стола успешно установлен, иначе false
-function initTableFromUrl() {
-    try {
-        const params = new URLSearchParams(window.location.search);
-        const tableParam = params.get('table');
-        if (!tableParam) return false;
+function addCartItem(item, variant) {
+    const cartId = variant ? `${item.id}_${variant.label}` : String(item.id);
+    const price = variant ? variant.price : item.price;
+    const nameSuffix = variant ? ` (${variant.label})` : '';
+    const name = (currentLang === 'ru' ? item.name : (item.nameKg || item.name)) + nameSuffix;
 
-        const num = parseInt(tableParam, 10);
-        // Валидация номера стола (1–11, как в модалке выбора стола)
-        if (!Number.isFinite(num) || num < 1 || num > 11) return false;
-
-        tableNumber = num;
-        orderType = 'cafe';
-
-        // Сохраняем номер стола локально (на случай обновления страницы)
-        try { localStorage.setItem('currentTableNumber', String(num)); } catch (e) { }
-
-        // Назначаем официанта, если есть привязка
-        const waiter = getWaiterForTable(num);
-        if (waiter) {
-            currentWaiter = waiter;
-            try { localStorage.setItem('currentWaiter', JSON.stringify(currentWaiter)); } catch (e) { }
-        }
-
-        // Применяем режим заказа (тип "кафе", стол уже выбран)
-        applyOrderTypeMode();
-
-        // Показываем уведомление о назначенном официанте
-        setTimeout(() => { notifyAssignedWaiter(); }, 300);
-        return true;
-    } catch (err) {
-        console.error('Failed to init table from URL', err);
-        return false;
-    }
-}
-
-// Показывает баннер/уведомление о назначенном официанте
-function notifyAssignedWaiter() {
-    if (!currentWaiter) return;
-    const name = currentWaiter.name || 'Официант';
-    showToast(`Ваш официант: ${name}`);
-
-    // Добавим небольшой баннер с кнопкой связи
-    if (document.getElementById('waiterBanner')) return;
-    const banner = document.createElement('div');
-    banner.id = 'waiterBanner';
-    banner.style.position = 'fixed';
-    banner.style.right = '12px';
-    banner.style.bottom = '12px';
-    banner.style.zIndex = 5000;
-    banner.style.background = 'rgba(255,255,255,0.97)';
-    banner.style.border = '1px solid #eee';
-    banner.style.borderRadius = '10px';
-    banner.style.padding = '8px 10px';
-    banner.style.boxShadow = '0 6px 18px rgba(0,0,0,0.08)';
-    banner.style.display = 'flex';
-    banner.style.alignItems = 'center';
-    banner.style.gap = '8px';
-
-    const img = document.createElement('img');
-    img.src = currentWaiter.photo || './icons/plate-eating.svg';
-    img.alt = name;
-    img.style.width = '44px';
-    img.style.height = '44px';
-    img.style.objectFit = 'cover';
-    img.style.borderRadius = '8px';
-
-    const info = document.createElement('div');
-    info.style.display = 'flex';
-    info.style.flexDirection = 'column';
-    info.style.gap = '2px';
-    info.innerHTML = `<strong style="font-size:0.95rem">${name}</strong><span style="font-size:0.82rem;color:#666">Ваш официант</span>`;
-
-    const btn = document.createElement('button');
-    btn.className = 'btn btn-primary';
-    btn.textContent = currentLang === 'ru' ? 'Написать' : 'Жазуу';
-    btn.addEventListener('click', () => {
-        const msg = currentLang === 'ru' ? `Здравствуйте, у меня заказ за столом №${tableNumber}` : `Салам, менин заказым стол №${tableNumber}`;
-        sendToWhatsAppTo(msg, currentWaiter.phone);
-    });
-
-    banner.appendChild(img);
-    banner.appendChild(info);
-    // Кнопка закрытия
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'btn btn-secondary';
-    closeBtn.style.padding = '4px 8px';
-    closeBtn.textContent = '×';
-    closeBtn.title = currentLang === 'ru' ? 'Закрыть' : 'Жабуу';
-    closeBtn.addEventListener('click', () => {
-        if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
-    });
-
-    banner.appendChild(btn);
-    banner.appendChild(closeBtn);
-    document.body.appendChild(banner);
-
-    // Автоматическое скрытие через 7 секунд (очень важно на мобильных)
-    const hideMs = 7000;
-    const timeoutId = setTimeout(() => {
-        if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
-    }, hideMs);
-
-    // Если пользователь вручную закрыл — отменяем таймер
-    closeBtn.addEventListener('click', () => clearTimeout(timeoutId));
-}
-
-// Блокировка фоновых взаимодействий при открытом обязательном модальном окне
-function enableModalLock() {
-    document.body.classList.add('modal-blocked');
-    // Отключаем прокрутку фона
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-}
-
-function disableModalLock() {
-    document.body.classList.remove('modal-blocked');
-    document.documentElement.style.overflow = '';
-    document.body.style.overflow = '';
-}
-
-function showTableSelect() {
-    const modal = document.getElementById('orderTypeModal');
-    const tableModal = document.getElementById('tableSelectModal');
-    if (modal) modal.classList.remove('active');
-    if (tableModal) tableModal.classList.add('active');
-    // при переходе к выбору стола фон всё ещё должен быть недоступен
-    enableModalLock();
-}
-
-function showDeliveryForm() {
-    const modal = document.getElementById('orderTypeModal');
-    const deliveryModal = document.getElementById('deliveryFormModal');
-    if (modal) modal.classList.remove('active');
-    if (deliveryModal) deliveryModal.classList.add('active');
-    // при показе формы доставки блокируем фон
-    enableModalLock();
-}
-
-function selectTable(num) {
-    tableNumber = num;
-    // Назначаем официанта для выбранного стола
-    const waiter = getWaiterForTable(num);
-    if (waiter) {
-        currentWaiter = waiter;
-        try { localStorage.setItem('currentWaiter', JSON.stringify(currentWaiter)); } catch (e) { }
-    }
-    setOrderType('cafe');
-    const tableModal = document.getElementById('tableSelectModal');
-    if (tableModal) tableModal.classList.remove('active');
-    // Показать уведомление о назначенном официанте
-    setTimeout(() => { notifyAssignedWaiter(); }, 250);
-}
-
-function setOrderType(type) {
-    orderType = type;
-
-    const modal = document.getElementById('orderTypeModal');
-    const tableModal = document.getElementById('tableSelectModal');
-    if (modal) modal.classList.remove('active');
-    if (tableModal) tableModal.classList.remove('active');
-
-    applyOrderTypeMode();
-    // После выбора снимаем блокировку и разрешаем взаимодействие с сайтом
-    disableModalLock();
-}
-
-function applyOrderTypeMode() {
-    // Если выбран режим просмотра, добавляем класс browse-mode
-    if (orderType === 'browse') {
-        document.body.classList.add('browse-mode');
+    const existing = cart.find(ci => ci.cartId === cartId);
+    if (existing) {
+        existing.quantity += 1;
     } else {
-        document.body.classList.remove('browse-mode');
+        cart.push({
+            cartId,
+            id: item.id,
+            name,
+            price,
+            image: item.image,
+            quantity: 1
+        });
     }
-    // Обновляем видимость поля адреса и варинтов оплаты при смене типа заказа
-    updateDeliveryAddressVisibility();
-    adjustPaymentOptionsForDelivery();
+
+    saveCart();
+    updateCartUI();
+    renderMenu();
+
+    const addedLabel = translations[currentLang]?.added || (currentLang === 'ru' ? 'Добавлено:' : 'Кошулду:');
+    showToast(`${addedLabel} ${name}`);
 }
 
-function getOrderTypeText() {
-    if (!orderType || orderType === 'browse') return '';
-
-    if (orderType === 'cafe' && tableNumber) {
-        return currentLang === 'ru'
-            ? `📍 Стол №${tableNumber}`
-            : `📍 Стол №${tableNumber}`;
-    } else if (orderType === 'pickup') {
-        return currentLang === 'ru' ? '📍 Самовывоз' : '📍 Өзү алып кетүү';
-    } else if (orderType === 'delivery' && deliveryInfo) {
-        return currentLang === 'ru'
-            ? `📍 Доставка: ${deliveryInfo.address}`
-            : `📍 Жеткирүү: ${deliveryInfo.address}`;
-    }
-    return '';
+function increaseQuantity(cartId) {
+    const item = cart.find(ci => ci.cartId === cartId);
+    if (item) { item.quantity += 1; saveCart(); updateCartUI(); renderMenu(); }
 }
 
-function updateDeliveryAddressVisibility() {
-    const addressGroup = document.getElementById('deliveryAddressGroup');
-    if (addressGroup) {
-        addressGroup.style.display = orderType === 'delivery' ? 'block' : 'none';
-    }
-}
-
-function openImageLightbox(src, alt) {
-    const lb = document.getElementById('imageLightbox');
-    const lbImg = document.getElementById('lightboxImage');
-    if (!lb || !lbImg) return;
-    lbImg.src = src;
-    lbImg.alt = alt || '';
-    lb.classList.add('active');
-}
-
-function closeImageLightbox() {
-    const lb = document.getElementById('imageLightbox');
-    const lbImg = document.getElementById('lightboxImage');
-    if (!lb || !lbImg) return;
-    lb.classList.remove('active');
-    lbImg.src = '';
-    lbImg.alt = '';
-}
-
-// Плавное появление приветствия
-function animateWelcome() {
-    const el = document.getElementById('animatedWelcome');
-    if (!el) return;
-    const text = (translations[currentLang] && translations[currentLang]['about-title']) ? translations[currentLang]['about-title'] : 'Добро пожаловать в кафе "Cholpon"';
-    el.textContent = text;
-    // Запускаем анимацию сразу после загрузки
-    requestAnimationFrame(() => {
-        el.classList.add('fade-in');
-    });
-
-    // CTA buttons behavior
-    const viewMenuBtn = document.getElementById('viewMenuBtn');
-    const viewContactsBtn = document.getElementById('viewContactsBtn');
-    if (viewMenuBtn) viewMenuBtn.addEventListener('click', () => document.getElementById('menu').scrollIntoView({ behavior: 'smooth' }));
-    if (viewContactsBtn) viewContactsBtn.addEventListener('click', () => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }));
-}
-
-// ============================================
-// Инициализация темы
-// ============================================// 1. Создаем элемент изображения
-const moon = document.createElement('img');
-const sun = document.createElement('img');
-
-// Исправлено: src вместо scr
-sun.src = 'icons/brightness.svg';
-sun.alt = 'light mode';
-sun.style.width = '20px';
-
-moon.src = 'icons/moon-stars.svg';
-moon.alt = 'Dark mode';
-moon.style.width = '20px';
-function initTheme() {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    const themeIcon = document.querySelector('.theme-icon');
-
-    if (themeIcon) {
-        // Очищаем содержимое, чтобы иконки не дублировались при повторном клике
-        themeIcon.textContent = '';
-
-        if (currentTheme === 'dark') {
-            themeIcon.appendChild(sun);
-        } else {
-            themeIcon.appendChild(moon);
-        }
+function decreaseQuantity(cartId) {
+    const item = cart.find(ci => ci.cartId === cartId);
+    if (item) {
+        item.quantity -= 1;
+        if (item.quantity <= 0) cart = cart.filter(ci => ci.cartId !== cartId);
+        saveCart(); updateCartUI(); renderMenu();
     }
 }
 
-
-
-// ============================================
-// Инициализация языка
-// ============================================
-
-function initLanguage() {
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-        langToggle.textContent = currentLang.toUpperCase();
-    }
-    // Обновляем состояние кнопок языка в модальном окне
-    const langBtnRu = document.getElementById('langBtnRu');
-    const langBtnKg = document.getElementById('langBtnKg');
-    if (langBtnRu) {
-        langBtnRu.classList.toggle('active', currentLang === 'ru');
-    }
-    if (langBtnKg) {
-        langBtnKg.classList.toggle('active', currentLang === 'kg');
-    }
-    translatePage();
+function removeFromCart(cartId) {
+    cart = cart.filter(ci => ci.cartId !== cartId);
+    saveCart(); updateCartUI(); renderMenu();
 }
 
-// ============================================
-// Перевод страницы
-// ============================================
+function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); }
 
-function translatePage() {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const txt = translations[currentLang] && translations[currentLang][key];
-        if (txt) {
-            // основной текст
-            el.textContent = txt;
-            // placeholder, title, aria-label, value
-            if (el.hasAttribute('placeholder')) el.setAttribute('placeholder', txt);
-            if (el.hasAttribute('title')) el.setAttribute('title', txt);
-            if (el.hasAttribute('aria-label')) el.setAttribute('aria-label', txt);
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.value = el.value || '';
-        }
-    });
-}
+function updateCartUI() {
+    const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
 
-// ============================================
-// Обработчики событий
-// ============================================
-
-function initEventListeners() {
-    // Переключение темы
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-
-    // Переключение языка
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', toggleLanguage);
-    }
-    // Кнопки выбора языка в модальном окне
-    const langBtnRu = document.getElementById('langBtnRu');
-    const langBtnKg = document.getElementById('langBtnKg');
-    if (langBtnRu) {
-        langBtnRu.addEventListener('click', () => setLanguage('ru'));
-    }
-    if (langBtnKg) {
-        langBtnKg.addEventListener('click', () => setLanguage('kg'));
-    }
-
-    // Нижнее мобильное меню (объявляем раньше, чтобы использовать в других обработчиках)
-    const bottomNavMenu = document.getElementById('bottomNavMenu');
-    const bottomNavCart = document.getElementById('bottomNavCart');
-
-    function updateBottomNavActive() {
-        // Определяем текущую секцию на основе позиции скролла
-        const menuSection = document.getElementById('menu');
-        const scrollPosition = window.pageYOffset + window.innerHeight / 2;
-
-        if (menuSection) {
-            const menuTop = menuSection.offsetTop;
-            const menuBottom = menuTop + menuSection.offsetHeight;
-
-            if (scrollPosition >= menuTop && scrollPosition < menuBottom) {
-                bottomNavMenu?.classList.add('active');
-                bottomNavCart?.classList.remove('active');
-            } else {
-                bottomNavMenu?.classList.remove('active');
-            }
-        }
-    }
-
-    // Открытие корзины
-    const cartIconBtn = document.getElementById('cartIconBtn');
-    if (cartIconBtn) {
-        cartIconBtn.addEventListener('click', () => {
-            document.getElementById('cartModal').classList.add('active');
-            // Обновляем активное состояние нижнего меню
-            if (bottomNavCart) {
-                bottomNavCart.classList.add('active');
-                bottomNavMenu?.classList.remove('active');
-            }
-        });
-    }
-
-    // Мобильное меню (гамбургер)
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-    if (mobileMenuBtn && mainNav) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('open');
-            const expanded = mainNav.classList.contains('open');
-            mobileMenuBtn.setAttribute('aria-expanded', expanded);
-        });
-
-        // Закрываем меню при клике вне навигации
-        document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mainNav.classList.remove('open');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Закрываем мобильное меню при изменении размера экрана
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 992) {
-                mainNav.classList.remove('open');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
-
-    if (bottomNavMenu) {
-        bottomNavMenu.addEventListener('click', () => {
-            const menuSection = document.getElementById('menu');
-            if (menuSection) {
-                menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                bottomNavMenu.classList.add('active');
-                bottomNavCart?.classList.remove('active');
-            }
-        });
-    }
-
-    if (bottomNavCart) {
-        bottomNavCart.addEventListener('click', () => {
-            const cartModal = document.getElementById('cartModal');
-            if (cartModal) {
-                cartModal.classList.add('active');
-                bottomNavCart.classList.add('active');
-                bottomNavCart.classList.add('active');
-                bottomNavMenu?.classList.remove('active');
-            }
-        });
-    }
-
-    // Обновляем активное состояние при скролле
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            updateBottomNavActive();
-        }, 100);
-    });
-
-    // Инициализируем активное состояние при загрузке
-    updateBottomNavActive();
-
-    // Закрытие модальных окон
-    const closeCartModal = document.getElementById('closeCartModal');
-    if (closeCartModal) {
-        closeCartModal.addEventListener('click', () => {
-            document.getElementById('cartModal').classList.remove('active');
-            // Обновляем активное состояние нижнего меню
-            updateBottomNavActive();
-        });
-    }
-
-    // Закрытие корзины при клике на overlay
-    const cartModalOverlay = document.getElementById('cartModal');
-    if (cartModalOverlay) {
-        cartModalOverlay.addEventListener('click', (e) => {
-            if (e.target === cartModalOverlay) {
-                cartModalOverlay.classList.remove('active');
-                updateBottomNavActive();
-            }
-        });
-    }
-
-    const closeOrderModal = document.getElementById('closeOrderModal');
-    if (closeOrderModal) {
-        closeOrderModal.addEventListener('click', () => {
-            document.getElementById('orderModal').classList.remove('active');
-        });
-    }
-
-    const cancelOrder = document.getElementById('cancelOrder');
-    if (cancelOrder) {
-        cancelOrder.addEventListener('click', () => {
-            document.getElementById('orderModal').classList.remove('active');
-        });
-    }
-
-    // Закрытие по клику вне модального окна
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-        overlay.addEventListener('click', (e) => {
-            // Если это модальное окно выбора типа заказа и оно активно,
-            // блокируем закрытие кликом по фону — пользователь должен выбрать.
-            if (overlay.id === 'orderTypeModal' && overlay.classList.contains('active')) {
-                // Игнорируем клик вне модального контента
-                return;
-            }
-            if (e.target === overlay) {
-                overlay.classList.remove('active');
-            }
-        });
-    });
-
-    // Очистка корзины
-    const clearCart = document.getElementById('clearCart');
-    if (clearCart) {
-        clearCart.addEventListener('click', () => {
-            const confText = translations[currentLang] && translations[currentLang]['confirm_clear_cart'] ? translations[currentLang]['confirm_clear_cart'] : (currentLang === 'ru' ? 'Очистить корзину?' : 'Себетти тазалоо?');
-            if (confirm(confText)) {
-                cart = [];
-                saveCart();
-                updateCartUI();
-            }
-        });
-    }
-
-    // Предотвращаем закрытие модалов клавишей Escape, когда включена обязательная блокировка
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && document.body.classList.contains('modal-blocked')) {
-            e.stopPropagation();
-            e.preventDefault();
+    ['cartBadge', 'bottomNavBadge'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.textContent = totalItems;
+            el.style.display = totalItems > 0 ? 'flex' : 'none';
         }
     });
 
-    // Оформление заказа
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', () => {
-            // Защита от пустой корзины
-            if (cart.length === 0) {
-                const cmsg = translations[currentLang] && translations[currentLang]['cart_empty_msg'] ? translations[currentLang]['cart_empty_msg'] : (currentLang === 'ru' ? 'Корзина пуста. Добавьте блюда в корзину.' : 'Себет бош. Себетке тамак кошуңуз.');
-                alert(cmsg);
-                return;
-            }
-            showOrderForm();
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartTotal = document.getElementById('cartTotal');
+    const totalPrice = document.getElementById('totalPrice');
+
+    if (!cartItemsEl || !cartEmpty || !cartTotal || !totalPrice) return;
+
+    if (cart.length === 0) {
+        cartItemsEl.style.display = 'none';
+        cartEmpty.style.display = 'block';
+        cartTotal.style.display = 'none';
+    } else {
+        cartItemsEl.style.display = 'flex';
+        cartEmpty.style.display = 'none';
+        cartTotal.style.display = 'block';
+
+        cartItemsEl.innerHTML = '';
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            const div = document.createElement('div');
+            div.className = 'cart-item';
+            div.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/80x80?text=?'">
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">${item.price} ${translations[currentLang]?.currency || 'сом'} × ${item.quantity}</div>
+                </div>
+                <div class="cart-item-controls">
+                    <button class="quantity-btn" onclick="decreaseQuantity('${item.cartId}')">−</button>
+                    <span class="quantity-value">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="increaseQuantity('${item.cartId}')">+</button>
+                </div>
+                <div class="cart-item-total">${itemTotal} ${translations[currentLang]?.currency || 'сом'}</div>
+                <button class="quantity-btn" onclick="removeFromCart('${item.cartId}')" style="background:#e05252;" title="${translations[currentLang]?.remove || '×'}">×</button>
+            `;
+            cartItemsEl.appendChild(div);
         });
+
+        totalPrice.textContent = `${total} ${translations[currentLang]?.currency || 'сом'}`;
     }
 
-    // Отправка формы заказа
-    const orderForm = document.getElementById('orderForm');
-    if (orderForm) {
-        orderForm.addEventListener('submit', handleOrderSubmit);
-    }
-
-    // Фильтр категорий
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const category = btn.getAttribute('data-category');
-            filterByCategory(category);
-
-            // Обновляем активную кнопку
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
-    });
-
-    // Закрытие модального окна деталей блюда
-    const closeDishDetailsModal = document.getElementById('closeDishDetailsModal');
-    if (closeDishDetailsModal) {
-        closeDishDetailsModal.addEventListener('click', () => {
-            document.getElementById('dishDetailsModal').classList.remove('active');
-        });
-    }
-
-    // Кнопка добавления в корзину из деталей
-    const addToCartFromDetails = document.getElementById('addToCartFromDetails');
-    if (addToCartFromDetails) {
-        addToCartFromDetails.addEventListener('click', () => {
-            const dishId = parseInt(addToCartFromDetails.getAttribute('data-dish-id'));
-            if (dishId) {
-                addToCart(dishId);
-                document.getElementById('dishDetailsModal').classList.remove('active');
-            }
-        });
-    }
-
-    // Слайдер фото
-    const sliderPrev = document.getElementById('sliderPrev');
-    const sliderNext = document.getElementById('sliderNext');
-    if (sliderPrev) sliderPrev.addEventListener('click', () => changeSliderImage(-1));
-    if (sliderNext) sliderNext.addEventListener('click', () => changeSliderImage(1));
+    try { validateOrderForm(); } catch (e) {}
 }
 
 // ============================================
-// Переключение темы
-// ============================================
-
-function toggleTheme() {
-    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', currentTheme);
-    initTheme();
-}
-
-// ============================================
-// Переключение языка
-// ============================================
-
-function toggleLanguage() {
-    currentLang = currentLang === 'ru' ? 'kg' : 'ru';
-    setLanguage(currentLang);
-}
-
-function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('lang', currentLang);
-    initLanguage();
-    renderMenu(); // Перерисовываем меню с новым языком
-    updateCartUI(); // Обновляем корзину с новым языком
-}
-
-// ============================================
-// Рендеринг меню
+// MENU RENDER
 // ============================================
 
 function renderMenu() {
     const menuGrid = document.getElementById('menuGrid');
     if (!menuGrid) return;
 
-    // Убедимся, что старый мобильный слайдер удалён перед перерисовкой
-    // чтобы при смене фильтра не оставались старые карточки в слайдере.
-    try { destroyMenuSlider(); } catch (e) { /* ignore */ }
-
     menuGrid.innerHTML = '';
 
-    // Фильтруем блюда по категории
-    const filteredItems = currentCategory === 'all'
+    const filtered = currentCategory === 'all'
         ? menuData
         : menuData.filter(item => item.category === currentCategory);
 
-    filteredItems.forEach(item => {
-        const card = createMenuCard(item);
-        menuGrid.appendChild(card);
+    filtered.forEach(item => {
+        menuGrid.appendChild(createMenuCard(item));
     });
-    // Инициализация мобильного слайдера (если экран небольшой)
-    initMenuSlider();
 }
 
-// ============================================
-// Фильтрация по категориям
-// ============================================
-
-function filterByCategory(category) {
-    currentCategory = category;
-    renderMenu();
-
-    // Прокручиваем к меню
-    document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+function getCategoryLabel(cat) {
+    const map = {
+        first: { ru: 'Первые', kg: 'Биринчи' },
+        second: { ru: 'Вторые', kg: 'Экинчи' },
+        special: { ru: 'Заказное', kg: 'Заказ' },
+        shashlik: { ru: 'Шашлык', kg: 'Кебаб' },
+        salad: { ru: 'Салат', kg: 'Салат' },
+        dessert: { ru: 'Десерт', kg: 'Десерт' },
+        drink: { ru: 'Напиток', kg: 'Суусундук' },
+        fastfood: { ru: 'Fast-Food', kg: 'Fast-Food' }
+    };
+    return (map[cat] && map[cat][currentLang]) || '';
 }
-
-// ============================================
-// Создание карточки блюда
-// ============================================
 
 function createMenuCard(item) {
     const card = document.createElement('div');
     card.className = 'menu-card';
 
-    const name = currentLang === 'ru' ? item.name : item.nameKg;
-    const description = currentLang === 'ru' ? item.description : item.descriptionKg;
-    const price = item.price2 ? `${item.price} / ${item.price2}` : item.price;
+    const name = currentLang === 'ru' ? item.name : (item.nameKg || item.name);
+    const description = currentLang === 'ru' ? item.description : (item.descriptionKg || item.description);
+    const catLabel = getCategoryLabel(item.category);
 
-    const cartItem = cart.find(ci => ci.id === item.id);
-    const quantity = cartItem ? cartItem.quantity : 0;
+    // Price display
+    let priceDisplay;
+    if (item.variants && item.variants.length > 0) {
+        const prices = item.variants.map(v => v.price);
+        const minP = Math.min(...prices);
+        const maxP = Math.max(...prices);
+        priceDisplay = minP === maxP ? `${minP}` : `${minP}–${maxP}`;
+    } else if (item.price2) {
+        priceDisplay = `${item.price} / ${item.price2}`;
+    } else {
+        priceDisplay = `${item.price}`;
+    }
+
+    const existing = cart.find(ci => ci.id === item.id);
+    const hasInCart = existing && !item.variants;
+    const qty = hasInCart ? existing.quantity : 0;
 
     card.innerHTML = `
-        <img src="${item.image}" alt="${name}" class="dish-image" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+        <div class="dish-image-wrap">
+            <img class="dish-image" src="${item.image}" alt="${name}" onerror="this.src='https://via.placeholder.com/400x260?text=?'" loading="lazy">
+            ${catLabel ? `<span class="dish-category-badge">${catLabel}</span>` : ''}
+        </div>
         <div class="dish-info">
-            <h3 class="dish-name">${name}</h3>
-            <p class="dish-description">${description}</p>
+            <div class="dish-name">${name}</div>
+            ${description ? `<div class="dish-description">${description}</div>` : ''}
             <div class="dish-footer">
-                <span class="dish-price">${price} <span data-i18n="currency">сом</span></span>
+                <div class="dish-price">${priceDisplay} <small>${translations[currentLang]?.currency || 'сом'}</small></div>
                 <div class="dish-actions">
-                        ${quantity === 0
-            ? `<button type="button" class="btn-add-cart" data-item-id="${item.id}" onclick="addToCart(${item.id})" data-i18n="add-to-cart">В корзину</button>`
-            : `<div class="quantity-controls">
-                            <button type="button" class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
-                            <span class="quantity-value">${quantity}</span>
-                            <button type="button" class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
-                        </div>`
-        }
+                    ${(item.variants && item.variants.length > 0)
+                        ? `<button class="btn-add-cart" onclick="addToCart(${item.id})">${translations[currentLang]?.['add-to-cart'] || 'В корзину'}</button>`
+                        : qty === 0
+                            ? `<button class="btn-add-cart" data-item-id="${item.id}" onclick="addToCart(${item.id})">${translations[currentLang]?.['add-to-cart'] || 'В корзину'}</button>`
+                            : `<div class="quantity-controls">
+                                <button class="quantity-btn" onclick="decreaseQuantity('${item.id}')">−</button>
+                                <span class="quantity-value">${qty}</span>
+                                <button class="quantity-btn" onclick="increaseQuantity('${item.id}')">+</button>
+                               </div>`
+                    }
                 </div>
             </div>
         </div>
     `;
 
-    // Переводим кнопки и элементы
-    const addBtn = card.querySelector('[data-i18n="add-to-cart"]');
-    if (addBtn) {
-        addBtn.textContent = translations[currentLang]['add-to-cart'];
-    }
-    const detailsBtn = card.querySelector('[data-i18n="details"]');
-    if (detailsBtn) {
-        detailsBtn.textContent = translations[currentLang]['details'];
-    }
-    const currency = card.querySelector('[data-i18n="currency"]');
-    if (currency) {
-        currency.textContent = translations[currentLang]['currency'];
-    }
-
-    // Надёжная загрузка изображения: используем объект Image чтобы обработать ошибки
-    const imgEl = card.querySelector('.dish-image');
-    if (imgEl) {
-        const placeholder = 'https://via.placeholder.com/300x200?text=No+Image';
-        const loader = new Image();
-        loader.onload = () => {
-            imgEl.src = loader.src;
-        };
-        loader.onerror = () => {
-            imgEl.src = placeholder;
-        };
-        // Начинаем загрузку
-        loader.src = item.image || placeholder;
-
-        // Навешиваем обработчик: клик по изображению открывает окно деталей
-        imgEl.addEventListener('click', () => showDishDetails(item.id));
-    }
-
-    // Делаем всю карточку кликабельной — клик по карточке открывает детали.
-    // Исключаем клики по кнопкам, контролам количества и по самому изображению.
-    card.addEventListener('click', (e) => {
-        if (e.target.closest('button') || e.target.closest('.dish-image') || e.target.closest('.dish-actions')) {
-            // Если клик по кнопке/изображению/областям действий — не открываем детали здесь
-            return;
-        }
+    card.addEventListener('click', e => {
+        if (e.target.closest('button') || e.target.closest('.dish-actions')) return;
         showDishDetails(item.id);
     });
 
     return card;
 }
 
-// ============================================
-// Работа с корзиной
-// ============================================
-function addToCart(itemId) {
-    const item = menuData.find(i => i.id === itemId);
-    if (!item) return;
-
-    // Найдём кнопку, если она есть (карточка меню)
-    const btn = document.querySelector(`button.btn-add-cart[data-item-id="${itemId}"]`);
-    const addingText = translations[currentLang] && translations[currentLang]['adding'] ? translations[currentLang]['adding'] : (currentLang === 'ru' ? 'Добавление…' : 'Кошулууда…');
-    if (btn) {
-        btn.disabled = true;
-        btn.textContent = addingText;
-        btn.classList.add('loading');
-    }
-
-    // Небольшая имитация загрузки для UX (можно убрать или уменьшить)
-    setTimeout(() => {
-        const existingItem = cart.find(ci => ci.id === itemId);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({
-                id: item.id,
-                name: currentLang === 'ru' ? item.name : item.nameKg,
-                price: item.price,
-                image: item.image,
-                quantity: 1
-            });
-        }
-
-        saveCart();
-        updateCartUI();
-        renderMenu(); // Обновляем меню для отображения количества
-
-        // Показ уведомления о добавлении (без открытия корзины)
-        const addedLabel = translations[currentLang] && translations[currentLang]['added'] ? translations[currentLang]['added'] : (currentLang === 'ru' ? 'Добавлено:' : 'Кошулду:');
-        const itemName = currentLang === 'ru' ? item.name : (item.nameKg || item.name);
-        showToast(`${addedLabel} ${itemName}`);
-
-    }, 350);
-}
-
-function increaseQuantity(itemId) {
-    const cartItem = cart.find(ci => ci.id === itemId);
-    if (cartItem) {
-        cartItem.quantity += 1;
-        saveCart();
-        updateCartUI();
-        renderMenu();
-    }
-}
-
-function decreaseQuantity(itemId) {
-    const cartItem = cart.find(ci => ci.id === itemId);
-    if (cartItem) {
-        cartItem.quantity -= 1;
-        if (cartItem.quantity <= 0) {
-            cart = cart.filter(ci => ci.id !== itemId);
-        }
-        saveCart();
-        updateCartUI();
-        renderMenu();
-    }
-}
-
-function removeFromCart(itemId) {
-    cart = cart.filter(ci => ci.id !== itemId);
-    saveCart();
-    updateCartUI();
+function filterByCategory(category) {
+    currentCategory = category;
     renderMenu();
-}
-
-function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-function updateCartUI() {
-    // Обновляем бейдж корзины
-    const cartBadge = document.getElementById('cartBadge');
-    if (cartBadge) {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartBadge.textContent = totalItems;
-        cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
-    }
-
-    // Обновляем бейдж корзины в нижнем меню
-    const bottomNavBadge = document.getElementById('bottomNavBadge');
-    if (bottomNavBadge) {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        bottomNavBadge.textContent = totalItems;
-        bottomNavBadge.style.display = totalItems > 0 ? 'flex' : 'none';
-    }
-
-    // Обновляем содержимое корзины
-    const cartItems = document.getElementById('cartItems');
-    const cartEmpty = document.getElementById('cartEmpty');
-    const cartTotal = document.getElementById('cartTotal');
-    const totalPrice = document.getElementById('totalPrice');
-
-    if (!cartItems || !cartEmpty || !cartTotal || !totalPrice) return;
-
-    if (cart.length === 0) {
-        cartItems.style.display = 'none';
-        cartEmpty.style.display = 'block';
-        cartTotal.style.display = 'none';
-    } else {
-        cartItems.style.display = 'flex';
-        cartEmpty.style.display = 'none';
-        cartTotal.style.display = 'block';
-
-        cartItems.innerHTML = '';
-        let total = 0;
-
-        cart.forEach(item => {
-            const itemTotal = item.price * item.quantity;
-            total += itemTotal;
-
-            const cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/80x80?text=No+Image'">
-                <div class="cart-item-info">
-                    <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-price">${item.price} ${translations[currentLang]['currency']} × ${item.quantity}</div>
-                </div>
-                <div class="cart-item-controls">
-                    <button type="button" class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
-                    <span class="quantity-value">${item.quantity}</span>
-                    <button type="button" class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
-                </div>
-                <div class="cart-item-total">${itemTotal} ${translations[currentLang]['currency']}</div>
-                <button type="button" class="quantity-btn" onclick="removeFromCart(${item.id})" style="background: #dc3545;" title="${translations[currentLang]['remove']}">×</button>
-            `;
-            cartItems.appendChild(cartItem);
-        });
-
-        totalPrice.textContent = `${total} ${translations[currentLang]['currency']}`;
-    }
-    // Обновляем валидацию формы заказа (кнопка Отправить зависит от корзины)
-    try { validateOrderForm(); } catch (e) { /* ignore */ }
+    document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
 }
 
 // ============================================
-// Показ формы заказа
+// DISH DETAILS
 // ============================================
 
-function showOrderForm() {
-    const orderModal = document.getElementById('orderModal');
-    const orderSummary = document.getElementById('orderSummary');
-    const orderForm = document.getElementById('orderForm');
-
-    if (!orderModal || !orderSummary || !orderForm) return;
-
-    // Очищаем форму
-    orderForm.reset();
-
-    // Если есть данные доставки, заполняем форму
-    if (orderType === 'delivery' && deliveryInfo) {
-        const nameInput = document.getElementById('customerName');
-        const phoneInput = document.getElementById('customerPhone');
-        if (nameInput) nameInput.value = deliveryInfo.name;
-        if (phoneInput) phoneInput.value = deliveryInfo.phone;
-        // Заполняем адрес доставки в форме оформления заказа
-        const addressInput = document.getElementById('deliveryAddress');
-        if (addressInput) addressInput.value = deliveryInfo.address || '';
-    }
-
-    // Формируем сводку заказа
-    let summaryHTML = '';
-    let total = 0;
-
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        summaryHTML += `
-            <div class="order-summary-item">
-                <span>${item.name} × ${item.quantity}</span>
-                <span>${itemTotal} ${translations[currentLang]['currency']}</span>
-            </div>
-        `;
-    });
-
-    summaryHTML += `
-        <div class="order-summary-item" style="font-weight: 600; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 2px solid var(--border);">
-            <span>${translations[currentLang]['cart-total']}</span>
-            <span>${total} ${translations[currentLang]['currency']}</span>
-        </div>
-    `;
-
-    orderSummary.innerHTML = summaryHTML;
-
-    // Показываем/скрываем поле адреса в зависимости от типа заказа
-    updateDeliveryAddressVisibility();
-    // Обновляем видимость способов оплаты и QR
-    adjustPaymentOptionsForDelivery();
-    const checked = document.querySelector('input[name="paymentMethod"]:checked');
-    toggleMbankQr(checked ? checked.value : null);
-
-    orderModal.classList.add('active');
-}
-
-// ============================================
-// Функции оформления заказа
-// ============================================
-
-/**
- * Формирует аккуратный текст заказа для WhatsApp
- * @param {string} name - Имя клиента
- * @param {string} phone - Телефон клиента
- * @param {string} comment - Комментарий к заказу
- * @returns {string} Отформатированный текст заказа
- */
-function createOrderText(name, phone, comment, paymentMethod) {
-    // Проверка на пустую корзину
-    if (cart.length === 0) {
-        throw new Error(currentLang === 'ru' ? 'Корзина пуста' : 'Себет бош');
-    }
-    const headerContainer = document.getElementById('order-header');
-    const logo = document.createElement('img');
-    logo.src = 'icons/plate-eating.svg';
-    logo.style.width = '30px';
-
-    const text = currentLang === 'ru'
-        ? ' 🍽 Новый заказ из кафе Cholpon'
-        : ' 🍽 Cholpon кафесинен жаңы заказ';
-    // Формируем список блюд
-    let itemsText = '';
-    let total = 0;
-
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        itemsText += `${item.name} x${item.quantity} — ${itemTotal} ${translations[currentLang]['currency']}\n`;
-    });
-
-    // Итоговая сумма (с пустой строкой перед итогом)
-    const totalText = `\n💰 Итого: ${total} ${translations[currentLang]['currency']}\n`;
-
-    // Информация о клиенте (добавляем +996 к номеру)
-    const fullPhone = '+996 ' + phone;
-    const customerInfo = `👤 ${currentLang === 'ru' ? 'Клиент' : 'Клиент'}: ${name}\n📞 ${currentLang === 'ru' ? 'Телефон' : 'Телефон'}: ${fullPhone}`;
-
-    // Способ оплаты
-    let paymentText = '';
-    if (paymentMethod) {
-        let pmLabel = paymentMethod === 'cash' ? (translations[currentLang]['payment-cash'] || (currentLang === 'ru' ? 'Наличными' : 'Накта'))
-            : paymentMethod === 'card' ? (translations[currentLang]['payment-card'] || (currentLang === 'ru' ? 'Картой' : 'Карта менен'))
-                : paymentMethod === 'mbank' ? (translations[currentLang]['payment-mbank'] || 'MBank')
-                    : paymentMethod;
-        paymentText = `\n💳 ${currentLang === 'ru' ? 'Способ оплаты' : 'Төлөө ыкмасы'}: ${pmLabel}`;
-    }
-
-    // Комментарий (если есть)
-    let commentText = '';
-    if (comment && comment.trim()) {
-        commentText = `\n📝 ${currentLang === 'ru' ? 'Комментарий' : 'Комментарий'}: ${comment}`;
-    }
-
-    // Тип заказа (стол/самовывоз/доставка)
-    const orderTypeInfo = getOrderTypeText();
-    const orderTypeText = orderTypeInfo ? `\n${orderTypeInfo}` : '';
-
-    // Собираем полный текст заказа
-    const headerText = '🍽 ' + (currentLang === 'ru' ? 'Новый заказ из кафе Cholpon' : 'Cholpon кафесинен жаңы заказ') + '\n\n';
-
-    return headerText + itemsText + totalText + customerInfo + paymentText + orderTypeText + commentText;
-}
-
-/**
- * Отправляет заказ в WhatsApp
- * @param {string} orderText - Текст заказа
- */
-function sendToWhatsApp(orderText) {
-    // Формируем URL для WhatsApp (отправка на общий номер кафе)
-    const whatsappUrl = `https://wa.me/${CAFE_PHONE_NUMBER}?text=${encodeURIComponent(orderText)}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-// Вспомогательный вариант: отправить на конкретный номер (без '+')
-function sendToWhatsAppTo(orderText, phoneNumber) {
-    if (!phoneNumber) return sendToWhatsApp(orderText);
-    const target = phoneNumber.replace(/\D/g, '');
-    const whatsappUrl = `https://wa.me/${target}?text=${encodeURIComponent(orderText)}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-/**
- * Отправляет заказ в Google Sheets через Google Apps Script
- * @param {string} name - Имя клиента
- * @param {string} phone - Телефон клиента
- * @param {string} comment - Комментарий к заказу
- * @returns {Promise} Промис с результатом отправки
- */
-async function sendToExcel(name, phone, comment, paymentMethod, address) {
-    // Проверяем, настроен ли URL Google Sheets
-    if (GOOGLE_SHEETS_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
-        console.log('Google Sheets не настроен. Пропускаем отправку.');
-        return Promise.resolve();
-    }
-
-    // Вычисляем общую сумму заказа
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-    // Формируем текст заказа для сохранения
-    const orderText = cart.map(item => `${item.name} × ${item.quantity}`).join(', ');
-
-    // Данные для отправки в Google Sheets
-    const orderData = {
-        date: new Date().toLocaleString('ru-RU', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        }),
-        order: orderText,
-        total: total,
-        customerName: name,
-        customerPhone: phone,
-        // Добавляем адрес доставки в комментарий, если он есть
-        comment: ((comment && comment.trim()) ? comment.trim() + ' | ' : '') + (address || ''),
-        paymentMethod: paymentMethod || ''
-    };
-
-    try {
-        // Отправляем данные в Google Sheets
-        // Используем no-cors режим для обхода CORS ограничений
-        await fetch(GOOGLE_SHEETS_URL, {
-            method: 'POST',
-            mode: 'no-cors', // Важно: позволяет отправлять без CORS проверки
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(orderData)
-        });
-
-        console.log('Заказ успешно отправлен в Google Sheets');
-        return Promise.resolve();
-    } catch (error) {
-        // Логируем ошибку, но не прерываем процесс заказа
-        console.error('Ошибка отправки в Google Sheets:', error);
-        // Возвращаем успешный промис, чтобы не блокировать отправку в WhatsApp
-        return Promise.resolve();
-    }
-}
-
-/**
- * Очищает корзину и localStorage
- */
-function clearCart() {
-    cart = [];
-    localStorage.removeItem('cart');
-    updateCartUI();
-    renderMenu();
-}
-
-/**
- * Основная функция оформления заказа
- * Выполняет все необходимые действия: валидацию, отправку в WhatsApp и Google Sheets
- * @param {Event} e - Событие формы
- */
-async function placeOrder(e) {
-    e.preventDefault();
-
-    // Получаем данные из формы
-    const name = document.getElementById('customerName').value.trim();
-    const phone = document.getElementById('customerPhone').value.trim();
-    const comment = document.getElementById('orderComment').value.trim();
-
-    // Валидация: проверка на пустую корзину
-    if (cart.length === 0) {
-        alert(currentLang === 'ru'
-            ? 'Корзина пуста. Добавьте блюда в корзину.'
-            : 'Себет бош. Себетке тамак кошуңуз.');
-        return;
-    }
-
-    // Валидация: проверка обязательных полей
-    if (!name || !phone) {
-        alert(currentLang === 'ru'
-            ? 'Заполните все обязательные поля'
-            : 'Бардык милдеттүү талааларды толтуруңуз');
-        return;
-    }
-
-    // Валидация: проверка формата телефона
-    // Принимаем форматы: +996 998 252 023, 0998252023, 996998252023
-    const cleanPhone = phone.replace(/[\s-]/g, ''); // Убираем пробелы и дефисы
-    const phoneRegex = /^(\+?996|0)?[0-9]{9}$/;
-
-    if (!phoneRegex.test(cleanPhone)) {
-        alert(currentLang === 'ru'
-            ? 'Введите корректный номер телефона\nПример: +996 998 252 023 или 0998252023'
-            : 'Туура телефон номурун киргизиңиз\nМисал: +996 998 252 023 же 0998252023');
-        return;
-    }
-
-    try {
-        // Читаем выбранный способ оплаты
-        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked') ? document.querySelector('input[name="paymentMethod"]:checked').value : 'cash';
-
-        // Формируем текст заказа
-        // Если это доставка, синхронизируем адрес из формы в `deliveryInfo`
-        if (orderType === 'delivery') {
-            const addrInput = document.getElementById('deliveryAddress');
-            const addrVal = addrInput ? addrInput.value.trim() : (deliveryInfo ? deliveryInfo.address : '');
-            if (!deliveryInfo) deliveryInfo = {};
-            deliveryInfo.address = addrVal || deliveryInfo.address;
-            try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) { }
-        }
-
-        const orderText = createOrderText(name, phone, comment, paymentMethod);
-
-        // Параллельно отправляем в WhatsApp и Google Sheets
-        // Открываем WhatsApp для отправки сообщения клиентом — на номер официанта, если назначен
-        const targetPhone = (orderType === 'cafe' && currentWaiter && currentWaiter.phone) ? currentWaiter.phone : CAFE_PHONE_NUMBER;
-        sendToWhatsAppTo(orderText, targetPhone);
-
-        // Отправляем в Google Sheets в фоне (не блокируем процесс)
-        const deliveryAddrForSheet = (orderType === 'delivery' && deliveryInfo && deliveryInfo.address) ? deliveryInfo.address : '';
-        sendToExcel(name, phone, comment, paymentMethod, deliveryAddrForSheet).catch(error => {
-            console.error('Ошибка при отправке в Google Sheets:', error);
-        });
-
-        // Очищаем корзину и localStorage
-        clearCart();
-
-        // Закрываем модальное окно
-        const orderModal = document.getElementById('orderModal');
-        if (orderModal) {
-            orderModal.classList.remove('active');
-        }
-
-        // Показываем сообщение об успехе
-        alert(currentLang === 'ru'
-            ? '✅ Заказ отправлен! Мы свяжемся с вами в ближайшее время.'
-            : '✅ Заказ жөнөтүлдү! Биз жакынкы убакта сиз менен байланышабыз.');
-
-    } catch (error) {
-        console.error('Ошибка при оформлении заказа:', error);
-        alert(currentLang === 'ru'
-            ? `❌ Произошла ошибка: ${error.message}. Пожалуйста, попробуйте еще раз.`
-            : `❌ Ката кетти: ${error.message}. Сураныч, кайра аракет кылыңыз.`);
-    }
-}
-
-/**
- * Обработчик отправки формы заказа
- * @param {Event} e - Событие формы
- */
-function handleOrderSubmit(e) {
-    placeOrder(e);
-}
-
-// ============================================
-// Модальное окно деталей блюда
-// ============================================
-
-/**
- * Показывает модальное окно с деталями блюда
- * @param {number} dishId - ID блюда
- */
 function showDishDetails(dishId) {
-    const dish = menuData.find(item => item.id === dishId);
+    const dish = menuData.find(i => i.id === dishId);
     if (!dish) return;
 
     const modal = document.getElementById('dishDetailsModal');
@@ -2715,383 +1496,752 @@ function showDishDetails(dishId) {
     const sliderDots = document.getElementById('sliderDots');
     const addBtn = document.getElementById('addToCartFromDetails');
 
-    if (!modal || !title || !name || !description || !price || !ingredientsList || !slider) return;
+    if (!modal) return;
 
-    // Заполняем информацию о блюде
-    const dishName = currentLang === 'ru' ? dish.name : dish.nameKg;
-    const dishDescription = currentLang === 'ru' ? dish.description : dish.descriptionKg;
-    const dishPrice = dish.price2 ? `${dish.price} / ${dish.price2}` : dish.price;
+    const dishName = currentLang === 'ru' ? dish.name : (dish.nameKg || dish.name);
+    const dishDesc = currentLang === 'ru' ? dish.description : (dish.descriptionKg || dish.description);
 
-    title.textContent = dishName;
-    name.textContent = dishName;
-    description.textContent = dishDescription;
-    price.textContent = `${dishPrice} ${translations[currentLang]['currency']}`;
-
-    // Устанавливаем ID блюда для кнопки добавления
-    if (addBtn) {
-        addBtn.setAttribute('data-dish-id', dishId);
+    let priceText;
+    if (dish.variants && dish.variants.length > 0) {
+        const prices = dish.variants.map(v => v.price);
+        const minP = Math.min(...prices);
+        const maxP = Math.max(...prices);
+        priceText = minP === maxP ? `${minP}` : `от ${minP}`;
+    } else if (dish.price2) {
+        priceText = `${dish.price} / ${dish.price2}`;
+    } else {
+        priceText = `${dish.price}`;
     }
 
-    // Получаем фото для слайдера
-    const images = dish.images && dish.images.length > 0 ? dish.images : [dish.image];
+    if (title) title.textContent = dishName;
+    if (name) name.textContent = dishName;
+    if (description) description.textContent = dishDesc;
+    if (price) price.textContent = `${priceText} ${translations[currentLang]?.currency || 'сом'}`;
+    if (addBtn) addBtn.setAttribute('data-dish-id', dishId);
+
+    const images = dish.images?.length ? dish.images : [dish.image];
     currentSliderIndex = 0;
 
-    // Очищаем слайдер
-    slider.innerHTML = '';
-    sliderDots.innerHTML = '';
+    if (slider) slider.innerHTML = '';
+    if (sliderDots) sliderDots.innerHTML = '';
 
-    // Добавляем фото в слайдер
-    images.forEach((img, index) => {
+    images.forEach((img, i) => {
         const slide = document.createElement('div');
         slide.className = 'slider-slide';
-        slide.innerHTML = `<img src="${img}" alt="${dishName}" onclick="openImageLightbox('${img}','${dishName}')" onerror="this.src='https://via.placeholder.com/600x400?text=No+Image'">`;
-        slider.appendChild(slide);
+        slide.innerHTML = `<img src="${img}" alt="${dishName}" onclick="openImageLightbox('${img}','${dishName}')" onerror="this.src='https://via.placeholder.com/600x360?text=?'">`;
+        slider?.appendChild(slide);
 
-        // Добавляем точку для навигации
         const dot = document.createElement('button');
-        dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-        dot.setAttribute('data-slide', index);
-        dot.addEventListener('click', () => goToSlide(index));
-        sliderDots.appendChild(dot);
+        dot.className = `slider-dot ${i === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => goToSlide(i));
+        sliderDots?.appendChild(dot);
     });
 
-    // Показываем/скрываем кнопки навигации
     const sliderPrev = document.getElementById('sliderPrev');
     const sliderNext = document.getElementById('sliderNext');
-    if (sliderPrev) sliderPrev.style.display = images.length > 1 ? 'block' : 'none';
-    if (sliderNext) sliderNext.style.display = images.length > 1 ? 'block' : 'none';
-    sliderDots.style.display = images.length > 1 ? 'flex' : 'none';
+    if (sliderPrev) sliderPrev.style.display = images.length > 1 ? 'flex' : 'none';
+    if (sliderNext) sliderNext.style.display = images.length > 1 ? 'flex' : 'none';
+    if (sliderDots) sliderDots.style.display = images.length > 1 ? 'flex' : 'none';
 
-    // Ингредиенты
-    ingredientsList.innerHTML = '';
-    if (dish.ingredients && dish.ingredients.length > 0) {
-        const ingredients = currentLang === 'ru' ? dish.ingredients : (dish.ingredientsKg || dish.ingredients);
-        ingredients.forEach(ingredient => {
+    if (ingredientsList) {
+        ingredientsList.innerHTML = '';
+        const ings = currentLang === 'ru' ? (dish.ingredients || []) : (dish.ingredientsKg || dish.ingredients || []);
+        if (ings.length > 0) {
+            ings.forEach(ing => {
+                const li = document.createElement('li');
+                li.textContent = ing;
+                ingredientsList.appendChild(li);
+            });
+        } else {
             const li = document.createElement('li');
-            li.textContent = ingredient;
+            li.textContent = dishDesc;
             ingredientsList.appendChild(li);
-        });
-    } else {
-        // Если ингредиенты не указаны, используем описание
-        const li = document.createElement('li');
-        li.textContent = dishDescription;
-        ingredientsList.appendChild(li);
+        }
     }
 
-    // Показываем модальное окно
     modal.classList.add('active');
     updateSlider();
 }
 
-/**
- * Переключает слайдер на следующее/предыдущее фото
- * @param {number} direction - Направление: 1 (вперёд) или -1 (назад)
- */
-function changeSliderImage(direction) {
+function changeSliderImage(dir) {
     const slider = document.getElementById('dishSlider');
     if (!slider) return;
-
     const slides = slider.querySelectorAll('.slider-slide');
-    if (slides.length === 0) return;
-
-    currentSliderIndex += direction;
-
-    if (currentSliderIndex < 0) {
-        currentSliderIndex = slides.length - 1;
-    } else if (currentSliderIndex >= slides.length) {
-        currentSliderIndex = 0;
-    }
-
+    currentSliderIndex = (currentSliderIndex + dir + slides.length) % slides.length;
     updateSlider();
 }
 
-/**
- * Переходит к конкретному слайду
- * @param {number} index - Индекс слайда
- */
-function goToSlide(index) {
-    const slider = document.getElementById('dishSlider');
-    if (!slider) return;
-
-    const slides = slider.querySelectorAll('.slider-slide');
-    if (index < 0 || index >= slides.length) return;
-
-    currentSliderIndex = index;
+function goToSlide(i) {
+    currentSliderIndex = i;
     updateSlider();
 }
 
-/**
- * Обновляет отображение слайдера
- */
 function updateSlider() {
     const slider = document.getElementById('dishSlider');
     const dots = document.querySelectorAll('.slider-dot');
     if (!slider) return;
-
-    const slides = slider.querySelectorAll('.slider-slide');
-    if (slides.length === 0) return;
-
-    // Перемещаем слайдер
     slider.style.transform = `translateX(-${currentSliderIndex * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSliderIndex));
+}
 
-    // Обновляем активную точку
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSliderIndex);
+// ============================================
+// ORDER FORM
+// ============================================
+
+function validateOrderForm() {
+    const submitBtn = document.getElementById('submitOrderBtn');
+    if (!submitBtn) return;
+
+    const name = document.getElementById('customerName');
+    const phone = document.getElementById('customerPhone');
+    const payment = document.querySelector('input[name="paymentMethod"]:checked');
+
+    const phoneVal = phone ? phone.value.trim().replace(/\s/g, '') : '';
+    const phoneOk = /^[0-9]{9}$/.test(phoneVal);
+    const nameOk = name && name.value.trim().length > 0;
+    const ready = cart.length > 0 && nameOk && phoneOk && !!payment;
+
+    submitBtn.disabled = !ready;
+    submitBtn.classList.toggle('ready', ready);
+}
+
+function formatPhoneInput(input) {
+    let v = input.value.replace(/\D/g, '').slice(0, 9);
+    let f = v.slice(0, 3);
+    if (v.length > 3) f += ' ' + v.slice(3, 5);
+    if (v.length > 5) f += ' ' + v.slice(5, 7);
+    if (v.length > 7) f += ' ' + v.slice(7, 9);
+    input.value = f;
+}
+
+function initOrderFormValidation() {
+    const name = document.getElementById('customerName');
+    const phone = document.getElementById('customerPhone');
+    const deliveryPhone = document.getElementById('deliveryPhone');
+    const radios = document.querySelectorAll('input[name="paymentMethod"]');
+
+    if (name) name.addEventListener('input', validateOrderForm);
+    if (phone) phone.addEventListener('input', () => { formatPhoneInput(phone); validateOrderForm(); });
+    if (deliveryPhone) deliveryPhone.addEventListener('input', () => formatPhoneInput(deliveryPhone));
+    radios.forEach(r => r.addEventListener('change', validateOrderForm));
+    validateOrderForm();
+}
+
+function initPaymentOptions() {
+    const options = document.querySelectorAll('.payment-option');
+    if (!options.length) return;
+
+    function refresh() {
+        options.forEach(opt => opt.classList.remove('selected'));
+        const checked = document.querySelector('input[name="paymentMethod"]:checked');
+        if (checked) checked.closest('.payment-option')?.classList.add('selected');
+    }
+
+    refresh();
+
+    const radios = document.querySelectorAll('input[name="paymentMethod"]');
+    radios.forEach(r => r.addEventListener('change', e => { refresh(); toggleMbankQr(e.target.value); }));
+
+    options.forEach(opt => opt.addEventListener('click', () => {
+        const inp = opt.querySelector('input[name="paymentMethod"]');
+        if (inp) { inp.checked = true; inp.dispatchEvent(new Event('change', { bubbles: true })); }
+    }));
+
+    const checked = document.querySelector('input[name="paymentMethod"]:checked');
+    toggleMbankQr(checked ? checked.value : null);
+}
+
+function toggleMbankQr(val) {
+    const c = document.getElementById('mbankQrContainer');
+    if (c) c.style.display = val === 'mbank' ? 'block' : 'none';
+}
+
+function adjustPaymentOptionsForDelivery() {
+    const cardInput = document.querySelector('input[name="paymentMethod"][value="card"]');
+    const cardLabel = cardInput?.closest('.payment-option');
+    if (orderType === 'delivery') {
+        if (cardLabel) cardLabel.style.display = 'none';
+        const checked = document.querySelector('input[name="paymentMethod"]:checked');
+        if (checked?.value === 'card') {
+            const cash = document.querySelector('input[name="paymentMethod"][value="cash"]');
+            if (cash) { cash.checked = true; cash.dispatchEvent(new Event('change', { bubbles: true })); }
+        }
+    } else {
+        if (cardLabel) cardLabel.style.display = '';
+    }
+}
+
+// ============================================
+// ORDER TYPE MODAL
+// ============================================
+
+function initOrderTypeModal() {
+    const modal = document.getElementById('orderTypeModal');
+    const tableModal = document.getElementById('tableSelectModal');
+    const deliveryModal = document.getElementById('deliveryFormModal');
+    const tableGrid = document.getElementById('tableGrid');
+
+    initLangSelectButtons();
+
+    if (tableGrid) {
+        tableGrid.innerHTML = '';
+        for (let i = 1; i <= 11; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'table-btn';
+            btn.textContent = i;
+            btn.dataset.table = i;
+            btn.addEventListener('click', () => selectTable(i));
+            tableGrid.appendChild(btn);
+        }
+    }
+
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const tableParam = params.get('table');
+        const cafeBtn = document.getElementById('orderTypeCafe');
+        if (cafeBtn && !tableParam) cafeBtn.style.display = 'none';
+    } catch (e) {}
+
+    const cafeBtn = document.getElementById('orderTypeCafe');
+    const pickupBtn = document.getElementById('orderTypePickup');
+    const deliveryBtn = document.getElementById('orderTypeDelivery');
+    const browseBtn = document.getElementById('orderTypeBrowse');
+    const closeTableBtn = document.getElementById('closeTableModal');
+    const closeDeliveryBtn = document.getElementById('closeDeliveryModal');
+    const backToOrderTypeBtn = document.getElementById('backToOrderType');
+    const deliveryForm = document.getElementById('deliveryInfoForm');
+
+    if (cafeBtn) cafeBtn.addEventListener('click', showTableSelect);
+    if (pickupBtn) pickupBtn.addEventListener('click', () => setOrderType('pickup'));
+    if (deliveryBtn) deliveryBtn.addEventListener('click', showDeliveryForm);
+    if (browseBtn) browseBtn.addEventListener('click', () => setOrderType('browse'));
+
+    if (closeTableBtn) closeTableBtn.addEventListener('click', () => {
+        tableModal?.classList.remove('active');
+        modal?.classList.add('active');
+    });
+
+    if (closeDeliveryBtn) closeDeliveryBtn.addEventListener('click', () => {
+        deliveryModal?.classList.remove('active');
+        modal?.classList.add('active');
+    });
+
+    if (backToOrderTypeBtn) backToOrderTypeBtn.addEventListener('click', () => {
+        deliveryModal?.classList.remove('active');
+        modal?.classList.add('active');
+    });
+
+    if (deliveryForm) {
+        deliveryForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('deliveryName').value.trim();
+            const phone = document.getElementById('deliveryPhone').value.trim();
+            const address = document.getElementById('deliveryAddressInput').value.trim();
+            if (name && phone && address) {
+                deliveryInfo = { name, phone, address };
+                try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) {}
+                setOrderType('delivery');
+                deliveryModal?.classList.remove('active');
+            }
+        });
+    }
+
+    [tableModal, deliveryModal].forEach(m => {
+        if (m) m.addEventListener('click', e => {
+            if (e.target === m) {
+                m.classList.remove('active');
+                modal?.classList.add('active');
+            }
+        });
+    });
+}
+
+function initLangSelectButtons() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+        btn.addEventListener('click', () => {
+            setLanguage(btn.dataset.lang);
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === btn.dataset.lang));
+            const langBtnRu = document.getElementById('langBtnRu');
+            const langBtnKg = document.getElementById('langBtnKg');
+            if (langBtnRu) langBtnRu.classList.toggle('active', btn.dataset.lang === 'ru');
+            if (langBtnKg) langBtnKg.classList.toggle('active', btn.dataset.lang === 'kg');
+        });
+    });
+}
+
+function showTableSelect() {
+    document.getElementById('orderTypeModal')?.classList.remove('active');
+    document.getElementById('tableSelectModal')?.classList.add('active');
+    enableModalLock();
+}
+
+function showDeliveryForm() {
+    document.getElementById('orderTypeModal')?.classList.remove('active');
+    document.getElementById('deliveryFormModal')?.classList.add('active');
+    enableModalLock();
+}
+
+function selectTable(num) {
+    tableNumber = num;
+    const waiter = getWaiterForTable(num);
+    if (waiter) {
+        currentWaiter = waiter;
+        try { localStorage.setItem('currentWaiter', JSON.stringify(currentWaiter)); } catch (e) {}
+    }
+    setOrderType('cafe');
+    document.getElementById('tableSelectModal')?.classList.remove('active');
+    setTimeout(() => notifyAssignedWaiter(), 250);
+}
+
+function setOrderType(type) {
+    orderType = type;
+    document.getElementById('orderTypeModal')?.classList.remove('active');
+    document.getElementById('tableSelectModal')?.classList.remove('active');
+    applyOrderTypeMode();
+    disableModalLock();
+}
+
+function applyOrderTypeMode() {
+    document.body.classList.toggle('browse-mode', orderType === 'browse');
+    updateDeliveryAddressVisibility();
+    adjustPaymentOptionsForDelivery();
+}
+
+function updateDeliveryAddressVisibility() {
+    const ag = document.getElementById('deliveryAddressGroup');
+    if (ag) ag.style.display = orderType === 'delivery' ? 'block' : 'none';
+}
+
+function getOrderTypeText() {
+    if (!orderType || orderType === 'browse') return '';
+    if (orderType === 'cafe' && tableNumber) return `📍 Стол №${tableNumber}`;
+    if (orderType === 'pickup') return currentLang === 'ru' ? '📍 Самовывоз' : '📍 Өзү алып кетүү';
+    if (orderType === 'delivery' && deliveryInfo) return currentLang === 'ru' ? `📍 Доставка: ${deliveryInfo.address}` : `📍 Жеткирүү: ${deliveryInfo.address}`;
+    return '';
+}
+
+function enableModalLock() {
+    document.body.classList.add('modal-blocked');
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+}
+
+function disableModalLock() {
+    document.body.classList.remove('modal-blocked');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+}
+
+function initTableFromUrl() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const tableParam = params.get('table');
+        if (!tableParam) return false;
+        const num = parseInt(tableParam, 10);
+        if (!Number.isFinite(num) || num < 1 || num > 11) return false;
+
+        tableNumber = num;
+        orderType = 'cafe';
+        try { localStorage.setItem('currentTableNumber', String(num)); } catch (e) {}
+
+        const waiter = getWaiterForTable(num);
+        if (waiter) {
+            currentWaiter = waiter;
+            try { localStorage.setItem('currentWaiter', JSON.stringify(waiter)); } catch (e) {}
+        }
+
+        applyOrderTypeMode();
+        setTimeout(() => notifyAssignedWaiter(), 300);
+        return true;
+    } catch (e) { return false; }
+}
+
+function notifyAssignedWaiter() {
+    if (!currentWaiter) return;
+    showToast(`Ваш официант: ${currentWaiter.name}`);
+    if (document.getElementById('waiterBanner')) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'waiterBanner';
+    Object.assign(banner.style, {
+        position: 'fixed', right: '14px', bottom: '80px', zIndex: 5000,
+        background: 'var(--card)', border: '1px solid var(--border)',
+        borderRadius: 'var(--radius)', padding: '12px 14px',
+        boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '10px'
+    });
+
+    banner.innerHTML = `
+        <img src="${currentWaiter.photo || './icons/plate-eating.svg'}" alt="${currentWaiter.name}"
+             style="width:44px;height:44px;object-fit:cover;border-radius:8px;">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+            <strong style="font-size:0.9rem;color:var(--text)">${currentWaiter.name}</strong>
+            <span style="font-size:0.78rem;color:var(--text-2)">Ваш официант</span>
+        </div>
+        <button class="btn btn-primary" style="padding:7px 14px;font-size:0.82rem;" id="waiterWriteBtn">Написать</button>
+        <button style="background:var(--bg-2);border:1px solid var(--border);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--text-2);" id="waiterCloseBtn">×</button>
+    `;
+
+    document.body.appendChild(banner);
+
+    document.getElementById('waiterWriteBtn')?.addEventListener('click', () => {
+        const msg = `Здравствуйте, у меня заказ за столом №${tableNumber}`;
+        sendToWhatsAppTo(msg, currentWaiter.phone);
+    });
+
+    const timeoutId = setTimeout(() => banner.parentNode?.removeChild(banner), 7000);
+    document.getElementById('waiterCloseBtn')?.addEventListener('click', () => {
+        clearTimeout(timeoutId);
+        banner.parentNode?.removeChild(banner);
     });
 }
 
 // ============================================
-// Мобильный слайдер для меню
+// ORDER SUBMIT
 // ============================================
 
-let menuSliderState = {
-    currentIndex: 0,
-    intervalId: null,
-    initialized: false,
-};
-
-function initMenuSlider() {
-    const menuGrid = document.getElementById('menuGrid');
-    if (!menuGrid) return;
-
-    // Показ только на узких экранах
-    if (window.innerWidth > 768) {
-        destroyMenuSlider();
+function showOrderForm() {
+    if (cart.length === 0) {
+        alert(translations[currentLang]?.cart_empty_msg || 'Корзина пуста');
         return;
     }
 
-    if (menuSliderState.initialized) return;
+    const orderModal = document.getElementById('orderModal');
+    const orderSummary = document.getElementById('orderSummary');
+    const orderForm = document.getElementById('orderForm');
 
-    // Создаем контейнер слайдера
-    const slider = document.createElement('div');
-    slider.id = 'menuSlider';
-    slider.className = 'menu-slider';
+    if (!orderModal || !orderSummary || !orderForm) return;
 
-    const track = document.createElement('div');
-    track.className = 'menu-slider-track';
+    orderForm.reset();
 
-    // Перемещаем карточки в слайды
-    while (menuGrid.firstChild) {
-        const slideWrapper = document.createElement('div');
-        slideWrapper.className = 'menu-slide';
-        slideWrapper.appendChild(menuGrid.firstChild);
-        track.appendChild(slideWrapper);
+    if (orderType === 'delivery' && deliveryInfo) {
+        const nameI = document.getElementById('customerName');
+        const phoneI = document.getElementById('customerPhone');
+        const addrI = document.getElementById('deliveryAddress');
+        if (nameI) nameI.value = deliveryInfo.name || '';
+        if (phoneI) phoneI.value = deliveryInfo.phone || '';
+        if (addrI) addrI.value = deliveryInfo.address || '';
     }
 
-    slider.appendChild(track);
+    let summaryHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        const it = item.price * item.quantity;
+        total += it;
+        summaryHTML += `<div class="order-summary-item"><span>${item.name} × ${item.quantity}</span><span>${it} ${translations[currentLang]?.currency || 'сом'}</span></div>`;
+    });
+    summaryHTML += `<div class="order-summary-item" style="font-weight:700;border-top:2px solid var(--border);margin-top:4px;padding-top:8px;"><span>${translations[currentLang]?.['cart-total'] || 'Итого:'}</span><span>${total} ${translations[currentLang]?.currency || 'сом'}</span></div>`;
+    orderSummary.innerHTML = summaryHTML;
 
-    // Кнопки навигации
-    const prev = document.createElement('button');
-    prev.className = 'slider-btn slider-prev';
-    prev.innerHTML = '‹';
-    prev.addEventListener('click', () => changeMenuSlide(-1));
+    updateDeliveryAddressVisibility();
+    adjustPaymentOptionsForDelivery();
+    const checked = document.querySelector('input[name="paymentMethod"]:checked');
+    toggleMbankQr(checked ? checked.value : null);
+    validateOrderForm();
 
-    const next = document.createElement('button');
-    next.className = 'slider-btn slider-next';
-    next.innerHTML = '›';
-    next.addEventListener('click', () => changeMenuSlide(1));
-
-    slider.appendChild(prev);
-    slider.appendChild(next);
-
-    // Точки
-    const dots = document.createElement('div');
-    dots.className = 'menu-slider-dots';
-    slider.appendChild(dots);
-
-    // Вставляем слайдер перед меню (menuGrid заменён на пустой контейнер)
-    menuGrid.parentNode.insertBefore(slider, menuGrid);
-
-    // Инициализация точек
-    updateMenuDots();
-
-    // Автопрокрутка
-    menuSliderState.intervalId = setInterval(() => changeMenuSlide(1), 3500);
-
-    // События для свайпа
-    initSliderTouch(track);
-
-    menuSliderState.initialized = true;
+    orderModal.classList.add('active');
 }
 
-function destroyMenuSlider() {
-    const slider = document.getElementById('menuSlider');
-    const menuGrid = document.getElementById('menuGrid');
-    if (!slider || !menuGrid) return;
+function createOrderText(name, phone, comment, paymentMethod) {
+    if (cart.length === 0) throw new Error('Корзина пуста');
 
-    const track = slider.querySelector('.menu-slider-track');
-    if (track) {
-        while (track.firstChild) {
-            const slide = track.firstChild;
-            // извлекаем карточку из обертки
-            const card = slide.firstChild;
-            if (card) menuGrid.appendChild(card);
-            track.removeChild(slide);
-        }
+    let itemsText = '';
+    let total = 0;
+    cart.forEach(item => {
+        const it = item.price * item.quantity;
+        total += it;
+        itemsText += `${item.name} x${item.quantity} — ${it} ${translations[currentLang]?.currency || 'сом'}\n`;
+    });
+
+    const totalText = `\n💰 Итого: ${total} ${translations[currentLang]?.currency || 'сом'}\n`;
+    const fullPhone = '+996 ' + phone;
+    const customerInfo = `👤 ${name}\n📞 ${fullPhone}`;
+
+    let paymentText = '';
+    if (paymentMethod) {
+        const pm = paymentMethod === 'cash' ? (translations[currentLang]?.['payment-cash'] || 'Наличными')
+            : paymentMethod === 'card' ? (translations[currentLang]?.['payment-card'] || 'Картой')
+            : 'MBank';
+        paymentText = `\n💳 ${pm}`;
     }
 
-    slider.remove();
-    if (menuSliderState.intervalId) {
-        clearInterval(menuSliderState.intervalId);
-        menuSliderState.intervalId = null;
+    let commentText = comment?.trim() ? `\n📝 ${comment.trim()}` : '';
+    const orderTypeText = getOrderTypeText() ? `\n${getOrderTypeText()}` : '';
+
+    return `🍽 ${currentLang === 'ru' ? 'Новый заказ — Кафе Cholpon' : 'Жаңы заказ — Cholpon кафе'}\n\n${itemsText}${totalText}${customerInfo}${paymentText}${orderTypeText}${commentText}`;
+}
+
+function sendToWhatsApp(text) {
+    window.open(`https://wa.me/${CAFE_PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+function sendToWhatsAppTo(text, phone) {
+    if (!phone) return sendToWhatsApp(text);
+    window.open(`https://wa.me/${phone.replace(/\D/g,'')}?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+async function sendToExcel(name, phone, comment, paymentMethod, address) {
+    if (!GOOGLE_SHEETS_URL || GOOGLE_SHEETS_URL.includes('YOUR_')) return;
+    const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const orderText = cart.map(i => `${i.name} × ${i.quantity}`).join(', ');
+    const orderData = {
+        date: new Date().toLocaleString('ru-RU'),
+        order: orderText,
+        total,
+        customerName: name,
+        customerPhone: phone,
+        comment: ((comment?.trim() ? comment.trim() + ' | ' : '') + (address || '')),
+        paymentMethod: paymentMethod || ''
+    };
+    try {
+        await fetch(GOOGLE_SHEETS_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(orderData) });
+    } catch (e) { console.warn('Sheets error:', e); }
+}
+
+function clearCart() {
+    cart = [];
+    localStorage.removeItem('cart');
+    updateCartUI();
+    renderMenu();
+}
+
+async function placeOrder(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('customerPhone').value.trim();
+    const comment = document.getElementById('orderComment').value.trim();
+
+    if (!cart.length) { alert('Корзина пуста'); return; }
+    if (!name || !phone) { alert(currentLang === 'ru' ? 'Заполните все поля' : 'Бардык талааларды толтуруңуз'); return; }
+
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || 'cash';
+
+    if (orderType === 'delivery') {
+        const addrInput = document.getElementById('deliveryAddress');
+        if (!deliveryInfo) deliveryInfo = {};
+        deliveryInfo.address = addrInput?.value.trim() || deliveryInfo.address;
+        try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch (e) {}
     }
-    menuSliderState.currentIndex = 0;
-    menuSliderState.initialized = false;
+
+    const orderText = createOrderText(name, phone, comment, paymentMethod);
+    const targetPhone = (orderType === 'cafe' && currentWaiter?.phone) ? currentWaiter.phone : CAFE_PHONE_NUMBER;
+    sendToWhatsAppTo(orderText, targetPhone);
+
+    const deliveryAddr = (orderType === 'delivery' && deliveryInfo?.address) ? deliveryInfo.address : '';
+    sendToExcel(name, phone, comment, paymentMethod, deliveryAddr).catch(() => {});
+
+    clearCart();
+    document.getElementById('orderModal')?.classList.remove('active');
+    alert(currentLang === 'ru' ? '✅ Заказ отправлен!' : '✅ Заказ жөнөтүлдү!');
 }
 
-function changeMenuSlide(direction) {
-    const slider = document.getElementById('menuSlider');
-    if (!slider) return;
-    const track = slider.querySelector('.menu-slider-track');
-    const slides = track ? track.children : [];
-    if (!slides || slides.length === 0) return;
+function handleOrderSubmit(e) { placeOrder(e); }
 
-    let idx = menuSliderState.currentIndex + direction;
-    if (idx < 0) idx = slides.length - 1;
-    if (idx >= slides.length) idx = 0;
+// ============================================
+// THEME & LANGUAGE
+// ============================================
 
-    goToMenuSlide(idx);
-}
-
-function goToMenuSlide(index) {
-    const slider = document.getElementById('menuSlider');
-    if (!slider) return;
-    const track = slider.querySelector('.menu-slider-track');
-    const dots = slider.querySelectorAll('.menu-slider-dot');
-    const slides = track.children;
-    if (index < 0 || index >= slides.length) return;
-
-    track.style.transform = `translateX(-${index * 100}%)`;
-    menuSliderState.currentIndex = index;
-
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
-}
-
-function updateMenuDots() {
-    const slider = document.getElementById('menuSlider');
-    if (!slider) return;
-    const dotsContainer = slider.querySelector('.menu-slider-dots');
-    const track = slider.querySelector('.menu-slider-track');
-    dotsContainer.innerHTML = '';
-    const count = track ? track.children.length : 0;
-    for (let i = 0; i < count; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'menu-slider-dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goToMenuSlide(i));
-        dotsContainer.appendChild(dot);
+function initTheme() {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    const icon = document.querySelector('.theme-icon');
+    if (icon) {
+        icon.innerHTML = currentTheme === 'dark'
+            ? '<img src="icons/brightness.svg" alt="light" style="width:20px;height:20px">'
+            : '<img src="icons/moon-stars.svg" alt="dark" style="width:20px;height:20px">';
     }
 }
 
-function initSliderTouch(track) {
-    if (!track) return;
-    let startX = 0;
-    let deltaX = 0;
+function toggleTheme() {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+    initTheme();
+}
 
-    track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        if (menuSliderState.intervalId) {
-            clearInterval(menuSliderState.intervalId);
-            menuSliderState.intervalId = null;
-        }
-    }, { passive: true });
+function initLanguage() {
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) langToggle.textContent = currentLang.toUpperCase();
 
-    track.addEventListener('touchmove', (e) => {
-        deltaX = e.touches[0].clientX - startX;
-    }, { passive: true });
+    const langBtnRu = document.getElementById('langBtnRu');
+    const langBtnKg = document.getElementById('langBtnKg');
+    if (langBtnRu) langBtnRu.classList.toggle('active', currentLang === 'ru');
+    if (langBtnKg) langBtnKg.classList.toggle('active', currentLang === 'kg');
 
-    track.addEventListener('touchend', () => {
-        if (Math.abs(deltaX) > 50) {
-            if (deltaX > 0) changeMenuSlide(-1);
-            else changeMenuSlide(1);
+    translatePage();
+}
+
+function translatePage() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const txt = translations[currentLang]?.[key];
+        if (txt) {
+            if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA') el.textContent = txt;
+            if (el.hasAttribute('placeholder')) el.setAttribute('placeholder', txt);
         }
-        // восстанавливаем автопрокрутку
-        if (!menuSliderState.intervalId) {
-            menuSliderState.intervalId = setInterval(() => changeMenuSlide(1), 3500);
-        }
-        startX = 0; deltaX = 0;
     });
 }
 
-// Пересоздаем/уничтожаем слайдер при изменении размера окна
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        if (window.innerWidth > 768) destroyMenuSlider();
-        else initMenuSlider();
-    }, 200);
-});
+function toggleLanguage() { setLanguage(currentLang === 'ru' ? 'kg' : 'ru'); }
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    initLanguage();
+    renderMenu();
+    updateCartUI();
+
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) langToggle.textContent = lang.toUpperCase();
+
+    const langBtnRu = document.getElementById('langBtnRu');
+    const langBtnKg = document.getElementById('langBtnKg');
+    if (langBtnRu) langBtnRu.classList.toggle('active', lang === 'ru');
+    if (langBtnKg) langBtnKg.classList.toggle('active', lang === 'kg');
+}
+
+function updateLanguage() { translatePage(); }
 
 // ============================================
-// Экспорт функций для использования в HTML
+// EVENT LISTENERS
 // ============================================
 
-// ============================================
-// Управление шапкой при скролле
-// ============================================
+function initEventListeners() {
+    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+    document.getElementById('langToggle')?.addEventListener('click', toggleLanguage);
+    document.getElementById('langBtnRu')?.addEventListener('click', () => setLanguage('ru'));
+    document.getElementById('langBtnKg')?.addEventListener('click', () => setLanguage('kg'));
 
-/**
- * Инициализирует логику скрытия/показа шапки при скролле
- */
+    const cartIconBtn = document.getElementById('cartIconBtn');
+    if (cartIconBtn) cartIconBtn.addEventListener('click', () => document.getElementById('cartModal')?.classList.add('active'));
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+            mobileMenuBtn.setAttribute('aria-expanded', String(mainNav.classList.contains('open')));
+        });
+        document.addEventListener('click', e => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mainNav.classList.remove('open');
+            }
+        });
+    }
+
+    document.getElementById('closeCartModal')?.addEventListener('click', () => document.getElementById('cartModal')?.classList.remove('active'));
+    document.getElementById('cartModal')?.addEventListener('click', e => { if (e.target.id === 'cartModal') e.target.classList.remove('active'); });
+    document.getElementById('closeOrderModal')?.addEventListener('click', () => document.getElementById('orderModal')?.classList.remove('active'));
+    document.getElementById('cancelOrder')?.addEventListener('click', () => document.getElementById('orderModal')?.classList.remove('active'));
+    document.getElementById('closeDishDetailsModal')?.addEventListener('click', () => document.getElementById('dishDetailsModal')?.classList.remove('active'));
+
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', e => {
+            if (overlay.id === 'orderTypeModal' && overlay.classList.contains('active')) return;
+            if (e.target === overlay) overlay.classList.remove('active');
+        });
+    });
+
+    document.getElementById('clearCart')?.addEventListener('click', () => {
+        const msg = translations[currentLang]?.confirm_clear_cart || 'Очистить корзину?';
+        if (confirm(msg)) { cart = []; saveCart(); updateCartUI(); }
+    });
+
+    document.getElementById('checkoutBtn')?.addEventListener('click', showOrderForm);
+    document.getElementById('orderForm')?.addEventListener('submit', handleOrderSubmit);
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterByCategory(btn.getAttribute('data-category'));
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    document.getElementById('addToCartFromDetails')?.addEventListener('click', () => {
+        const dishId = parseInt(document.getElementById('addToCartFromDetails').getAttribute('data-dish-id'));
+        if (dishId) {
+            addToCart(dishId);
+            document.getElementById('dishDetailsModal')?.classList.remove('active');
+        }
+    });
+
+    document.getElementById('sliderPrev')?.addEventListener('click', () => changeSliderImage(-1));
+    document.getElementById('sliderNext')?.addEventListener('click', () => changeSliderImage(1));
+
+    // Bottom nav
+    const bottomNavMenu = document.getElementById('bottomNavMenu');
+    const bottomNavCart = document.getElementById('bottomNavCart');
+
+    if (bottomNavMenu) {
+        bottomNavMenu.addEventListener('click', () => {
+            document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+            bottomNavMenu.classList.add('active');
+            bottomNavCart?.classList.remove('active');
+        });
+    }
+
+    if (bottomNavCart) {
+        bottomNavCart.addEventListener('click', () => {
+            document.getElementById('cartModal')?.classList.add('active');
+            bottomNavCart.classList.add('active');
+            bottomNavMenu?.classList.remove('active');
+        });
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            if (document.body.classList.contains('modal-blocked')) { e.preventDefault(); return; }
+            // Close topmost modal
+            const vm = document.getElementById('variantModalOverlay');
+            if (vm?.classList.contains('active')) { closeVariantModal(); return; }
+            document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+        }
+    });
+}
+
 function initHeaderScroll() {
     const header = document.querySelector('.header');
     if (!header) return;
-
-    let lastScrollTop = 0;
-    let scrollThreshold = 100; // Минимальное расстояние скролла для срабатывания
-    let ticking = false;
+    let last = 0, ticking = false;
 
     window.addEventListener('scroll', () => {
         if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // Если прокрутили меньше порога, не меняем состояние
-                if (Math.abs(currentScrollTop - lastScrollTop) < 10) {
-                    ticking = false;
-                    return;
-                }
-
-                // В самом верху страницы всегда показываем шапку
-                if (currentScrollTop < 50) {
-                    header.classList.remove('hidden');
-                    header.classList.add('visible');
-                }
-                // При скролле вниз - скрываем
-                else if (currentScrollTop > lastScrollTop && currentScrollTop > scrollThreshold) {
-                    header.classList.add('hidden');
-                    header.classList.remove('visible');
-                }
-                // При скролле вверх - показываем
-                else if (currentScrollTop < lastScrollTop) {
-                    header.classList.remove('hidden');
-                    header.classList.add('visible');
-                }
-
-                lastScrollTop = currentScrollTop;
+            requestAnimationFrame(() => {
+                const cur = window.pageYOffset;
+                if (cur < 50) { header.classList.remove('hidden'); }
+                else if (cur > last && cur > 80) { header.classList.add('hidden'); }
+                else if (cur < last) { header.classList.remove('hidden'); }
+                last = cur;
                 ticking = false;
             });
-
             ticking = true;
         }
     }, { passive: true });
 }
 
 // ============================================
-// Экспорт функций для использования в HTML
+// WELCOME ANIMATION
 // ============================================
 
+function animateWelcome() {
+    const el = document.getElementById('animatedWelcome');
+    if (!el) return;
+    el.textContent = (translations[currentLang]?.['about-title']) || 'Добро пожаловать в кафе "Cholpon"';
+    requestAnimationFrame(() => el.classList.add('fade-in'));
+
+    document.getElementById('viewMenuBtn')?.addEventListener('click', () => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' }));
+    document.getElementById('viewContactsBtn')?.addEventListener('click', () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }));
+}
+
 // ============================================
-// Система отзывов
+// TOAST
 // ============================================
 
-// Утилита: простой toast для уведомлений
 function showToast(message, timeout = 3000) {
     const toast = document.createElement('div');
     toast.className = 'cf-toast';
     toast.textContent = message;
     document.body.appendChild(toast);
-    // force reflow for animation
     void toast.offsetWidth;
     toast.classList.add('visible');
     setTimeout(() => {
@@ -3100,26 +2250,37 @@ function showToast(message, timeout = 3000) {
     }, timeout);
 }
 
+// ============================================
+// LIGHTBOX
+// ============================================
 
-let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+function openImageLightbox(src, alt) {
+    const lb = document.getElementById('imageLightbox');
+    const img = document.getElementById('lightboxImage');
+    if (!lb || !img) return;
+    img.src = src;
+    img.alt = alt || '';
+    lb.classList.add('active');
+}
 
-/**
- * Инициализация системы отзывов
- */
+function closeImageLightbox() {
+    const lb = document.getElementById('imageLightbox');
+    const img = document.getElementById('lightboxImage');
+    if (!lb || !img) return;
+    lb.classList.remove('active');
+    img.src = '';
+}
+
+// ============================================
+// REVIEWS (minimal)
+// ============================================
+
 async function initReviews() {
-    // Попробуем получить отзывы с сервера (если настроен)
     await fetchReviewsFromServer();
-
-    // Инициализация рейтинга звездами
     initStarRating();
 
-    // Обработчик формы отзыва
-    const reviewForm = document.getElementById('reviewForm');
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', handleReviewSubmit);
-    }
+    document.getElementById('reviewForm')?.addEventListener('submit', handleReviewSubmit);
 
-    // Кнопки загрузки фото
     const takePhotoBtn = document.getElementById('takePhotoBtn');
     const choosePhotoBtn = document.getElementById('choosePhotoBtn');
     const removePhotoBtn = document.getElementById('removePhotoBtn');
@@ -3131,240 +2292,129 @@ async function initReviews() {
             reviewPhoto.click();
         });
     }
-
     if (choosePhotoBtn && reviewPhoto) {
         choosePhotoBtn.addEventListener('click', () => {
             reviewPhoto.removeAttribute('capture');
             reviewPhoto.click();
         });
     }
-
     if (removePhotoBtn) {
         removePhotoBtn.addEventListener('click', () => {
-            const photoPreview = document.getElementById('photoPreview');
-            const reviewPhoto = document.getElementById('reviewPhoto');
-            if (photoPreview) photoPreview.innerHTML = '';
-            if (reviewPhoto) reviewPhoto.value = '';
+            const pp = document.getElementById('photoPreview');
+            const rp = document.getElementById('reviewPhoto');
+            if (pp) pp.innerHTML = '';
+            if (rp) rp.value = '';
             removePhotoBtn.style.display = 'none';
         });
     }
+    if (reviewPhoto) reviewPhoto.addEventListener('change', handlePhotoSelect);
 
-    if (reviewPhoto) {
-        reviewPhoto.addEventListener('change', handlePhotoSelect);
-    }
-
-    // Отображение отзывов
     displayReviews();
 }
 
-/**
- * Инициализация рейтинга звездами
- */
 function initStarRating() {
     const stars = document.querySelectorAll('.star');
     const ratingInput = document.getElementById('reviewRating');
-
     if (!stars.length || !ratingInput) return;
 
-    stars.forEach((star, index) => {
+    stars.forEach((star, i) => {
         star.addEventListener('click', () => {
-            const rating = index + 1;
-            ratingInput.value = rating;
-            updateStarRating(rating);
+            ratingInput.value = i + 1;
+            updateStarRating(i + 1);
         });
-
-        star.addEventListener('mouseenter', () => {
-            updateStarRating(index + 1, true);
-        });
+        star.addEventListener('mouseenter', () => updateStarRating(i + 1, true));
     });
 
-    const starContainer = document.getElementById('starRating');
-    if (starContainer) {
-        starContainer.addEventListener('mouseleave', () => {
-            const currentRating = parseInt(ratingInput.value) || 0;
-            updateStarRating(currentRating);
-        });
-    }
-}
-
-/**
- * Обновление отображения звезд рейтинга
- */
-function updateStarRating(rating, isHover = false) {
-    const stars = document.querySelectorAll('.star');
-    stars.forEach((star, index) => {
-        if (index < rating) {
-            star.classList.add('active');
-        } else {
-            star.classList.remove('active');
-        }
+    document.getElementById('starRating')?.addEventListener('mouseleave', () => {
+        updateStarRating(parseInt(ratingInput.value) || 0);
     });
 }
 
-/**
- * Обработка выбора фото
- */
+function updateStarRating(rating) {
+    document.querySelectorAll('.star').forEach((s, i) => s.classList.toggle('active', i < rating));
+}
+
 function handlePhotoSelect(e) {
     const file = e.target.files[0];
-    if (!file) return;
-
-    if (!file.type.startsWith('image/')) {
-        alert(currentLang === 'ru' ? 'Пожалуйста, выберите изображение' : 'Сураныч, сүрөт тандаңыз');
-        return;
-    }
-
+    if (!file || !file.type.startsWith('image/')) return;
     const reader = new FileReader();
-    reader.onload = (event) => {
-        const photoPreview = document.getElementById('photoPreview');
-        const removePhotoBtn = document.getElementById('removePhotoBtn');
-
-        if (photoPreview) {
-            photoPreview.innerHTML = `
-                <img src="${event.target.result}" alt="Preview" class="photo-preview-image">
-            `;
-        }
-
-        if (removePhotoBtn) {
-            removePhotoBtn.style.display = 'block';
-        }
+    reader.onload = ev => {
+        const pp = document.getElementById('photoPreview');
+        const rb = document.getElementById('removePhotoBtn');
+        if (pp) pp.innerHTML = `<img src="${ev.target.result}" alt="Preview" class="photo-preview-image">`;
+        if (rb) rb.style.display = 'block';
     };
-
     reader.readAsDataURL(file);
 }
 
-/**
- * Обработка отправки отзыва
- */
 function handleReviewSubmit(e) {
     e.preventDefault();
-
     const name = document.getElementById('reviewerName').value.trim();
     const rating = parseInt(document.getElementById('reviewRating').value);
     const comment = document.getElementById('reviewComment').value.trim();
     const photoInput = document.getElementById('reviewPhoto');
 
     if (!name || !rating || !comment) {
-        alert(currentLang === 'ru'
-            ? 'Заполните все обязательные поля'
-            : 'Бардык милдеттүү талааларды толтуруңуз');
+        alert(currentLang === 'ru' ? 'Заполните все поля' : 'Бардык талааларды толтуруңуз');
         return;
     }
 
-    if (rating === 0) {
-        alert(currentLang === 'ru'
-            ? 'Пожалуйста, выберите оценку'
-            : 'Сураныч, баалоо тандаңыз');
-        return;
-    }
-
-    // Получаем фото, если есть
-    let photoData = null;
-    if (photoInput && photoInput.files && photoInput.files[0]) {
-        const file = photoInput.files[0];
+    if (photoInput?.files?.[0]) {
         const reader = new FileReader();
-
-        reader.onload = (event) => {
-            photoData = event.target.result;
-            saveReview(name, rating, comment, photoData);
-        };
-
-        reader.readAsDataURL(file);
+        reader.onload = ev => saveReview(name, rating, comment, ev.target.result);
+        reader.readAsDataURL(photoInput.files[0]);
     } else {
         saveReview(name, rating, comment, null);
     }
 }
 
-/**
- * Сохранение отзыва
- */
-function saveReview(name, rating, comment, photoData) {
+function saveReview(name, rating, comment, photo) {
     const review = {
         id: Date.now(),
-        name: name,
-        rating: rating,
-        comment: comment,
-        photo: photoData,
-        date: new Date().toLocaleString('ru-RU', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit'
-        }),
+        name, rating, comment, photo,
+        date: new Date().toLocaleString('ru-RU'),
         timestamp: Date.now()
     };
 
-    reviews.unshift(review); // Добавляем в начало
+    reviews.unshift(review);
     localStorage.setItem('reviews', JSON.stringify(reviews));
 
-    // Очищаем форму
-    document.getElementById('reviewForm').reset();
-    document.getElementById('photoPreview').innerHTML = '';
-    document.getElementById('removePhotoBtn').style.display = 'none';
+    document.getElementById('reviewForm')?.reset();
+    const pp = document.getElementById('photoPreview');
+    const rb = document.getElementById('removePhotoBtn');
+    if (pp) pp.innerHTML = '';
+    if (rb) rb.style.display = 'none';
     updateStarRating(0);
 
-    // Обновляем отображение
     displayReviews();
+    alert(currentLang === 'ru' ? 'Спасибо за ваш отзыв!' : 'Пикириңиз үчүн рахмат!');
 
-    // Показываем сообщение об успехе
-    alert(currentLang === 'ru'
-        ? 'Спасибо за ваш отзыв!'
-        : 'Пикириңиз үчүн рахмат!');
-
-    // Попробуем отправить на сервер в фоне (если настроен)
-    postReviewToServer(review).then(saved => {
-        if (saved && typeof saved === 'object') {
-            const idx = reviews.findIndex(r => r.timestamp === review.timestamp);
-            if (idx !== -1) {
-                reviews[idx] = saved;
-                localStorage.setItem('reviews', JSON.stringify(reviews));
-            }
-        } else {
-            console.warn('Review stored locally but not synced to server.');
-        }
-    });
+    postReviewToServer(review).catch(() => {});
 }
 
 function displayReviews(limit = 6) {
-    const reviewsGrid = document.getElementById('reviewsGrid');
-    const reviewsEmpty = document.getElementById('reviewsEmpty');
-
-    if (!reviewsGrid || !reviewsEmpty) return;
+    const grid = document.getElementById('reviewsGrid');
+    const empty = document.getElementById('reviewsEmpty');
+    if (!grid || !empty) return;
 
     if (reviews.length === 0) {
-        reviewsGrid.style.display = 'none';
-        reviewsEmpty.style.display = 'block';
+        grid.style.display = 'none';
+        empty.style.display = 'block';
         return;
     }
 
-    reviewsGrid.style.display = 'grid';
-    reviewsEmpty.style.display = 'none';
-    reviewsGrid.innerHTML = '';
-
-    const reviewsToShow = reviews.slice(0, limit);
-
-    reviewsToShow.forEach(review => {
-        const reviewCard = createReviewCard(review);
-        reviewsGrid.appendChild(reviewCard);
-    });
+    grid.style.display = 'grid';
+    empty.style.display = 'none';
+    grid.innerHTML = '';
+    reviews.slice(0, limit).forEach(r => grid.appendChild(createReviewCard(r)));
 }
 
-/**
- * Создание карточки отзыва
- */
 function createReviewCard(review) {
     const card = document.createElement('div');
     card.className = 'review-card';
 
-    let starsHTML = '';
-    for (let i = 1; i <= 5; i++) {
-        starsHTML += `<span class="review-star ${i <= review.rating ? 'active' : ''}">★</span>`;
-    }
-
-    let photoHTML = '';
-    if (review.photo) {
-        photoHTML = `<img src="${review.photo}" alt="Review photo" class="review-photo">`;
-    }
+    let stars = '';
+    for (let i = 1; i <= 5; i++) stars += `<span class="review-star ${i <= review.rating ? 'active' : ''}">★</span>`;
 
     card.innerHTML = `
         <div class="review-header">
@@ -3372,38 +2422,29 @@ function createReviewCard(review) {
                 <strong>${review.name}</strong>
                 <span class="review-date">${review.date}</span>
             </div>
-            <div class="review-stars">${starsHTML}</div>
+            <div class="review-stars">${stars}</div>
         </div>
         <div class="review-content">
             <p class="review-comment">${review.comment}</p>
-            ${photoHTML}
+            ${review.photo ? `<img src="${review.photo}" alt="Фото" class="review-photo">` : ''}
         </div>
     `;
-
     return card;
 }
 
-/**
- * Получение всех отзывов
- */
-function getAllReviews() {
-    return reviews.sort((a, b) => b.timestamp - a.timestamp); // Сортировка по дате (новые сначала)
-}
+function getAllReviews() { return reviews.sort((a, b) => b.timestamp - a.timestamp); }
 
-// Попытка получить отзывы с сервера (если настроен)
 async function fetchReviewsFromServer() {
-    if (!REVIEWS_ENDPOINT) return; // не настроен
+    if (!REVIEWS_ENDPOINT) return;
     try {
-        const res = await fetch(REVIEWS_ENDPOINT, { method: 'GET', headers: { 'Accept': 'application/json' } });
-        if (!res.ok) throw new Error('Network response was not ok');
+        const res = await fetch(REVIEWS_ENDPOINT, { headers: { Accept: 'application/json' } });
+        if (!res.ok) return;
         const data = await res.json();
         if (Array.isArray(data)) {
             reviews = data.sort((a, b) => b.timestamp - a.timestamp);
             localStorage.setItem('reviews', JSON.stringify(reviews));
         }
-    } catch (err) {
-        console.warn('Could not fetch reviews from server:', err);
-    }
+    } catch (e) {}
 }
 
 async function postReviewToServer(review) {
@@ -3414,14 +2455,14 @@ async function postReviewToServer(review) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review)
         });
-        if (!res.ok) throw new Error('Network response was not ok');
-        const saved = await res.json();
-        return saved;
-    } catch (err) {
-        console.warn('Failed to post review to server:', err);
-        return false;
-    }
+        return res.ok ? await res.json() : false;
+    } catch (e) { return false; }
 }
+
+// ============================================
+// EXPOSE GLOBALS
+// ============================================
+
 window.addToCart = addToCart;
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
@@ -3430,3 +2471,5 @@ window.showDishDetails = showDishDetails;
 window.filterByCategory = filterByCategory;
 window.getAllReviews = getAllReviews;
 window.createReviewCard = createReviewCard;
+window.openImageLightbox = openImageLightbox;
+window.closeImageLightbox = closeImageLightbox;
