@@ -2,7 +2,7 @@
 // Официанты
 // ============================================
 let WAITERS = {
-    'w1': { id: 'w1', name: 'Альмурза', phone: '996700000001', photo: './waiterphoto/ali.png' },
+    'w1': { id: 'w1', name: 'Альмурза', phone: '996705505530', photo: './waiterphoto/ali.png' },
     'w2': { id: 'w2', name: 'Нурсултан', phone: '996700000002', photo: './waiterphoto/nursultan.png' },
     'w3': { id: 'w3', name: 'Айзада', phone: '996700000003', photo: './waiterphoto/ali.png' }
 };
@@ -11,22 +11,6 @@ let WAITER_TABLES = {
     'w2': [3, 8, 11],
     'w3': [4, 5, 6, 9]
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

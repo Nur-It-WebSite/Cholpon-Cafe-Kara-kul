@@ -50,6 +50,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.logoo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--bg);
@@ -499,12 +506,17 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  animation: breathe 6s ease-in-out infinite;
 }
 
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
 .menu-card:hover .dish-image {
   transform: scale(1.04);
+  animation-play-state: paused;
 }
-
 .dish-category-badge {
   position: absolute;
   top: 10px;
