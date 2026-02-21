@@ -849,6 +849,7 @@ const translations = {
         'nav-reviews': 'Отзывы',
         'nav-contact': 'Контакты',
         'about-title': 'Добро пожаловать в кафе "Cholpon"',
+        'about-desc': 'Уютное кафе в центре Кара-Куля. Вкусная домашняя еда каждый день.',
         'about-text-1': 'Кафе "Cholpon" - это уютное место в городе Кара-Куль, где гостей встречают с теплом и заботой. Мы готовим вкусные блюда национальной кухни, используя свежие продукты и проверенные рецепты.',
         'about-text-2': 'У нас можно приятно провести время с семьёй и друзьями, пообедать, поужинать, или отметить важное событие. В кафе царит спокойная атмосфера, а внимательный персонал всегда старается, чтобы каждый гость остался доволен.',
         'about-text-3': 'Кафе "Cholpon" - место, куда хочется возвращаться снова и снова.',
@@ -897,7 +898,9 @@ const translations = {
         'reviews-empty': 'Пока нет отзывов. Будьте первым!',
         'reviews-view-all': 'Посмотреть все отзывы',
         'reviews-all-title': 'Все отзывы',
-        'reviews-back': 'Вернуться на главную'
+        'reviews-back': 'Вернуться на главную',
+        'waiter-label': 'Ваш официант',
+        'waiter-write': 'Написать'
     },
     kg: {
         'nav-menu': 'Меню',
@@ -905,6 +908,7 @@ const translations = {
         'nav-reviews': 'Пикирлер',
         'nav-contact': 'Байланыш',
         'about-title': '"Cholpon" кафесине кош келиңиз',
+        'about-desc': 'Кара-Куль шаарынын борборундагы жайкы кафе. Ар бир күн даамдуу үй жемиши.',
         'about-text-1': '"Cholpon" кафеси - Кара-Көл шаарындагы жайлуу жер, мында конокторду жылуулук менен кабыл алышат. Биз таза азыктарды жана текшерилген рецептерди колдонуп, улуттук тамактарды даярдайбыз.',
         'about-text-2': 'Бизде үй-бүлө менен жана достор менен жакшы убакыт өткөрүүгө, таңкы жеш, кечки тамак же маанилүү окуяны белгилөөгө болот. Кафеде тынч атмосфера, ал эми кызыкчыл персонал ар дайым ар бир коноктун канааттанган болушун камсыз кылууга аракет кылат.',
         'about-text-3': '"Cholpon" кафеси - кайра-кайра кайтууну каалаган жер.',
@@ -953,7 +957,9 @@ const translations = {
         'reviews-empty': 'Азырынча пикирлер жок. Биринчи болуңуз!',
         'reviews-view-all': 'Бардык пикирлерди көрүү',
         'reviews-all-title': 'Бардык пикирлер',
-        'reviews-back': 'Башкы бетке кайтуу'
+        'reviews-back': 'Башкы бетке кайтуу',
+        'waiter-label': 'Сиздин официянты',
+        'waiter-write': 'Жазуу'
     },
     en: {
         'nav-menu': 'Menu',
@@ -1871,7 +1877,8 @@ function initTableFromUrl() {
 
 function notifyAssignedWaiter() {
     if (!currentWaiter) return;
-    showToast(`Ваш официант: ${currentWaiter.name}`);
+    const waiterLabel = translations[currentLang]?.['waiter-label'] || 'Ваш официант';
+    showToast(`${waiterLabel}: ${currentWaiter.name}`);
     if (document.getElementById('waiterBanner')) return;
 
     const banner = document.createElement('div');
@@ -1883,14 +1890,15 @@ function notifyAssignedWaiter() {
         boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '10px'
     });
 
+    const waiterWrite = translations[currentLang]?.['waiter-write'] || 'Написать';
     banner.innerHTML = `
         <img src="${currentWaiter.photo || './icons/plate-eating.svg'}" alt="${currentWaiter.name}"
              style="width:44px;height:44px;object-fit:cover;border-radius:8px;">
         <div style="display:flex;flex-direction:column;gap:2px;">
             <strong style="font-size:0.9rem;color:var(--text)">${currentWaiter.name}</strong>
-            <span style="font-size:0.78rem;color:var(--text-2)">Ваш официант</span>
+            <span style="font-size:0.78rem;color:var(--text-2)">${waiterLabel}</span>
         </div>
-        <button class="btn btn-primary" style="padding:7px 14px;font-size:0.82rem;" id="waiterWriteBtn">Написать</button>
+        <button class="btn btn-primary" style="padding:7px 14px;font-size:0.82rem;" id="waiterWriteBtn">${waiterWrite}</button>
         <button style="background:var(--bg-2);border:1px solid var(--border);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--text-2);" id="waiterCloseBtn">×</button>
     `;
 
