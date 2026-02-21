@@ -1,3 +1,35 @@
+// ============================================
+// Официанты
+// ============================================
+let WAITERS = {
+    'w1': { id: 'w1', name: 'Альмурза', phone: '996700000001', photo: './waiterphoto/ali.png' },
+    'w2': { id: 'w2', name: 'Нурсултан', phone: '996700000002', photo: './waiterphoto/nursultan.png' },
+    'w3': { id: 'w3', name: 'Айзада', phone: '996700000003', photo: './waiterphoto/ali.png' }
+};
+let WAITER_TABLES = {
+    'w1': [1, 2, 7, 10],
+    'w2': [3, 8, 11],
+    'w3': [4, 5, 6, 9]
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const menuData = [
     // ==================== ПЕРВЫЕ БЛЮДА ====================
     {
@@ -1093,21 +1125,6 @@ const CAFE_PHONE_NUMBER = '996998252023';
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwRZDDKK04OEv-ySYHz6XbskBZXp7vGYcWxp7fYiLSmrVe0fjHi7KgDEIGIFnIEFYrn/exec';
 const REVIEWS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyYVg9L5UtQISuiSDvzxcleVKqN4mLN4b3to64DRukMGMN6kTCnYhX3F5BfSSwA85hUWg/exec';
 
-// ============================================
-// Официанты
-// ============================================
-
-let WAITERS = {
-    'w1': { id: 'w1', name: 'Альмурза', phone: '996700000001', photo: './icons/waiter1.jpg' },
-    'w2': { id: 'w2', name: 'Нурсултан', phone: '996700000002', photo: './icons/waiter2.jpg' },
-    'w3': { id: 'w3', name: 'Айзада', phone: '996700000003', photo: './icons/waiter3.jpg' }
-};
-
-let WAITER_TABLES = {
-    'w1': [1, 2, 7, 10],
-    'w2': [3, 8, 11],
-    'w3': [4, 5, 6, 9]
-};
 
 let currentWaiter = null;
 
@@ -1187,7 +1204,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             const savedWaiter = localStorage.getItem('currentWaiter');
             if (savedWaiter && !currentWaiter) {
                 currentWaiter = JSON.parse(savedWaiter);
-                setTimeout(() => notifyAssignedWaiter(), 300);
             }
         } catch (e) { }
 
@@ -1250,8 +1266,8 @@ function openVariantModal(item, onSelect) {
             <span class="vo-price">${v.price} <span style="font-size:0.8em;font-weight:400">${translations[currentLang]?.currency || 'сом'}</span></span>
         `;
         btn.addEventListener('click', () => {
-            closeVariantModal();
             if (variantCallback) variantCallback(v);
+            closeVariantModal();
         });
         options.appendChild(btn);
     });
