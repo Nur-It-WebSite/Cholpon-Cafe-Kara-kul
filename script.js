@@ -35,7 +35,7 @@ const menuData = [
         description: 'Шашлык Наполеон с нежным вкусом',
         descriptionKg: 'Наполеон шашлык нымдуу даамы менен',
         price: 210,
-        image: 'https://via.placeholder.com/300x200?text=Наполеон',
+        image: './Menu/Шашлык Наполеон с нежным вкусом.png',
         category: 'shashlik',
         ingredients: ['Мясо', 'Лук', 'Специи'],
         ingredientsKg: ['Эт', 'Пияз', 'Азыктар']
@@ -59,7 +59,7 @@ const menuData = [
         description: 'Куриные крылышки на гриле',
         descriptionKg: 'Грилдеги тоок канаттары',
         price: 225,
-        image: 'https://via.placeholder.com/300x200?text=Крылышки',
+        image: './Menu/Крылышки.png',
         category: 'shashlik',
         ingredients: ['Куриные крылышки', 'Специи', 'Масло'],
         ingredientsKg: ['Тоок канаттары', 'Азыктар', 'Май']
@@ -71,7 +71,7 @@ const menuData = [
         description: 'Шашлык из свежих овощей',
         descriptionKg: 'Жаңы жашылчалардан шашлык',
         price: 180,
-        image: 'https://via.placeholder.com/300x200?text=Овощной+шашлык',
+        image: './Menu/Шашлык из свежих овощей.png',
         category: 'shashlik',
         ingredients: ['Перец', 'Баклажан', 'Помидоры', 'Лук'],
         ingredientsKg: ['Мурч', 'Баклажан', 'Помидор', 'Пияз']
@@ -168,7 +168,7 @@ const menuData = [
         description: 'Суп Ак Серке с фрикадельками',
         descriptionKg: 'Ак Серке суп фрикаделькалар менен',
         price: 235,
-        image: 'https://via.placeholder.com/300x200?text=Ак+Серке',
+        image: './Menu/Ак Серке с фрикадельками.png',
         category: 'first',
         ingredients: ['Фрикадельки', 'Картофель', 'Морковь', 'Лук'],
         ingredientsKg: ['Фрикадельки', 'Картөшкө', 'Сабиз', 'Пияз']
@@ -350,7 +350,7 @@ const menuData = [
         description: 'Турецкий кебаб в лаваше',
         descriptionKg: 'Лавашта түрк кебабы',
         price: 280,
-        image: 'https://via.placeholder.com/300x200?text=Турецкий+кебаб',
+        image: './Menu/turk.png',
         category: 'special',
         ingredients: ['Мясо', 'Лаваш', 'Овощи'],
         ingredientsKg: ['Эт', 'Лаваш', 'Жашылчалар']
@@ -386,7 +386,7 @@ const menuData = [
         description: 'Бризоль из мяса',
         descriptionKg: 'Эттен бризоль',
         price: 265,
-        image: 'https://via.placeholder.com/300x200?text=Бризоль',
+        image: './Menu/БризольЗаказное Бризоль Бризоль из мяса.png',
         category: 'special',
         ingredients: ['Мясо', 'Специи', 'Масло'],
         ingredientsKg: ['Эт', 'Азыктар', 'Май']
@@ -507,7 +507,7 @@ const menuData = [
         description: 'Греческий салат с маслом',
         descriptionKg: 'Май менен грек салаты',
         price: 225,
-        image: 'https://via.placeholder.com/300x200?text=Греческий+салат',
+        image: './Menu/Греческий.png',
         category: 'salad-oil',
         ingredients: ['Помидоры', 'Огурцы', 'Сыр фета', 'Масло'],
         ingredientsKg: ['Помидор', 'Бадыраң', 'Фета сыры', 'Май']
@@ -817,7 +817,7 @@ const menuData = [
         description: 'Корейские куриные стрипсы',
         descriptionKg: 'Корей тоок стрипсы',
         price: 290,
-        image: 'https://via.placeholder.com/300x200?text=Стрипсы+корейские',
+        image: './Menu/Стрипсы корейские.png',
         category: 'fastfood',
         ingredients: ['Курица', 'Специи', 'Масло'],
         ingredientsKg: ['Тоок', 'Азыктар', 'Май']
@@ -829,7 +829,7 @@ const menuData = [
         description: 'Курица KFC с картошкой фри',
         descriptionKg: 'KFC тоок фри картөшкө менен',
         price: 300,
-        image: 'https://via.placeholder.com/300x200?text=KFC+фри',
+        image: './Menu/kfxfree.png',
         category: 'fastfood',
         ingredients: ['Курица', 'Картофель фри'],
         ingredientsKg: ['Тоок', 'Фри картөшкө'],
@@ -845,7 +845,7 @@ const menuData = [
         description: 'Классическая шаурма',
         descriptionKg: 'Классикалык шаурма',
         price: 235,
-        image: 'https://via.placeholder.com/300x200?text=Шаурма',
+        image: './Menu/Шаурма Классическая шаурма.png',
         category: 'fastfood',
         ingredients: ['Лаваш', 'Мясо', 'Овощи', 'Соус'],
         ingredientsKg: ['Лаваш', 'Эт', 'Жашылчалар', 'Соус']
