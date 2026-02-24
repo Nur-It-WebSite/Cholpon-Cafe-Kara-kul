@@ -519,7 +519,7 @@ const menuData = [
         description: 'Столичный салат с мясом и овощами',
         descriptionKg: 'Эт жана жашылчалар менен борбордук салат',
         price: 250,
-        image: 'https://via.placeholder.com/300x200?text=Столичный+салат',
+        image: './Menu/Сталичный',
         category: 'salad-oil',
         ingredients: ['Мясо', 'Корнишоны', 'Грибы', 'Лук', 'Салат', 'Масло'],
         ingredientsKg: ['Эт', 'Корнишон', 'Козу карын', 'Пияз', 'Салат', 'Май']
@@ -531,7 +531,7 @@ const menuData = [
         description: 'Восточный салат с овощами и мясом',
         descriptionKg: 'Жашылчалар жана эт менен чыгыштык салат',
         price: 250,
-        image: 'https://via.placeholder.com/300x200?text=Восточный+салат',
+        image: './Menu/Восточный.png',
         category: 'salad-oil',
         ingredients: ['Помидоры', 'Огурцы', 'Мясо', 'Лук', 'Кабачки', 'Баклажан', 'Масло'],
         ingredientsKg: ['Помидор', 'Бадыраң', 'Эт', 'Пияз', 'Кабачки', 'Баклажан', 'Май']
@@ -543,7 +543,7 @@ const menuData = [
         description: 'Острый китайский салат',
         descriptionKg: 'Ачтуу кытай салаты',
         price: 240,
-        image: 'https://via.placeholder.com/300x200?text=Китайский+острый+салат',
+        image: './Menu/Китайский.png',
         category: 'salad-oil',
         ingredients: ['Помидоры', 'Огурцы', 'Мясо', 'Лук', 'Морковь', 'Перец', 'Масло'],
         ingredientsKg: ['Помидор', 'Бадыраң', 'Эт', 'Пияз', 'Сабиз', 'Мурч', 'Май']
@@ -555,7 +555,7 @@ const menuData = [
         description: 'Гасконский салат с копченой окорочкой',
         descriptionKg: 'Копченка менен гаскон салаты',
         price: 230,
-        image: 'https://via.placeholder.com/300x200?text=Гасконский+салат',
+        image: './Menu/Госконский.png',
         category: 'salad-oil',
         ingredients: ['Помидоры', 'Корнишоны', 'Опята', 'Копченая окорочка', 'Масло'],
         ingredientsKg: ['Помидор', 'Корнишон', 'Опята', 'Копченка', 'Май']
@@ -567,7 +567,7 @@ const menuData = [
         description: 'Витаминный салат с овощами',
         descriptionKg: 'Жашылчалар менен витамин салат',
         price: 195,
-        image: 'https://via.placeholder.com/300x200?text=Витаминка+салат',
+        image: './Menu/Витаминка.png',
         category: 'salad-oil',
         ingredients: ['Свекла', 'Колбаска', 'Кукуруза', 'Зелень', 'Морковь', 'Масло'],
         ingredientsKg: ['Кызылча', 'Колбаса', 'Жүгөрү', 'Жашылча', 'Сабиз', 'Май']
@@ -579,7 +579,7 @@ const menuData = [
         description: 'Микс овощного салата',
         descriptionKg: 'Жашылча салат микси',
         price: 235,
-        image: 'https://via.placeholder.com/300x200?text=Овощной+микс+салат',
+        image: './Menu/Овощной микс.png',
         category: 'salad-oil',
         ingredients: ['Цветная капуста', 'Брокколи', 'Овощи', 'Масло'],
         ingredientsKg: ['Түстүү капуста', 'Брокколи', 'Жашылчалар', 'Май']
