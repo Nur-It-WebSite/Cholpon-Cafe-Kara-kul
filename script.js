@@ -591,7 +591,7 @@ const menuData = [
         description: 'Свежий овощной салат',
         descriptionKg: 'Жаңы жашылча салаты',
         price: 130,
-        image: 'https://via.placeholder.com/300x200?text=Свежий+салат',
+        image: './Menu/Свежий.png',
         category: 'salad-oil',
         ingredients: ['Помидоры', 'Огурцы', 'Лук', 'Масло'],
         ingredientsKg: ['Помидор', 'Бадыраң', 'Пияз', 'Май']
@@ -615,7 +615,7 @@ const menuData = [
         description: 'Фирменная овощная нарезка',
         descriptionKg: 'Фирмалык жашылча нарезкасы',
         price: 350,
-        image: 'https://via.placeholder.com/300x200?text=Нарезка+фирменная+овощная',
+        image: './Menu/Нарезка.png',
         category: 'salad-oil',
         ingredients: ['Огурцы', 'Помидоры', 'Соленные огурцы', 'Квашенная капуста', 'Лук', 'Масло'],
         ingredientsKg: ['Бадыраң', 'Помидор', 'Туздалган бадыраң', 'Кычкыл капуста', 'Пияз', 'Май']
