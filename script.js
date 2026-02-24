@@ -193,7 +193,7 @@ const menuData = [
         description: 'Паровые манты с мясом',
         descriptionKg: 'Эт менен буу манты',
         price: 240,
-        image: 'https://via.placeholder.com/300x200?text=Манты',
+        image: './Menu/Манты.png',
         category: 'second',
         ingredients: ['Тесто', 'Мясо', 'Лук', 'Специи'],
         ingredientsKg: ['Камыр', 'Эт', 'Пияз', 'Азыктар']
@@ -241,7 +241,7 @@ const menuData = [
         description: 'Мясные зразы с начинкой',
         descriptionKg: 'Начинка менен эт зразы',
         price: 240,
-        image: 'https://via.placeholder.com/300x200?text=Зразы',
+        image: './Menu/Зразы.png',
         category: 'second',
         ingredients: ['Мясо', 'Картофель', 'Лук', 'Яйцо'],
         ingredientsKg: ['Эт', 'Картөшкө', 'Пияз', 'Жумуртка']
@@ -253,7 +253,7 @@ const menuData = [
         description: 'Уйгурский лагман с мясом и овощами',
         descriptionKg: 'Эт жана жашылчалар менен уйгур лагманы',
         price: 260,
-        image: 'https://via.placeholder.com/300x200?text=Лагман+уйгурский',
+        image: './Menu/Уйгур.png',
         category: 'second',
         ingredients: ['Лапша', 'Мясо', 'Перец', 'Морковь', 'Лук'],
         ingredientsKg: ['Лапша', 'Эт', 'Мурч', 'Сабиз', 'Пияз']
@@ -265,7 +265,7 @@ const menuData = [
         description: 'Жареный лагман с овощами',
         descriptionKg: 'Жашылчалар менен куурулган лагман',
         price: 260,
-        image: 'https://via.placeholder.com/300x200?text=Лагман+жареный',
+        image: './Menu/Жаре.png',
         category: 'second',
         ingredients: ['Лапша', 'Мясо', 'Перец', 'Морковь', 'Лук'],
         ingredientsKg: ['Лапша', 'Эт', 'Мурч', 'Сабиз', 'Пияз']
@@ -302,7 +302,7 @@ const menuData = [
         description: 'Стейк говядины по-деревенски',
         descriptionKg: 'Айылдык жылкы эти стейк',
         price: 610,
-        image: 'https://via.placeholder.com/300x200?text=Мясо+по-деревенски',
+        image: './Menu/Мясо.png',
         category: 'special',
         ingredients: ['Говядина', 'Специи', 'Масло'],
         ingredientsKg: ['Жылкы эти', 'Азыктар', 'Май']
@@ -357,12 +357,12 @@ const menuData = [
     },
     {
         id: 29,
-        name: 'Бейти кебаб (в лаваше с плавленым сыром)',
-        nameKg: 'Бейти кебаб (лавашта эритилген сыр менен)',
+        name: 'Бейти кебаб',
+        nameKg: 'Бейти кебаб ',
         description: 'Бейти кебаб в лаваше с плавленым сыром',
         descriptionKg: 'Лавашта эритилген сыр менен бейти кебаб',
         price: 330,
-        image: 'https://via.placeholder.com/300x200?text=Бейти+кебаб',
+        image: './Menu/Бейти кебаб.png',
         category: 'special',
         ingredients: ['Мясо', 'Лаваш', 'Сыр'],
         ingredientsKg: ['Эт', 'Лаваш', 'Сыр']
@@ -410,7 +410,7 @@ const menuData = [
         description: 'Куурдак из говядины и баранины',
         descriptionKg: 'Жылкы эти жана кой этинен куурдак',
         price: 490,
-        image: 'https://via.placeholder.com/300x200?text=Куурдак',
+        image: './Menu/Куурдак.png',
         category: 'special',
         ingredients: ['Говядина', 'Баранина', 'Картофель', 'Лук'],
         ingredientsKg: ['Жылкы эти', 'Кой эти', 'Картөшкө', 'Пияз']
@@ -422,7 +422,7 @@ const menuData = [
         description: 'Курица в кисло-сладком соусе',
         descriptionKg: 'Кышкыл-таттуу соустагы тоок',
         price: 290,
-        image: 'https://via.placeholder.com/300x200?text=Курица+в+кисло-сладком+соусе',
+        image: './Menu/Крк.png',
         category: 'special',
         ingredients: ['Курица', 'Соус', 'Овощи'],
         ingredientsKg: ['Тоок', 'Соус', 'Жашылчалар']
@@ -434,7 +434,7 @@ const menuData = [
         description: 'Фрикассе из курицы',
         descriptionKg: 'Тооктон фрикассе',
         price: 290,
-        image: 'https://via.placeholder.com/300x200?text=Фрикассе',
+        image: './Menu/Фрикасе.png',
         category: 'special',
         ingredients: ['Курица', 'Сливки', 'Овощи'],
         ingredientsKg: ['Тоок', 'Каймак', 'Жашылчалар']
@@ -453,12 +453,12 @@ const menuData = [
     },
     {
         id: 37,
-        name: 'Плов 1 кг (заказ заранее)',
-        nameKg: 'Плов 1 кг (алдын ала заказ)',
+        name: 'Плов 1 кг',
+        nameKg: 'Плов 1 кг ',
         description: 'Плов 1 кг, заказ заранее',
         descriptionKg: 'Плов 1 кг, алдын ала заказ',
         price: 2200,
-        image: 'https://via.placeholder.com/300x200?text=Плов+1кг',
+        image: './Menu/Плов.png',
         category: 'special',
         ingredients: ['Рис', 'Мясо', 'Морковь', 'Лук', 'Специи'],
         ingredientsKg: ['Күрүч', 'Эт', 'Сабиз', 'Пияз', 'Азыктар']
@@ -470,7 +470,7 @@ const menuData = [
         description: 'Казан кебаб',
         descriptionKg: 'Казан кебабы',
         price: 320,
-        image: 'https://via.placeholder.com/300x200?text=Казан+кебаб',
+        image: './Menu/Казан кебаб.png',
         category: 'special',
         ingredients: ['Мясо', 'Картофель', 'Лук', 'Специи'],
         ingredientsKg: ['Эт', 'Картөшкө', 'Пияз', 'Азыктар']
@@ -482,7 +482,7 @@ const menuData = [
         description: 'Хачапури с сыром',
         descriptionKg: 'Сыр менен хачапури',
         price: 460,
-        image: 'https://via.placeholder.com/300x200?text=Хачапури',
+        image: './Menu/Хачапури.png',
         category: 'special',
         ingredients: ['Тесто', 'Сыр', 'Масло'],
         ingredientsKg: ['Камыр', 'Сыр', 'Май']
@@ -494,7 +494,7 @@ const menuData = [
         description: 'Фетучини с курицей',
         descriptionKg: 'Тоок менен фетучини',
         price: 390,
-        image: 'https://via.placeholder.com/300x200?text=Фетучини+с+курицей',
+        image: './Menu/Фетучини с курицей.png',
         category: 'special',
         ingredients: ['Фетучини', 'Курица', 'Сливки', 'Сыр'],
         ingredientsKg: ['Фетучини', 'Тоок', 'Каймак', 'Сыр']
@@ -514,8 +514,8 @@ const menuData = [
     },
     {
         id: 42,
-        name: 'Столичный (мясо, корнишоны, грибы, лук, салат)',
-        nameKg: 'Борбордук (эт, корнишон, козу карын, пияз, салат)',
+        name: 'Столичный',
+        nameKg: 'Борбордук ',
         description: 'Столичный салат с мясом и овощами',
         descriptionKg: 'Эт жана жашылчалар менен борбордук салат',
         price: 250,
@@ -603,7 +603,7 @@ const menuData = [
         description: 'Салат с фунчозой, мясом и овощами',
         descriptionKg: 'Фунчоза, эт жана жашылчалар менен салат',
         price: 230,
-        image: 'https://via.placeholder.com/300x200?text=Фунчоза+салат',
+        image: './Menu/Фунчеза.png',
         category: 'salad-oil',
         ingredients: ['Мясо', 'Овощи', 'Фунчоза', 'Масло'],
         ingredientsKg: ['Эт', 'Жашылчалар', 'Фунчоза', 'Май']
@@ -640,7 +640,7 @@ const menuData = [
         description: 'Цезарь с курицей и майонезом',
         descriptionKg: 'Майонез менен тоок Цезарь',
         price: 245,
-        image: 'https://via.placeholder.com/300x200?text=Цезарь+с+курицей',
+        image: './Menu/Цезарь с курицей.png',
         category: 'salad-mayo',
         ingredients: ['Курица', 'Салат', 'Сыр', 'Крутоны', 'Майонез'],
         ingredientsKg: ['Тоок', 'Салат', 'Сыр', 'Крутон', 'Майонез']
@@ -652,7 +652,7 @@ const menuData = [
         description: 'Гнездо кукушки с майонезом',
         descriptionKg: 'Майонез менен кукушка уясы',
         price: 240,
-        image: 'https://via.placeholder.com/300x200?text=Гнездо+кукушки+салат',
+        image: './Menu/Гнездо кукушки .png',
         category: 'salad-mayo',
         ingredients: ['Копченое мясо', 'Пай', 'Кукуруза', 'Сыр', 'Майонез'],
         ingredientsKg: ['Копченка', 'Пай', 'Жүгөрү', 'Сыр', 'Майонез']
@@ -664,7 +664,7 @@ const menuData = [
         description: 'Мерло салат с майонезом',
         descriptionKg: 'Майонез менен мерло салат',
         price: 210,
-        image: './Menu/',
+        image: './Menu/Мерло.png',
         category: 'salad-mayo',
         ingredients: ['Омлет', 'Горох', 'Кукуруза', 'Курица', 'Майонез'],
         ingredientsKg: ['Омлет', 'Буурчак', 'Жүгөрү', 'Тоок', 'Майонез']
@@ -688,7 +688,7 @@ const menuData = [
         description: 'Салат со свеклой и майонезом',
         descriptionKg: 'Майонез менен кызылча салат',
         price: 235,
-        image: 'https://via.placeholder.com/300x200?text=Салат+со+свеклой',
+        image: './Menu/Салат со свеклой.png',
         category: 'salad-mayo',
         ingredients: ['Свекла', 'Брокколи', 'Творожный сыр', 'Орех', 'Майонез'],
         ingredientsKg: ['Кызылча', 'Брокколи', 'Творожный сыр', 'Орех', 'Майонез']
@@ -712,7 +712,7 @@ const menuData = [
         description: 'Баклажан с овощами и майонезом',
         descriptionKg: 'Майонез менен жашылчалуу баклажан',
         price: 255,
-        image: 'https://via.placeholder.com/300x200?text=Баклажан+с+овощами+салат',
+        image: './Menu/Баклажан с овощами.png',
         category: 'salad-mayo',
         ingredients: ['Баклажаны', 'Перец', 'Помидоры', 'Лук', 'Майонез'],
         ingredientsKg: ['Баклажан', 'Мурч', 'Помидор', 'Пияз', 'Майонез']
@@ -924,12 +924,12 @@ const menuData = [
     },
     {
         id: 75,
-        name: 'Рамён',
+        name: 'Рамен',
         nameKg: 'Рамён',
         description: 'Японский рамён',
         descriptionKg: 'Жапон рамёну',
         price: 260,
-        image: 'https://via.placeholder.com/300x200?text=Рамён',
+        image: './Menu/Рамен.png',
         category: 'fastfood',
         ingredients: ['Лапша', 'Бульон', 'Мясо', 'Овощи'],
         ingredientsKg: ['Лапша', 'Бульон', 'Эт', 'Жашылчалар']
@@ -953,7 +953,7 @@ const menuData = [
         description: 'Классический чизкейк',
         descriptionKg: 'Классикалык чизкейк',
         price: 370,
-        image: 'https://via.placeholder.com/300x200?text=Чизкейк',
+        image: './Menu/Чизкейк.png',
         category: 'fastfood',
         ingredients: ['Сыр', 'Тесто', 'Крем'],
         ingredientsKg: ['Сыр', 'Камыр', 'Крем']
