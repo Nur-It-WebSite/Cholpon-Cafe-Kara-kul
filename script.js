@@ -748,7 +748,7 @@ const menuData = [
         description: 'Курица с ореховым соусом и майонезом',
         descriptionKg: 'Майонез менен орех соусу тоок',
         price: 240,
-        image: 'https://via.placeholder.com/300x200?text=Курица+с+ореховым+соусом+салат',
+        image: './Menu/Ореховомсоус.png',
         category: 'salad-mayo',
         ingredients: ['Курица', 'Ореховый соус', 'Майонез'],
         ingredientsKg: ['Тоок', 'Орех соусу', 'Майонез']
@@ -760,7 +760,7 @@ const menuData = [
         nameKg: 'Компот',
         description: 'Компот из сухофруктов',
         descriptionKg: 'Куру жемиштерден компот',
-        image: 'https://via.placeholder.com/300x200?text=Компот',
+        image: './Menu/Компот.png',
         category: 'drink',
         variants: [
             { label: '1 л', price: 100 },
@@ -965,7 +965,7 @@ const menuData = [
         description: 'Торт три шоколада',
         descriptionKg: 'Үч шоколад торт',
         price: 280,
-        image: 'https://via.placeholder.com/300x200?text=Три+шоколада',
+        image: './Menu/Три.png',
         category: 'fastfood',
         ingredients: ['Шоколад', 'Тесто', 'Крем'],
         ingredientsKg: ['Шоколад', 'Камыр', 'Крем']
@@ -989,7 +989,7 @@ const menuData = [
         description: 'Свежий пирог',
         descriptionKg: 'Жаңы пирог',
         price: 50,
-        image: 'https://via.placeholder.com/300x200?text=Пирог',
+        image: './Menu/ПИрог.png',
         category: 'fastfood',
         ingredients: ['Тесто', 'Начинка'],
         ingredientsKg: ['Камыр', 'Начинка']
@@ -1001,7 +1001,7 @@ const menuData = [
         description: 'Мини песочные самсы',
         descriptionKg: 'Мини кум самсы',
         price: 55,
-        image: 'https://via.placeholder.com/300x200?text=Мини+самсы+песочные',
+        image: './Menu/Песоксамсы.png',
         category: 'fastfood',
         ingredients: ['Тесто', 'Начинка'],
         ingredientsKg: ['Камыр', 'Начинка']
@@ -1037,7 +1037,7 @@ const menuData = [
         description: 'Боорсок с каймаком',
         descriptionKg: 'Каймак менен боорсок',
         price: 50,
-        image: 'https://via.placeholder.com/300x200?text=Боорсок+каймак',
+        image: './Menu/Борскок.png',
         category: 'dessert',
         ingredients: ['Боорсок', 'Каймак'],
         ingredientsKg: ['Боорсок', 'Каймак'],
