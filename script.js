@@ -83,7 +83,7 @@ const menuData = [
         description: 'Говядина 2, Люля-кебаб 2, Наполеон 2 + подарок',
         descriptionKg: 'Жылкы эти 2, Люля-кебаб 2, Наполеон 2 + белек',
         price: 2050,
-        image: 'https://via.placeholder.com/300x200?text=Сет+Компания',
+        image: './Menu/сет компания.png',
         category: 'shashlik',
         ingredients: ['Говядина', 'Люля-кебаб', 'Наполеон'],
         ingredientsKg: ['Жылкы эти', 'Люля-кебаб', 'Наполеон']
@@ -95,7 +95,7 @@ const menuData = [
         description: 'Говядина 2, Люля-кебаб 1, Наполеон 1, Рыба 4, Грибы + подарок',
         descriptionKg: 'Жылкы эти 2, Люля-кебаб 1, Наполеон 1, Балык 4, Козу карын + белек',
         price: 2800,
-        image: 'https://via.placeholder.com/300x200?text=Сет+Фантазия',
+        image: './Menu/сет фантазия.png',
         category: 'shashlik',
         ingredients: ['Говядина', 'Люля-кебаб', 'Наполеон', 'Рыба', 'Грибы'],
         ingredientsKg: ['Жылкы эти', 'Люля-кебаб', 'Наполеон', 'Балык', 'Козу карын']
@@ -205,7 +205,7 @@ const menuData = [
         description: 'Мясные котлеты с гарниром',
         descriptionKg: 'Гарнир менен эт котлеталары',
         price: 220,
-        image: 'https://via.placeholder.com/300x200?text=Котлеты',
+        image: './Menu/Мясные котлеты.png',
         category: 'second',
         ingredients: ['Фарш', 'Лук', 'Яйцо', 'Хлеб'],
         ingredientsKg: ['Фарш', 'Пияз', 'Жумуртка', 'Нан']
@@ -217,7 +217,7 @@ const menuData = [
         description: 'Мясные тефтели в соусе',
         descriptionKg: 'Соустагы эт тефтель',
         price: 220,
-        image: 'https://via.placeholder.com/300x200?text=Тефтели',
+        image: './Menu/мясные тефтели.png',
         category: 'second',
         ingredients: ['Фарш', 'Рис', 'Лук', 'Соус'],
         ingredientsKg: ['Фарш', 'Күрүч', 'Пияз', 'Соус']
@@ -229,7 +229,7 @@ const menuData = [
         description: 'Сочный бифштекс из говядины',
         descriptionKg: 'Жылкы этинен шырындуу бифштекс',
         price: 230,
-        image: 'https://via.placeholder.com/300x200?text=Бифштекс',
+        image: './Menu/Бифштекс.png',
         category: 'second',
         ingredients: ['Говядина', 'Специи', 'Масло'],
         ingredientsKg: ['Жылкы эти', 'Азыктар', 'Май']
@@ -277,7 +277,7 @@ const menuData = [
         description: 'Гуляш из говядины с овощами',
         descriptionKg: 'Жашылчалар менен жылкы эти гуляш',
         price: 300,
-        image: 'https://via.placeholder.com/300x200?text=Гуляш',
+        image: './Menu/Гуляш из говядины.png',
         category: 'second',
         ingredients: ['Говядина', 'Картофель', 'Морковь', 'Лук', 'Соус'],
         ingredientsKg: ['Жылкы эти', 'Картөшкө', 'Сабиз', 'Пияз', 'Соус']
@@ -289,7 +289,7 @@ const menuData = [
         description: 'Мясо по-королевски с сыром',
         descriptionKg: 'Сыр менен королдук эт',
         price: 270,
-        image: 'https://via.placeholder.com/300x200?text=Мясо+по-королевски',
+        image: './Menu/мясо по королевски.png',
         category: 'second',
         ingredients: ['Мясо', 'Сыр', 'Помидоры', 'Зелень'],
         ingredientsKg: ['Эт', 'Сыр', 'Помидор', 'Жашылча']
@@ -314,7 +314,7 @@ const menuData = [
         description: 'Стейки форели, 3 шт.',
         descriptionKg: 'Форель стейктери, 3 дөн',
         price: 610,
-        image: 'https://via.placeholder.com/300x200?text=Стейк+форель+3шт',
+        image: './Menu/стейк форель.png',
         category: 'special',
         ingredients: ['Форель', 'Специи', 'Масло'],
         ingredientsKg: ['Форель', 'Азыктар', 'Май']
@@ -326,7 +326,7 @@ const menuData = [
         description: 'Стейки форели, 2 шт.',
         descriptionKg: 'Форель стейктери, 2 дөн',
         price: 510,
-        image: 'https://via.placeholder.com/300x200?text=Стейк+форель+2шт',
+        image: './Menu/стейк форель.png',
         category: 'special',
         ingredients: ['Форель', 'Специи', 'Масло'],
         ingredientsKg: ['Форель', 'Азыктар', 'Май']
@@ -338,7 +338,7 @@ const menuData = [
         description: 'Адана кебаб на шпажках с гарниром и салатом',
         descriptionKg: 'Гарнир жана салат менен шпажкаларда адана кебаб',
         price: 290,
-        image: 'https://via.placeholder.com/300x200?text=Адана+кебаб',
+        image: './Menu/адана кебаб.png',
         category: 'special',
         ingredients: ['Мясо', 'Специи', 'Гарнир', 'Салат'],
         ingredientsKg: ['Эт', 'Азыктар', 'Гарнир', 'Салат']
@@ -374,7 +374,7 @@ const menuData = [
         description: 'Жареное мясо с овощами',
         descriptionKg: 'Жашылчалар менен куурулган эт',
         price: 280,
-        image: 'https://via.placeholder.com/300x200?text=Лазуро',
+        image: './Menu/лазуро.png',
         category: 'special',
         ingredients: ['Мясо', 'Овощи', 'Масло'],
         ingredientsKg: ['Эт', 'Жашылчалар', 'Май']
@@ -398,7 +398,7 @@ const menuData = [
         description: 'Мясо в горшочке с помидорами, грибами и сыром',
         descriptionKg: 'Помидор, козу карын жана сыр менен кыштектеги эт',
         price: 290,
-        image: 'https://via.placeholder.com/300x200?text=Мясо+в+горшочке',
+        image: './Menu/мясо в горшочке.png',
         category: 'special',
         ingredients: ['Мясо', 'Помидоры', 'Грибы', 'Сыр'],
         ingredientsKg: ['Эт', 'Помидор', 'Козу карын', 'Сыр']
@@ -446,7 +446,7 @@ const menuData = [
         description: 'Фирменное мясо',
         descriptionKg: 'Фирмалык эт',
         price: 460,
-        image: 'https://via.placeholder.com/300x200?text=Мясо+фирменное',
+        image: './Menu/фирменное мясо.png',
         category: 'special',
         ingredients: ['Мясо', 'Специи', 'Соус'],
         ingredientsKg: ['Эт', 'Азыктар', 'Соус']
@@ -519,7 +519,7 @@ const menuData = [
         description: 'Столичный салат с мясом и овощами',
         descriptionKg: 'Эт жана жашылчалар менен борбордук салат',
         price: 250,
-        image: './Menu/Сталичный',
+        image: './Menu/Столичный.png',
         category: 'salad-oil',
         ingredients: ['Мясо', 'Корнишоны', 'Грибы', 'Лук', 'Салат', 'Масло'],
         ingredientsKg: ['Эт', 'Корнишон', 'Козу карын', 'Пияз', 'Салат', 'Май']
@@ -628,7 +628,7 @@ const menuData = [
         description: 'Воздушный салат с майонезом',
         descriptionKg: 'Майонез менен аба салат',
         price: 220,
-        image: 'https://via.placeholder.com/300x200?text=Воздушный+салат',
+        image: './Menu/Воздушный салат.png',
         category: 'salad-mayo',
         ingredients: ['Басай', 'Охотница', 'Яйцо', 'Чипсы', 'Майонез'],
         ingredientsKg: ['Басай', 'Охотница', 'Жумуртка', 'Чипсы', 'Майонез']
@@ -700,7 +700,7 @@ const menuData = [
         description: 'Охотница салат с майонезом',
         descriptionKg: 'Майонез менен охотница салат',
         price: 250,
-        image: 'https://via.placeholder.com/300x200?text=Охотница+салат',
+        image: './Menu/Охотница.png',
         category: 'salad-mayo',
         ingredients: ['Охотница', 'Корнишоны', 'Черри', 'Листья', 'Шампиньоны', 'Орешки', 'Майонез'],
         ingredientsKg: ['Охотница', 'Корнишон', 'Черри', 'Жалбырактар', 'Шампиньон', 'Орех', 'Майонез']
@@ -724,7 +724,7 @@ const menuData = [
         description: 'Фирменный баклажан в панировке с майонезом',
         descriptionKg: 'Майонез менен панировкадагы фирмалык баклажан',
         price: 255,
-        image: 'https://via.placeholder.com/300x200?text=Фирменный+баклажан+салат',
+        image: './Menu/Баклажан в панировке.png',
         category: 'salad-mayo',
         ingredients: ['Баклажан', 'Панировка', 'Майонез'],
         ingredientsKg: ['Баклажан', 'Панировка', 'Майонез']
@@ -736,7 +736,7 @@ const menuData = [
         description: 'Микс баклажанов с майонезом',
         descriptionKg: 'Майонез менен баклажан микси',
         price: 240,
-        image: 'https://via.placeholder.com/300x200?text=Баклажан+микс+салат',
+        image: './Menu/Баклажан микс.png',
         category: 'salad-mayo',
         ingredients: ['Баклажан', 'Майонез'],
         ingredientsKg: ['Баклажан', 'Майонез']
