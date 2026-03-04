@@ -79,7 +79,7 @@ const menuData = [
         description: 'Говядина 2, Люля-кебаб 1, Наполеон 1, Рыба 4, Грибы + подарок',
         descriptionKg: 'Жылкы эти 2, Люля-кебаб 1, Наполеон 1, Балык 4, Козу карын + белек',
         price: 2800,
-        image: './Menu/сет фантазия.png',
+        image: './Menu/Сет фантазия.png',
         category: 'shashlik',
         ingredients: ['Говядина', 'Люля-кебаб', 'Наполеон', 'Рыба', 'Грибы'],
         ingredientsKg: ['Жылкы эти', 'Люля-кебаб', 'Наполеон', 'Балык', 'Козу карын']
@@ -189,7 +189,7 @@ const menuData = [
         description: 'Мясные котлеты с гарниром',
         descriptionKg: 'Гарнир менен эт котлеталары',
         price: 220,
-        image: './Menu/Мясные котлеты.png',
+        image: './Menu/мясные котлеты.png',
         category: 'second',
         ingredients: ['Фарш', 'Лук', 'Яйцо', 'Хлеб'],
         ingredientsKg: ['Фарш', 'Пияз', 'Жумуртка', 'Нан']
@@ -213,7 +213,7 @@ const menuData = [
         description: 'Сочный бифштекс из говядины',
         descriptionKg: 'Жылкы этинен шырындуу бифштекс',
         price: 230,
-        image: './Menu/Бифштекс.png',
+        image: './Menu/бифштекс.png',
         category: 'second',
         ingredients: ['Говядина', 'Специи', 'Масло'],
         ingredientsKg: ['Жылкы эти', 'Азыктар', 'Май']
@@ -261,7 +261,7 @@ const menuData = [
         description: 'Гуляш из говядины с овощами',
         descriptionKg: 'Жашылчалар менен жылкы эти гуляш',
         price: 300,
-        image: './Menu/Гуляш из говядины.png',
+        image: './Menu/гуляш из говядины.png',
         category: 'second',
         ingredients: ['Говядина', 'Картофель', 'Морковь', 'Лук', 'Соус'],
         ingredientsKg: ['Жылкы эти', 'Картөшкө', 'Сабиз', 'Пияз', 'Соус']
