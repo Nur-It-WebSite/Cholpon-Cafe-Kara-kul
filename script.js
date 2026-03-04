@@ -1,50 +1,3 @@
-// ============================================
-// Официанты
-// ============================================
-let WAITERS = {
-    'Официант1':
-    {
-        id: 'w1',
-        name: 'Алимырза',
-        phone: '996705505530',
-        photo: './waiterphoto/ali.png'
-    },
-    'Официант2':
-    {
-        id: 'w2',
-        name: 'Нурсултан',
-        phone: '996700000002',
-        photo: './waiterphoto/nursultan.png'
-    },
-    'Официант3':
-    {
-        id: 'w3',
-        name: 'Айзада',
-        phone: '996700000003',
-        photo: './waiterphoto/ali.png'
-    }
-};
-// ==================== Какой стол привязан к какому официанту ====================
-
-let WAITER_TABLES = {
-    'Официант1': [1, 2, 7, 10],
-    'Официант2': [3, 8, 11],
-    'Официант3': [4, 5, 6, 9]
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const menuData = [
     // ==================== ШАШЛЫКИ ====================
     {
@@ -389,7 +342,7 @@ const menuData = [
     {
         id: 29,
         name: 'Бейти кебаб',
-        nameKg: 'Бейти кебаб ',
+        nameKg: 'Бейти кебаб',
         description: 'Бейти кебаб в лаваше с плавленым сыром',
         descriptionKg: 'Лавашта эритилген сыр менен бейти кебаб',
         price: 330,
@@ -485,7 +438,7 @@ const menuData = [
     {
         id: 37,
         name: 'Плов 1 кг',
-        nameKg: 'Плов 1 кг ',
+        nameKg: 'Плов 1 кг',
         description: 'Плов 1 кг, заказ заранее',
         descriptionKg: 'Плов 1 кг, алдын ала заказ',
         price: 2200,
@@ -546,7 +499,7 @@ const menuData = [
     {
         id: 42,
         name: 'Столичный',
-        nameKg: 'Борбордук ',
+        nameKg: 'Борбордук',
         description: 'Столичный салат с мясом и овощами',
         descriptionKg: 'Эт жана жашылчалар менен борбордук салат',
         price: 250,
@@ -865,8 +818,8 @@ const menuData = [
         ingredients: ['Курица', 'Картофель фри'],
         ingredientsKg: ['Тоок', 'Фри картөшкө'],
         variants: [
-            { label: "20 ш", price: 310 },
-            { label: "1   0 ш", price: 260 },
+            { label: '20 шт', price: 310 },
+            { label: '10 шт', price: 260 }
         ]
     },
     {
@@ -1091,8 +1044,8 @@ const translations = {
         'nav-contact': 'Контакты',
         'about-title': 'Добро пожаловать в кафе "Cholpon"',
         'about-desc': 'Уютное кафе в центре Кара-Куля. Вкусная домашняя еда каждый день.',
-        'about-text-1': 'Кафе "Cholpon" - это уютное место в городе Кара-Куль, где гостей встречают с теплом и заботой. Мы готовим вкусные блюда национальной кухни, используя свежие продукты и проверенные рецепты.',
-        'about-text-2': 'У нас можно приятно провести время с семьёй и друзьями, пообедать, поужинать, или отметить важное событие. В кафе царит спокойная атмосфера, а внимательный персонал всегда старается, чтобы каждый гость остался доволен.',
+        'about-text-1': 'Кафе "Cholpon" - это уютное место в городе Кара-Куль, где гостей встречают с теплом и заботой.',
+        'about-text-2': 'У нас можно приятно провести время с семьёй и друзьями, пообедать, поужинать, или отметить важное событие.',
         'about-text-3': 'Кафе "Cholpon" - место, куда хочется возвращаться снова и снова.',
         'menu-title': 'Меню',
         'contact-title': 'Контакты',
@@ -1132,17 +1085,33 @@ const translations = {
         'review-name': 'Ваше имя',
         'review-rating': 'Оценка',
         'review-comment': 'Комментарий',
-        'review-photo': 'Фото (необязательно)',
-        'review-take-photo': 'Сделать фото',
-        'review-choose-photo': 'Выбрать из галереи',
-        'review-remove-photo': 'Удалить фото',
         'review-submit': 'Отправить отзыв',
         'reviews-empty': 'Пока нет отзывов. Будьте первым!',
-        'reviews-view-all': 'Посмотреть все отзывы',
-        'reviews-all-title': 'Все отзывы',
-        'reviews-back': 'Вернуться на главную',
-        'waiter-label': 'Ваш официант',
-        'waiter-write': 'Написать'
+        'view-menu': 'Посмотреть меню',
+        'payment-method-label': 'Способ оплаты',
+        'payment-cash': 'Наличными',
+        'payment-card': 'Картой',
+        'payment-mbank': 'MBank',
+        'order-type-title': 'Как вы хотите заказать?',
+        'order-type-cafe': 'Я в кафе',
+        'order-type-pickup': 'Самовывоз',
+        'order-type-delivery': 'Доставка',
+        'order-type-browse': 'Просто посмотреть меню',
+        'table-select-title': 'Выберите номер стола',
+        'order-address': 'Адрес доставки',
+        'delivery-form-title': 'Данные для доставки',
+        'back': 'Назад',
+        'continue': 'Продолжить',
+        'adding': 'Добавление…',
+        'added': 'Добавлено:',
+        'order_sent_success': '✅ Заказ отправлен! Мы свяжемся с вами в ближайшее время.',
+        'min_order_msg': 'Минимальная сумма для доставки {min} сом. Текущая сумма: {current} сом.',
+        'fill_required': 'Заполните все обязательные поля',
+        'confirm_clear_cart': 'Очистить корзину?',
+        'cart_empty_msg': 'Корзина пуста. Добавьте блюда в корзину.',
+        'invalid_phone': 'Введите корректный номер телефона\nПример: 998 25 20 23',
+        'review_thanks': 'Спасибо за ваш отзыв!',
+        'order_error': '❌ Произошла ошибка: {msg}. Пожалуйста, попробуйте еще раз.'
     },
     kg: {
         'nav-menu': 'Меню',
@@ -1150,9 +1119,9 @@ const translations = {
         'nav-reviews': 'Пикирлер',
         'nav-contact': 'Байланыш',
         'about-title': '"Cholpon" кафесине кош келиңиз',
-        'about-desc': 'Кара-Куль шаарынын борборундагы жайкы кафе. Ар бир күн даамдуу үй жемиши.',
-        'about-text-1': '"Cholpon" кафеси - Кара-Көл шаарындагы жайлуу жер, мында конокторду жылуулук менен кабыл алышат. Биз таза азыктарды жана текшерилген рецептерди колдонуп, улуттук тамактарды даярдайбыз.',
-        'about-text-2': 'Бизде үй-бүлө менен жана достор менен жакшы убакыт өткөрүүгө, таңкы жеш, кечки тамак же маанилүү окуяны белгилөөгө болот. Кафеде тынч атмосфера, ал эми кызыкчыл персонал ар дайым ар бир коноктун канааттанган болушун камсыз кылууга аракет кылат.',
+        'about-desc': 'Кара-Куль шаарынын борборундагы жайкы кафе.',
+        'about-text-1': '"Cholpon" кафеси - Кара-Көл шаарындагы жайлуу жер.',
+        'about-text-2': 'Бизде үй-бүлө менен жана достор менен жакшы убакыт өткөрүүгө болот.',
         'about-text-3': '"Cholpon" кафеси - кайра-кайра кайтууну каалаган жер.',
         'menu-title': 'Меню',
         'contact-title': 'Байланыш',
@@ -1181,8 +1150,8 @@ const translations = {
         'filter-first': 'Биринчи тамактар',
         'filter-second': 'Экинчи тамактар',
         'filter-special': 'Заказдык тамактар',
-        'filter-salad-oil': 'Салат май менен заправленный',
-        'filter-salad-mayo': 'Салат майонез менен заправленный',
+        'filter-salad-oil': 'Салат май менен',
+        'filter-salad-mayo': 'Салат майонез менен',
         'filter-drink': 'Ичимдик',
         'filter-fastfood': 'Фаст фуд',
         'filter-dessert': 'Десерттер',
@@ -1192,199 +1161,46 @@ const translations = {
         'review-name': 'Атыңыз',
         'review-rating': 'Баалоо',
         'review-comment': 'Комментарий',
-        'review-photo': 'Сүрөт (милдеттүү эмес)',
-        'review-take-photo': 'Сүрөт тартуу',
-        'review-choose-photo': 'Галереядан тандау',
-        'review-remove-photo': 'Сүрөттү өчүрүү',
         'review-submit': 'Пикирди жөнөтүү',
         'reviews-empty': 'Азырынча пикирлер жок. Биринчи болуңуз!',
-        'reviews-view-all': 'Бардык пикирлерди көрүү',
-        'reviews-all-title': 'Бардык пикирлер',
-        'reviews-back': 'Башкы бетке кайтуу',
-        'waiter-label': 'Сиздин официянты',
-        'waiter-write': 'Жазуу'
-    },
-    en: {
-        'nav-menu': 'Menu',
-        'nav-about': 'About',
-        'nav-reviews': 'Reviews',
-        'nav-contact': 'Contacts',
-        'about-title': 'Welcome to Cholpon Cafe',
-        'about-text-1': 'Cholpon Cafe is a cozy place in Kara-Kul where guests are welcomed with warmth and care. We prepare delicious national cuisine using fresh products and proven recipes.',
-        'about-text-2': 'You can spend quality time with family and friends, have lunch, dinner, or celebrate an important event. The cafe has a calm atmosphere, and the attentive staff always strives to ensure every guest is satisfied.',
-        'about-text-3': 'Cholpon Cafe is a place you want to return to again and again.',
-        'menu-title': 'Menu',
-        'contact-title': 'Contacts',
-        'contact-location': 'Kara-Kul',
-        'contact-hours': '10:00 - 22:00, no days off',
-        'footer-text': '© 2025 Cholpon Cafe. All rights reserved.',
-        'cart-title': 'Cart',
-        'cart-empty': 'Cart is empty',
-        'cart-total': 'Total:',
-        'currency': 'som',
-        'cart-clear': 'Clear cart',
-        'cart-checkout': 'Checkout',
-        'order-title': 'Checkout',
-        'order-name': 'Name',
-        'order-phone': 'Phone',
-        'order-phone-hint': 'Enter number without 0, e.g.: 998 25 20 23',
-        'order-comment': 'Comment (optional)',
-        'order-summary': 'Order summary:',
-        'order-cancel': 'Cancel',
-        'order-submit': 'Submit order',
-        'add-to-cart': 'Add to cart',
-        'remove': 'Remove',
-        'details': 'Details',
-        'filter-all': 'All',
-        'filter-shashlik': 'Shashlik',
-        'filter-first': 'Soups',
-        'filter-second': 'Main dishes',
-        'filter-special': 'Special orders',
-        'filter-salad-oil': 'Salads dressed with oil',
-        'filter-salad-mayo': 'Salads dressed with mayonnaise',
-        'filter-drink': 'Drinks',
-        'filter-fastfood': 'Fast food',
-        'filter-dessert': 'Desserts',
-        'dish-ingredients': 'Ingredients:',
-        'reviews-title': 'Reviews',
-        'review-form-title': 'Leave a review',
-        'review-name': 'Your name',
-        'review-rating': 'Rating',
-        'review-comment': 'Comment',
-        'review-photo': 'Photo (optional)',
-        'review-take-photo': 'Take photo',
-        'review-choose-photo': 'Choose from gallery',
-        'review-remove-photo': 'Remove photo',
-        'review-submit': 'Submit review',
-        'reviews-empty': 'No reviews yet. Be the first!',
-        'reviews-view-all': 'View all reviews',
-        'reviews-all-title': 'All reviews',
-        'reviews-back': 'Back to main'
+        'view-menu': 'Менюну көрүү',
+        'payment-method-label': 'Төлөө ыкмасы',
+        'payment-cash': 'Накта',
+        'payment-card': 'Карта менен',
+        'payment-mbank': 'MBank',
+        'order-type-title': 'Кантип заказ бересиз?',
+        'order-type-cafe': 'Мен кафедемин',
+        'order-type-pickup': 'Өзүм алам',
+        'order-type-delivery': 'Жеткирүү',
+        'order-type-browse': 'Менюну гана көрүү',
+        'table-select-title': 'Стол номурун тандаңыз',
+        'order-address': 'Жеткирүү дареги',
+        'delivery-form-title': 'Жеткирүү үчүн маалыматтар',
+        'back': 'Артка',
+        'continue': 'Улантуу',
+        'adding': 'Кошулууда…',
+        'added': 'Кошулду:',
+        'order_sent_success': '✅ Заказ жөнөтүлдү! Биз жакынкы убакта сиз менен байланышабыз.',
+        'min_order_msg': 'Доставка үчүн минималдуу сумма {min} сом. Учурдагы сумма: {current} сом.',
+        'fill_required': 'Бардык милдеттүү талааларды толтуруңуз',
+        'confirm_clear_cart': 'Себетти тазалоо?',
+        'cart_empty_msg': 'Себет бош. Себетке тамак кошуңуз.',
+        'invalid_phone': 'Туура телефон номурун киргизиңиз',
+        'review_thanks': 'Пикириңиз үчүн рахмат!',
+        'order_error': '❌ Ката кетти: {msg}. Сураныч, кайра аракет кылыңыз.'
     }
 };
 
-// Дополнительные строки для переводов (используются в уведомлениях и кнопках)
-translations.ru['adding'] = 'Добавление…';
-translations.kg['adding'] = 'Кошулууда…';
-translations.ru['added'] = 'Добавлено:';
-translations.kg['added'] = 'Кошулду:';
-translations.ru['order_sent_success'] = '✅ Заказ отправлен! Мы свяжемся с вами в ближайшее время.';
-translations.kg['order_sent_success'] = '✅ Заказ жөнөтүлдү! Биз жакынкы убакта сиз менен байланышабыз.';
-translations.ru['min_order_msg'] = 'Минимальная сумма для доставки {min} сом. Текущая сумма: {current} сом.';
-translations.kg['min_order_msg'] = 'Доставка үчүн минималдуу сумма {min} сом. Учурдагы сумма: {current} сом.';
-translations.ru['fill_required'] = 'Заполните все обязательные поля';
-translations.kg['fill_required'] = 'Бардык милдеттүү талааларды толтуруңуз';
-translations.ru['confirm_clear_cart'] = 'Очистить корзину?';
-translations.kg['confirm_clear_cart'] = 'Себетти тазалоо?';
-translations.ru['cart_empty_msg'] = 'Корзина пуста. Добавьте блюда в корзину.';
-translations.kg['cart_empty_msg'] = 'Себет бош. Себетке тамак кошуңуз.';
-translations.ru['invalid_phone'] = 'Введите корректный номер телефона\nПример: +996 998 252 023 или 0998252023';
-translations.kg['invalid_phone'] = 'Туура телефон номурун киргизиңиз\nМисал: +996 998 252 023 же 0998252023';
-translations.ru['select_image'] = 'Пожалуйста, выберите изображение';
-translations.kg['select_image'] = 'Сураныч, сүрөт тандаңыз';
-translations.ru['select_rating'] = 'Пожалуйста, выберите оценку';
-translations.kg['select_rating'] = 'Сураныч, баалоо тандаңыз';
-translations.ru['review_thanks'] = 'Спасибо за ваш отзыв!';
-translations.kg['review_thanks'] = 'Пикириңиз үчүн рахмат!';
-translations.ru['order_error'] = '❌ Произошла ошибка: {msg}. Пожалуйста, попробуйте еще раз.';
-translations.kg['order_error'] = '❌ Ката кетти: {msg}. Сураныч, кайра аракет кылыңыз.';
-// CTA / header small keys
-translations.ru['view-menu'] = 'Посмотреть меню';
-translations.kg['view-menu'] = 'Менюну караңыз';
-// Payment translations
-translations.ru['payment-method-label'] = 'Способ оплаты';
-translations.kg['payment-method-label'] = 'Төлөө ыкмасы';
-translations.ru['payment-cash'] = 'Наличными';
-translations.kg['payment-cash'] = 'Накта';
-translations.ru['payment-card'] = 'Картой';
-translations.kg['payment-card'] = 'Карта менен';
-translations.ru['payment-mbank'] = 'MBank';
-translations.kg['payment-mbank'] = 'MBank';
-// Переводы для выбора типа заказа
-translations.ru['order-type-title'] = 'Как вы хотите заказать?';
-translations.kg['order-type-title'] = 'Кантип заказ бересиз?';
-translations.ru['order-type-cafe'] = 'Я в кафе';
-translations.kg['order-type-cafe'] = 'Мен кафедемин';
-translations.ru['order-type-pickup'] = 'Самовывоз';
-translations.kg['order-type-pickup'] = 'Өзүм алам';
-translations.ru['order-type-delivery'] = 'Доставка';
-translations.kg['order-type-delivery'] = 'Жеткирүү';
-translations.ru['order-type-browse'] = 'Просто посмотреть меню';
-translations.kg['order-type-browse'] = 'Менюну гана көрүү';
-translations.ru['table-select-title'] = 'Выберите номер стола';
-translations.kg['table-select-title'] = 'Стол номурун тандаңыз';
-translations.ru['order-address'] = 'Адрес доставки';
-translations.kg['order-address'] = 'Жеткирүү дареги';
-translations.ru['delivery-form-title'] = 'Данные для доставки';
-translations.kg['delivery-form-title'] = 'Жеткирүү үчүн маалыматтар';
-translations.ru['back'] = 'Назад';
-translations.kg['back'] = 'Артка';
-translations.ru['continue'] = 'Продолжить';
-translations.kg['continue'] = 'Улантуу';
-
-// Английские переводы для дополнительных строк
-translations.en['adding'] = 'Adding…';
-translations.en['added'] = 'Added:';
-translations.en['order_sent_success'] = '✅ Order sent! We will contact you soon.';
-translations.en['min_order_msg'] = 'Minimum order for delivery is {min} som. Current total: {current} som.';
-translations.en['fill_required'] = 'Please fill in all required fields';
-translations.en['confirm_clear_cart'] = 'Clear cart?';
-translations.en['cart_empty_msg'] = 'Cart is empty. Add dishes to your cart.';
-translations.en['invalid_phone'] = 'Please enter a valid phone number';
-translations.en['select_image'] = 'Please select an image';
-translations.en['select_rating'] = 'Please select a rating';
-translations.en['review_thanks'] = 'Thank you for your review!';
-translations.en['order_error'] = '❌ Error occurred: {msg}. Please try again.';
-translations.en['view-menu'] = 'View menu';
-translations.en['payment-method-label'] = 'Payment method';
-translations.en['payment-cash'] = 'Cash';
-translations.en['payment-card'] = 'Card';
-translations.en['payment-mbank'] = 'MBank';
-translations.en['order-type-title'] = 'How would you like to order?';
-translations.en['order-type-cafe'] = 'I\'m at the cafe';
-translations.en['order-type-pickup'] = 'Pickup';
-translations.en['order-type-delivery'] = 'Delivery';
-translations.en['order-type-browse'] = 'Just browse the menu';
-translations.en['table-select-title'] = 'Select your table';
-translations.en['order-address'] = 'Delivery address';
-translations.en['delivery-form-title'] = 'Delivery information';
-translations.en['back'] = 'Back';
-translations.en['continue'] = 'Continue';
 // ============================================
-// Константы
+// Константы — ВСЕ заказы идут на один номер
 // ============================================
 
 const CAFE_PHONE_NUMBER = '996998252023';
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwRZDDKK04OEv-ySYHz6XbskBZXp7vGYcWxp7fYiLSmrVe0fjHi7KgDEIGIFnIEFYrn/exec';
 const REVIEWS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyYVg9L5UtQISuiSDvzxcleVKqN4mLN4b3to64DRukMGMN6kTCnYhX3F5BfSSwA85hUWg/exec';
 
-
-let currentWaiter = null;
-
-function loadWaiterConfig() {
-    try {
-        const raw = localStorage.getItem('waiterConfig');
-        if (!raw) return;
-        const cfg = JSON.parse(raw);
-        if (cfg.waiters) WAITERS = cfg.waiters;
-        if (cfg.waiterTables) WAITER_TABLES = cfg.waiterTables;
-    } catch (e) { }
-}
-
-function saveWaiterConfig() {
-    try {
-        localStorage.setItem('waiterConfig', JSON.stringify({ waiters: WAITERS, waiterTables: WAITER_TABLES }));
-    } catch (e) { }
-}
-
-function getWaiterForTable(num) {
-    for (const wid in WAITER_TABLES) {
-        if ((WAITER_TABLES[wid] || []).indexOf(Number(num)) !== -1) return WAITERS[wid] || null;
-    }
-    return null;
-}
-
-loadWaiterConfig();
+// Заглушка для блюд без фото
+const PLACEHOLDER_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3ede3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='48' fill='%23c8965a'%3E🍽%3C/text%3E%3C/svg%3E";
 
 // ============================================
 // Глобальные переменные
@@ -1421,7 +1237,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     animateWelcome();
 
-    // Lightbox
     const closeLb = document.getElementById('closeLightbox');
     const lb = document.getElementById('imageLightbox');
     if (closeLb) closeLb.addEventListener('click', closeImageLightbox);
@@ -1433,13 +1248,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const handledByUrl = initTableFromUrl();
     if (!handledByUrl) {
-        try {
-            const savedWaiter = localStorage.getItem('currentWaiter');
-            if (savedWaiter && !currentWaiter) {
-                currentWaiter = JSON.parse(savedWaiter);
-            }
-        } catch (e) { }
-
         const orderTypeModal = document.getElementById('orderTypeModal');
         if (orderTypeModal) {
             orderTypeModal.classList.add('active');
@@ -1449,13 +1257,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ============================================
-// VARIANT MODAL (для позиций с несколькими объёмами)
+// VARIANT MODAL
 // ============================================
 
 let variantCallback = null;
 
 function initVariantModal() {
-    // Создаём модал если его нет
     if (document.getElementById('variantModal')) return;
 
     const overlay = document.createElement('div');
@@ -1522,7 +1329,6 @@ function addToCart(itemId) {
     const item = menuData.find(i => i.id === itemId);
     if (!item) return;
 
-    // Если у позиции есть варианты — показываем модал
     if (item.variants && item.variants.length > 0) {
         openVariantModal(item, (variant) => {
             addCartItem(item, variant);
@@ -1530,7 +1336,6 @@ function addToCart(itemId) {
         return;
     }
 
-    // Обычное добавление
     addCartItem(item, null);
 }
 
@@ -1558,7 +1363,7 @@ function addCartItem(item, variant) {
     updateCartUI();
     renderMenu();
 
-    const addedLabel = translations[currentLang]?.added || (currentLang === 'ru' ? 'Добавлено:' : 'Кошулду:');
+    const addedLabel = translations[currentLang]?.added || 'Добавлено:';
     showToast(`${addedLabel} ${name}`);
 }
 
@@ -1619,7 +1424,9 @@ function updateCartUI() {
             const div = document.createElement('div');
             div.className = 'cart-item';
             div.innerHTML = `
-                <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/80x80?text=?'">
+                <img src="${item.image}" alt="${item.name}" class="cart-item-image"
+                     loading="lazy" decoding="async"
+                     onerror="this.src='${PLACEHOLDER_IMAGE}'">
                 <div class="cart-item-info">
                     <div class="cart-item-name">${item.name}</div>
                     <div class="cart-item-price">${item.price} ${translations[currentLang]?.currency || 'сом'} × ${item.quantity}</div>
@@ -1642,7 +1449,7 @@ function updateCartUI() {
 }
 
 // ============================================
-// MENU RENDER
+// MENU RENDER — оптимизированная загрузка картинок
 // ============================================
 
 function renderMenu() {
@@ -1658,6 +1465,28 @@ function renderMenu() {
     filtered.forEach(item => {
         menuGrid.appendChild(createMenuCard(item));
     });
+
+    // Запускаем IntersectionObserver для ленивой загрузки если поддерживается
+    if ('IntersectionObserver' in window) {
+        const lazyImages = menuGrid.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, { rootMargin: '200px 0px' });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback: загружаем всё сразу
+        menuGrid.querySelectorAll('img[data-src]').forEach(img => {
+            img.src = img.dataset.src;
+        });
+    }
 }
 
 function getCategoryLabel(cat) {
@@ -1684,15 +1513,12 @@ function createMenuCard(item) {
     const description = currentLang === 'ru' ? item.description : (item.descriptionKg || item.description);
     const catLabel = getCategoryLabel(item.category);
 
-    // Price display
     let priceDisplay;
     if (item.variants && item.variants.length > 0) {
         const prices = item.variants.map(v => v.price);
         const minP = Math.min(...prices);
         const maxP = Math.max(...prices);
         priceDisplay = minP === maxP ? `${minP}` : `${minP}–${maxP}`;
-    } else if (item.price2) {
-        priceDisplay = `${item.price} / ${item.price2}`;
     } else {
         priceDisplay = `${item.price}`;
     }
@@ -1701,9 +1527,16 @@ function createMenuCard(item) {
     const hasInCart = existing && !item.variants;
     const qty = hasInCart ? existing.quantity : 0;
 
+    // Используем data-src для ленивой загрузки, src = заглушка
     card.innerHTML = `
         <div class="dish-image-wrap">
-            <img class="dish-image" src="${item.image}" alt="${name}" onerror="this.src='https://via.placeholder.com/400x260?text=?'" loading="lazy">
+            <img class="dish-image"
+                 src="${PLACEHOLDER_IMAGE}"
+                 data-src="${item.image}"
+                 alt="${name}"
+                 loading="lazy"
+                 decoding="async"
+                 onerror="this.src='${PLACEHOLDER_IMAGE}';this.removeAttribute('data-src')">
             ${catLabel ? `<span class="dish-category-badge">${catLabel}</span>` : ''}
         </div>
         <div class="dish-info">
@@ -1768,10 +1601,7 @@ function showDishDetails(dishId) {
     if (dish.variants && dish.variants.length > 0) {
         const prices = dish.variants.map(v => v.price);
         const minP = Math.min(...prices);
-        const maxP = Math.max(...prices);
-        priceText = minP === maxP ? `${minP}` : `от ${minP}`;
-    } else if (dish.price2) {
-        priceText = `${dish.price} / ${dish.price2}`;
+        priceText = `от ${minP}`;
     } else {
         priceText = `${dish.price}`;
     }
@@ -1791,7 +1621,10 @@ function showDishDetails(dishId) {
     images.forEach((img, i) => {
         const slide = document.createElement('div');
         slide.className = 'slider-slide';
-        slide.innerHTML = `<img src="${img}" alt="${dishName}" onclick="openImageLightbox('${img}','${dishName}')" onerror="this.src='https://via.placeholder.com/600x360?text=?'">`;
+        slide.innerHTML = `<img src="${img}" alt="${dishName}"
+            loading="lazy" decoding="async"
+            onclick="openImageLightbox('${img}','${dishName}')"
+            onerror="this.src='${PLACEHOLDER_IMAGE}'">`;
         slider?.appendChild(slide);
 
         const dot = document.createElement('button');
@@ -1958,6 +1791,7 @@ function initOrderTypeModal() {
         }
     }
 
+    // Скрываем кнопку "Я в кафе" если нет параметра table в URL
     try {
         const params = new URLSearchParams(window.location.search);
         const tableParam = params.get('table');
@@ -2047,14 +1881,9 @@ function showDeliveryForm() {
 
 function selectTable(num) {
     tableNumber = num;
-    const waiter = getWaiterForTable(num);
-    if (waiter) {
-        currentWaiter = waiter;
-        try { localStorage.setItem('currentWaiter', JSON.stringify(currentWaiter)); } catch (e) { }
-    }
     setOrderType('cafe');
     document.getElementById('tableSelectModal')?.classList.remove('active');
-    setTimeout(() => notifyAssignedWaiter(), 250);
+    showToast(currentLang === 'ru' ? `Стол №${num} выбран` : `${num} стол тандалды`);
 }
 
 function setOrderType(type) {
@@ -2108,61 +1937,14 @@ function initTableFromUrl() {
         orderType = 'cafe';
         try { localStorage.setItem('currentTableNumber', String(num)); } catch (e) { }
 
-        const waiter = getWaiterForTable(num);
-        if (waiter) {
-            currentWaiter = waiter;
-            try { localStorage.setItem('currentWaiter', JSON.stringify(waiter)); } catch (e) { }
-        }
-
         applyOrderTypeMode();
-        setTimeout(() => notifyAssignedWaiter(), 300);
+        showToast(currentLang === 'ru' ? `Стол №${num}` : `${num} стол`);
         return true;
     } catch (e) { return false; }
 }
 
-function notifyAssignedWaiter() {
-    if (!currentWaiter) return;
-    const waiterLabel = translations[currentLang]?.['waiter-label'] || 'Ваш официант';
-    showToast(`${waiterLabel}: ${currentWaiter.name}`);
-    if (document.getElementById('waiterBanner')) return;
-
-    const banner = document.createElement('div');
-    banner.id = 'waiterBanner';
-    Object.assign(banner.style, {
-        position: 'fixed', right: '14px', bottom: '80px', zIndex: 5000,
-        background: 'var(--card)', border: '1px solid var(--border)',
-        borderRadius: 'var(--radius)', padding: '12px 14px',
-        boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '10px'
-    });
-
-    const waiterWrite = translations[currentLang]?.['waiter-write'] || 'Написать';
-    banner.innerHTML = `
-        <img src="${currentWaiter.photo || './icons/plate-eating.svg'}" alt="${currentWaiter.name}"
-             style="width:44px;height:44px;object-fit:cover;border-radius:8px;">
-        <div style="display:flex;flex-direction:column;gap:2px;">
-            <strong style="font-size:0.9rem;color:var(--text)">${currentWaiter.name}</strong>
-            <span style="font-size:0.78rem;color:var(--text-2)">${waiterLabel}</span>
-        </div>
-        <button class="btn btn-primary" style="padding:7px 14px;font-size:0.82rem;" id="waiterWriteBtn">${waiterWrite}</button>
-        <button style="background:var(--bg-2);border:1px solid var(--border);border-radius:6px;width:28px;height:28px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--text-2);" id="waiterCloseBtn">×</button>
-    `;
-
-    document.body.appendChild(banner);
-
-    document.getElementById('waiterWriteBtn')?.addEventListener('click', () => {
-        const msg = `Здравствуйте, у меня заказ за столом №${tableNumber}`;
-        sendToWhatsAppTo(msg, currentWaiter.phone);
-    });
-
-    const timeoutId = setTimeout(() => banner.parentNode?.removeChild(banner), 7000);
-    document.getElementById('waiterCloseBtn')?.addEventListener('click', () => {
-        clearTimeout(timeoutId);
-        banner.parentNode?.removeChild(banner);
-    });
-}
-
 // ============================================
-// ORDER SUBMIT
+// ORDER SUBMIT — все заказы идут на CAFE_PHONE_NUMBER
 // ============================================
 
 function showOrderForm() {
@@ -2236,13 +2018,14 @@ function createOrderText(name, phone, comment, paymentMethod) {
     return `🍽 ${currentLang === 'ru' ? 'Новый заказ — Кафе Cholpon' : 'Жаңы заказ — Cholpon кафе'}\n\n${itemsText}${totalText}${customerInfo}${paymentText}${orderTypeText}${commentText}`;
 }
 
+// Все заказы — только на основной номер кафе
 function sendToWhatsApp(text) {
     window.open(`https://wa.me/${CAFE_PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-function sendToWhatsAppTo(text, phone) {
-    if (!phone) return sendToWhatsApp(text);
-    window.open(`https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`, '_blank');
+// Вспомогательная функция — тоже шлёт только на основной номер
+function sendToWhatsAppTo(text, _ignoredPhone) {
+    window.open(`https://wa.me/${CAFE_PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
 }
 
 async function sendToExcel(name, phone, comment, paymentMethod, address) {
@@ -2290,8 +2073,9 @@ async function placeOrder(e) {
     }
 
     const orderText = createOrderText(name, phone, comment, paymentMethod);
-    const targetPhone = (orderType === 'cafe' && currentWaiter?.phone) ? currentWaiter.phone : CAFE_PHONE_NUMBER;
-    sendToWhatsAppTo(orderText, targetPhone);
+    
+    // Всегда отправляем на основной номер кафе
+    sendToWhatsApp(orderText);
 
     const deliveryAddr = (orderType === 'delivery' && deliveryInfo?.address) ? deliveryInfo.address : '';
     sendToExcel(name, phone, comment, paymentMethod, deliveryAddr).catch(() => { });
@@ -2364,8 +2148,6 @@ function setLanguage(lang) {
     if (langBtnKg) langBtnKg.classList.toggle('active', lang === 'kg');
 }
 
-function updateLanguage() { translatePage(); }
-
 // ============================================
 // EVENT LISTENERS
 // ============================================
@@ -2398,8 +2180,6 @@ function initEventListeners() {
     document.getElementById('closeOrderModal')?.addEventListener('click', () => document.getElementById('orderModal')?.classList.remove('active'));
     document.getElementById('cancelOrder')?.addEventListener('click', () => document.getElementById('orderModal')?.classList.remove('active'));
     document.getElementById('closeDishDetailsModal')?.addEventListener('click', () => document.getElementById('dishDetailsModal')?.classList.remove('active'));
-
-    document.getElementById('variantModalClose')?.addEventListener('click', closeVariantModal);
 
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
         overlay.addEventListener('click', e => {
@@ -2435,7 +2215,6 @@ function initEventListeners() {
     document.getElementById('sliderPrev')?.addEventListener('click', () => changeSliderImage(-1));
     document.getElementById('sliderNext')?.addEventListener('click', () => changeSliderImage(1));
 
-    // Bottom nav
     const bottomNavMenu = document.getElementById('bottomNavMenu');
     const bottomNavCart = document.getElementById('bottomNavCart');
 
@@ -2458,7 +2237,6 @@ function initEventListeners() {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
             if (document.body.classList.contains('modal-blocked')) { e.preventDefault(); return; }
-            // Close topmost modal
             const vm = document.getElementById('variantModalOverlay');
             if (vm?.classList.contains('active')) { closeVariantModal(); return; }
             document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
@@ -2539,7 +2317,7 @@ function closeImageLightbox() {
 }
 
 // ============================================
-// REVIEWS (minimal)
+// REVIEWS
 // ============================================
 
 async function initReviews() {
@@ -2693,7 +2471,7 @@ function createReviewCard(review) {
         </div>
         <div class="review-content">
             <p class="review-comment">${review.comment}</p>
-            ${review.photo ? `<img src="${review.photo}" alt="Фото" class="review-photo">` : ''}
+            ${review.photo ? `<img src="${review.photo}" alt="Фото" class="review-photo" loading="lazy">` : ''}
         </div>
     `;
     return card;
