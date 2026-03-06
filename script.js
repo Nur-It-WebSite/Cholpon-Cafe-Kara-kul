@@ -353,15 +353,17 @@ function renderCartItems() {
            onerror="this.src='${PLACEHOLDER}'">
       <div class="cart-row-info">
         <div class="cart-row-name">${item.name}</div>
-        <div class="cart-row-price">${item.price} ${t('currency')} × ${item.qty}</div>
+        <div class="cart-row-price">${item.price} ${t('currency')}</div>
       </div>
-      <div class="qty-ctrl">
-        <button class="qty-btn" onclick="decreaseQty('${item.cid}')">−</button>
-        <span class="qty-val">${item.qty}</span>
-        <button class="qty-btn" onclick="increaseQty('${item.cid}')">+</button>
-      </div>
-      <span class="cart-row-total">${sub} ${t('currency')}</span>
       <button class="cart-row-del" onclick="removeItem('${item.cid}')" aria-label="${t('remove')}">×</button>
+      <div class="cart-row-bottom">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="decreaseQty('${item.cid}')">−</button>
+          <span class="qty-val">${item.qty}</span>
+          <button class="qty-btn" onclick="increaseQty('${item.cid}')">+</button>
+        </div>
+        <span class="cart-row-total">${sub} ${t('currency')}</span>
+      </div>
     `;
     wrap.appendChild(row);
   });
