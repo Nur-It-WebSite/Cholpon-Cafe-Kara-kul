@@ -282,8 +282,6 @@ let activeCategory = 'all';
 let slideIndex = 0;
 let variantCb = null;
 let activeDishId = null;
-let deferredPrompt = null;
-const IS_IOS = /iphone|ipad|ipod/i.test(navigator.userAgent || '');
 
 // ── HELPERS ───────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -851,12 +849,6 @@ function setOrderType(type) {
   closeModal('deliveryModal');
   unlockScroll();
   document.body.classList.toggle('browse', type === 'browse');
-
-  // Показ баннера установки PWA после выбора способа заказа
-  if (deferredPrompt && !localStorage.getItem('pwaDismissed')) {
-    const banner = $('pwaBanner');
-    if (banner) banner.classList.add('show');
-  }
 }
 
 function initOrderTypeModal() {
@@ -1119,59 +1111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($('lightbox')?.classList.contains('open')) closeLightbox();
   });
 });
-
-// ── PWA INSTALL BANNER ────────────────────────────────────
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  // Если пользователь уже закрывал баннер — больше не предлагаем автоматически.
-  // Сам баннер показываем после выбора способа заказа (setOrderType).
-  if (localStorage.getItem('pwaDismissed')) return;
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Кнопка "Установить"
-  $('pwaInstallBtn')?.addEventListener('click', async () => {
-    const banner = $('pwaBanner');
-    // iPhone — нет нормального beforeinstallprompt, показываем подсказку
-    if (IS_IOS) {
-      showToast('На iPhone: нажмите Поделиться → На экран Домой', 5000);
-      banner?.classList.remove('show');
-      return;
-    }
-    // Не iOS, но event не пришёл: либо уже установлено, либо PWA ещё не готова
-    if (!deferredPrompt) {
-      showToast('Установка пока недоступна или приложение уже установлено.', 4000);
-      banner?.classList.remove('show');
-      return;
-    }
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') showToast('✅ Приложение установлено!');
-    deferredPrompt = null;
-    banner?.classList.remove('show');
-  });
-
-  // Кнопка "Закрыть"
-  $('pwaCloseBtn')?.addEventListener('click', () => {
-    $('pwaBanner')?.classList.remove('show');
-    localStorage.setItem('pwaDismissed', '1');
-  });
-});
-
-// Скрываем если установлено
-window.addEventListener('appinstalled', () => {
-  $('pwaBanner')?.classList.remove('show');
-  showToast('✅ Приложение установлено!');
-});
-
-// ── PWA SERVICE WORKER ────────────────────────────────────
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  });
-}
 
 // ── EXPOSE GLOBALS (needed for inline onclick in dynamically-created HTML) ──
 window.decreaseQty = decreaseQty;
