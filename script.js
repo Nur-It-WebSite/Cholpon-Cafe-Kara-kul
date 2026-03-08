@@ -966,7 +966,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($('lightbox')?.classList.contains('open')) closeLightbox();
   });
 });
-
+// ── PWA SERVICE WORKER ────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
 // ── EXPOSE GLOBALS (needed for inline onclick in dynamically-created HTML) ──
 window.decreaseQty = decreaseQty;
 window.increaseQty = increaseQty;
