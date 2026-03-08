@@ -1152,7 +1152,7 @@ const translations = {
         'filter-special': 'Заказдык тамактар',
         'filter-salad-oil': 'Салат май менен',
         'filter-salad-mayo': 'Салат майонез менен',
-        'filter-drink': 'Ичимдик',
+        'filter-drink': 'Суусундуктар',
         'filter-fastfood': 'Фаст фуд',
         'filter-dessert': 'Десерттер',
         'dish-ingredients': 'Курамы:',
