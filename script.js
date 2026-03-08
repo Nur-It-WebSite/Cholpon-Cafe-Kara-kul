@@ -267,6 +267,9 @@ const translations = {
     }
 };
 
+// Совместимость с существующей функцией t()
+const i18n = translations;
+
 // ── STATE ─────────────────────────────────────────────────
 let lang = localStorage.getItem('lang') || 'ru';
 let theme = localStorage.getItem('theme') ||
