@@ -1,7 +1,4 @@
-/* ============================================================
-   CHOLPON CAFE — script.js
-   Clean, no-Firebase, WhatsApp-only order flow
-   ============================================================ */
+
 
 'use strict';
 
@@ -12,183 +9,183 @@ const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 // ── MENU DATA ──────────────────────────────────────────────
 const menuData = [
   // ШАШЛЫКИ
-  { id:1,  name:'Говядина',           nameKg:'Жылкы эти',            description:'Сочный шашлык из говядины на углях',       descriptionKg:'Жылкы этинен шашлык, көмүрдө бышырылган',   price:260, image:'./Menu/Шашлыкговя.webp',      category:'shashlik', ingredients:['Говядина','Лук','Специи','Масло'],         ingredientsKg:['Жылкы эти','Пияз','Азыктар','Май'] },
-  { id:2,  name:'Наполеон',           nameKg:'Наполеон',             description:'Шашлык Наполеон с нежным вкусом',          descriptionKg:'Наполеон шашлык нымдуу даамы менен',        price:210, image:'./Menu/Шашлык Наполеон с нежным вкусом.webp', category:'shashlik', ingredients:['Мясо','Лук','Специи'],                   ingredientsKg:['Эт','Пияз','Азыктар'] },
-  { id:3,  name:'Люля-кебаб',         nameKg:'Люля-кебаб',           description:'Традиционный люля-кебаб из фарша',         descriptionKg:'Фарштан жасалган салттуу люля-кебаб',       price:190, image:'./Menu/люля.webp',              category:'shashlik', ingredients:['Фарш','Лук','Специи'],                   ingredientsKg:['Фарш','Пияз','Азыктар'] },
-  { id:4,  name:'Крылышки',           nameKg:'Канаттар',             description:'Куриные крылышки на гриле',                descriptionKg:'Грилдеги тоок канаттары',                   price:225, image:'./Menu/Крылышки.webp',          category:'shashlik', ingredients:['Куриные крылышки','Специи','Масло'],      ingredientsKg:['Тоок канаттары','Азыктар','Май'] },
-  { id:5,  name:'Овощной шашлык',     nameKg:'Жашылчалуу шашлык',   description:'Шашлык из свежих овощей',                  descriptionKg:'Жаңы жашылчалардан шашлык',                price:180, image:'./Menu/Шашлык из свежих овощей.webp', category:'shashlik', ingredients:['Перец','Баклажан','Помидоры','Лук'],   ingredientsKg:['Мурч','Баклажан','Помидор','Пияз'] },
-  { id:6,  name:'Сет «Компания»',     nameKg:'«Компания» сети',      description:'Говядина 2, Люля-кебаб 2, Наполеон 2 + подарок', descriptionKg:'Жылкы эти 2, Люля-кебаб 2, Наполеон 2 + белек', price:2050, image:'./Menu/сет компания.webp', category:'shashlik', ingredients:['Говядина','Люля-кебаб','Наполеон'],    ingredientsKg:['Жылкы эти','Люля-кебаб','Наполеон'] },
-  { id:7,  name:'Сет «Фантазия»',     nameKg:'«Фантазия» сети',      description:'Говядина 2, Люля-кебаб 1, Наполеон 1, Рыба 4, Грибы + подарок', descriptionKg:'Жылкы эти 2, Люля-кебаб 1, Наполеон 1, Балык 4 + белек', price:2800, image:'./Menu/Сет фантазия.webp', category:'shashlik', ingredients:['Говядина','Люля-кебаб','Наполеон','Рыба','Грибы'], ingredientsKg:['Жылкы эти','Люля-кебаб','Наполеон','Балык','Козу карын'] },
+  { id: 1, name: 'Говядина', nameKg: 'Жылкы эти', description: 'Сочный шашлык из говядины на углях', descriptionKg: 'Жылкы этинен шашлык, көмүрдө бышырылган', price: 260, image: './Menu/Шашлыкговя.webp', category: 'shashlik', ingredients: ['Говядина', 'Лук', 'Специи', 'Масло'], ingredientsKg: ['Жылкы эти', 'Пияз', 'Азыктар', 'Май'] },
+  { id: 2, name: 'Наполеон', nameKg: 'Наполеон', description: 'Шашлык Наполеон с нежным вкусом', descriptionKg: 'Наполеон шашлык нымдуу даамы менен', price: 210, image: './Menu/Шашлык Наполеон с нежным вкусом.webp', category: 'shashlik', ingredients: ['Мясо', 'Лук', 'Специи'], ingredientsKg: ['Эт', 'Пияз', 'Азыктар'] },
+  { id: 3, name: 'Люля-кебаб', nameKg: 'Люля-кебаб', description: 'Традиционный люля-кебаб из фарша', descriptionKg: 'Фарштан жасалган салттуу люля-кебаб', price: 190, image: './Menu/люля.webp', category: 'shashlik', ingredients: ['Фарш', 'Лук', 'Специи'], ingredientsKg: ['Фарш', 'Пияз', 'Азыктар'] },
+  { id: 4, name: 'Крылышки', nameKg: 'Канаттар', description: 'Куриные крылышки на гриле', descriptionKg: 'Грилдеги тоок канаттары', price: 225, image: './Menu/Крылышки.webp', category: 'shashlik', ingredients: ['Куриные крылышки', 'Специи', 'Масло'], ingredientsKg: ['Тоок канаттары', 'Азыктар', 'Май'] },
+  { id: 5, name: 'Овощной шашлык', nameKg: 'Жашылчалуу шашлык', description: 'Шашлык из свежих овощей', descriptionKg: 'Жаңы жашылчалардан шашлык', price: 180, image: './Menu/Шашлык из свежих овощей.webp', category: 'shashlik', ingredients: ['Перец', 'Баклажан', 'Помидоры', 'Лук'], ingredientsKg: ['Мурч', 'Баклажан', 'Помидор', 'Пияз'] },
+  { id: 6, name: 'Сет «Компания»', nameKg: '«Компания» сети', description: 'Говядина 2, Люля-кебаб 2, Наполеон 2 + подарок', descriptionKg: 'Жылкы эти 2, Люля-кебаб 2, Наполеон 2 + белек', price: 2050, image: './Menu/сет компания.webp', category: 'shashlik', ingredients: ['Говядина', 'Люля-кебаб', 'Наполеон'], ingredientsKg: ['Жылкы эти', 'Люля-кебаб', 'Наполеон'] },
+  { id: 7, name: 'Сет «Фантазия»', nameKg: '«Фантазия» сети', description: 'Говядина 2, Люля-кебаб 1, Наполеон 1, Рыба 4, Грибы + подарок', descriptionKg: 'Жылкы эти 2, Люля-кебаб 1, Наполеон 1, Балык 4 + белек', price: 2800, image: './Menu/Сет фантазия.webp', category: 'shashlik', ingredients: ['Говядина', 'Люля-кебаб', 'Наполеон', 'Рыба', 'Грибы'], ingredientsKg: ['Жылкы эти', 'Люля-кебаб', 'Наполеон', 'Балык', 'Козу карын'] },
   // ПЕРВЫЕ БЛЮДА
-  { id:8,  name:'Шорпо (говядина)',   nameKg:'Шорпо (жылкы эти)',    description:'Традиционный суп с говядиной',              descriptionKg:'Жылкы эти менен салттуу суп',               price:235, image:'./Menu/Шорпо.webp',            category:'first',    ingredients:['Говядина','Картофель','Морковь','Лук','Зелень'],    ingredientsKg:['Жылкы эти','Картөшкө','Сабиз','Пияз','Жашылча'] },
-  { id:9,  name:'Сырный суп',         nameKg:'Сыр суп',              description:'Суп с сыром и овощами',                    descriptionKg:'Сыр жана жашылчалар менен суп',             price:235, image:'./Menu/СырныйСуп.webp',        category:'first',    ingredients:['Сыр','Картофель','Морковь','Лук'],              ingredientsKg:['Сыр','Картөшкө','Сабиз','Пияз'] },
-  { id:10, name:'Суп с фрикадельками',nameKg:'Фрикаделькалуу суп',   description:'Суп с мясными фрикадельками',               descriptionKg:'Эт фрикаделькалары менен суп',             price:235, image:'./Menu/Суп с фрикадельками.webp', category:'first', ingredients:['Фрикадельки','Картофель','Морковь','Лук'],     ingredientsKg:['Фрикадельки','Картөшкө','Сабиз','Пияз'] },
-  { id:11, name:'Солянка',            nameKg:'Солянка',              description:'Мясная солянка с овощами',                 descriptionKg:'Жашылчалар менен эт солянкасы',            price:205, image:'./Menu/Солянка.webp',          category:'first',    ingredients:['Мясо','Огурцы','Оливки','Лук'],                ingredientsKg:['Эт','Бадыраң','Оливки','Пияз'] },
-  { id:12, name:'Пельмени домашние',  nameKg:'Үй пельмени',          description:'Домашние пельмени с мясом',                descriptionKg:'Эт менен үй пельмени',                      price:225, image:'./Menu/Пельмени.webp',         category:'first',    ingredients:['Тесто','Фарш','Лук','Специи'],                 ingredientsKg:['Камыр','Фарш','Пияз','Азыктар'] },
-  { id:13, name:'Ак Серке с фрикадельками', nameKg:'Ак Серке фрикаделькалар менен', description:'Суп Ак Серке с фрикадельками', descriptionKg:'Ак Серке суп фрикаделькалар менен', price:235, image:'./Menu/Ак Серке с фрикадельками.webp', category:'first', ingredients:['Фрикадельки','Картофель','Морковь','Лук'], ingredientsKg:['Фрикадельки','Картөшкө','Сабиз','Пияз'] },
-  { id:14, name:'Чечевичный суп',     nameKg:'Чечевичный суп',       description:'Суп из чечевицы с овощами',                descriptionKg:'Жашылчалар менен чечевица суп',            price:195, image:'./Menu/Чечевичный суп.webp',  category:'first',    ingredients:['Чечевица','Картофель','Морковь','Лук'],         ingredientsKg:['Чечевица','Картөшкө','Сабиз','Пияз'] },
+  { id: 8, name: 'Шорпо (говядина)', nameKg: 'Шорпо (жылкы эти)', description: 'Традиционный суп с говядиной', descriptionKg: 'Жылкы эти менен салттуу суп', price: 235, image: './Menu/Шорпо.webp', category: 'first', ingredients: ['Говядина', 'Картофель', 'Морковь', 'Лук', 'Зелень'], ingredientsKg: ['Жылкы эти', 'Картөшкө', 'Сабиз', 'Пияз', 'Жашылча'] },
+  { id: 9, name: 'Сырный суп', nameKg: 'Сыр суп', description: 'Суп с сыром и овощами', descriptionKg: 'Сыр жана жашылчалар менен суп', price: 235, image: './Menu/СырныйСуп.webp', category: 'first', ingredients: ['Сыр', 'Картофель', 'Морковь', 'Лук'], ingredientsKg: ['Сыр', 'Картөшкө', 'Сабиз', 'Пияз'] },
+  { id: 10, name: 'Суп с фрикадельками', nameKg: 'Фрикаделькалуу суп', description: 'Суп с мясными фрикадельками', descriptionKg: 'Эт фрикаделькалары менен суп', price: 235, image: './Menu/Суп с фрикадельками.webp', category: 'first', ingredients: ['Фрикадельки', 'Картофель', 'Морковь', 'Лук'], ingredientsKg: ['Фрикадельки', 'Картөшкө', 'Сабиз', 'Пияз'] },
+  { id: 11, name: 'Солянка', nameKg: 'Солянка', description: 'Мясная солянка с овощами', descriptionKg: 'Жашылчалар менен эт солянкасы', price: 205, image: './Menu/Солянка.webp', category: 'first', ingredients: ['Мясо', 'Огурцы', 'Оливки', 'Лук'], ingredientsKg: ['Эт', 'Бадыраң', 'Оливки', 'Пияз'] },
+  { id: 12, name: 'Пельмени домашние', nameKg: 'Үй пельмени', description: 'Домашние пельмени с мясом', descriptionKg: 'Эт менен үй пельмени', price: 225, image: './Menu/Пельмени.webp', category: 'first', ingredients: ['Тесто', 'Фарш', 'Лук', 'Специи'], ingredientsKg: ['Камыр', 'Фарш', 'Пияз', 'Азыктар'] },
+  { id: 13, name: 'Ак Серке с фрикадельками', nameKg: 'Ак Серке фрикаделькалар менен', description: 'Суп Ак Серке с фрикадельками', descriptionKg: 'Ак Серке суп фрикаделькалар менен', price: 235, image: './Menu/Ак Серке с фрикадельками.webp', category: 'first', ingredients: ['Фрикадельки', 'Картофель', 'Морковь', 'Лук'], ingredientsKg: ['Фрикадельки', 'Картөшкө', 'Сабиз', 'Пияз'] },
+  { id: 14, name: 'Чечевичный суп', nameKg: 'Чечевичный суп', description: 'Суп из чечевицы с овощами', descriptionKg: 'Жашылчалар менен чечевица суп', price: 195, image: './Menu/Чечевичный суп.webp', category: 'first', ingredients: ['Чечевица', 'Картофель', 'Морковь', 'Лук'], ingredientsKg: ['Чечевица', 'Картөшкө', 'Сабиз', 'Пияз'] },
   // ВТОРЫЕ БЛЮДА
-  { id:15, name:'Манты',              nameKg:'Манты',                description:'Паровые манты с мясом',                    descriptionKg:'Эт менен буу манты',                        price:240, image:'./Menu/Манты.webp',           category:'second',   ingredients:['Тесто','Мясо','Лук','Специи'],                 ingredientsKg:['Камыр','Эт','Пияз','Азыктар'] },
-  { id:16, name:'Котлеты',            nameKg:'Котлеталар',           description:'Мясные котлеты с гарниром',                descriptionKg:'Гарнир менен эт котлеталары',               price:220, image:'./Menu/мясные котлеты.webp', category:'second',   ingredients:['Фарш','Лук','Яйцо','Хлеб'],                   ingredientsKg:['Фарш','Пияз','Жумуртка','Нан'] },
-  { id:17, name:'Тефтели',            nameKg:'Тефтель',              description:'Мясные тефтели в соусе',                   descriptionKg:'Соустагы эт тефтель',                       price:220, image:'./Menu/мясные тефтели.webp', category:'second',   ingredients:['Фарш','Рис','Лук','Соус'],                     ingredientsKg:['Фарш','Күрүч','Пияз','Соус'] },
-  { id:18, name:'Бифштекс',           nameKg:'Бифштекс',             description:'Сочный бифштекс из говядины',              descriptionKg:'Жылкы этинен шырындуу бифштекс',            price:230, image:'./Menu/бифштекс.webp',        category:'second',   ingredients:['Говядина','Специи','Масло'],                   ingredientsKg:['Жылкы эти','Азыктар','Май'] },
-  { id:19, name:'Зразы',              nameKg:'Зразы',                description:'Мясные зразы с начинкой',                  descriptionKg:'Начинка менен эт зразы',                    price:240, image:'./Menu/Зразы.webp',          category:'second',   ingredients:['Мясо','Картофель','Лук','Яйцо'],               ingredientsKg:['Эт','Картөшкө','Пияз','Жумуртка'] },
-  { id:20, name:'Лагман уйгурский',   nameKg:'Уйгур лагманы',        description:'Уйгурский лагман с мясом и овощами',       descriptionKg:'Эт жана жашылчалар менен уйгур лагманы',   price:260, image:'./Menu/Уйгур.webp',          category:'second',   ingredients:['Лапша','Мясо','Перец','Морковь','Лук'],        ingredientsKg:['Лапша','Эт','Мурч','Сабиз','Пияз'] },
-  { id:21, name:'Лагман жареный',     nameKg:'Куурулган лагман',     description:'Жареный лагман с овощами',                 descriptionKg:'Жашылчалар менен куурулган лагман',         price:260, image:'./Menu/Жаре.webp',           category:'second',   ingredients:['Лапша','Мясо','Перец','Морковь','Лук'],        ingredientsKg:['Лапша','Эт','Мурч','Сабиз','Пияз'] },
-  { id:22, name:'Гуляш',              nameKg:'Гуляш',                description:'Гуляш из говядины с овощами',              descriptionKg:'Жашылчалар менен жылкы эти гуляш',         price:300, image:'./Menu/гуляш из говядины.webp', category:'second', ingredients:['Говядина','Картофель','Морковь','Лук','Соус'], ingredientsKg:['Жылкы эти','Картөшкө','Сабиз','Пияз','Соус'] },
-  { id:23, name:'Мясо по-королевски', nameKg:'Королдук эти',         description:'Мясо по-королевски с сыром',               descriptionKg:'Сыр менен королдук эт',                    price:270, image:'./Menu/мясо по королевски.webp', category:'second', ingredients:['Мясо','Сыр','Помидоры','Зелень'],           ingredientsKg:['Эт','Сыр','Помидор','Жашылча'] },
+  { id: 15, name: 'Манты', nameKg: 'Манты', description: 'Паровые манты с мясом', descriptionKg: 'Эт менен буу манты', price: 240, image: './Menu/Манты.webp', category: 'second', ingredients: ['Тесто', 'Мясо', 'Лук', 'Специи'], ingredientsKg: ['Камыр', 'Эт', 'Пияз', 'Азыктар'] },
+  { id: 16, name: 'Котлеты', nameKg: 'Котлеталар', description: 'Мясные котлеты с гарниром', descriptionKg: 'Гарнир менен эт котлеталары', price: 220, image: './Menu/мясные котлеты.webp', category: 'second', ingredients: ['Фарш', 'Лук', 'Яйцо', 'Хлеб'], ingredientsKg: ['Фарш', 'Пияз', 'Жумуртка', 'Нан'] },
+  { id: 17, name: 'Тефтели', nameKg: 'Тефтель', description: 'Мясные тефтели в соусе', descriptionKg: 'Соустагы эт тефтель', price: 220, image: './Menu/мясные тефтели.webp', category: 'second', ingredients: ['Фарш', 'Рис', 'Лук', 'Соус'], ingredientsKg: ['Фарш', 'Күрүч', 'Пияз', 'Соус'] },
+  { id: 18, name: 'Бифштекс', nameKg: 'Бифштекс', description: 'Сочный бифштекс из говядины', descriptionKg: 'Жылкы этинен шырындуу бифштекс', price: 230, image: './Menu/бифштекс.webp', category: 'second', ingredients: ['Говядина', 'Специи', 'Масло'], ingredientsKg: ['Жылкы эти', 'Азыктар', 'Май'] },
+  { id: 19, name: 'Зразы', nameKg: 'Зразы', description: 'Мясные зразы с начинкой', descriptionKg: 'Начинка менен эт зразы', price: 240, image: './Menu/Зразы.webp', category: 'second', ingredients: ['Мясо', 'Картофель', 'Лук', 'Яйцо'], ingredientsKg: ['Эт', 'Картөшкө', 'Пияз', 'Жумуртка'] },
+  { id: 20, name: 'Лагман уйгурский', nameKg: 'Уйгур лагманы', description: 'Уйгурский лагман с мясом и овощами', descriptionKg: 'Эт жана жашылчалар менен уйгур лагманы', price: 260, image: './Menu/Уйгур.webp', category: 'second', ingredients: ['Лапша', 'Мясо', 'Перец', 'Морковь', 'Лук'], ingredientsKg: ['Лапша', 'Эт', 'Мурч', 'Сабиз', 'Пияз'] },
+  { id: 21, name: 'Лагман жареный', nameKg: 'Куурулган лагман', description: 'Жареный лагман с овощами', descriptionKg: 'Жашылчалар менен куурулган лагман', price: 260, image: './Menu/Жаре.webp', category: 'second', ingredients: ['Лапша', 'Мясо', 'Перец', 'Морковь', 'Лук'], ingredientsKg: ['Лапша', 'Эт', 'Мурч', 'Сабиз', 'Пияз'] },
+  { id: 22, name: 'Гуляш', nameKg: 'Гуляш', description: 'Гуляш из говядины с овощами', descriptionKg: 'Жашылчалар менен жылкы эти гуляш', price: 300, image: './Menu/гуляш из говядины.webp', category: 'second', ingredients: ['Говядина', 'Картофель', 'Морковь', 'Лук', 'Соус'], ingredientsKg: ['Жылкы эти', 'Картөшкө', 'Сабиз', 'Пияз', 'Соус'] },
+  { id: 23, name: 'Мясо по-королевски', nameKg: 'Королдук эти', description: 'Мясо по-королевски с сыром', descriptionKg: 'Сыр менен королдук эт', price: 270, image: './Menu/мясо по королевски.webp', category: 'second', ingredients: ['Мясо', 'Сыр', 'Помидоры', 'Зелень'], ingredientsKg: ['Эт', 'Сыр', 'Помидор', 'Жашылча'] },
   // ЗАКАЗНЫЕ
-  { id:24, name:'Мясо по-деревенски (стейк говядина)', nameKg:'Айылдык эти (стейк)', description:'Стейк говядины по-деревенски', descriptionKg:'Айылдык жылкы эти стейк', price:610, image:'./Menu/Мясо.webp', category:'special', ingredients:['Говядина','Специи','Масло'], ingredientsKg:['Жылкы эти','Азыктар','Май'] },
-  { id:25, name:'Стейк форель (3 шт.)', nameKg:'Форель стейк (3 дөн)', description:'Стейки форели, 3 шт.', descriptionKg:'Форель стейктери, 3 дөн', price:610, image:'./Menu/стейк форель.webp', category:'special', ingredients:['Форель','Специи','Масло'], ingredientsKg:['Форель','Азыктар','Май'] },
-  { id:26, name:'Стейк форель (2 шт.)', nameKg:'Форель стейк (2 дөн)', description:'Стейки форели, 2 шт.', descriptionKg:'Форель стейктери, 2 дөн', price:510, image:'./Menu/стейк форель.webp', category:'special', ingredients:['Форель','Специи','Масло'], ingredientsKg:['Форель','Азыктар','Май'] },
-  { id:27, name:'Адана кебаб', nameKg:'Адана кебаб', description:'Адана кебаб на шпажках с гарниром и салатом', descriptionKg:'Гарнир жана салат менен шпажкаларда адана кебаб', price:290, image:'./Menu/адана кебаб.webp', category:'special', ingredients:['Мясо','Специи','Гарнир','Салат'], ingredientsKg:['Эт','Азыктар','Гарнир','Салат'] },
-  { id:28, name:'Турецкий кебаб', nameKg:'Түрк кебабы', description:'Турецкий кебаб в лаваше', descriptionKg:'Лавашта түрк кебабы', price:280, image:'./Menu/turk.webp', category:'special', ingredients:['Мясо','Лаваш','Овощи'], ingredientsKg:['Эт','Лаваш','Жашылчалар'] },
-  { id:29, name:'Бейти кебаб', nameKg:'Бейти кебаб', description:'Бейти кебаб в лаваше с плавленым сыром', descriptionKg:'Лавашта эритилген сыр менен бейти кебаб', price:330, image:'./Menu/Бейти кебаб.webp', category:'special', ingredients:['Мясо','Лаваш','Сыр'], ingredientsKg:['Эт','Лаваш','Сыр'] },
-  { id:30, name:'Лазуро', nameKg:'Лазуро', description:'Жареное мясо с овощами', descriptionKg:'Жашылчалар менен куурулган эт', price:280, image:'./Menu/лазуро.webp', category:'special', ingredients:['Мясо','Овощи','Масло'], ingredientsKg:['Эт','Жашылчалар','Май'] },
-  { id:31, name:'Бризоль', nameKg:'Бризоль', description:'Бризоль из мяса', descriptionKg:'Эттен бризоль', price:265, image:'./Menu/БризольЗаказное Бризоль Бризоль из мяса.webp', category:'special', ingredients:['Мясо','Специи','Масло'], ingredientsKg:['Эт','Азыктар','Май'] },
-  { id:32, name:'Мясо в горшочке', nameKg:'Кыштектеги эт', description:'Мясо в горшочке с помидорами, грибами и сыром', descriptionKg:'Помидор, козу карын жана сыр менен кыштектеги эт', price:290, image:'./Menu/мясо в горшочке.webp', category:'special', ingredients:['Мясо','Помидоры','Грибы','Сыр'], ingredientsKg:['Эт','Помидор','Козу карын','Сыр'] },
-  { id:33, name:'Куурдак', nameKg:'Куурдак', description:'Куурдак из говядины и баранины', descriptionKg:'Жылкы эти жана кой этинен куурдак', price:490, image:'./Menu/Куурдак.webp', category:'special', ingredients:['Говядина','Баранина','Картофель','Лук'], ingredientsKg:['Жылкы эти','Кой эти','Картөшкө','Пияз'] },
-  { id:34, name:'Курица в кисло-сладком соусе', nameKg:'Кышкыл-таттуу соустагы тоок', description:'Курица в кисло-сладком соусе', descriptionKg:'Кышкыл-таттуу соустагы тоок', price:290, image:'./Menu/Крк.webp', category:'special', ingredients:['Курица','Соус','Овощи'], ingredientsKg:['Тоок','Соус','Жашылчалар'] },
-  { id:35, name:'Фрикассе', nameKg:'Фрикассе', description:'Фрикассе из курицы', descriptionKg:'Тооктон фрикассе', price:290, image:'./Menu/Фрикасе.webp', category:'special', ingredients:['Курица','Сливки','Овощи'], ingredientsKg:['Тоок','Каймак','Жашылчалар'] },
-  { id:36, name:'Мясо фирменное', nameKg:'Фирмалык эт', description:'Фирменное мясо кафе Cholpon', descriptionKg:'Фирмалык эт', price:460, image:'./Menu/фирменное мясо.webp', category:'special', ingredients:['Мясо','Специи','Соус'], ingredientsKg:['Эт','Азыктар','Соус'] },
-  { id:37, name:'Плов 1 кг', nameKg:'Плов 1 кг', description:'Плов 1 кг, заказ заранее', descriptionKg:'Плов 1 кг, алдын ала заказ', price:2200, image:'./Menu/Плов.webp', category:'special', ingredients:['Рис','Мясо','Морковь','Лук','Специи'], ingredientsKg:['Күрүч','Эт','Сабиз','Пияз','Азыктар'] },
-  { id:38, name:'Казан кебаб', nameKg:'Казан кебабы', description:'Казан кебаб', descriptionKg:'Казан кебабы', price:320, image:'./Menu/Казан кебаб.webp', category:'special', ingredients:['Мясо','Картофель','Лук','Специи'], ingredientsKg:['Эт','Картөшкө','Пияз','Азыктар'] },
-  { id:39, name:'Хачапури', nameKg:'Хачапури', description:'Хачапури с сыром', descriptionKg:'Сыр менен хачапури', price:460, image:'./Menu/Хачапури.webp', category:'special', ingredients:['Тесто','Сыр','Масло'], ingredientsKg:['Камыр','Сыр','Май'] },
-  { id:40, name:'Фетучини с курицей', nameKg:'Тоок менен фетучини', description:'Фетучини с курицей', descriptionKg:'Тоок менен фетучини', price:390, image:'./Menu/Фетучини с курицей.webp', category:'special', ingredients:['Фетучини','Курица','Сливки','Сыр'], ingredientsKg:['Фетучини','Тоок','Каймак','Сыр'] },
+  { id: 24, name: 'Мясо по-деревенски (стейк говядина)', nameKg: 'Айылдык эти (стейк)', description: 'Стейк говядины по-деревенски', descriptionKg: 'Айылдык жылкы эти стейк', price: 610, image: './Menu/Мясо.webp', category: 'special', ingredients: ['Говядина', 'Специи', 'Масло'], ingredientsKg: ['Жылкы эти', 'Азыктар', 'Май'] },
+  { id: 25, name: 'Стейк форель (3 шт.)', nameKg: 'Форель стейк (3 дөн)', description: 'Стейки форели, 3 шт.', descriptionKg: 'Форель стейктери, 3 дөн', price: 610, image: './Menu/стейк форель.webp', category: 'special', ingredients: ['Форель', 'Специи', 'Масло'], ingredientsKg: ['Форель', 'Азыктар', 'Май'] },
+  { id: 26, name: 'Стейк форель (2 шт.)', nameKg: 'Форель стейк (2 дөн)', description: 'Стейки форели, 2 шт.', descriptionKg: 'Форель стейктери, 2 дөн', price: 510, image: './Menu/стейк форель.webp', category: 'special', ingredients: ['Форель', 'Специи', 'Масло'], ingredientsKg: ['Форель', 'Азыктар', 'Май'] },
+  { id: 27, name: 'Адана кебаб', nameKg: 'Адана кебаб', description: 'Адана кебаб на шпажках с гарниром и салатом', descriptionKg: 'Гарнир жана салат менен шпажкаларда адана кебаб', price: 290, image: './Menu/адана кебаб.webp', category: 'special', ingredients: ['Мясо', 'Специи', 'Гарнир', 'Салат'], ingredientsKg: ['Эт', 'Азыктар', 'Гарнир', 'Салат'] },
+  { id: 28, name: 'Турецкий кебаб', nameKg: 'Түрк кебабы', description: 'Турецкий кебаб в лаваше', descriptionKg: 'Лавашта түрк кебабы', price: 280, image: './Menu/turk.webp', category: 'special', ingredients: ['Мясо', 'Лаваш', 'Овощи'], ingredientsKg: ['Эт', 'Лаваш', 'Жашылчалар'] },
+  { id: 29, name: 'Бейти кебаб', nameKg: 'Бейти кебаб', description: 'Бейти кебаб в лаваше с плавленым сыром', descriptionKg: 'Лавашта эритилген сыр менен бейти кебаб', price: 330, image: './Menu/Бейти кебаб.webp', category: 'special', ingredients: ['Мясо', 'Лаваш', 'Сыр'], ingredientsKg: ['Эт', 'Лаваш', 'Сыр'] },
+  { id: 30, name: 'Лазуро', nameKg: 'Лазуро', description: 'Жареное мясо с овощами', descriptionKg: 'Жашылчалар менен куурулган эт', price: 280, image: './Menu/лазуро.webp', category: 'special', ingredients: ['Мясо', 'Овощи', 'Масло'], ingredientsKg: ['Эт', 'Жашылчалар', 'Май'] },
+  { id: 31, name: 'Бризоль', nameKg: 'Бризоль', description: 'Бризоль из мяса', descriptionKg: 'Эттен бризоль', price: 265, image: './Menu/БризольЗаказное Бризоль Бризоль из мяса.webp', category: 'special', ingredients: ['Мясо', 'Специи', 'Масло'], ingredientsKg: ['Эт', 'Азыктар', 'Май'] },
+  { id: 32, name: 'Мясо в горшочке', nameKg: 'Кыштектеги эт', description: 'Мясо в горшочке с помидорами, грибами и сыром', descriptionKg: 'Помидор, козу карын жана сыр менен кыштектеги эт', price: 290, image: './Menu/мясо в горшочке.webp', category: 'special', ingredients: ['Мясо', 'Помидоры', 'Грибы', 'Сыр'], ingredientsKg: ['Эт', 'Помидор', 'Козу карын', 'Сыр'] },
+  { id: 33, name: 'Куурдак', nameKg: 'Куурдак', description: 'Куурдак из говядины и баранины', descriptionKg: 'Жылкы эти жана кой этинен куурдак', price: 490, image: './Menu/Куурдак.webp', category: 'special', ingredients: ['Говядина', 'Баранина', 'Картофель', 'Лук'], ingredientsKg: ['Жылкы эти', 'Кой эти', 'Картөшкө', 'Пияз'] },
+  { id: 34, name: 'Курица в кисло-сладком соусе', nameKg: 'Кышкыл-таттуу соустагы тоок', description: 'Курица в кисло-сладком соусе', descriptionKg: 'Кышкыл-таттуу соустагы тоок', price: 290, image: './Menu/Крк.webp', category: 'special', ingredients: ['Курица', 'Соус', 'Овощи'], ingredientsKg: ['Тоок', 'Соус', 'Жашылчалар'] },
+  { id: 35, name: 'Фрикассе', nameKg: 'Фрикассе', description: 'Фрикассе из курицы', descriptionKg: 'Тооктон фрикассе', price: 290, image: './Menu/Фрикасе.webp', category: 'special', ingredients: ['Курица', 'Сливки', 'Овощи'], ingredientsKg: ['Тоок', 'Каймак', 'Жашылчалар'] },
+  { id: 36, name: 'Мясо фирменное', nameKg: 'Фирмалык эт', description: 'Фирменное мясо кафе Cholpon', descriptionKg: 'Фирмалык эт', price: 460, image: './Menu/фирменное мясо.webp', category: 'special', ingredients: ['Мясо', 'Специи', 'Соус'], ingredientsKg: ['Эт', 'Азыктар', 'Соус'] },
+  { id: 37, name: 'Плов 1 кг', nameKg: 'Плов 1 кг', description: 'Плов 1 кг, заказ заранее', descriptionKg: 'Плов 1 кг, алдын ала заказ', price: 2200, image: './Menu/Плов.webp', category: 'special', ingredients: ['Рис', 'Мясо', 'Морковь', 'Лук', 'Специи'], ingredientsKg: ['Күрүч', 'Эт', 'Сабиз', 'Пияз', 'Азыктар'] },
+  { id: 38, name: 'Казан кебаб', nameKg: 'Казан кебабы', description: 'Казан кебаб', descriptionKg: 'Казан кебабы', price: 320, image: './Menu/Казан кебаб.webp', category: 'special', ingredients: ['Мясо', 'Картофель', 'Лук', 'Специи'], ingredientsKg: ['Эт', 'Картөшкө', 'Пияз', 'Азыктар'] },
+  { id: 39, name: 'Хачапури', nameKg: 'Хачапури', description: 'Хачапури с сыром', descriptionKg: 'Сыр менен хачапури', price: 460, image: './Menu/Хачапури.webp', category: 'special', ingredients: ['Тесто', 'Сыр', 'Масло'], ingredientsKg: ['Камыр', 'Сыр', 'Май'] },
+  { id: 40, name: 'Фетучини с курицей', nameKg: 'Тоок менен фетучини', description: 'Фетучини с курицей', descriptionKg: 'Тоок менен фетучини', price: 390, image: './Menu/Фетучини с курицей.webp', category: 'special', ingredients: ['Фетучини', 'Курица', 'Сливки', 'Сыр'], ingredientsKg: ['Фетучини', 'Тоок', 'Каймак', 'Сыр'] },
   // САЛАТЫ
-  { id:41, name:'Греческий', nameKg:'Грек', description:'Греческий салат с маслом', descriptionKg:'Май менен грек салаты', price:225, image:'./Menu/Греческий.webp', category:'salad', ingredients:['Помидоры','Огурцы','Сыр фета','Масло'], ingredientsKg:['Помидор','Бадыраң','Фета сыры','Май'] },
-  { id:42, name:'Столичный', nameKg:'Борбордук', description:'Столичный салат с мясом', descriptionKg:'Эт менен борбордук салат', price:250, image:'./Menu/Столичный.webp', category:'salad', ingredients:['Мясо','Корнишоны','Грибы','Лук','Масло'], ingredientsKg:['Эт','Корнишон','Козу карын','Пияз','Май'] },
-  { id:43, name:'Восточный', nameKg:'Чыгыштык', description:'Восточный салат с овощами и мясом', descriptionKg:'Жашылчалар жана эт менен чыгыштык салат', price:250, image:'./Menu/Восточный.webp', category:'salad', ingredients:['Помидоры','Огурцы','Мясо','Лук','Кабачки','Баклажан'], ingredientsKg:['Помидор','Бадыраң','Эт','Пияз','Кабачки','Баклажан'] },
-  { id:44, name:'Китайский острый', nameKg:'Кытайлык ачтуу', description:'Острый китайский салат', descriptionKg:'Ачтуу кытай салаты', price:240, image:'./Menu/Китайский.webp', category:'salad', ingredients:['Помидоры','Огурцы','Мясо','Лук','Морковь','Перец'], ingredientsKg:['Помидор','Бадыраң','Эт','Пияз','Сабиз','Мурч'] },
-  { id:45, name:'Гасконский', nameKg:'Гаскон', description:'Гасконский салат с копченой окорочкой', descriptionKg:'Копченка менен гаскон салаты', price:230, image:'./Menu/Госконский.webp', category:'salad', ingredients:['Помидоры','Корнишоны','Опята','Копченая окорочка'], ingredientsKg:['Помидор','Корнишон','Опята','Копченка'] },
-  { id:46, name:'Витаминка', nameKg:'Витаминка', description:'Витаминный салат с овощами', descriptionKg:'Жашылчалар менен витамин салат', price:195, image:'./Menu/Витаминка.webp', category:'salad', ingredients:['Свекла','Колбаска','Кукуруза','Зелень','Морковь'], ingredientsKg:['Кызылча','Колбаса','Жүгөрү','Жашылча','Сабиз'] },
-  { id:47, name:'Овощной микс', nameKg:'Жашылча микси', description:'Микс овощного салата', descriptionKg:'Жашылча салат микси', price:235, image:'./Menu/Овощной микс.webp', category:'salad', ingredients:['Цветная капуста','Брокколи','Овощи'], ingredientsKg:['Түстүү капуста','Брокколи','Жашылчалар'] },
-  { id:48, name:'Свежий', nameKg:'Жаңы', description:'Свежий овощной салат', descriptionKg:'Жаңы жашылча салаты', price:130, image:'./Menu/Свежий.webp', category:'salad', ingredients:['Помидоры','Огурцы','Лук','Масло'], ingredientsKg:['Помидор','Бадыраң','Пияз','Май'] },
-  { id:49, name:'Фунчоза', nameKg:'Фунчоза', description:'Салат с фунчозой, мясом и овощами', descriptionKg:'Фунчоза, эт жана жашылчалар менен салат', price:230, image:'./Menu/Фунчеза.webp', category:'salad', ingredients:['Мясо','Овощи','Фунчоза'], ingredientsKg:['Эт','Жашылчалар','Фунчоза'] },
-  { id:50, name:'Нарезка фирменная', nameKg:'Фирмалык нарезка', description:'Фирменная овощная нарезка', descriptionKg:'Фирмалык жашылча нарезкасы', price:350, image:'./Menu/Нарезка.webp', category:'salad', ingredients:['Огурцы','Помидоры','Квашеная капуста','Лук'], ingredientsKg:['Бадыраң','Помидор','Кычкыл капуста','Пияз'] },
-  { id:51, name:'Воздушный', nameKg:'Аба', description:'Воздушный салат с майонезом', descriptionKg:'Майонез менен аба салат', price:220, image:'./Menu/Воздушный салат.webp', category:'salad', ingredients:['Басай','Охотница','Яйцо','Чипсы','Майонез'], ingredientsKg:['Басай','Охотница','Жумуртка','Чипсы','Майонез'] },
-  { id:52, name:'Цезарь с курицей', nameKg:'Тоок менен Цезарь', description:'Цезарь с курицей', descriptionKg:'Тоок Цезарь', price:245, image:'./Menu/Цезарь с курицей.webp', category:'salad', ingredients:['Курица','Салат','Сыр','Крутоны','Майонез'], ingredientsKg:['Тоок','Салат','Сыр','Крутон','Майонез'] },
-  { id:53, name:'Гнездо кукушки', nameKg:'Кукушка уясы', description:'Гнездо кукушки с майонезом', descriptionKg:'Майонез менен кукушка уясы', price:240, image:'./Menu/Гнездо кукушки .webp', category:'salad', ingredients:['Копченое мясо','Пай','Кукуруза','Сыр','Майонез'], ingredientsKg:['Копченка','Пай','Жүгөрү','Сыр','Майонез'] },
-  { id:54, name:'Мерло', nameKg:'Мерло', description:'Мерло салат с майонезом', descriptionKg:'Майонез менен мерло салат', price:210, image:'./Menu/Мерло.webp', category:'salad', ingredients:['Омлет','Горох','Кукуруза','Курица','Майонез'], ingredientsKg:['Омлет','Буурчак','Жүгөрү','Тоок','Майонез'] },
-  { id:55, name:'Салат с грибами', nameKg:'Козу карын менен салат', description:'Салат с грибами и майонезом', descriptionKg:'Майонез менен козу карын салат', price:245, image:'./Menu/Сгрибами.webp', category:'salad', ingredients:['Шампиньоны','Филе','Яйцо','Картофель пай','Майонез'], ingredientsKg:['Шампиньон','Филе','Жумуртка','Картөшкө пай','Майонез'] },
-  { id:56, name:'Салат со свеклой', nameKg:'Кызылча менен салат', description:'Салат со свеклой и майонезом', descriptionKg:'Майонез менен кызылча салат', price:235, image:'./Menu/Салат со свеклой.webp', category:'salad', ingredients:['Свекла','Брокколи','Творожный сыр','Орех','Майонез'], ingredientsKg:['Кызылча','Брокколи','Творожный сыр','Орех','Майонез'] },
-  { id:57, name:'Охотница', nameKg:'Охотница', description:'Охотница салат с майонезом', descriptionKg:'Майонез менен охотница салат', price:250, image:'./Menu/Охотница.webp', category:'salad', ingredients:['Охотница','Корнишоны','Черри','Шампиньоны','Орешки','Майонез'], ingredientsKg:['Охотница','Корнишон','Черри','Шампиньон','Орех','Майонез'] },
-  { id:58, name:'Баклажан с овощами', nameKg:'Жашылчалуу баклажан', description:'Баклажан с овощами и майонезом', descriptionKg:'Майонез менен жашылчалуу баклажан', price:255, image:'./Menu/Баклажан с овощами.webp', category:'salad', ingredients:['Баклажаны','Перец','Помидоры','Лук','Майонез'], ingredientsKg:['Баклажан','Мурч','Помидор','Пияз','Майонез'] },
-  { id:59, name:'Фирменный баклажан', nameKg:'Фирмалык баклажан', description:'Фирменный баклажан в панировке', descriptionKg:'Панировкадагы фирмалык баклажан', price:255, image:'./Menu/Баклажан в панировке.webp', category:'salad', ingredients:['Баклажан','Панировка','Майонез'], ingredientsKg:['Баклажан','Панировка','Майонез'] },
-  { id:60, name:'Баклажан микс', nameKg:'Баклажан микси', description:'Микс баклажанов с майонезом', descriptionKg:'Майонез менен баклажан микси', price:240, image:'./Menu/Баклажан микс.webp', category:'salad', ingredients:['Баклажан','Майонез'], ingredientsKg:['Баклажан','Майонез'] },
-  { id:61, name:'Курица с ореховым соусом', nameKg:'Орех соусу менен тоок', description:'Курица с ореховым соусом', descriptionKg:'Орех соусу менен тоок', price:240, image:'./Menu/Ореховомсоус.webp', category:'salad', ingredients:['Курица','Ореховый соус','Майонез'], ingredientsKg:['Тоок','Орех соусу','Майонез'] },
+  { id: 41, name: 'Греческий', nameKg: 'Грек', description: 'Греческий салат с маслом', descriptionKg: 'Май менен грек салаты', price: 225, image: './Menu/Греческий.webp', category: 'salad', ingredients: ['Помидоры', 'Огурцы', 'Сыр фета', 'Масло'], ingredientsKg: ['Помидор', 'Бадыраң', 'Фета сыры', 'Май'] },
+  { id: 42, name: 'Столичный', nameKg: 'Борбордук', description: 'Столичный салат с мясом', descriptionKg: 'Эт менен борбордук салат', price: 250, image: './Menu/Столичный.webp', category: 'salad', ingredients: ['Мясо', 'Корнишоны', 'Грибы', 'Лук', 'Масло'], ingredientsKg: ['Эт', 'Корнишон', 'Козу карын', 'Пияз', 'Май'] },
+  { id: 43, name: 'Восточный', nameKg: 'Чыгыштык', description: 'Восточный салат с овощами и мясом', descriptionKg: 'Жашылчалар жана эт менен чыгыштык салат', price: 250, image: './Menu/Восточный.webp', category: 'salad', ingredients: ['Помидоры', 'Огурцы', 'Мясо', 'Лук', 'Кабачки', 'Баклажан'], ingredientsKg: ['Помидор', 'Бадыраң', 'Эт', 'Пияз', 'Кабачки', 'Баклажан'] },
+  { id: 44, name: 'Китайский острый', nameKg: 'Кытайлык ачтуу', description: 'Острый китайский салат', descriptionKg: 'Ачтуу кытай салаты', price: 240, image: './Menu/Китайский.webp', category: 'salad', ingredients: ['Помидоры', 'Огурцы', 'Мясо', 'Лук', 'Морковь', 'Перец'], ingredientsKg: ['Помидор', 'Бадыраң', 'Эт', 'Пияз', 'Сабиз', 'Мурч'] },
+  { id: 45, name: 'Гасконский', nameKg: 'Гаскон', description: 'Гасконский салат с копченой окорочкой', descriptionKg: 'Копченка менен гаскон салаты', price: 230, image: './Menu/Госконский.webp', category: 'salad', ingredients: ['Помидоры', 'Корнишоны', 'Опята', 'Копченая окорочка'], ingredientsKg: ['Помидор', 'Корнишон', 'Опята', 'Копченка'] },
+  { id: 46, name: 'Витаминка', nameKg: 'Витаминка', description: 'Витаминный салат с овощами', descriptionKg: 'Жашылчалар менен витамин салат', price: 195, image: './Menu/Витаминка.webp', category: 'salad', ingredients: ['Свекла', 'Колбаска', 'Кукуруза', 'Зелень', 'Морковь'], ingredientsKg: ['Кызылча', 'Колбаса', 'Жүгөрү', 'Жашылча', 'Сабиз'] },
+  { id: 47, name: 'Овощной микс', nameKg: 'Жашылча микси', description: 'Микс овощного салата', descriptionKg: 'Жашылча салат микси', price: 235, image: './Menu/Овощной микс.webp', category: 'salad', ingredients: ['Цветная капуста', 'Брокколи', 'Овощи'], ingredientsKg: ['Түстүү капуста', 'Брокколи', 'Жашылчалар'] },
+  { id: 48, name: 'Свежий', nameKg: 'Жаңы', description: 'Свежий овощной салат', descriptionKg: 'Жаңы жашылча салаты', price: 130, image: './Menu/Свежий.webp', category: 'salad', ingredients: ['Помидоры', 'Огурцы', 'Лук', 'Масло'], ingredientsKg: ['Помидор', 'Бадыраң', 'Пияз', 'Май'] },
+  { id: 49, name: 'Фунчоза', nameKg: 'Фунчоза', description: 'Салат с фунчозой, мясом и овощами', descriptionKg: 'Фунчоза, эт жана жашылчалар менен салат', price: 230, image: './Menu/Фунчеза.webp', category: 'salad', ingredients: ['Мясо', 'Овощи', 'Фунчоза'], ingredientsKg: ['Эт', 'Жашылчалар', 'Фунчоза'] },
+  { id: 50, name: 'Нарезка фирменная', nameKg: 'Фирмалык нарезка', description: 'Фирменная овощная нарезка', descriptionKg: 'Фирмалык жашылча нарезкасы', price: 350, image: './Menu/Нарезка.webp', category: 'salad', ingredients: ['Огурцы', 'Помидоры', 'Квашеная капуста', 'Лук'], ingredientsKg: ['Бадыраң', 'Помидор', 'Кычкыл капуста', 'Пияз'] },
+  { id: 51, name: 'Воздушный', nameKg: 'Аба', description: 'Воздушный салат с майонезом', descriptionKg: 'Майонез менен аба салат', price: 220, image: './Menu/Воздушный салат.webp', category: 'salad', ingredients: ['Басай', 'Охотница', 'Яйцо', 'Чипсы', 'Майонез'], ingredientsKg: ['Басай', 'Охотница', 'Жумуртка', 'Чипсы', 'Майонез'] },
+  { id: 52, name: 'Цезарь с курицей', nameKg: 'Тоок менен Цезарь', description: 'Цезарь с курицей', descriptionKg: 'Тоок Цезарь', price: 245, image: './Menu/Цезарь с курицей.webp', category: 'salad', ingredients: ['Курица', 'Салат', 'Сыр', 'Крутоны', 'Майонез'], ingredientsKg: ['Тоок', 'Салат', 'Сыр', 'Крутон', 'Майонез'] },
+  { id: 53, name: 'Гнездо кукушки', nameKg: 'Кукушка уясы', description: 'Гнездо кукушки с майонезом', descriptionKg: 'Майонез менен кукушка уясы', price: 240, image: './Menu/Гнездо кукушки .webp', category: 'salad', ingredients: ['Копченое мясо', 'Пай', 'Кукуруза', 'Сыр', 'Майонез'], ingredientsKg: ['Копченка', 'Пай', 'Жүгөрү', 'Сыр', 'Майонез'] },
+  { id: 54, name: 'Мерло', nameKg: 'Мерло', description: 'Мерло салат с майонезом', descriptionKg: 'Майонез менен мерло салат', price: 210, image: './Menu/Мерло.webp', category: 'salad', ingredients: ['Омлет', 'Горох', 'Кукуруза', 'Курица', 'Майонез'], ingredientsKg: ['Омлет', 'Буурчак', 'Жүгөрү', 'Тоок', 'Майонез'] },
+  { id: 55, name: 'Салат с грибами', nameKg: 'Козу карын менен салат', description: 'Салат с грибами и майонезом', descriptionKg: 'Майонез менен козу карын салат', price: 245, image: './Menu/Сгрибами.webp', category: 'salad', ingredients: ['Шампиньоны', 'Филе', 'Яйцо', 'Картофель пай', 'Майонез'], ingredientsKg: ['Шампиньон', 'Филе', 'Жумуртка', 'Картөшкө пай', 'Майонез'] },
+  { id: 56, name: 'Салат со свеклой', nameKg: 'Кызылча менен салат', description: 'Салат со свеклой и майонезом', descriptionKg: 'Майонез менен кызылча салат', price: 235, image: './Menu/Салат со свеклой.webp', category: 'salad', ingredients: ['Свекла', 'Брокколи', 'Творожный сыр', 'Орех', 'Майонез'], ingredientsKg: ['Кызылча', 'Брокколи', 'Творожный сыр', 'Орех', 'Майонез'] },
+  { id: 57, name: 'Охотница', nameKg: 'Охотница', description: 'Охотница салат с майонезом', descriptionKg: 'Майонез менен охотница салат', price: 250, image: './Menu/Охотница.webp', category: 'salad', ingredients: ['Охотница', 'Корнишоны', 'Черри', 'Шампиньоны', 'Орешки', 'Майонез'], ingredientsKg: ['Охотница', 'Корнишон', 'Черри', 'Шампиньон', 'Орех', 'Майонез'] },
+  { id: 58, name: 'Баклажан с овощами', nameKg: 'Жашылчалуу баклажан', description: 'Баклажан с овощами и майонезом', descriptionKg: 'Майонез менен жашылчалуу баклажан', price: 255, image: './Menu/Баклажан с овощами.webp', category: 'salad', ingredients: ['Баклажаны', 'Перец', 'Помидоры', 'Лук', 'Майонез'], ingredientsKg: ['Баклажан', 'Мурч', 'Помидор', 'Пияз', 'Майонез'] },
+  { id: 59, name: 'Фирменный баклажан', nameKg: 'Фирмалык баклажан', description: 'Фирменный баклажан в панировке', descriptionKg: 'Панировкадагы фирмалык баклажан', price: 255, image: './Menu/Баклажан в панировке.webp', category: 'salad', ingredients: ['Баклажан', 'Панировка', 'Майонез'], ingredientsKg: ['Баклажан', 'Панировка', 'Майонез'] },
+  { id: 60, name: 'Баклажан микс', nameKg: 'Баклажан микси', description: 'Микс баклажанов с майонезом', descriptionKg: 'Майонез менен баклажан микси', price: 240, image: './Menu/Баклажан микс.webp', category: 'salad', ingredients: ['Баклажан', 'Майонез'], ingredientsKg: ['Баклажан', 'Майонез'] },
+  { id: 61, name: 'Курица с ореховым соусом', nameKg: 'Орех соусу менен тоок', description: 'Курица с ореховым соусом', descriptionKg: 'Орех соусу менен тоок', price: 240, image: './Menu/Ореховомсоус.webp', category: 'salad', ingredients: ['Курица', 'Ореховый соус', 'Майонез'], ingredientsKg: ['Тоок', 'Орех соусу', 'Майонез'] },
   // НАПИТКИ (с вариантами)
-  { id:62, name:'Компот', nameKg:'Компот', description:'Компот из сухофруктов', descriptionKg:'Куру жемиштерден компот', image:'./Menu/Компот.webp', category:'drink', variants:[{label:'1 л',price:100},{label:'1.5 л',price:140},{label:'2 л',price:170}] },
-  { id:63, name:'Кола', nameKg:'Кола', description:'Coca-Cola', descriptionKg:'Кола', image:'./Menu/Кола.webp', category:'drink', variants:[{label:'1 л',price:120},{label:'1.5 л',price:170},{label:'2 л',price:200}] },
-  { id:64, name:'Фанта', nameKg:'Фанта', description:'Fanta', descriptionKg:'Фанта', image:'./Menu/Фанта.webp', category:'drink', variants:[{label:'1 л',price:120},{label:'1.5 л',price:170},{label:'2 л',price:200}] },
-  { id:65, name:'Любимый (сок)', nameKg:'Сүйүктүү (ширеп)', description:'Сок Любимый', descriptionKg:'Сүйүктүү ширеп', image:'./Menu/Любимый (сок).webp', category:'drink', variants:[{label:'1 л',price:150},{label:'2 л',price:270}] },
+  { id: 62, name: 'Компот', nameKg: 'Компот', description: 'Компот из сухофруктов', descriptionKg: 'Куру жемиштерден компот', image: './Menu/Компот.webp', category: 'drink', variants: [{ label: '1 л', price: 100 }, { label: '1.5 л', price: 140 }, { label: '2 л', price: 170 }] },
+  { id: 63, name: 'Кола', nameKg: 'Кола', description: 'Coca-Cola', descriptionKg: 'Кола', image: './Menu/Кола.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
+  { id: 64, name: 'Фанта', nameKg: 'Фанта', description: 'Fanta', descriptionKg: 'Фанта', image: './Menu/Фанта.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
+  { id: 65, name: 'Любимый (сок)', nameKg: 'Сүйүктүү (ширеп)', description: 'Сок Любимый', descriptionKg: 'Сүйүктүү ширеп', image: './Menu/Любимый (сок).webp', category: 'drink', variants: [{ label: '1 л', price: 150 }, { label: '2 л', price: 270 }] },
   // ФАСТ-ФУД
-  { id:66, name:'Стрипсы корейские', nameKg:'Корей стрипсы', description:'Корейские куриные стрипсы', descriptionKg:'Корей тоок стрипсы', price:290, image:'./Menu/Стрипсы корейские.webp', category:'fastfood', ingredients:['Курица','Специи','Масло'], ingredientsKg:['Тоок','Азыктар','Май'] },
-  { id:67, name:'KFC + фри', nameKg:'KFC + фри', description:'Курица KFC с картошкой фри', descriptionKg:'KFC тоок фри картөшкө менен', image:'./Menu/kfxfree.webp', category:'fastfood', variants:[{label:'20 шт',price:310},{label:'10 шт',price:260}] },
-  { id:68, name:'Шаурма', nameKg:'Шаурма', description:'Классическая шаурма', descriptionKg:'Классикалык шаурма', price:235, image:'./Menu/Шаурма Классическая шаурма.webp', category:'fastfood', ingredients:['Лаваш','Мясо','Овощи','Соус'], ingredientsKg:['Лаваш','Эт','Жашылчалар','Соус'] },
-  { id:69, name:'Шаурма с курицей', nameKg:'Тоок менен шаурма', description:'Шаурма с курицей', descriptionKg:'Тоок менен шаурма', price:260, image:'./Menu/Шаурма куриная.webp', category:'fastfood', ingredients:['Лаваш','Курица','Овощи','Соус'], ingredientsKg:['Лаваш','Тоок','Жашылчалар','Соус'] },
-  { id:70, name:'Шаурма сырная', nameKg:'Сыр шаурма', description:'Шаурма с сыром', descriptionKg:'Сыр менен шаурма', price:260, image:'./Menu/Шаурма сырная.webp', category:'fastfood', ingredients:['Лаваш','Мясо','Сыр','Овощи','Соус'], ingredientsKg:['Лаваш','Эт','Сыр','Жашылчалар','Соус'] },
-  { id:71, name:'Пицца «Пепперони»', nameKg:'Пицца «Пепперони»', description:'Пицца Пепперони', descriptionKg:'Пепперони пиццасы', price:550, image:'./Menu/Пицца Пепперони.webp', category:'fastfood', ingredients:['Тесто','Сыр','Пепперони','Соус'], ingredientsKg:['Камыр','Сыр','Пепперони','Соус'] },
-  { id:72, name:'Пицца «Мясная»', nameKg:'Пицца «Эттүү»', description:'Мясная пицца', descriptionKg:'Эттүү пицца', price:590, image:'./Menu/Пицца Мясная.webp', category:'fastfood', ingredients:['Тесто','Сыр','Мясо','Соус'], ingredientsKg:['Камыр','Сыр','Эт','Соус'] },
-  { id:73, name:'Пицца «Курица с грибами»', nameKg:'Пицца «Тоок козу карын»', description:'Пицца с курицей и грибами', descriptionKg:'Тоок жана козу карын менен пицца', price:590, image:'./Menu/Пицца Курица с грибами.webp', category:'fastfood', ingredients:['Тесто','Сыр','Курица','Грибы','Соус'], ingredientsKg:['Камыр','Сыр','Тоок','Козу карын','Соус'] },
-  { id:74, name:'Пицца «Цезарь»', nameKg:'Пицца «Цезарь»', description:'Пицца Цезарь', descriptionKg:'Цезарь пиццасы', price:570, image:'./Menu/Пицца Цезарь.webp', category:'fastfood', ingredients:['Тесто','Сыр','Курица','Салат','Соус'], ingredientsKg:['Камыр','Сыр','Тоок','Салат','Соус'] },
-  { id:75, name:'Рамен', nameKg:'Рамён', description:'Японский рамён', descriptionKg:'Жапон рамёну', price:260, image:'./Menu/Рамен.webp', category:'fastfood', ingredients:['Лапша','Бульон','Мясо','Овощи'], ingredientsKg:['Лапша','Бульон','Эт','Жашылчалар'] },
+  { id: 66, name: 'Стрипсы корейские', nameKg: 'Корей стрипсы', description: 'Корейские куриные стрипсы', descriptionKg: 'Корей тоок стрипсы', price: 290, image: './Menu/Стрипсы корейские.webp', category: 'fastfood', ingredients: ['Курица', 'Специи', 'Масло'], ingredientsKg: ['Тоок', 'Азыктар', 'Май'] },
+  { id: 67, name: 'KFC + фри', nameKg: 'KFC + фри', description: 'Курица KFC с картошкой фри', descriptionKg: 'KFC тоок фри картөшкө менен', image: './Menu/kfxfree.webp', category: 'fastfood', variants: [{ label: '20 шт', price: 310 }, { label: '10 шт', price: 260 }] },
+  { id: 68, name: 'Шаурма', nameKg: 'Шаурма', description: 'Классическая шаурма', descriptionKg: 'Классикалык шаурма', price: 235, image: './Menu/Шаурма Классическая шаурма.webp', category: 'fastfood', ingredients: ['Лаваш', 'Мясо', 'Овощи', 'Соус'], ingredientsKg: ['Лаваш', 'Эт', 'Жашылчалар', 'Соус'] },
+  { id: 69, name: 'Шаурма с курицей', nameKg: 'Тоок менен шаурма', description: 'Шаурма с курицей', descriptionKg: 'Тоок менен шаурма', price: 260, image: './Menu/Шаурма куриная.webp', category: 'fastfood', ingredients: ['Лаваш', 'Курица', 'Овощи', 'Соус'], ingredientsKg: ['Лаваш', 'Тоок', 'Жашылчалар', 'Соус'] },
+  { id: 70, name: 'Шаурма сырная', nameKg: 'Сыр шаурма', description: 'Шаурма с сыром', descriptionKg: 'Сыр менен шаурма', price: 260, image: './Menu/Шаурма сырная.webp', category: 'fastfood', ingredients: ['Лаваш', 'Мясо', 'Сыр', 'Овощи', 'Соус'], ingredientsKg: ['Лаваш', 'Эт', 'Сыр', 'Жашылчалар', 'Соус'] },
+  { id: 71, name: 'Пицца «Пепперони»', nameKg: 'Пицца «Пепперони»', description: 'Пицца Пепперони', descriptionKg: 'Пепперони пиццасы', price: 550, image: './Menu/Пицца Пепперони.webp', category: 'fastfood', ingredients: ['Тесто', 'Сыр', 'Пепперони', 'Соус'], ingredientsKg: ['Камыр', 'Сыр', 'Пепперони', 'Соус'] },
+  { id: 72, name: 'Пицца «Мясная»', nameKg: 'Пицца «Эттүү»', description: 'Мясная пицца', descriptionKg: 'Эттүү пицца', price: 590, image: './Menu/Пицца Мясная.webp', category: 'fastfood', ingredients: ['Тесто', 'Сыр', 'Мясо', 'Соус'], ingredientsKg: ['Камыр', 'Сыр', 'Эт', 'Соус'] },
+  { id: 73, name: 'Пицца «Курица с грибами»', nameKg: 'Пицца «Тоок козу карын»', description: 'Пицца с курицей и грибами', descriptionKg: 'Тоок жана козу карын менен пицца', price: 590, image: './Menu/Пицца Курица с грибами.webp', category: 'fastfood', ingredients: ['Тесто', 'Сыр', 'Курица', 'Грибы', 'Соус'], ingredientsKg: ['Камыр', 'Сыр', 'Тоок', 'Козу карын', 'Соус'] },
+  { id: 74, name: 'Пицца «Цезарь»', nameKg: 'Пицца «Цезарь»', description: 'Пицца Цезарь', descriptionKg: 'Цезарь пиццасы', price: 570, image: './Menu/Пицца Цезарь.webp', category: 'fastfood', ingredients: ['Тесто', 'Сыр', 'Курица', 'Салат', 'Соус'], ingredientsKg: ['Камыр', 'Сыр', 'Тоок', 'Салат', 'Соус'] },
+  { id: 75, name: 'Рамен', nameKg: 'Рамён', description: 'Японский рамён', descriptionKg: 'Жапон рамёну', price: 260, image: './Menu/Рамен.webp', category: 'fastfood', ingredients: ['Лапша', 'Бульон', 'Мясо', 'Овощи'], ingredientsKg: ['Лапша', 'Бульон', 'Эт', 'Жашылчалар'] },
   // ДЕСЕРТЫ
-  { id:76, name:'Сан-Себастьян', nameKg:'Сан-Себастьян', description:'Десерт Сан-Себастьян', descriptionKg:'Сан-Себастьян десерти', price:360, image:'./Menu/Десерт Сан-Себастьян.webp', category:'dessert', ingredients:['Тесто','Крем','Фрукты'], ingredientsKg:['Камыр','Крем','Жемиштер'] },
-  { id:77, name:'Чизкейк', nameKg:'Чизкейк', description:'Классический чизкейк', descriptionKg:'Классикалык чизкейк', price:370, image:'./Menu/Чизкейк.webp', category:'dessert', ingredients:['Сыр','Тесто','Крем'], ingredientsKg:['Сыр','Камыр','Крем'] },
-  { id:78, name:'Три шоколада', nameKg:'Үч шоколад', description:'Торт три шоколада', descriptionKg:'Үч шоколад торт', price:280, image:'./Menu/Три.webp', category:'dessert', ingredients:['Шоколад','Тесто','Крем'], ingredientsKg:['Шоколад','Камыр','Крем'] },
-  { id:79, name:'Трайфл макс', nameKg:'Трайфл макс', description:'Десерт Трайфл макс', descriptionKg:'Трайфл макс десерти', price:290, image:'./Menu/Трайфл макс.webp', category:'dessert', ingredients:['Бисквит','Крем','Фрукты'], ingredientsKg:['Бисквит','Крем','Жемиштер'] },
-  { id:80, name:'Пирог', nameKg:'Пирог', description:'Свежий пирог', descriptionKg:'Жаңы пирог', price:50, image:'./Menu/ПИрог.webp', category:'dessert', ingredients:['Тесто','Начинка'], ingredientsKg:['Камыр','Начинка'] },
-  { id:81, name:'Мини самсы', nameKg:'Мини кум самсы', description:'Мини песочные самсы', descriptionKg:'Мини кум самсы', price:55, image:'./Menu/Песоксамсы.webp', category:'fastfood', ingredients:['Тесто','Начинка'], ingredientsKg:['Камыр','Начинка'] },
-  { id:82, name:'Хлеб', nameKg:'Нан', description:'Свежий хлеб', descriptionKg:'Жаңы нан', price:45, image:'./Menu/нан.webp', category:'fastfood', ingredients:['Мука','Вода','Дрожжи'], ingredientsKg:['Ун','Суу','Ачыткы'] },
-  { id:83, name:'Чай', nameKg:'Чай', description:'Горячий чай', descriptionKg:'Ысык чай', price:20, image:'./Menu/чай.webp', category:'fastfood', ingredients:['Чай','Вода'], ingredientsKg:['Чай','Суу'] },
-  { id:84, name:'Боорсок + каймак', nameKg:'Боорсок + каймак', description:'Боорсок с каймаком', descriptionKg:'Каймак менен боорсок', image:'./Menu/Борскок.webp', category:'dessert', variants:[{label:'1 кг',price:170},{label:'2 кг',price:340}] }
+  { id: 76, name: 'Сан-Себастьян', nameKg: 'Сан-Себастьян', description: 'Десерт Сан-Себастьян', descriptionKg: 'Сан-Себастьян десерти', price: 360, image: './Menu/Десерт Сан-Себастьян.webp', category: 'dessert', ingredients: ['Тесто', 'Крем', 'Фрукты'], ingredientsKg: ['Камыр', 'Крем', 'Жемиштер'] },
+  { id: 77, name: 'Чизкейк', nameKg: 'Чизкейк', description: 'Классический чизкейк', descriptionKg: 'Классикалык чизкейк', price: 370, image: './Menu/Чизкейк.webp', category: 'dessert', ingredients: ['Сыр', 'Тесто', 'Крем'], ingredientsKg: ['Сыр', 'Камыр', 'Крем'] },
+  { id: 78, name: 'Три шоколада', nameKg: 'Үч шоколад', description: 'Торт три шоколада', descriptionKg: 'Үч шоколад торт', price: 280, image: './Menu/Три.webp', category: 'dessert', ingredients: ['Шоколад', 'Тесто', 'Крем'], ingredientsKg: ['Шоколад', 'Камыр', 'Крем'] },
+  { id: 79, name: 'Трайфл макс', nameKg: 'Трайфл макс', description: 'Десерт Трайфл макс', descriptionKg: 'Трайфл макс десерти', price: 290, image: './Menu/Трайфл макс.webp', category: 'dessert', ingredients: ['Бисквит', 'Крем', 'Фрукты'], ingredientsKg: ['Бисквит', 'Крем', 'Жемиштер'] },
+  { id: 80, name: 'Пирог', nameKg: 'Пирог', description: 'Свежий пирог', descriptionKg: 'Жаңы пирог', price: 50, image: './Menu/ПИрог.webp', category: 'dessert', ingredients: ['Тесто', 'Начинка'], ingredientsKg: ['Камыр', 'Начинка'] },
+  { id: 81, name: 'Мини самсы', nameKg: 'Мини кум самсы', description: 'Мини песочные самсы', descriptionKg: 'Мини кум самсы', price: 55, image: './Menu/Песоксамсы.webp', category: 'fastfood', ingredients: ['Тесто', 'Начинка'], ingredientsKg: ['Камыр', 'Начинка'] },
+  { id: 82, name: 'Хлеб', nameKg: 'Нан', description: 'Свежий хлеб', descriptionKg: 'Жаңы нан', price: 45, image: './Menu/нан.webp', category: 'fastfood', ingredients: ['Мука', 'Вода', 'Дрожжи'], ingredientsKg: ['Ун', 'Суу', 'Ачыткы'] },
+  { id: 83, name: 'Чай', nameKg: 'Чай', description: 'Горячий чай', descriptionKg: 'Ысык чай', price: 20, image: './Menu/чай.webp', category: 'fastfood', ingredients: ['Чай', 'Вода'], ingredientsKg: ['Чай', 'Суу'] },
+  { id: 84, name: 'Боорсок + каймак', nameKg: 'Боорсок + каймак', description: 'Боорсок с каймаком', descriptionKg: 'Каймак менен боорсок', image: './Menu/Борскок.webp', category: 'dessert', variants: [{ label: '1 кг', price: 170 }, { label: '2 кг', price: 340 }] }
 ];
 
 // ── TRANSLATIONS ───────────────────────────────────────────
 const i18n = {
   ru: {
-    'nav-menu':'Меню','nav-contact':'Контакты',
-    'hero-badge':'🌟 Открыто сейчас · 10:00 – 22:00',
-    'hero-desc':'Уютное кафе в центре Кара-Куля. Вкусная домашняя еда каждый день.',
-    'view-menu':'Смотреть меню',
-    'menu-title':'Меню','menu-sub':'Всё готовится из свежих продуктов каждый день',
-    'filter-all':'Все','filter-first':'Первые блюда','filter-second':'Вторые блюда',
-    'filter-special':'Заказные','filter-shashlik':'Шашлыки','filter-salad':'Салаты',
-    'filter-dessert':'Десерты','filter-drink':'Напитки','filter-fastfood':'Fast-Food',
-    'contact-title':'Контакты','contact-phone-label':'Телефон',
-    'contact-loc-label':'Адрес','contact-loc':'Кара-Куль, ул. Боконбаева',
-    'contact-hours-label':'Режим работы','contact-hours':'10:00 – 22:00, без выходных',
-    'footer-text':'© 2025 Кафе Cholpon. Все права защищены.',
-    'cart-title':'Корзина','cart-empty':'Корзина пуста','cart-total':'Итого:',
-    'currency':'сом','cart-clear':'Очистить','cart-checkout':'Оформить заказ',
-    'order-title':'Оформление заказа','order-name':'Имя','order-phone':'Телефон',
-    'order-phone-hint':'Введите номер без 0, например: 998 25 20 23',
-    'order-address':'Адрес доставки','order-comment':'Комментарий (необязательно)',
-    'order-summary':'Состав заказа:','order-cancel':'Отмена','order-submit':'Отправить заказ',
-    'add-to-cart':'В корзину','remove':'×','details':'Подробнее',
-    'payment-method-label':'Способ оплаты','payment-cash':'Наличными',
-    'payment-card':'Картой','mbank-scan':'Отсканируйте QR для оплаты в MBank',
-    'dish-ingredients':'Ингредиенты:',
-    'order-type-title':'Как вы хотите заказать?',
-    'order-type-cafe':'Я в кафе','order-type-pickup':'Самовывоз',
-    'order-type-delivery':'Доставка','order-type-browse':'Просто посмотреть',
-    'table-select-title':'Выберите стол',
-    'delivery-form-title':'Данные для доставки',
-    'back':'Назад','continue':'Продолжить',
-    'variant-hint':'Выберите объём или вариант:',
-    'toast-added':'Добавлено:','toast-table':'Стол №',
-    'alert-cart-empty':'Корзина пуста. Добавьте блюда.',
-    'alert-fill-fields':'Заполните все обязательные поля.',
-    'alert-invalid-phone':'Введите корректный номер телефона (9 цифр без 0).',
-    'alert-order-sent':'✅ Заказ отправлен! Мы свяжемся с вами.',
-    'confirm-clear':'Очистить корзину?',
+    'nav-menu': 'Меню', 'nav-contact': 'Контакты',
+    'hero-badge': '🌟 Открыто сейчас · 10:00 – 22:00',
+    'hero-desc': 'Уютное кафе в центре Кара-Куля. Вкусная домашняя еда каждый день.',
+    'view-menu': 'Смотреть меню',
+    'menu-title': 'Меню', 'menu-sub': 'Всё готовится из свежих продуктов каждый день',
+    'filter-all': 'Все', 'filter-first': 'Первые блюда', 'filter-second': 'Вторые блюда',
+    'filter-special': 'Заказные', 'filter-shashlik': 'Шашлыки', 'filter-salad': 'Салаты',
+    'filter-dessert': 'Десерты', 'filter-drink': 'Напитки', 'filter-fastfood': 'Fast-Food',
+    'contact-title': 'Контакты', 'contact-phone-label': 'Телефон',
+    'contact-loc-label': 'Адрес', 'contact-loc': 'Кара-Куль, ул. Боконбаева',
+    'contact-hours-label': 'Режим работы', 'contact-hours': '10:00 – 22:00, без выходных',
+    'footer-text': '© 2025 Кафе Cholpon. Все права защищены.',
+    'cart-title': 'Корзина', 'cart-empty': 'Корзина пуста', 'cart-total': 'Итого:',
+    'currency': 'сом', 'cart-clear': 'Очистить', 'cart-checkout': 'Оформить заказ',
+    'order-title': 'Оформление заказа', 'order-name': 'Имя', 'order-phone': 'Телефон',
+    'order-phone-hint': 'Введите номер без 0, например: 998 25 20 23',
+    'order-address': 'Адрес доставки', 'order-comment': 'Комментарий (необязательно)',
+    'order-summary': 'Состав заказа:', 'order-cancel': 'Отмена', 'order-submit': 'Отправить заказ',
+    'add-to-cart': 'В корзину', 'remove': '×', 'details': 'Подробнее',
+    'payment-method-label': 'Способ оплаты', 'payment-cash': 'Наличными',
+    'payment-card': 'Картой', 'mbank-scan': 'Отсканируйте QR для оплаты в MBank',
+    'dish-ingredients': 'Ингредиенты:',
+    'order-type-title': 'Как вы хотите заказать?',
+    'order-type-cafe': 'Я в кафе', 'order-type-pickup': 'Самовывоз',
+    'order-type-delivery': 'Доставка', 'order-type-browse': 'Просто посмотреть',
+    'table-select-title': 'Выберите стол',
+    'delivery-form-title': 'Данные для доставки',
+    'back': 'Назад', 'continue': 'Продолжить',
+    'variant-hint': 'Выберите объём или вариант:',
+    'toast-added': 'Добавлено:', 'toast-table': 'Стол №',
+    'alert-cart-empty': 'Корзина пуста. Добавьте блюда.',
+    'alert-fill-fields': 'Заполните все обязательные поля.',
+    'alert-invalid-phone': 'Введите корректный номер телефона (9 цифр без 0).',
+    'alert-order-sent': '✅ Заказ отправлен! Мы свяжемся с вами.',
+    'confirm-clear': 'Очистить корзину?',
   },
   kg: {
-    'nav-menu':'Меню','nav-contact':'Байланыш',
-    'hero-badge':'🌟 Ачык · 10:00 – 22:00',
-    'hero-desc':'Кара-Көл шаарынын борборундагы жайлуу кафе.',
-    'view-menu':'Менюну көрүү',
-    'menu-title':'Меню','menu-sub':'Баары күн сайын жаңы продукттардан жасалат',
-    'filter-all':'Баары','filter-first':'Биринчи тамактар','filter-second':'Экинчи тамактар',
-    'filter-special':'Заказдык','filter-shashlik':'Шашлык','filter-salad':'Салат',
-    'filter-dessert':'Десерттер','filter-drink':'Суусундуктар','filter-fastfood':'Fast-Food',
-    'contact-title':'Байланыш','contact-phone-label':'Телефон',
-    'contact-loc-label':'Дарек','contact-loc':'Кара-Көл, Боконбаева',
-    'contact-hours-label':'Иш убактысы','contact-hours':'10:00 – 22:00, дем алыш жок',
-    'footer-text':'© 2025 Cholpon кафеси. Бардык укуктар корголгон.',
-    'cart-title':'Себет','cart-empty':'Себет бош','cart-total':'Баары:',
-    'currency':'сом','cart-clear':'Тазалоо','cart-checkout':'Заказ берүү',
-    'order-title':'Заказ берүү','order-name':'Аты','order-phone':'Телефон',
-    'order-phone-hint':'Номурду 0сүз жазыңыз, мисалы: 998 25 20 23',
-    'order-address':'Жеткирүү дареги','order-comment':'Комментарий (милдеттүү эмес)',
-    'order-summary':'Заказдын курамы:','order-cancel':'Жокко чыгаруу','order-submit':'Заказды жөнөтүү',
-    'add-to-cart':'Себетке','remove':'×','details':'Кененирээк',
-    'payment-method-label':'Төлөө ыкмасы','payment-cash':'Накта',
-    'payment-card':'Карта менен','mbank-scan':'MBank төлөм үчүн QR сканерлеңиз',
-    'dish-ingredients':'Курамы:',
-    'order-type-title':'Кантип заказ бересиз?',
-    'order-type-cafe':'Мен кафедемин','order-type-pickup':'Өзүм алам',
-    'order-type-delivery':'Жеткирүү','order-type-browse':'Менюну гана көрүү',
-    'table-select-title':'Стол номурун тандаңыз',
-    'delivery-form-title':'Жеткирүү үчүн маалыматтар',
-    'back':'Артка','continue':'Улантуу',
-    'variant-hint':'Көлөмдү же вариантты тандаңыз:',
-    'toast-added':'Кошулду:','toast-table':'Стол №',
-    'alert-cart-empty':'Себет бош. Тамак кошуңуз.',
-    'alert-fill-fields':'Бардык талааларды толтуруңуз.',
-    'alert-invalid-phone':'Туура телефон номурун киргизиңиз.',
-    'alert-order-sent':'✅ Заказ жөнөтүлдү!',
-    'confirm-clear':'Себетти тазалоо?',
+    'nav-menu': 'Меню', 'nav-contact': 'Байланыш',
+    'hero-badge': '🌟 Ачык · 10:00 – 22:00',
+    'hero-desc': 'Кара-Көл шаарынын борборундагы жайлуу кафе.',
+    'view-menu': 'Менюну көрүү',
+    'menu-title': 'Меню', 'menu-sub': 'Баары күн сайын жаңы продукттардан жасалат',
+    'filter-all': 'Баары', 'filter-first': 'Биринчи тамактар', 'filter-second': 'Экинчи тамактар',
+    'filter-special': 'Заказдык', 'filter-shashlik': 'Шашлык', 'filter-salad': 'Салат',
+    'filter-dessert': 'Десерттер', 'filter-drink': 'Суусундуктар', 'filter-fastfood': 'Fast-Food',
+    'contact-title': 'Байланыш', 'contact-phone-label': 'Телефон',
+    'contact-loc-label': 'Дарек', 'contact-loc': 'Кара-Көл, Боконбаева',
+    'contact-hours-label': 'Иш убактысы', 'contact-hours': '10:00 – 22:00, дем алыш жок',
+    'footer-text': '© 2025 Cholpon кафеси. Бардык укуктар корголгон.',
+    'cart-title': 'Себет', 'cart-empty': 'Себет бош', 'cart-total': 'Баары:',
+    'currency': 'сом', 'cart-clear': 'Тазалоо', 'cart-checkout': 'Заказ берүү',
+    'order-title': 'Заказ берүү', 'order-name': 'Аты', 'order-phone': 'Телефон',
+    'order-phone-hint': 'Номурду 0сүз жазыңыз, мисалы: 998 25 20 23',
+    'order-address': 'Жеткирүү дареги', 'order-comment': 'Комментарий (милдеттүү эмес)',
+    'order-summary': 'Заказдын курамы:', 'order-cancel': 'Жокко чыгаруу', 'order-submit': 'Заказды жөнөтүү',
+    'add-to-cart': 'Себетке', 'remove': '×', 'details': 'Кененирээк',
+    'payment-method-label': 'Төлөө ыкмасы', 'payment-cash': 'Накта',
+    'payment-card': 'Карта менен', 'mbank-scan': 'MBank төлөм үчүн QR сканерлеңиз',
+    'dish-ingredients': 'Курамы:',
+    'order-type-title': 'Кантип заказ бересиз?',
+    'order-type-cafe': 'Мен кафедемин', 'order-type-pickup': 'Өзүм алам',
+    'order-type-delivery': 'Жеткирүү', 'order-type-browse': 'Менюну гана көрүү',
+    'table-select-title': 'Стол номурун тандаңыз',
+    'delivery-form-title': 'Жеткирүү үчүн маалыматтар',
+    'back': 'Артка', 'continue': 'Улантуу',
+    'variant-hint': 'Көлөмдү же вариантты тандаңыз:',
+    'toast-added': 'Кошулду:', 'toast-table': 'Стол №',
+    'alert-cart-empty': 'Себет бош. Тамак кошуңуз.',
+    'alert-fill-fields': 'Бардык талааларды толтуруңуз.',
+    'alert-invalid-phone': 'Туура телефон номурун киргизиңиз.',
+    'alert-order-sent': '✅ Заказ жөнөтүлдү!',
+    'confirm-clear': 'Себетти тазалоо?',
   }
 };
 
 // ── STATE ─────────────────────────────────────────────────
 let lang = localStorage.getItem('lang') || 'ru';
-let theme = localStorage.getItem('theme') || 'light';
-let cart = [];
+let theme = localStorage.getItem('theme') ||
+  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); let cart = [];
 let orderType = null;   // 'cafe' | 'pickup' | 'delivery' | 'browse'
-let tableNum  = null;
+let tableNum = null;
 let deliveryInfo = null;
 let activeCategory = 'all';
 let slideIndex = 0;
@@ -204,15 +201,15 @@ function loadCart() {
   catch { cart = []; }
 }
 function saveCart() {
-  try { localStorage.setItem('cart', JSON.stringify(cart)); } catch {}
+  try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { }
 }
 
 function formatPhone(input) {
   let v = input.value.replace(/\D/g, '').slice(0, 9);
-  let f = v.slice(0,3);
-  if (v.length > 3) f += ' ' + v.slice(3,5);
-  if (v.length > 5) f += ' ' + v.slice(5,7);
-  if (v.length > 7) f += ' ' + v.slice(7,9);
+  let f = v.slice(0, 3);
+  if (v.length > 3) f += ' ' + v.slice(3, 5);
+  if (v.length > 5) f += ' ' + v.slice(5, 7);
+  if (v.length > 7) f += ' ' + v.slice(7, 9);
   input.value = f;
 }
 
@@ -240,14 +237,14 @@ function showToast(msg, ms = 3000) {
 
 function getCatLabel(cat) {
   const map = {
-    first:    {ru:'Первые',     kg:'Биринчи'},
-    second:   {ru:'Вторые',     kg:'Экинчи'},
-    special:  {ru:'Заказное',   kg:'Заказ'},
-    shashlik: {ru:'Шашлык',     kg:'Кебаб'},
-    salad:    {ru:'Салат',      kg:'Салат'},
-    dessert:  {ru:'Десерт',     kg:'Десерт'},
-    drink:    {ru:'Напиток',    kg:'Суусундук'},
-    fastfood: {ru:'Fast-Food',  kg:'Fast-Food'}
+    first: { ru: 'Первые', kg: 'Биринчи' },
+    second: { ru: 'Вторые', kg: 'Экинчи' },
+    special: { ru: 'Заказное', kg: 'Заказ' },
+    shashlik: { ru: 'Шашлык', kg: 'Кебаб' },
+    salad: { ru: 'Салат', kg: 'Салат' },
+    dessert: { ru: 'Десерт', kg: 'Десерт' },
+    drink: { ru: 'Напиток', kg: 'Суусундук' },
+    fastfood: { ru: 'Fast-Food', kg: 'Fast-Food' }
   };
   return map[cat]?.[lang] || '';
 }
@@ -260,6 +257,14 @@ function applyTheme() {
   if (moon) moon.style.display = theme === 'dark' ? 'none' : '';
   if (sun)  sun.style.display  = theme === 'dark' ? '' : 'none';
 }
+
+// Слушаем если пользователь меняет тему в системе
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('theme')) {
+    theme = e.matches ? 'dark' : 'light';
+    applyTheme();
+  }
+});
 
 // ── LANGUAGE ──────────────────────────────────────────────
 function applyLang() {
@@ -280,10 +285,10 @@ function applyLang() {
 
 // ── CART LOGIC ────────────────────────────────────────────
 function addItem(item, variant) {
-  const cid    = variant ? `${item.id}_${variant.label}` : String(item.id);
-  const price  = variant ? variant.price : item.price;
+  const cid = variant ? `${item.id}_${variant.label}` : String(item.id);
+  const price = variant ? variant.price : item.price;
   const suffix = variant ? ` (${variant.label})` : '';
-  const name   = (lang === 'ru' ? item.name : (item.nameKg || item.name)) + suffix;
+  const name = (lang === 'ru' ? item.name : (item.nameKg || item.name)) + suffix;
 
   const existing = cart.find(c => c.cid === cid);
   if (existing) {
@@ -315,7 +320,7 @@ function removeItem(cid) {
 
 function updateCartBadge() {
   const total = cart.reduce((s, i) => s + i.qty, 0);
-  ['cartBadge','bottomBadge'].forEach(id => {
+  ['cartBadge', 'bottomBadge'].forEach(id => {
     const el = $(id);
     if (!el) return;
     el.textContent = total;
@@ -324,10 +329,10 @@ function updateCartBadge() {
 }
 
 function renderCartItems() {
-  const wrap    = $('cartItems');
-  const empty   = $('cartEmpty');
+  const wrap = $('cartItems');
+  const empty = $('cartEmpty');
   const totWrap = $('cartTotalWrap');
-  const totEl   = $('cartTotalPrice');
+  const totEl = $('cartTotalPrice');
   if (!wrap) return;
 
   if (cart.length === 0) {
@@ -409,7 +414,7 @@ function createCard(item) {
 
   const name = lang === 'ru' ? item.name : (item.nameKg || item.name);
   const desc = lang === 'ru' ? item.description : (item.descriptionKg || item.description);
-  const cat  = getCatLabel(item.category);
+  const cat = getCatLabel(item.category);
 
   let priceStr;
   if (item.variants?.length) {
@@ -438,15 +443,15 @@ function createCard(item) {
       <div class="card-price">${priceStr} <small>${t('currency')}</small></div>
       <div class="card-actions">
         ${item.variants?.length
-          ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
-          : qty === 0
-            ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
-            : `<div class="qty-ctrl">
+      ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
+      : qty === 0
+        ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
+        : `<div class="qty-ctrl">
                  <button class="qty-btn" onclick="decreaseQty('${item.id}');event.stopPropagation()">−</button>
                  <span class="qty-val">${qty}</span>
                  <button class="qty-btn" onclick="increaseQty('${item.id}');event.stopPropagation()">+</button>
                </div>`
-        }
+    }
       </div>
     </div>
   `;
@@ -488,16 +493,16 @@ function showDishDetail(id) {
   }
 
   $('dishModalTitle').textContent = name;
-  $('dishName').textContent       = name;
-  $('dishDesc').textContent       = desc || '';
-  $('dishPrice').textContent      = priceText;
-  $('dishIngList').innerHTML      = ings.map(i => `<li>${i}</li>`).join('');
+  $('dishName').textContent = name;
+  $('dishDesc').textContent = desc || '';
+  $('dishPrice').textContent = priceText;
+  $('dishIngList').innerHTML = ings.map(i => `<li>${i}</li>`).join('');
 
   // Build slider
   const images = dish.images?.length ? dish.images : [dish.image];
   slideIndex = 0;
   const slider = $('dishSlider');
-  const dots   = $('slideDots');
+  const dots = $('slideDots');
   slider.innerHTML = '';
   dots.innerHTML = '';
 
@@ -506,12 +511,12 @@ function showDishDetail(id) {
     slide.className = 'slide-item';
     slide.innerHTML = `<img src="${src}" alt="${name}" loading="lazy"
       onerror="this.src='${PLACEHOLDER}'"
-      onclick="openLightbox('${src.replace(/'/g,"\\'")}','${name.replace(/'/g,"\\'")}')">`;
+      onclick="openLightbox('${src.replace(/'/g, "\\'")}','${name.replace(/'/g, "\\'")}')">`;
     slider.appendChild(slide);
 
     const dot = document.createElement('button');
     dot.className = `slide-dot${i === 0 ? ' active' : ''}`;
-    dot.setAttribute('aria-label', `Фото ${i+1}`);
+    dot.setAttribute('aria-label', `Фото ${i + 1}`);
     dot.addEventListener('click', () => { slideIndex = i; updateSlider(); });
     dots.appendChild(dot);
   });
@@ -571,12 +576,12 @@ function buildOrderSummary() {
 }
 
 function validateOrder() {
-  const btn   = $('submitOrderBtn');
+  const btn = $('submitOrderBtn');
   if (!btn) return;
-  const name  = $('custName')?.value.trim();
-  const phone = $('custPhone')?.value.replace(/\s/g,'');
-  const pay   = document.querySelector('input[name="payment"]:checked');
-  const ok    = cart.length > 0 && name?.length > 0 && isValidPhone(phone) && !!pay;
+  const name = $('custName')?.value.trim();
+  const phone = $('custPhone')?.value.replace(/\s/g, '');
+  const pay = document.querySelector('input[name="payment"]:checked');
+  const ok = cart.length > 0 && name?.length > 0 && isValidPhone(phone) && !!pay;
   btn.disabled = !ok;
   btn.classList.toggle('pulse', ok);
 }
@@ -633,8 +638,8 @@ function buildOrderText(name, phone, comment, payment) {
     lines += `\n💳 ${pm}`;
   }
 
-  if (orderType === 'cafe' && tableNum)  lines += `\n📍 Стол №${tableNum}`;
-  if (orderType === 'pickup')            lines += `\n📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}`;
+  if (orderType === 'cafe' && tableNum) lines += `\n📍 Стол №${tableNum}`;
+  if (orderType === 'pickup') lines += `\n📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}`;
   if (orderType === 'delivery' && deliveryInfo?.address) lines += `\n📍 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}`;
   if (comment?.trim()) lines += `\n📝 ${comment.trim()}`;
 
@@ -644,16 +649,16 @@ function buildOrderText(name, phone, comment, payment) {
 function submitOrder(e) {
   e.preventDefault();
 
-  const name    = $('custName')?.value.trim();
-  const rawPhone= $('custPhone')?.value.trim();
-  const phone   = rawPhone.replace(/\s/g,'');
+  const name = $('custName')?.value.trim();
+  const rawPhone = $('custPhone')?.value.trim();
+  const phone = rawPhone.replace(/\s/g, '');
   const comment = $('custComment')?.value.trim() || '';
   const payment = document.querySelector('input[name="payment"]:checked')?.value || '';
-  const addr    = $('custAddr')?.value.trim() || '';
+  const addr = $('custAddr')?.value.trim() || '';
 
-  if (!name)                { alert(t('alert-fill-fields')); return; }
+  if (!name) { alert(t('alert-fill-fields')); return; }
   if (!isValidPhone(phone)) { alert(t('alert-invalid-phone')); return; }
-  if (!cart.length)         { alert(t('alert-cart-empty')); return; }
+  if (!cart.length) { alert(t('alert-cart-empty')); return; }
 
   if (orderType === 'delivery') {
     if (!deliveryInfo) deliveryInfo = {};
@@ -673,7 +678,7 @@ function submitOrder(e) {
 
 // ── LIGHTBOX ──────────────────────────────────────────────
 function openLightbox(src, alt) {
-  const lb  = $('lightbox');
+  const lb = $('lightbox');
   const img = $('lightboxImg');
   if (!lb || !img) return;
   img.src = src;
@@ -681,7 +686,7 @@ function openLightbox(src, alt) {
   lb.classList.add('open');
 }
 function closeLightbox() {
-  const lb  = $('lightbox');
+  const lb = $('lightbox');
   const img = $('lightboxImg');
   if (!lb || !img) return;
   lb.classList.remove('open');
@@ -689,7 +694,7 @@ function closeLightbox() {
 }
 
 // ── ORDER TYPE FLOW ───────────────────────────────────────
-function lockScroll()   { document.body.classList.add('locked'); }
+function lockScroll() { document.body.classList.add('locked'); }
 function unlockScroll() { document.body.classList.remove('locked'); }
 
 function setOrderType(type) {
@@ -709,13 +714,13 @@ function initOrderTypeModal() {
     if (tp) {
       const n = parseInt(tp, 10);
       if (n >= 1 && n <= 11) {
-        tableNum  = n;
+        tableNum = n;
         orderType = 'cafe';
         showToast(`${t('toast-table')}${n}`);
         return;
       }
     }
-  } catch {}
+  } catch { }
 
   // Hide "Я в кафе" when no table param
   const cafeBtn = $('otCafe');
@@ -795,7 +800,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     const saved = localStorage.getItem('deliveryInfo');
     if (saved) deliveryInfo = JSON.parse(saved);
-  } catch {}
+  } catch { }
 
   // ── Theme toggle
   $('themeToggle')?.addEventListener('click', () => {
@@ -827,7 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Hamburger
   const menuToggle = $('menuToggle');
-  const mainNav    = $('mainNav');
+  const mainNav = $('mainNav');
   menuToggle?.addEventListener('click', () => {
     const open = mainNav.classList.toggle('open');
     menuToggle.classList.toggle('open', open);
@@ -841,8 +846,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Hero buttons
-  $('viewMenuBtn')?.addEventListener('click',    () => $('menu')?.scrollIntoView({ behavior:'smooth' }));
-  $('viewContactBtn')?.addEventListener('click', () => $('contact')?.scrollIntoView({ behavior:'smooth' }));
+  $('viewMenuBtn')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
+  $('viewContactBtn')?.addEventListener('click', () => $('contact')?.scrollIntoView({ behavior: 'smooth' }));
 
   // ── Category filter
   document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -850,7 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
       activeCategory = btn.dataset.category;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
       renderMenu();
-      $('menu')?.scrollIntoView({ behavior:'smooth' });
+      $('menu')?.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
@@ -858,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('cartBtn')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
 
   // ── Bottom nav
-  $('bnMenu')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior:'smooth' }));
+  $('bnMenu')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
   $('bnCart')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
 
   // ── Cart modal actions
@@ -907,7 +912,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal('orderTypeModal');
     openModal('tableModal');
   });
-  $('otPickup')?.addEventListener('click',   () => setOrderType('pickup'));
+  $('otPickup')?.addEventListener('click', () => setOrderType('pickup'));
   $('otDelivery')?.addEventListener('click', () => {
     closeModal('orderTypeModal');
     openModal('deliveryModal');
@@ -930,15 +935,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('deliveryForm')?.addEventListener('submit', e => {
     e.preventDefault();
-    const name    = $('dlvName')?.value.trim();
-    const phone   = $('dlvPhone')?.value.trim();
+    const name = $('dlvName')?.value.trim();
+    const phone = $('dlvPhone')?.value.trim();
     const address = $('dlvAddress')?.value.trim();
-    if (!name || !isValidPhone(phone.replace(/\s/g,'')) || !address) {
+    if (!name || !isValidPhone(phone.replace(/\s/g, '')) || !address) {
       alert(t('alert-fill-fields'));
       return;
     }
     deliveryInfo = { name, phone, address };
-    try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch {}
+    try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch { }
     setOrderType('delivery');
   });
 
@@ -963,8 +968,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── EXPOSE GLOBALS (needed for inline onclick in dynamically-created HTML) ──
-window.decreaseQty      = decreaseQty;
-window.increaseQty      = increaseQty;
-window.removeItem       = removeItem;
-window.handleAddToCart  = handleAddToCart;
-window.openLightbox     = openLightbox;
+window.decreaseQty = decreaseQty;
+window.increaseQty = increaseQty;
+window.removeItem = removeItem;
+window.handleAddToCart = handleAddToCart;
+window.openLightbox = openLightbox;
