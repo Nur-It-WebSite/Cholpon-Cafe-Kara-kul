@@ -182,10 +182,10 @@ const i18n = {
 
 // ── STATE ─────────────────────────────────────────────────
 let lang = localStorage.getItem('lang') || 'ru';
-let theme = localStorage.getItem('theme') ||
-  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); let cart = [];
+let theme = localStorage.getItem('theme') || 'light';
+let cart = [];
 let orderType = null;   // 'cafe' | 'pickup' | 'delivery' | 'browse'
-let tableNum = null;
+let tableNum  = null;
 let deliveryInfo = null;
 let activeCategory = 'all';
 let slideIndex = 0;
@@ -201,15 +201,15 @@ function loadCart() {
   catch { cart = []; }
 }
 function saveCart() {
-  try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { }
+  try { localStorage.setItem('cart', JSON.stringify(cart)); } catch {}
 }
 
 function formatPhone(input) {
   let v = input.value.replace(/\D/g, '').slice(0, 9);
-  let f = v.slice(0, 3);
-  if (v.length > 3) f += ' ' + v.slice(3, 5);
-  if (v.length > 5) f += ' ' + v.slice(5, 7);
-  if (v.length > 7) f += ' ' + v.slice(7, 9);
+  let f = v.slice(0,3);
+  if (v.length > 3) f += ' ' + v.slice(3,5);
+  if (v.length > 5) f += ' ' + v.slice(5,7);
+  if (v.length > 7) f += ' ' + v.slice(7,9);
   input.value = f;
 }
 
@@ -237,14 +237,14 @@ function showToast(msg, ms = 3000) {
 
 function getCatLabel(cat) {
   const map = {
-    first: { ru: 'Первые', kg: 'Биринчи' },
-    second: { ru: 'Вторые', kg: 'Экинчи' },
-    special: { ru: 'Заказное', kg: 'Заказ' },
-    shashlik: { ru: 'Шашлык', kg: 'Кебаб' },
-    salad: { ru: 'Салат', kg: 'Салат' },
-    dessert: { ru: 'Десерт', kg: 'Десерт' },
-    drink: { ru: 'Напиток', kg: 'Суусундук' },
-    fastfood: { ru: 'Fast-Food', kg: 'Fast-Food' }
+    first:    {ru:'Первые',     kg:'Биринчи'},
+    second:   {ru:'Вторые',     kg:'Экинчи'},
+    special:  {ru:'Заказное',   kg:'Заказ'},
+    shashlik: {ru:'Шашлык',     kg:'Кебаб'},
+    salad:    {ru:'Салат',      kg:'Салат'},
+    dessert:  {ru:'Десерт',     kg:'Десерт'},
+    drink:    {ru:'Напиток',    kg:'Суусундук'},
+    fastfood: {ru:'Fast-Food',  kg:'Fast-Food'}
   };
   return map[cat]?.[lang] || '';
 }
@@ -257,14 +257,6 @@ function applyTheme() {
   if (moon) moon.style.display = theme === 'dark' ? 'none' : '';
   if (sun)  sun.style.display  = theme === 'dark' ? '' : 'none';
 }
-
-// Слушаем если пользователь меняет тему в системе
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (!localStorage.getItem('theme')) {
-    theme = e.matches ? 'dark' : 'light';
-    applyTheme();
-  }
-});
 
 // ── LANGUAGE ──────────────────────────────────────────────
 function applyLang() {
@@ -285,10 +277,10 @@ function applyLang() {
 
 // ── CART LOGIC ────────────────────────────────────────────
 function addItem(item, variant) {
-  const cid = variant ? `${item.id}_${variant.label}` : String(item.id);
-  const price = variant ? variant.price : item.price;
+  const cid    = variant ? `${item.id}_${variant.label}` : String(item.id);
+  const price  = variant ? variant.price : item.price;
   const suffix = variant ? ` (${variant.label})` : '';
-  const name = (lang === 'ru' ? item.name : (item.nameKg || item.name)) + suffix;
+  const name   = (lang === 'ru' ? item.name : (item.nameKg || item.name)) + suffix;
 
   const existing = cart.find(c => c.cid === cid);
   if (existing) {
@@ -320,7 +312,7 @@ function removeItem(cid) {
 
 function updateCartBadge() {
   const total = cart.reduce((s, i) => s + i.qty, 0);
-  ['cartBadge', 'bottomBadge'].forEach(id => {
+  ['cartBadge','bottomBadge'].forEach(id => {
     const el = $(id);
     if (!el) return;
     el.textContent = total;
@@ -329,10 +321,10 @@ function updateCartBadge() {
 }
 
 function renderCartItems() {
-  const wrap = $('cartItems');
-  const empty = $('cartEmpty');
+  const wrap    = $('cartItems');
+  const empty   = $('cartEmpty');
   const totWrap = $('cartTotalWrap');
-  const totEl = $('cartTotalPrice');
+  const totEl   = $('cartTotalPrice');
   if (!wrap) return;
 
   if (cart.length === 0) {
@@ -414,7 +406,7 @@ function createCard(item) {
 
   const name = lang === 'ru' ? item.name : (item.nameKg || item.name);
   const desc = lang === 'ru' ? item.description : (item.descriptionKg || item.description);
-  const cat = getCatLabel(item.category);
+  const cat  = getCatLabel(item.category);
 
   let priceStr;
   if (item.variants?.length) {
@@ -443,15 +435,15 @@ function createCard(item) {
       <div class="card-price">${priceStr} <small>${t('currency')}</small></div>
       <div class="card-actions">
         ${item.variants?.length
-      ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
-      : qty === 0
-        ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
-        : `<div class="qty-ctrl">
+          ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
+          : qty === 0
+            ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
+            : `<div class="qty-ctrl">
                  <button class="qty-btn" onclick="decreaseQty('${item.id}');event.stopPropagation()">−</button>
                  <span class="qty-val">${qty}</span>
                  <button class="qty-btn" onclick="increaseQty('${item.id}');event.stopPropagation()">+</button>
                </div>`
-    }
+        }
       </div>
     </div>
   `;
@@ -493,16 +485,16 @@ function showDishDetail(id) {
   }
 
   $('dishModalTitle').textContent = name;
-  $('dishName').textContent = name;
-  $('dishDesc').textContent = desc || '';
-  $('dishPrice').textContent = priceText;
-  $('dishIngList').innerHTML = ings.map(i => `<li>${i}</li>`).join('');
+  $('dishName').textContent       = name;
+  $('dishDesc').textContent       = desc || '';
+  $('dishPrice').textContent      = priceText;
+  $('dishIngList').innerHTML      = ings.map(i => `<li>${i}</li>`).join('');
 
   // Build slider
   const images = dish.images?.length ? dish.images : [dish.image];
   slideIndex = 0;
   const slider = $('dishSlider');
-  const dots = $('slideDots');
+  const dots   = $('slideDots');
   slider.innerHTML = '';
   dots.innerHTML = '';
 
@@ -511,12 +503,12 @@ function showDishDetail(id) {
     slide.className = 'slide-item';
     slide.innerHTML = `<img src="${src}" alt="${name}" loading="lazy"
       onerror="this.src='${PLACEHOLDER}'"
-      onclick="openLightbox('${src.replace(/'/g, "\\'")}','${name.replace(/'/g, "\\'")}')">`;
+      onclick="openLightbox('${src.replace(/'/g,"\\'")}','${name.replace(/'/g,"\\'")}')">`;
     slider.appendChild(slide);
 
     const dot = document.createElement('button');
     dot.className = `slide-dot${i === 0 ? ' active' : ''}`;
-    dot.setAttribute('aria-label', `Фото ${i + 1}`);
+    dot.setAttribute('aria-label', `Фото ${i+1}`);
     dot.addEventListener('click', () => { slideIndex = i; updateSlider(); });
     dots.appendChild(dot);
   });
@@ -576,12 +568,12 @@ function buildOrderSummary() {
 }
 
 function validateOrder() {
-  const btn = $('submitOrderBtn');
+  const btn   = $('submitOrderBtn');
   if (!btn) return;
-  const name = $('custName')?.value.trim();
-  const phone = $('custPhone')?.value.replace(/\s/g, '');
-  const pay = document.querySelector('input[name="payment"]:checked');
-  const ok = cart.length > 0 && name?.length > 0 && isValidPhone(phone) && !!pay;
+  const name  = $('custName')?.value.trim();
+  const phone = $('custPhone')?.value.replace(/\s/g,'');
+  const pay   = document.querySelector('input[name="payment"]:checked');
+  const ok    = cart.length > 0 && name?.length > 0 && isValidPhone(phone) && !!pay;
   btn.disabled = !ok;
   btn.classList.toggle('pulse', ok);
 }
@@ -623,62 +615,112 @@ function showOrderForm() {
 }
 
 function buildOrderText(name, phone, comment, payment) {
-  let lines = `🍽 ${lang === 'ru' ? 'Новый заказ — Кафе Cholpon' : 'Жаңы заказ — Cholpon кафе'}\n\n`;
+  const title = lang === 'ru' ? 'Новый заказ — Кафе Cholpon' : 'Жаңы заказ — Cholpon кафе';
+  let lines = `<b>🍽 ${title}</b>\n`;
+  lines += `━━━━━━━━━━━━━━━━\n`;
+
   let total = 0;
   cart.forEach(item => {
     const sub = item.price * item.qty;
     total += sub;
-    lines += `• ${item.name} × ${item.qty} = ${sub} ${t('currency')}\n`;
+    lines += `• ${item.name} × ${item.qty} — <b>${sub} ${t('currency')}</b>\n`;
   });
-  lines += `\n💰 ${t('cart-total')} ${total} ${t('currency')}\n`;
-  lines += `\n👤 ${name}\n📞 +996 ${phone}`;
+
+  lines += `━━━━━━━━━━━━━━━━\n`;
+  lines += `💰 <b>${t('cart-total')} ${total} ${t('currency')}</b>\n`;
+  lines += `━━━━━━━━━━━━━━━━\n`;
+  lines += `👤 <b>${name}</b>\n`;
+  lines += `📞 +996 ${phone}\n`;
 
   if (payment) {
     const pm = payment === 'cash' ? t('payment-cash') : payment === 'card' ? t('payment-card') : 'MBank';
-    lines += `\n💳 ${pm}`;
+    lines += `💳 ${pm}\n`;
   }
 
-  if (orderType === 'cafe' && tableNum) lines += `\n📍 Стол №${tableNum}`;
-  if (orderType === 'pickup') lines += `\n📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}`;
-  if (orderType === 'delivery' && deliveryInfo?.address) lines += `\n📍 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}`;
-  if (comment?.trim()) lines += `\n📝 ${comment.trim()}`;
+  if (orderType === 'cafe' && tableNum)  lines += `📍 Стол №${tableNum}\n`;
+  if (orderType === 'pickup')            lines += `📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}\n`;
+  if (orderType === 'delivery' && deliveryInfo?.address) {
+    lines += `🚗 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}\n`;
+  }
+  if (comment?.trim()) lines += `\n📝 <i>${comment.trim()}</i>`;
 
   return lines;
 }
 
-function submitOrder(e) {
+// ── SEND TO TELEGRAM ─────────────────────────────────────
+async function sendToTelegram(text) {
+  // Проверяем что токен и chat_id заполнены
+  if (!TG_BOT_TOKEN || TG_BOT_TOKEN === 'ТВОЙ_ТОКЕН_БОТА') {
+    alert('⚠️ Вставь TG_BOT_TOKEN и TG_CHAT_ID в начало script.js!');
+    return false;
+  }
+  try {
+    const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TG_CHAT_ID,
+        text: text,
+        parse_mode: 'HTML'
+      })
+    });
+    const data = await res.json();
+    if (!data.ok) {
+      console.error('Telegram error:', data);
+      alert('❌ Ошибка отправки. Проверь токен и chat_id.');
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error('Network error:', err);
+    alert('❌ Нет соединения. Попробуй ещё раз.');
+    return false;
+  }
+}
+
+async function submitOrder(e) {
   e.preventDefault();
 
-  const name = $('custName')?.value.trim();
-  const rawPhone = $('custPhone')?.value.trim();
-  const phone = rawPhone.replace(/\s/g, '');
+  const name    = $('custName')?.value.trim();
+  const rawPhone= $('custPhone')?.value.trim();
+  const phone   = rawPhone.replace(/\s/g,'');
   const comment = $('custComment')?.value.trim() || '';
   const payment = document.querySelector('input[name="payment"]:checked')?.value || '';
-  const addr = $('custAddr')?.value.trim() || '';
+  const addr    = $('custAddr')?.value.trim() || '';
 
-  if (!name) { alert(t('alert-fill-fields')); return; }
+  if (!name)                { alert(t('alert-fill-fields')); return; }
   if (!isValidPhone(phone)) { alert(t('alert-invalid-phone')); return; }
-  if (!cart.length) { alert(t('alert-cart-empty')); return; }
+  if (!cart.length)         { alert(t('alert-cart-empty')); return; }
 
   if (orderType === 'delivery') {
     if (!deliveryInfo) deliveryInfo = {};
     deliveryInfo.address = addr || deliveryInfo.address;
   }
 
-  const text = buildOrderText(name, rawPhone, comment, payment);
-  window.open(`https://wa.me/${CAFE_WA}?text=${encodeURIComponent(text)}`, '_blank');
+  // Блокируем кнопку на время отправки
+  const btn = $('submitOrderBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Отправляем...'; }
 
-  cart = [];
-  saveCart();
-  updateCartBadge();
-  renderMenu();
-  closeModal('orderModal');
-  alert(t('alert-order-sent'));
+  const text = buildOrderText(name, rawPhone, comment, payment);
+  const ok = await sendToTelegram(text);
+
+  if (ok) {
+    cart = [];
+    saveCart();
+    updateCartBadge();
+    renderMenu();
+    closeModal('orderModal');
+    alert(t('alert-order-sent'));
+  } else {
+    // Возвращаем кнопку если ошибка
+    if (btn) { btn.disabled = false; btn.textContent = t('order-submit'); }
+  }
 }
 
 // ── LIGHTBOX ──────────────────────────────────────────────
 function openLightbox(src, alt) {
-  const lb = $('lightbox');
+  const lb  = $('lightbox');
   const img = $('lightboxImg');
   if (!lb || !img) return;
   img.src = src;
@@ -686,7 +728,7 @@ function openLightbox(src, alt) {
   lb.classList.add('open');
 }
 function closeLightbox() {
-  const lb = $('lightbox');
+  const lb  = $('lightbox');
   const img = $('lightboxImg');
   if (!lb || !img) return;
   lb.classList.remove('open');
@@ -694,7 +736,7 @@ function closeLightbox() {
 }
 
 // ── ORDER TYPE FLOW ───────────────────────────────────────
-function lockScroll() { document.body.classList.add('locked'); }
+function lockScroll()   { document.body.classList.add('locked'); }
 function unlockScroll() { document.body.classList.remove('locked'); }
 
 function setOrderType(type) {
@@ -714,13 +756,13 @@ function initOrderTypeModal() {
     if (tp) {
       const n = parseInt(tp, 10);
       if (n >= 1 && n <= 11) {
-        tableNum = n;
+        tableNum  = n;
         orderType = 'cafe';
         showToast(`${t('toast-table')}${n}`);
         return;
       }
     }
-  } catch { }
+  } catch {}
 
   // Hide "Я в кафе" when no table param
   const cafeBtn = $('otCafe');
@@ -800,7 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     const saved = localStorage.getItem('deliveryInfo');
     if (saved) deliveryInfo = JSON.parse(saved);
-  } catch { }
+  } catch {}
 
   // ── Theme toggle
   $('themeToggle')?.addEventListener('click', () => {
@@ -832,7 +874,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Hamburger
   const menuToggle = $('menuToggle');
-  const mainNav = $('mainNav');
+  const mainNav    = $('mainNav');
   menuToggle?.addEventListener('click', () => {
     const open = mainNav.classList.toggle('open');
     menuToggle.classList.toggle('open', open);
@@ -846,8 +888,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Hero buttons
-  $('viewMenuBtn')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
-  $('viewContactBtn')?.addEventListener('click', () => $('contact')?.scrollIntoView({ behavior: 'smooth' }));
+  $('viewMenuBtn')?.addEventListener('click',    () => $('menu')?.scrollIntoView({ behavior:'smooth' }));
+  $('viewContactBtn')?.addEventListener('click', () => $('contact')?.scrollIntoView({ behavior:'smooth' }));
 
   // ── Category filter
   document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -855,7 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
       activeCategory = btn.dataset.category;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
       renderMenu();
-      $('menu')?.scrollIntoView({ behavior: 'smooth' });
+      $('menu')?.scrollIntoView({ behavior:'smooth' });
     });
   });
 
@@ -863,7 +905,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('cartBtn')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
 
   // ── Bottom nav
-  $('bnMenu')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
+  $('bnMenu')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior:'smooth' }));
   $('bnCart')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
 
   // ── Cart modal actions
@@ -912,7 +954,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal('orderTypeModal');
     openModal('tableModal');
   });
-  $('otPickup')?.addEventListener('click', () => setOrderType('pickup'));
+  $('otPickup')?.addEventListener('click',   () => setOrderType('pickup'));
   $('otDelivery')?.addEventListener('click', () => {
     closeModal('orderTypeModal');
     openModal('deliveryModal');
@@ -935,15 +977,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('deliveryForm')?.addEventListener('submit', e => {
     e.preventDefault();
-    const name = $('dlvName')?.value.trim();
-    const phone = $('dlvPhone')?.value.trim();
+    const name    = $('dlvName')?.value.trim();
+    const phone   = $('dlvPhone')?.value.trim();
     const address = $('dlvAddress')?.value.trim();
-    if (!name || !isValidPhone(phone.replace(/\s/g, '')) || !address) {
+    if (!name || !isValidPhone(phone.replace(/\s/g,'')) || !address) {
       alert(t('alert-fill-fields'));
       return;
     }
     deliveryInfo = { name, phone, address };
-    try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch { }
+    try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch {}
     setOrderType('delivery');
   });
 
@@ -966,6 +1008,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($('lightbox')?.classList.contains('open')) closeLightbox();
   });
 });
+
+// ── EXPOSE GLOBALS (needed for inline onclick in dynamically-created HTML) ──
+window.decreaseQty      = decreaseQty;
+window.increaseQty      = increaseQty;
+window.removeItem       = removeItem;
+window.handleAddToCart  = handleAddToCart;
+window.openLightbox     = openLightbox;
+
+// ── PWA INSTALL BANNER ────────────────────────────────────
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Не показываем если уже закрывали
+  if (localStorage.getItem('pwaDismissed')) return;
+
+  // Показываем баннер через 4 секунды
+  setTimeout(() => {
+    const banner = $('pwaBanner');
+    if (banner) banner.classList.add('show');
+  }, 4000);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Кнопка "Установить"
+  $('pwaInstallBtn')?.addEventListener('click', async () => {
+    const banner = $('pwaBanner');
+    if (!deferredPrompt) {
+      // iPhone — нет API, показываем подсказку
+      showToast('На iPhone: нажмите Поделиться → На экран Домой', 5000);
+      banner?.classList.remove('show');
+      return;
+    }
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') showToast('✅ Приложение установлено!');
+    deferredPrompt = null;
+    banner?.classList.remove('show');
+  });
+
+  // Кнопка "Закрыть"
+  $('pwaCloseBtn')?.addEventListener('click', () => {
+    $('pwaBanner')?.classList.remove('show');
+    localStorage.setItem('pwaDismissed', '1');
+  });
+});
+
+// Скрываем если установлено
+window.addEventListener('appinstalled', () => {
+  $('pwaBanner')?.classList.remove('show');
+  showToast('✅ Приложение установлено!');
+});
+
 // ── PWA SERVICE WORKER ────────────────────────────────────
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
