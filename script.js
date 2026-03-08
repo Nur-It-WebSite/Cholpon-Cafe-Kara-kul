@@ -283,6 +283,7 @@ let slideIndex = 0;
 let variantCb = null;
 let activeDishId = null;
 let deferredPrompt = null;
+const IS_IOS = /iphone|ipad|ipod/i.test(navigator.userAgent || '');
 
 // ── HELPERS ───────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -1133,9 +1134,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Кнопка "Установить"
   $('pwaInstallBtn')?.addEventListener('click', async () => {
     const banner = $('pwaBanner');
-    if (!deferredPrompt) {
-      // iPhone — нет API, показываем подсказку
+    // iPhone — нет нормального beforeinstallprompt, показываем подсказку
+    if (IS_IOS) {
       showToast('На iPhone: нажмите Поделиться → На экран Домой', 5000);
+      banner?.classList.remove('show');
+      return;
+    }
+    // Не iOS, но event не пришёл: либо уже установлено, либо PWA ещё не готова
+    if (!deferredPrompt) {
+      showToast('Установка пока недоступна или приложение уже установлено.', 4000);
       banner?.classList.remove('show');
       return;
     }
