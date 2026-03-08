@@ -78,6 +78,7 @@
       <!-- Category Filter -->
       <div class="filter-wrap" id="categoryFilter">
         <button class="filter-btn active" data-category="all" data-i18n="filter-all">Все</button>
+        <button class="filter-btn" data-category="hits" data-i18n="filter-hits">Хиты</button>
         <button class="filter-btn" data-category="first" data-i18n="filter-first">Первые блюда</button>
         <button class="filter-btn" data-category="second" data-i18n="filter-second">Вторые блюда</button>
         <button class="filter-btn" data-category="special" data-i18n="filter-special">Заказные</button>
@@ -142,6 +143,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- CART SUMMARY BAR -->
+  <div class="cart-summary-bar" id="cartSummaryBar">
+    <div class="cart-summary-info">
+      <span id="cartSummaryText">0 блюд</span>
+      <span class="cart-summary-price" id="cartSummaryPrice">0 сом</span>
+    </div>
+    <button class="btn btn-primary cart-summary-btn" id="cartSummaryCheckout">Оформить</button>
+  </div>
 
   <!-- ======= BOTTOM NAV (mobile) ======= -->
   <nav class="bottom-nav" id="bottomNav">
