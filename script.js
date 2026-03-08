@@ -850,6 +850,12 @@ function setOrderType(type) {
   closeModal('deliveryModal');
   unlockScroll();
   document.body.classList.toggle('browse', type === 'browse');
+
+  // Показ баннера установки PWA после выбора способа заказа
+  if (deferredPrompt && !localStorage.getItem('pwaDismissed')) {
+    const banner = $('pwaBanner');
+    if (banner) banner.classList.add('show');
+  }
 }
 
 function initOrderTypeModal() {
@@ -1118,14 +1124,9 @@ window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   deferredPrompt = e;
 
-  // Не показываем если уже закрывали
+  // Если пользователь уже закрывал баннер — больше не предлагаем автоматически.
+  // Сам баннер показываем после выбора способа заказа (setOrderType).
   if (localStorage.getItem('pwaDismissed')) return;
-
-  // Показываем баннер через 4 секунды
-  setTimeout(() => {
-    const banner = $('pwaBanner');
-    if (banner) banner.classList.add('show');
-  }, 4000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
