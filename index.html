@@ -312,30 +312,44 @@
       </div>
       <div class="modal-body">
         <form id="orderForm" novalidate>
-          <div class="form-field">
-            <label for="custName" data-i18n="order-name">Имя</label>
-            <input type="text" id="custName" required autocomplete="given-name" />
+
+          <!-- Подсказка для повторного заказа QR-гостя (скрыта по умолчанию) -->
+          <div id="repeatOrderHint" class="repeat-order-hint" style="display:none">
+            <span class="roh-icon">✅</span>
+            <span data-i18n="repeat-order-hint">Данные сохранены. Просто добавьте комментарий если нужно.</span>
           </div>
-          <div class="form-field">
-            <label for="custPhone" data-i18n="order-phone">Телефон</label>
-            <div class="phone-wrap">
-              <span class="phone-prefix">+996</span>
-              <input type="tel" id="custPhone" placeholder="998 25 20 23" maxlength="12" required autocomplete="tel" />
+
+          <!-- Поля имени и телефона (скрываются для повторных заказов QR-гостей) -->
+          <div id="guestFields">
+            <div class="form-field">
+              <label for="custName" data-i18n="order-name">Имя</label>
+              <input type="text" id="custName" autocomplete="given-name" />
             </div>
-            <small data-i18n="order-phone-hint">Введите номер без 0, например: 998 25 20 23</small>
+            <div class="form-field">
+              <label for="custPhone" data-i18n="order-phone">Телефон</label>
+              <div class="phone-wrap">
+                <span class="phone-prefix">+996</span>
+                <input type="tel" id="custPhone" placeholder="998 25 20 23" maxlength="12" autocomplete="tel" />
+              </div>
+              <small data-i18n="order-phone-hint">Введите номер без 0, например: 998 25 20 23</small>
+            </div>
           </div>
+
           <div class="form-field" id="addrField" style="display:none">
             <label for="custAddr" data-i18n="order-address">Адрес доставки</label>
             <input type="text" id="custAddr" autocomplete="street-address" />
           </div>
+
           <div class="form-field">
             <label for="custComment" data-i18n="order-comment">Комментарий (необязательно)</label>
             <textarea id="custComment" rows="3"></textarea>
           </div>
+
           <div class="form-field">
             <label data-i18n="order-summary">Состав заказа:</label>
             <div id="orderSummary" class="order-summary"></div>
           </div>
+
           <div class="form-field">
             <label data-i18n="payment-method-label">Способ оплаты</label>
             <div class="payment-opts" id="paymentOpts">
@@ -360,6 +374,7 @@
               <p data-i18n="mbank-scan">Отсканируйте QR для оплаты в MBank</p>
             </div>
           </div>
+
           <div class="form-actions">
             <button type="button" class="btn btn-outline" id="cancelOrderBtn" data-i18n="order-cancel">Отмена</button>
             <button type="submit" class="btn btn-primary" id="submitOrderBtn" disabled
@@ -423,5 +438,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
