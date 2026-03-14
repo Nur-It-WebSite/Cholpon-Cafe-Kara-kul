@@ -293,7 +293,7 @@ ul { list-style: none; }
 
 .card-body { padding: 14px 14px 8px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 
-/* ── НАЗВАНИЕ БЛЮДА — крупнее и жирнее ─────────── */
+/* ──НАЗВАНИЕ БЛЮДА — крупнее и жирнее─────────── */
 .card-name {
   font-family: var(--ff-display);
   font-size: 1.2rem;

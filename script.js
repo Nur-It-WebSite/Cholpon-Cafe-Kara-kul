@@ -902,19 +902,20 @@ function initOrderTypeModal() {
 
     if (tableParam) {
       const tableNumber = parseInt(tableParam, 10);
-
-      // проверяем что это число и оно больше 0
       if (!isNaN(tableNumber) && tableNumber >= 1) {
         tableNum = tableNumber;
         orderType = 'cafe';
-
         showToast(`${t('toast-table')}${tableNumber}`);
-        return;
+        return; // ← QR-гость: модалка не нужна
       }
     }
   } catch (error) {
     console.error("Error parsing table number:", error);
   }
+
+  // Обычный посетитель — показываем модалку выбора типа заказа
+  lockScroll();
+  openModal('orderTypeModal');
 }
 
 function buildTableGrid() {
