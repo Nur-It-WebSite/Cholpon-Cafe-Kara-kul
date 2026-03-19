@@ -75,7 +75,6 @@ const menuData = [
   { id: 62, name: 'Компот', nameKg: 'Компот', description: 'Компот из сухофруктов', descriptionKg: 'Куру жемиштерден компот', image: './Меню/Компот.webp', category: 'drink', variants: [{ label: '1 л', price: 100 }, { label: '1.5 л', price: 140 }, { label: '2 л', price: 170 }] },
   { id: 63, name: 'Кола', nameKg: 'Кола', description: 'Coca-Cola', descriptionKg: 'Кола', image: './Меню/Кола.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
   { id: 64, name: 'Фанта', nameKg: 'Фанта', description: 'Fanta', descriptionKg: 'Фанта', image: './Меню/Фанта.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
-  // ✅ НОВОЕ: Лимонад
   { id: 85, name: 'Лимонад', nameKg: 'Лимонад', description: 'Освежающий домашний лимонад', descriptionKg: 'Сергитүүчү үй лимонады', image: './Меню/лимонад.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 160 }, { label: '2 л', price: 200 }] },
   // ФАСТ-ФУД
   { id: 66, name: 'Стрипсы корейские', nameKg: 'Корей стрипсы', description: 'Корейские куриные стрипсы', descriptionKg: 'Корей тоок стрипсы', price: 290, image: './Меню/Стрипсы.webp', category: 'fastfood', ingredients: ['Курица', 'Специи', 'Масло'], ingredientsKg: ['Тоок', 'Азыктар', 'Май'] },
@@ -88,14 +87,9 @@ const menuData = [
   { id: 74, name: 'Пицца «Цезарь»', nameKg: 'Пицца «Цезарь»', description: 'Пицца Цезарь', descriptionKg: 'Цезарь пиццасы', image: './Меню/Пицца Цезарь.webp', category: 'fastfood', ingredients: ['Тесто', 'Сыр', 'Курица', 'Салат', 'Соус'], ingredientsKg: ['Камыр', 'Сыр', 'Тоок', 'Салат', 'Соус'], variants: [{ label: '30 см', price: 570 }, { label: '40 см', price: 770 }] },
   { id: 75, name: 'Рамен', nameKg: 'Рамён', description: 'Японский рамён', descriptionKg: 'Жапон рамёну', price: 260, image: './Меню/Рамен.webp', category: 'fastfood', ingredients: ['Лапша', 'Бульон', 'Мясо', 'Овощи'], ingredientsKg: ['Лапша', 'Бульон', 'Эт', 'Жашылчалар'] },
   { id: 81, name: 'Мини самсы', nameKg: 'Мини кум самсы', description: 'Мини песочные самсы', descriptionKg: 'Мини кум самсы', price: 55, image: './Меню/Мини самсы .webp', category: 'fastfood', ingredients: ['Тесто', 'Начинка'], ingredientsKg: ['Камыр', 'Начинка'] },
-  // ✅ НОВОЕ: Обычные самсы
   { id: 86, name: 'Самсы', nameKg: 'Самсы', description: 'Сочные самсы из слоёного теста', descriptionKg: 'Катмарлуу камырдан шырындуу самсы', price: 80, image: './Меню/Самсы.webp', category: 'fastfood', ingredients: ['Тесто', 'Мясо', 'Лук'], ingredientsKg: ['Камыр', 'Эт', 'Пияз'] },
   { id: 82, name: 'Хлеб', nameKg: 'Нан', description: 'Свежий хлеб', descriptionKg: 'Жаңы нан', price: 45, image: './Меню/Нан.webp', category: 'fastfood', ingredients: ['Мука', 'Вода', 'Дрожжи'], ingredientsKg: ['Ун', 'Суу', 'Ачыткы'] },
   { id: 83, name: 'Чай', nameKg: 'Чай', description: 'Горячий чай', descriptionKg: 'Ысык чай', price: 20, image: './Меню/Чай.webp', category: 'fastfood', ingredients: ['Чай', 'Вода'], ingredientsKg: ['Чай', 'Суу'] },
-  // ДЕСЕРТЫ
-  //
-  // ✅ ИЗМЕНЕНО: Сан-Себастьян теперь с вариантами (обычный и фисташковый),
-  //    каждый со своей картинкой через variantImages
   {
     id: 76,
     name: 'Сан-Себастьян',
