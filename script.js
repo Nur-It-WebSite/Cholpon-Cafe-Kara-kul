@@ -499,25 +499,56 @@ function showOrderForm() {
   document.querySelectorAll('input[name="payment"]').forEach(r => r.checked = false);
   buildOrderSummary(); validateOrder(); closeModal('cartModal'); openModal('orderModal');
 }
-
 function buildOrderText(name, phone, comment, payment) {
-  const title = lang === 'ru' ? 'Новый заказ — Кафе Cholpon' : 'Жаңы заказ — Cholpon кафе';
-  let lines = `<b>🍽 ${title}</b>\n━━━━━━━━━━━━━━━━\n`;
+  const title = lang === 'ru'
+    ? 'Новый заказ'
+    : 'Жаңы заказ';
+
+  let lines = `<b>🍽 ${title}</b>\n`;
+
+  // 👉 ВСТАВЛЯЕМ СЮДА (сразу после заголовка)
+  if (orderType === 'cafe' && tableNum) {
+    lines += `📍 Стол №${tableNum}\n`;
+  }
+
+  lines += `━━━━━━━━━━━━━━━━\n`;
+
   let total = 0;
+
   cart.forEach(item => {
-    const sub = item.price * item.qty; total += sub;
+    const sub = item.price * item.qty;
+    total += sub;
     lines += `• ${item.name} × ${item.qty} — <b>${sub} ${t('currency')}</b>\n`;
   });
-  lines += `━━━━━━━━━━━━━━━━\n💰 <b>${t('cart-total')} ${total} ${t('currency')}</b>\n━━━━━━━━━━━━━━━━\n`;
+
+  lines += `━━━━━━━━━━━━━━━━\n`;
+  lines += `💰 <b>${t('cart-total')} ${total} ${t('currency')}</b>\n`;
+  lines += `━━━━━━━━━━━━━━━━\n`;
+
   lines += `👤 <b>${name}</b>\n📞 +996 ${phone}\n`;
+
   if (payment) {
-    const pm = payment === 'cash' ? t('payment-cash') : payment === 'card' ? t('payment-card') : 'MBank';
+    const pm =
+      payment === 'cash'
+        ? t('payment-cash')
+        : payment === 'card'
+        ? t('payment-card')
+        : 'MBank';
     lines += `💳 ${pm}\n`;
   }
-  if (orderType === 'cafe' && tableNum) lines += `📍 Стол №${tableNum}\n`;
-  if (orderType === 'pickup') lines += `📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}\n`;
-  if (orderType === 'delivery' && deliveryInfo?.address) lines += `🚗 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}\n`;
-  if (comment?.trim()) lines += `\n📝 <i>${comment.trim()}</i>`;
+
+  if (orderType === 'pickup') {
+    lines += `📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}\n`;
+  }
+
+  if (orderType === 'delivery' && deliveryInfo?.address) {
+    lines += `🚗 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}\n`;
+  }
+
+  if (comment?.trim()) {
+    lines += `\n📝 <i>${comment.trim()}</i>`;
+  }
+
   return lines;
 }
 
