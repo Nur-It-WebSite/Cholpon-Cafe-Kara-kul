@@ -604,7 +604,7 @@ async function submitOrder(e) {
   if (sent) {
     openModal('successModal');
   } else {
-    // Резерв — WhatsApp если Telegram не сработал
+    // Резерв — WhatsApp если Telegram не ср  аботал
     const waText = text.replace(/<[^>]*>/g, '');
     window.open(`https://wa.me/${CAFE_WA}?text=${encodeURIComponent(waText)}`, '_blank');
     openModal('successModal');

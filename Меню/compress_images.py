@@ -113,5 +113,4 @@ if __name__ == '__main__':
 
     if args.quality < 10 or args.quality > 95:
         raise ValueError('quality должен быть в диапазоне 10..95')
-
     compress_images(folder=args.folder, quality=args.quality, recursive=args.recursive, include_png=args.png)
