@@ -167,9 +167,7 @@ const translations = {
   }
 };
 
-const i18n = translations;
-
-// ── STATE ─────────────────────────────────────────────────
+const i18n = translations;// ── STATE ─────────────────────────────────────────────────
 let lang = localStorage.getItem('lang') || 'ru';
 let theme = localStorage.getItem('theme') ||
   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -181,7 +179,6 @@ let activeCategory = 'all';
 let slideIndex = 0;
 let activeDishId = null;
 let tableGuestData = null;
-let pendingAddItemId = null;
 
 function loadTableGuestData() {
   try { const raw = localStorage.getItem('tableGuestData'); if (raw) tableGuestData = JSON.parse(raw); }
@@ -197,8 +194,15 @@ function isQrTableSession() { return orderType === 'cafe' && tableNum !== null; 
 const $ = id => document.getElementById(id);
 const t = key => i18n[lang]?.[key] ?? i18n.ru[key] ?? key;
 
-function loadCart() { try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch { cart = []; } }
-function saveCart() { try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { } }
+function loadCart() { 
+  try { 
+    const saved = localStorage.getItem('cart');
+    cart = saved ? JSON.parse(saved) : [];
+  } catch { cart = []; }
+}
+function saveCart() { 
+  try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { } 
+}
 
 function formatPhone(input) {
   let v = input.value.replace(/\D/g, '').slice(0, 9);
@@ -251,7 +255,7 @@ function addItem(item, variant) {
   const existing = cart.find(c => c.cid === cid);
   if (existing) { existing.qty++; }
   else { cart.push({ cid, id: item.id, name, price, image: item.image, qty: 1 }); }
-  saveCart(); updateCartBadge(); updateCartSummary(); renderMenu();
+  saveCart(); updateCartBadge(); renderMenu();
   showToast(`${t('toast-added')} ${name}`);
   if (wasEmpty) highlightCartEntry();
 }
@@ -362,7 +366,7 @@ function createCard(item) {
     const mn = Math.min(...prices), mx = Math.max(...prices);
     priceStr = mn === mx ? `${mn}` : `${mn}–${mx}`;
   } else { priceStr = `${item.price}`; }
-  const existing = !item.variants?.length && cart.find(c => c.id === item.id && c.cid === String(item.id));
+  const existing = !item.variants?.length && cart.find(c => c.cid === String(item.id));
   const qty = existing ? existing.qty : 0;
   card.innerHTML = `
     <div class="card-img-wrap">
@@ -390,17 +394,11 @@ function createCard(item) {
   card.addEventListener('click', e => { if (e.target.closest('.card-actions')) return; showDishDetail(item.id); });
   return card;
 }
+
 function handleAddToCart(id, e) {
   e.stopPropagation();
   const item = menuData.find(i => i.id === id); if (!item) return;
-
-  if (!orderType) {
-    pendingAddItemId = id; 
-    lockScroll();
-    openModal('orderTypeModal');
-    return;
-  }
-
+  
   if (item.variants?.length) openVariantModal(item);
   else addItem(item, null);
 }
@@ -483,10 +481,31 @@ function validateOrder() {
   btn.disabled = !ok; btn.classList.toggle('pulse', ok);
 }
 
-function showOrderForm() {
-  if (cart.length === 0) { alert(t('alert-cart-empty')); return; }
+// ГЛАВНАЯ ФУНКЦИЯ - вызывается при нажатии "Оформить заказ"
+function startCheckout() {
+  if (cart.length === 0) { 
+    alert(t('alert-cart-empty')); 
+    return; 
+  }
+  
+  // Сначала закрываем корзину
+  closeModal('cartModal');
+  
+  // Если тип заказа еще не выбран - показываем модалку выбора
+  if (!orderType) {
+    lockScroll();
+    openModal('orderTypeModal');
+    return;
+  }
+  
+  // Если тип уже выбран - показываем форму заказа
+  openOrderFormModal();
+}
+
+function openOrderFormModal() {
   const orderForm = $('orderForm'); if (orderForm) orderForm.reset();
   const guestFieldsWrap = $('guestFields'); const repeatHint = $('repeatOrderHint');
+  
   if (isQrTableSession() && tableGuestData) {
     if (guestFieldsWrap) guestFieldsWrap.style.display = 'none';
     if (repeatHint) repeatHint.style.display = '';
@@ -500,69 +519,56 @@ function showOrderForm() {
       if (a) a.value = deliveryInfo.address || '';
     }
   }
-  const af = $('addrField'); if (af) af.style.display = orderType === 'delivery' ? '' : 'none';
-  const pc = $('payCard'); if (pc) pc.style.display = orderType === 'delivery' ? 'none' : '';
-  const qr = $('mbankQr'); if (qr) qr.style.display = 'none';
+  
+  const af = $('addrField'); 
+  if (af) af.style.display = orderType === 'delivery' ? '' : 'none';
+  
+  const pc = $('payCard'); 
+  if (pc) pc.style.display = orderType === 'delivery' ? 'none' : '';
+  
   document.querySelectorAll('.pay-opt').forEach(o => o.classList.remove('selected'));
   document.querySelectorAll('input[name="payment"]').forEach(r => r.checked = false);
-  buildOrderSummary(); validateOrder(); closeModal('cartModal'); openModal('orderModal');
+  
+  buildOrderSummary(); 
+  validateOrder(); 
+  openModal('orderModal');
 }
+
 function buildOrderText(name, phone, comment, payment) {
-  const title = lang === 'ru'
-    ? 'Новый заказ'
-    : 'Жаңы заказ';
-
+  const title = lang === 'ru' ? 'Новый заказ' : 'Жаңы заказ';
   let lines = `<b>🍽 ${title}</b>\n`;
-
-  // 👉 ВСТАВЛЯЕМ СЮДА (сразу после заголовка)
   if (orderType === 'cafe' && tableNum) {
     lines += `📍 Стол №${tableNum}\n`;
   }
-
   lines += `━━━━━━━━━━━━━━━━\n`;
-
   let total = 0;
-
   cart.forEach(item => {
     const sub = item.price * item.qty;
     total += sub;
     lines += `• ${item.name} × ${item.qty} — <b>${sub} ${t('currency')}</b>\n`;
   });
-
   lines += `━━━━━━━━━━━━━━━━\n`;
   lines += `💰 <b>${t('cart-total')} ${total} ${t('currency')}</b>\n`;
   lines += `━━━━━━━━━━━━━━━━\n`;
-
   lines += `👤 <b>${name}</b>\n📞 +996 ${phone}\n`;
-
   if (payment) {
-    const pm =
-      payment === 'cash'
-        ? t('payment-cash')
-        : payment === 'card'
-        ? t('payment-card')
-        : 'MBank';
+    const pm = payment === 'cash' ? t('payment-cash') : payment === 'card' ? t('payment-card') : 'MBank';
     lines += `💳 ${pm}\n`;
   }
-
   if (orderType === 'pickup') {
     lines += `📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}\n`;
   }
-
   if (orderType === 'delivery' && deliveryInfo?.address) {
     lines += `🚗 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}\n`;
   }
-
   if (comment?.trim()) {
     lines += `\n📝 <i>${comment.trim()}</i>`;
   }
-
   return lines;
 }
 
 // ── SEND TO TELEGRAM ──────────────────────────────────────
 async function sendToTelegram(text) {
-  // Стол → группа, Самовывоз/Доставка → личка
   const chatId = (orderType === 'cafe') ? '-1003743803600' : '7994163787';
   try {
     const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
@@ -598,6 +604,9 @@ async function submitOrder(e) {
   if (orderType === 'delivery') {
     if (!deliveryInfo) deliveryInfo = {};
     deliveryInfo.address = addr || deliveryInfo.address;
+    deliveryInfo.name = name;
+    deliveryInfo.phone = rawPhone;
+    try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch { }
   }
 
   const btn = $('submitOrderBtn');
@@ -608,16 +617,19 @@ async function submitOrder(e) {
 
   cart = []; saveCart(); updateCartBadge(); renderMenu(); closeModal('orderModal');
 
-  // ✅ Красивая модалка вместо alert
   if (sent) {
     openModal('successModal');
   } else {
-    // Резерв — WhatsApp если Telegram не ср  аботал
     const waText = text.replace(/<[^>]*>/g, '');
     window.open(`https://wa.me/${CAFE_WA}?text=${encodeURIComponent(waText)}`, '_blank');
     openModal('successModal');
   }
 
+  // Сбрасываем тип заказа после оформления
+  orderType = null;
+  tableNum = null;
+  document.body.classList.remove('locked', 'browse');
+  
   if (btn) { btn.disabled = false; btn.textContent = t('order-submit'); }
 }
 
@@ -634,40 +646,30 @@ function closeLightbox() {
 // ── ORDER TYPE FLOW ───────────────────────────────────────
 function lockScroll() { document.body.classList.add('locked'); }
 function unlockScroll() { document.body.classList.remove('locked'); }
+
 function setOrderType(type) {
   orderType = type;
-  closeModal('orderTypeModal'); closeModal('tableModal'); closeModal('deliveryModal');
-  unlockScroll(); document.body.classList.toggle('browse', type === 'browse');
-
-  // Если был отложенный товар — добавить его
-  if (pendingAddItemId !== null) {
-    const item = menuData.find(i => i.id === pendingAddItemId);
-    pendingAddItemId = null;
-    if (item) {
-      if (item.variants?.length) openVariantModal(item);
-      else addItem(item, null);
-    }
+  closeModal('orderTypeModal'); 
+  closeModal('tableModal'); 
+  closeModal('deliveryModal');
+  unlockScroll(); 
+  document.body.classList.toggle('browse', type === 'browse');
+  
+  // После выбора типа заказа показываем форму заказа (если есть товары)
+  if (type !== 'browse' && cart.length > 0) {
+    openOrderFormModal();
   }
-}
-function initOrderTypeModal() {
-  try {
-    const params = new URLSearchParams(window.location.search);
-    const tableParam = params.get('table');
-    if (tableParam) {
-      const tableNumber = parseInt(tableParam, 10);
-      if (!isNaN(tableNumber) && tableNumber >= 1) {
-        tableNum = tableNumber; orderType = 'cafe';
-        showToast(`${t('toast-table')}${tableNumber}`); return;
-      }
-    }
-  } catch (error) { console.error("Error parsing table number:", error); }
 }
 
 function buildTableGrid() {
   const grid = $('tableGrid'); if (!grid) return; grid.innerHTML = '';
   for (let i = 1; i <= 11; i++) {
     const btn = document.createElement('button'); btn.className = 'tbl-btn'; btn.textContent = i;
-    btn.addEventListener('click', () => { tableNum = i; setOrderType('cafe'); showToast(`${t('toast-table')}${i}`); });
+    btn.addEventListener('click', () => { 
+      tableNum = i; 
+      setOrderType('cafe'); 
+      showToast(`${t('toast-table')}${i}`);
+    });
     grid.appendChild(btn);
   }
 }
@@ -697,7 +699,6 @@ function initPaymentUI() {
       radio.checked = true;
       document.querySelectorAll('.pay-opt').forEach(o => o.classList.remove('selected'));
       opt.classList.add('selected');
-      const qr = $('mbankQr'); if (qr) qr.style.display = radio.value === 'mbank' ? '' : 'none';
       validateOrder();
     });
   });
@@ -706,7 +707,7 @@ function initPaymentUI() {
 // ── MAIN INIT ─────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   loadCart(); loadTableGuestData(); applyTheme(); applyLang();
-  updateCartBadge(); buildTableGrid(); renderMenu(); initScrollHeader(); initPaymentUI(); initOrderTypeModal();
+  updateCartBadge(); buildTableGrid(); renderMenu(); initScrollHeader(); initPaymentUI();
 
   try { const saved = localStorage.getItem('deliveryInfo'); if (saved) deliveryInfo = JSON.parse(saved); } catch { }
 
@@ -755,9 +756,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('closeCartModal')?.addEventListener('click', () => closeModal('cartModal'));
   $('clearCartBtn')?.addEventListener('click', () => {
-    if (confirm(t('confirm-clear'))) { cart = []; saveCart(); updateCartBadge(); renderCartItems(); }
+    if (confirm(t('confirm-clear'))) { cart = []; saveCart(); updateCartBadge(); renderMenu(); renderCartItems(); }
   });
-  $('checkoutBtn')?.addEventListener('click', showOrderForm);
+  // ИСПРАВЛЕНО: используем startCheckout вместо showOrderForm
+  $('checkoutBtn')?.addEventListener('click', startCheckout);
 
   $('closeOrderModal')?.addEventListener('click', () => closeModal('orderModal'));
   $('cancelOrderBtn')?.addEventListener('click', () => closeModal('orderModal'));
@@ -781,6 +783,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('lightboxClose')?.addEventListener('click', closeLightbox);
   $('lightbox')?.addEventListener('click', e => { if (e.target === $('lightbox')) closeLightbox(); });
 
+  // Order type buttons
   $('otCafe')?.addEventListener('click', () => { closeModal('orderTypeModal'); openModal('tableModal'); });
   $('otPickup')?.addEventListener('click', () => setOrderType('pickup'));
   $('otDelivery')?.addEventListener('click', () => { closeModal('orderTypeModal'); openModal('deliveryModal'); });
@@ -825,3 +828,4 @@ window.increaseQty = increaseQty;
 window.removeItem = removeItem;
 window.handleAddToCart = handleAddToCart;
 window.openLightbox = openLightbox;
+window.startCheckout = startCheckout;
