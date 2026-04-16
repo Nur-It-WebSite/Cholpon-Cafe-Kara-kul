@@ -181,6 +181,7 @@ let activeCategory = 'all';
 let slideIndex = 0;
 let activeDishId = null;
 let tableGuestData = null;
+let pendingAddItemId = null;
 
 function loadTableGuestData() {
   try { const raw = localStorage.getItem('tableGuestData'); if (raw) tableGuestData = JSON.parse(raw); }
@@ -389,10 +390,17 @@ function createCard(item) {
   card.addEventListener('click', e => { if (e.target.closest('.card-actions')) return; showDishDetail(item.id); });
   return card;
 }
-
 function handleAddToCart(id, e) {
   e.stopPropagation();
   const item = menuData.find(i => i.id === id); if (!item) return;
+
+  if (!orderType) {
+    pendingAddItemId = id; 
+    lockScroll();
+    openModal('orderTypeModal');
+    return;
+  }
+
   if (item.variants?.length) openVariantModal(item);
   else addItem(item, null);
 }
@@ -626,13 +634,21 @@ function closeLightbox() {
 // ── ORDER TYPE FLOW ───────────────────────────────────────
 function lockScroll() { document.body.classList.add('locked'); }
 function unlockScroll() { document.body.classList.remove('locked'); }
-
 function setOrderType(type) {
   orderType = type;
   closeModal('orderTypeModal'); closeModal('tableModal'); closeModal('deliveryModal');
   unlockScroll(); document.body.classList.toggle('browse', type === 'browse');
-}
 
+  // Если был отложенный товар — добавить его
+  if (pendingAddItemId !== null) {
+    const item = menuData.find(i => i.id === pendingAddItemId);
+    pendingAddItemId = null;
+    if (item) {
+      if (item.variants?.length) openVariantModal(item);
+      else addItem(item, null);
+    }
+  }
+}
 function initOrderTypeModal() {
   try {
     const params = new URLSearchParams(window.location.search);
@@ -645,7 +661,6 @@ function initOrderTypeModal() {
       }
     }
   } catch (error) { console.error("Error parsing table number:", error); }
-  lockScroll(); openModal('orderTypeModal');
 }
 
 function buildTableGrid() {
@@ -769,7 +784,6 @@ document.addEventListener('DOMContentLoaded', () => {
   $('otCafe')?.addEventListener('click', () => { closeModal('orderTypeModal'); openModal('tableModal'); });
   $('otPickup')?.addEventListener('click', () => setOrderType('pickup'));
   $('otDelivery')?.addEventListener('click', () => { closeModal('orderTypeModal'); openModal('deliveryModal'); });
-  $('otBrowse')?.addEventListener('click', () => setOrderType('browse'));
 
   $('closeTableModal')?.addEventListener('click', () => { closeModal('tableModal'); openModal('orderTypeModal'); });
   $('closeDeliveryModal')?.addEventListener('click', () => { closeModal('deliveryModal'); openModal('orderTypeModal'); });
