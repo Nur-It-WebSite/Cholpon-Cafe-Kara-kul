@@ -4,18 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"content="Кафе Cholpon — вкусная домашняя еда в Кара-Куле. Шашлыки, первые и вторые блюда, десерты, доставка." />
+  <meta name="description" content="Кафе Cholpon — вкусная домашняя еда в Кара-Куле. Шашлыки, первые и вторые блюда, десерты, доставка." />
   <title>Кафе Cholpon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- ======= HEADER ======= -->
+  <!-- ======= ШАПКА ======= -->
   <header class="header" id="header">
     <div class="container">
       <div class="header-inner">
@@ -31,12 +29,10 @@
         <div class="header-actions">
           <button class="btn-lang" id="langToggle" aria-label="Переключить язык">RU</button>
           <button class="btn-theme" id="themeToggle" aria-label="Переключить тему">
-            <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
+            <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
-            <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" style="display:none">
+            <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
               <circle cx="12" cy="12" r="5" />
               <line x1="12" y1="1" x2="12" y2="3" />
               <line x1="12" y1="21" x2="12" y2="23" />
@@ -64,9 +60,8 @@
       </div>
     </div>
   </header>
-  
 
-  <!-- =======HERO======= -->
+  <!-- ======= ГЛАВНЫЙ ЭКРАН ======= -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="container">
@@ -90,7 +85,7 @@
     </div>
   </section>
 
-  <!-- ======= MENU ======= -->
+  <!-- ======= МЕНЮ ======= -->
   <section class="menu-section" id="menu">
     <div class="container">
       <div class="section-header">
@@ -98,26 +93,26 @@
         <p class="section-sub" data-i18n="menu-sub">Всё готовится из свежих продуктов каждый день</p>
       </div>
 
-      <!-- Category Filter -->
+      <!-- Фильтры по категориям -->
       <div class="filter-wrap" id="categoryFilter">
-        <button class="filter-btn active" data-category="all" data-i18n="filter-all">Все</button>
-        <button class="filter-btn" data-category="hits" data-i18n="filter-hits">Хиты</button>
-        <button class="filter-btn" data-category="first" data-i18n="filter-first">Первые блюда</button>
-        <button class="filter-btn" data-category="second" data-i18n="filter-second">Вторые блюда</button>
-        <button class="filter-btn" data-category="special" data-i18n="filter-special">Заказные</button>
-        <button class="filter-btn" data-category="shashlik" data-i18n="filter-shashlik">Шашлыки</button>
-        <button class="filter-btn" data-category="salad" data-i18n="filter-salad">Салаты</button>
-        <button class="filter-btn" data-category="dessert" data-i18n="filter-dessert">Десерты</button>
-        <button class="filter-btn" data-category="drink" data-i18n="filter-drink">Напитки</button>
-        <button class="filter-btn" data-category="fastfood" data-i18n="filter-fastfood">Fast-Food</button>
+        <button class="filter-btn active" data-category="all"      data-i18n="filter-all">Все</button>
+        <button class="filter-btn"        data-category="hits"     data-i18n="filter-hits">Хиты</button>
+        <button class="filter-btn"        data-category="first"    data-i18n="filter-first">Первые блюда</button>
+        <button class="filter-btn"        data-category="second"   data-i18n="filter-second">Вторые блюда</button>
+        <button class="filter-btn"        data-category="special"  data-i18n="filter-special">Заказные</button>
+        <button class="filter-btn"        data-category="shashlik" data-i18n="filter-shashlik">Шашлыки</button>
+        <button class="filter-btn"        data-category="salad"    data-i18n="filter-salad">Салаты</button>
+        <button class="filter-btn"        data-category="dessert"  data-i18n="filter-dessert">Десерты</button>
+        <button class="filter-btn"        data-category="drink"    data-i18n="filter-drink">Напитки</button>
+        <button class="filter-btn"        data-category="fastfood" data-i18n="filter-fastfood">Fast-Food</button>
       </div>
 
-      <!-- Menu Grid -->
+      <!-- Сетка карточек меню — заполняется через JS -->
       <div class="menu-grid" id="menuGrid"></div>
     </div>
   </section>
 
-  <!-- ======= CONTACTS ======= -->
+  <!-- ======= КОНТАКТЫ ======= -->
   <section class="contact-section" id="contact">
     <div class="container">
       <div class="section-header">
@@ -125,15 +120,14 @@
       </div>
       <div class="contact-grid">
         <div class="contact-cards">
-          <a class="contact-card" href="tel:+996 500 350 565">
+          <a class="contact-card" href="tel:+996500350565">
             <div class="contact-icon">📞</div>
             <div>
               <div class="contact-label" data-i18n="contact-phone-label">Телефон</div>
               <div class="contact-val">+996 500 350 565</div>
             </div>
           </a>
-          <a class="contact-card" href="https://maps.google.com/?q=41.6307442,72.6622908" target="_blank"
-            rel="noopener">
+          <a class="contact-card" href="https://maps.google.com/?q=41.6307442,72.6622908" target="_blank" rel="noopener">
             <div class="contact-icon">📍</div>
             <div>
               <div class="contact-label" data-i18n="contact-loc-label">Адрес</div>
@@ -158,7 +152,7 @@
     </div>
   </section>
 
-  <!-- ======= FOOTER ======= -->
+  <!-- ======= ПОДВАЛ ======= -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
@@ -168,7 +162,7 @@
     </div>
   </footer>
 
-  <!-- CART SUMMARY BAR -->
+  <!-- Полоска итого внизу экрана -->
   <div class="cart-summary-bar" id="cartSummaryBar">
     <div class="cart-summary-info">
       <span id="cartSummaryText">0 блюд</span>
@@ -177,7 +171,7 @@
     <button class="btn btn-primary cart-summary-btn" id="cartSummaryCheckout">Оформить</button>
   </div>
 
-  <!-- ======= BOTTOM NAV (mobile) ======= -->
+  <!-- ======= НИЖНЯЯ НАВИГАЦИЯ (мобильная) ======= -->
   <nav class="bottom-nav" id="bottomNav">
     <button class="bottom-btn" id="bnMenu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -197,7 +191,8 @@
       <span class="bottom-badge" id="bottomBadge" style="display:none">0</span>
     </button>
   </nav>
-  <!-- ORDER TYPE MODAL -->
+
+  <!-- ======= МОДАЛКА: ВЫБОР ТИПА ЗАКАЗА ======= -->
   <div class="modal-overlay" id="orderTypeModal" role="dialog" aria-modal="true" aria-label="Тип заказа">
     <div class="modal order-type-modal">
       <div class="modal-head center-head">
@@ -221,7 +216,8 @@
       </div>
     </div>
   </div>
-  <!-- DELIVERY INFO MODAL -->
+
+  <!-- ======= МОДАЛКА: ДАННЫЕ ДОСТАВКИ ======= -->
   <div class="modal-overlay" id="deliveryModal" role="dialog" aria-modal="true" aria-label="Данные для доставки">
     <div class="modal">
       <div class="modal-head">
@@ -243,8 +239,7 @@
           </div>
           <div class="form-field">
             <label for="dlvAddress" data-i18n="order-address">Адрес доставки</label>
-            <input type="text" id="dlvAddress" placeholder="ул. Боконбаева, дом 5" required
-              autocomplete="street-address" />
+            <input type="text" id="dlvAddress" placeholder="ул. Боконбаева, дом 5" required autocomplete="street-address" />
           </div>
           <div class="form-actions">
             <button type="button" class="btn btn-outline" id="backToOrderType" data-i18n="back">Назад</button>
@@ -254,7 +249,8 @@
       </div>
     </div>
   </div>
-  <!-- CART MODAL -->
+
+  <!-- ======= МОДАЛКА: КОРЗИНА ======= -->
   <div class="modal-overlay" id="cartModal" role="dialog" aria-modal="true" aria-label="Корзина">
     <div class="modal">
       <div class="modal-head">
@@ -273,12 +269,13 @@
         </div>
       </div>
       <div class="modal-foot">
-        <button class="btn btn-outline" id="clearCartBtn" data-i18n="cart-clear">Очистить</button>
-        <button class="btn btn-primary" id="checkoutBtn" data-i18n="cart-checkout">Оформить заказ</button>
+        <button class="btn btn-outline" id="clearCartBtn"  data-i18n="cart-clear">Очистить</button>
+        <button class="btn btn-primary" id="checkoutBtn"   data-i18n="cart-checkout">Оформить заказ</button>
       </div>
     </div>
   </div>
-  <!-- ORDER FORM MODAL -->
+
+  <!-- ======= МОДАЛКА: ФОРМА ЗАКАЗА ======= -->
   <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-label="Оформление заказа">
     <div class="modal">
       <div class="modal-head">
@@ -287,12 +284,14 @@
       </div>
       <div class="modal-body">
         <form id="orderForm" novalidate>
-          <!-- Подсказка для повторного заказа QR-гостя (скрыта по умолчанию) -->
+
+          <!-- Для QR-гостей, которые уже вводили данные — подсказка вместо полей -->
           <div id="repeatOrderHint" class="repeat-order-hint" style="display:none">
             <span class="roh-icon">✅</span>
             <span data-i18n="repeat-order-hint">Данные сохранены. Просто добавьте комментарий если нужно.</span>
           </div>
-          <!-- Поля имени и телефона (скрываются для повторных заказов QR-гостей) -->
+
+          <!-- Поля имени и телефона -->
           <div id="guestFields">
             <div class="form-field">
               <label for="custName" data-i18n="order-name">Имя</label>
@@ -308,6 +307,7 @@
             </div>
           </div>
 
+          <!-- Поле адреса — только для доставки -->
           <div class="form-field" id="addrField" style="display:none">
             <label for="custAddr" data-i18n="order-address">Адрес доставки</label>
             <input type="text" id="custAddr" autocomplete="street-address" />
@@ -318,43 +318,44 @@
             <textarea id="custComment" rows="3"></textarea>
           </div>
 
+          <!-- Список блюд в заказе -->
           <div class="form-field">
             <label data-i18n="order-summary">Состав заказа:</label>
             <div id="orderSummary" class="order-summary"></div>
           </div>
 
+          <!-- Способ оплаты -->
           <div class="form-field">
             <label data-i18n="payment-method-label">Способ оплаты</label>
             <div class="payment-opts" id="paymentOpts">
               <label class="pay-opt">
                 <input type="radio" name="payment" value="cash" />
-                <span class="pay-icon"><img style="width: 30px;" src="./icons/money-bills-simple.svg" alt=""></span>
+                <span class="pay-icon"><img style="width:30px" src="./icons/money-bills-simple.svg" alt=""></span>
                 <span data-i18n="payment-cash">Наличными</span>
               </label>
               <label class="pay-opt" id="payCard">
                 <input type="radio" name="payment" value="card" />
-                <span class="pay-icon"><img style="width: 30px;" src="./icons/credit-card.svg" alt=""></span>
+                <span class="pay-icon"><img style="width:30px" src="./icons/credit-card.svg" alt=""></span>
                 <span data-i18n="payment-card">Картой</span>
               </label>
               <label class="pay-opt">
                 <input type="radio" name="payment" value="mbank" />
-                <span class="pay-icon"><img style="width: 30px;"
-                    src="https://cdn-icons-png.flaticon.com/128/10605/10605177.png" alt=""></span>
-                <span> <img style="width: 100px;" src="https://mbank.kg/media/logo/frame_1288.png" alt=""></span>
+                <span class="pay-icon"><img style="width:30px" src="https://cdn-icons-png.flaticon.com/128/10605/10605177.png" alt=""></span>
+                <span><img style="width:100px" src="https://mbank.kg/media/logo/frame_1288.png" alt="MBank"></span>
               </label>
             </div>
           </div>
+
           <div class="form-actions">
             <button type="button" class="btn btn-outline" id="cancelOrderBtn" data-i18n="order-cancel">Отмена</button>
-            <button type="submit" class="btn btn-primary" id="submitOrderBtn" disabled
-              data-i18n="order-submit">Отправить заказ</button>
+            <button type="submit"  class="btn btn-primary" id="submitOrderBtn" disabled data-i18n="order-submit">Отправить заказ</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- DISH DETAILS MODAL -->
+  <!-- ======= МОДАЛКА: ДЕТАЛИ БЛЮДА ======= -->
   <div class="modal-overlay" id="dishModal" role="dialog" aria-modal="true" aria-label="Детали блюда">
     <div class="modal modal-wide">
       <div class="modal-head">
@@ -382,7 +383,7 @@
     </div>
   </div>
 
-  <!-- VARIANT MODAL -->
+  <!-- ======= МОДАЛКА: ВЫБОР ВАРИАНТА ======= -->
   <div class="modal-overlay" id="variantModal" role="dialog" aria-modal="true" aria-label="Выбор варианта">
     <div class="modal modal-sm">
       <div class="modal-head">
@@ -396,24 +397,52 @@
     </div>
   </div>
 
-  <!-- LIGHTBOX -->
+  <!-- ======= МОДАЛКА: ВЫБОР СТОЛА ======= -->
+  <div class="modal-overlay" id="tableModal" role="dialog" aria-modal="true" aria-label="Выбор стола">
+    <div class="modal modal-sm">
+      <div class="modal-head">
+        <h2 data-i18n="table-select-title">Выберите стол</h2>
+        <button class="btn-close" id="closeTableModal" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="tableGrid" class="table-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= ЛАЙТБОКС (просмотр фото) ======= -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Полноразмерное фото">
     <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">✕</button>
     <img id="lightboxImg" src="" alt="" />
   </div>
-  <!-- TOAST -->
+
+  <!-- Всплывающее уведомление -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <!-- SUCCESS MODAL -->
+
+  <!-- ======= МОДАЛКА: ЗАКАЗ ПРИНЯТ ======= -->
   <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true">
     <div class="modal modal-sm success-modal">
-      <div class="success-icon"><svg xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Check"><path d="M4 12l6 6L20 6"/></svg></div>
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12l6 6L20 6"/>
+        </svg>
+      </div>
       <h2 class="success-title">Заказ принят!</h2>
       <button class="btn btn-primary btn-full"
-        onclick="document.getElementById('successModal').classList.remove('open')">
+              onclick="document.getElementById('successModal').classList.remove('open')">
         Отлично!
       </button>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <!-- ══════════════════════════════════════════════════════════
+       СКРИПТЫ — порядок подключения важен!
+       Каждый следующий файл использует переменные из предыдущего
+       ══════════════════════════════════════════════════════════ -->
+  <script src="./Меню/api/настройки.js"></script>       
+  <script src="./scripts/данные-меню.js"></script>      <!-- 2. Все блюда меню с ценами -->
+  <script src="./scripts/перевод.js"></script>         <!-- 3. Тексты интерфейса на двух языках -->
+  <script src="./scripts/main.js"></script>  <!-- 4. Вся логика: корзина, заказы, отрисовка -->
 </body>
 </html>
