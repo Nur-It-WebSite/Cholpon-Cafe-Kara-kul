@@ -183,14 +183,6 @@ let activeDishId = null;
 let tableGuestData = null;
 let pendingAddItemId = null;
 
-function loadTableGuestData() {
-  try { const raw = localStorage.getItem('tableGuestData'); if (raw) tableGuestData = JSON.parse(raw); }
-  catch { tableGuestData = null; }
-}
-function saveTableGuestData(name, phone) {
-  tableGuestData = { name, phone };
-  try { localStorage.setItem('tableGuestData', JSON.stringify(tableGuestData)); } catch { }
-}
 function isQrTableSession() { return orderType === 'cafe' && tableNum !== null; }
 
 // ── HELPERS ───────────────────────────────────────────────
@@ -498,7 +490,7 @@ function showOrderForm() {
   const guestFieldsWrap = $('guestFields'); const repeatHint = $('repeatOrderHint');
   if (isQrTableSession() && tableGuestData) {
     if (guestFieldsWrap) guestFieldsWrap.style.display = 'none';
-    if (repeatHint) repeatHint.style.display = '';
+    if (repeatHint) repeatHint.style.display = 'none';
   } else {
     if (guestFieldsWrap) guestFieldsWrap.style.display = '';
     if (repeatHint) repeatHint.style.display = 'none';
@@ -597,7 +589,6 @@ async function submitOrder(e) {
     name = $('custName')?.value.trim(); rawPhone = $('custPhone')?.value.trim(); phone = rawPhone.replace(/\s/g, '');
     if (!name) { alert(t('alert-fill-fields')); return; }
     if (!isValidPhone(phone)) { alert(t('alert-invalid-phone')); return; }
-    if (isQrTableSession()) saveTableGuestData(name, rawPhone);
   }
 
   const comment = $('custComment')?.value.trim() || '';
@@ -708,7 +699,7 @@ function initPaymentUI() {
 
 // ── MAIN INIT ─────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  loadCart(); loadTableGuestData(); applyTheme(); applyLang();
+  loadCart(); applyTheme(); applyLang();
   updateCartBadge(); buildTableGrid(); renderMenu(); initScrollHeader(); initPaymentUI(); initOrderTypeModal();
 
   try { const saved = localStorage.getItem('deliveryInfo'); if (saved) deliveryInfo = JSON.parse(saved); } catch { }
