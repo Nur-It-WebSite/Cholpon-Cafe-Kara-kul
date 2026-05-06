@@ -2,7 +2,7 @@
 
 // ── CONSTANTS ─────────────────────────────────────────────
 const TG_BOT_TOKEN = '8738069114:AAHzk7-y8i15FFWDuin9DVAc0v2C8LKrx5A';
-const TG_CHAT_ID = '404578015';
+const TG_CHAT_ID = 7994163787;
 const CAFE_WA = '996500350565';
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f2ece0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='52' fill='%23c27941'%3E%F0%9F%8D%BD%3C/text%3E%3C/svg%3E";
 
@@ -572,6 +572,7 @@ function buildOrderText(name, phone, comment, payment) {
 async function sendToTelegram(text) {
   // Все заказы в один чат
   const chatId = TG_CHAT_ID;
+  console.log('🚨 Отправка в Telegram:', { chatId, token: TG_BOT_TOKEN.slice(0, 10) + '...', text: text.slice(0, 50) });
   try {
     const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
     const res = await fetch(url, {
@@ -580,8 +581,10 @@ async function sendToTelegram(text) {
       body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
     });
     const data = await res.json();
+    console.log('🛠 Ответ Telegram:', data);
+    if (!data.ok) console.error('❌ Ошибка Telegram:', data.description || data);
     return data.ok;
-  } catch (err) { console.error('Telegram error:', err); return false; }
+  } catch (err) { console.error('❌ Telegram error:', err); return false; }
 }
 // ── SUBMIT ORDER ──────────────────────────────────────────
 async function submitOrder(e) {
@@ -617,7 +620,7 @@ async function submitOrder(e) {
 
   // ✅ Все заказы только в Telegram бота
   openModal('successModal');
-  
+
   if (btn) { btn.disabled = false; btn.textContent = t('order-submit'); }
 }
 
