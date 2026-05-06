@@ -197,15 +197,15 @@ function isQrTableSession() { return orderType === 'cafe' && tableNum !== null; 
 const $ = id => document.getElementById(id);
 const t = key => i18n[lang]?.[key] ?? i18n.ru[key] ?? key;
 
-function loadCart() { 
-  try { 
-    cart = JSON.parse(localStorage.getItem('cart')) || []; 
-    cart = cart.map(item => ({ 
-      ...item, 
-      qty: Number(item.qty) || 1, 
-      price: Number(item.price) || 0 
+function loadCart() {
+  try {
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.map(item => ({
+      ...item,
+      qty: Number(item.qty) || 1,
+      price: Number(item.price) || 0
     }));
-  } catch { cart = []; } 
+  } catch { cart = []; }
 }
 function saveCart() { try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { } }
 
@@ -523,9 +523,13 @@ function buildOrderText(name, phone, comment, payment) {
 
   let lines = `<b>🍽 ${title}</b>\n`;
 
-  // 👉 ВСТАВЛЯЕМ СЮДА (сразу после заголовка)
+  // Тип заказа в начале
   if (orderType === 'cafe' && tableNum) {
-    lines += `📍 Стол №${tableNum}\n`;
+    lines += `<b>📍 СТОЛИК №${tableNum}</b>\n`;
+  } else if (orderType === 'pickup') {
+    lines += `<b>🏪 САМОВЫВОЗ</b>\n`;
+  } else if (orderType === 'delivery') {
+    lines += `<b>🚗 ДОСТАВКА</b>\n`;
   }
 
   lines += `━━━━━━━━━━━━━━━━\n`;
@@ -554,12 +558,8 @@ function buildOrderText(name, phone, comment, payment) {
     lines += `💳 ${pm}\n`;
   }
 
-  if (orderType === 'pickup') {
-    lines += `📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}\n`;
-  }
-
   if (orderType === 'delivery' && deliveryInfo?.address) {
-    lines += `🚗 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}\n`;
+    lines += `📍 ${lang === 'ru' ? 'Адрес' : 'Дарек'}: ${deliveryInfo.address}\n`;
   }
 
   if (comment?.trim()) {
@@ -570,8 +570,8 @@ function buildOrderText(name, phone, comment, payment) {
 }
 // ── SEND TO TELEGRAM ──────────────────────────────────────
 async function sendToTelegram(text) {
-  // Стол → группа, Самовывоз/Доставка → личка
-  const chatId = (orderType === 'cafe') ? '404578015' : '7994163787';
+  // Все заказы в один чат
+  const chatId = TG_CHAT_ID;
   try {
     const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
     const res = await fetch(url, {
