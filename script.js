@@ -2,7 +2,7 @@
 
 // ── CONSTANTS ─────────────────────────────────────────────
 const TG_BOT_TOKEN = '8775508464:AAELivIGkjIE-1ukRNzgDDzoPz3mdkqjxxQ';
-const TG_CHAT_ID = '-1003743803600';
+const TG_CHAT_ID = '404578015';
 const CAFE_WA = '996500350565';
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f2ece0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='52' fill='%23c27941'%3E%F0%9F%8D%BD%3C/text%3E%3C/svg%3E";
 
@@ -73,10 +73,10 @@ const menuData = [
   { id: 60, name: 'Баклажан микс', nameKg: 'Баклажан микси', description: 'Микс баклажанов с майонезом', descriptionKg: 'Майонез менен баклажан микси', price: 240, image: './Меню/МикссБакл.jpeg', category: 'salad', ingredients: ['Баклажан', 'Майонез'], ingredientsKg: ['Баклажан', 'Майонез'] },
   { id: 61, name: 'Курица с овощами', nameKg: 'Жер жемиштери менен тоок', description: 'Курица с ореховым соусом', descriptionKg: 'Орех соусу менен тоок', price: 240, image: './Меню/Кура.webp', category: 'salad', ingredients: ['Курица', 'Ореховый соус', 'Майонез'], ingredientsKg: ['Тоок', 'Орех соусу', 'Майонез'] },
   // НАПИТКИ
-  { id: 62, name: 'Компот', nameKg: 'Компот', description: 'Компот из сухофруктов', descriptionKg: 'Куру жемиштерден компот', image: './Меню/Компот.webp', category: 'drink', variants: [{ label: '1 л', price: 100 }, { label: '1.5 л', price: 140 }, { label: '2 л', price: 170 }] },
-  { id: 63, name: 'Кола', nameKg: 'Кола', description: 'Coca-Cola', descriptionKg: 'Кола', image: './Меню/Кола.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
-  { id: 64, name: 'Фанта', nameKg: 'Фанта', description: 'Fanta', descriptionKg: 'Фанта', image: './Меню/Фанта.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
-  { id: 85, name: 'Лимонад', nameKg: 'Лимонад', description: 'Освежающий домашний лимонад', descriptionKg: 'Сергитүүчү үй лимонады', image: './Меню/лимонад.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 160 }, { label: '2 л', price: 200 }] },
+  { id: 62, name: 'Компот', nameKg: 'Компот', description: 'Компот из сухофруктов', descriptionKg: 'Куру жемиштерден компот', image: './Меню/Кк.webp', category: 'drink', variants: [{ label: '1 л', price: 100 }, { label: '1.5 л', price: 140 }, { label: '2 л', price: 170 }] },
+  { id: 63, name: 'Кола', nameKg: 'Кола', description: 'Coca-Cola', descriptionKg: 'Кола', image: './Меню/Cola.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
+  { id: 64, name: 'Фанта', nameKg: 'Фанта', description: 'Fanta', descriptionKg: 'Фанта', image: './Меню/Fanta.png', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 170 }, { label: '2 л', price: 200 }] },
+  { id: 85, name: 'Лимонад', nameKg: 'Лимонад', description: 'Освежающий домашний лимонад', descriptionKg: 'Сергитүүчү үй лимонады', image: './Меню/Lemonade.webp', category: 'drink', variants: [{ label: '1 л', price: 120 }, { label: '1.5 л', price: 160 }, { label: '2 л', price: 200 }] },
   // ФАСТ-ФУД
   { id: 66, name: 'Стрипсы корейские', nameKg: 'Корей стрипсы', description: 'Корейские куриные стрипсы', descriptionKg: 'Корей тоок стрипсы', price: 290, image: './Меню/Стрипсы кор.jpeg', category: 'fastfood', ingredients: ['Курица', 'Специи', 'Масло'], ingredientsKg: ['Тоок', 'Азыктар', 'Май'] },
   { id: 67, name: 'KFC + фри', nameKg: 'KFC + фри', description: 'Курица KFC с картошкой фри', descriptionKg: 'KFC тоок фри картөшкө менен', image: './Меню/Картошка.webp', category: 'fastfood', variants: [{ label: '20 шт', price: 310 }, { label: '10 шт', price: 260 }] },
@@ -395,7 +395,7 @@ function handleAddToCart(id, e) {
   const item = menuData.find(i => i.id === id); if (!item) return;
 
   if (!orderType) {
-    pendingAddItemId = id; 
+    pendingAddItemId = id;
     lockScroll();
     openModal('orderTypeModal');
     return;
@@ -540,8 +540,8 @@ function buildOrderText(name, phone, comment, payment) {
       payment === 'cash'
         ? t('payment-cash')
         : payment === 'card'
-        ? t('payment-card')
-        : 'MBank';
+          ? t('payment-card')
+          : 'MBank';
     lines += `💳 ${pm}\n`;
   }
 
@@ -559,11 +559,10 @@ function buildOrderText(name, phone, comment, payment) {
 
   return lines;
 }
-
 // ── SEND TO TELEGRAM ──────────────────────────────────────
 async function sendToTelegram(text) {
   // Стол → группа, Самовывоз/Доставка → личка
-  const chatId = (orderType === 'cafe') ? '-1003743803600' : '7994163787';
+  const chatId = (orderType === 'cafe') ? '404578015' : '7994163787';
   try {
     const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
     const res = await fetch(url, {
@@ -575,7 +574,6 @@ async function sendToTelegram(text) {
     return data.ok;
   } catch (err) { console.error('Telegram error:', err); return false; }
 }
-
 // ── SUBMIT ORDER ──────────────────────────────────────────
 async function submitOrder(e) {
   e.preventDefault();
@@ -755,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('closeCartModal')?.addEventListener('click', () => closeModal('cartModal'));
   $('clearCartBtn')?.addEventListener('click', () => {
-    if (confirm(t('confirm-clear'))) { cart = []; saveCart(); updateCartBadge(); renderCartItems(); }
+    if (confirm(t('confirm-clear'))) { cart = []; saveCart(); updateCartBadge(); renderCartItems(); renderMenu(); }
   });
   $('checkoutBtn')?.addEventListener('click', showOrderForm);
 
