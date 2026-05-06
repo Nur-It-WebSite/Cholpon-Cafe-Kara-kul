@@ -1,7 +1,7 @@
 'use strict';
 
 // ── CONSTANTS ─────────────────────────────────────────────
-const TG_BOT_TOKEN = '8775508464:AAELivIGkjIE-1ukRNzgDDzoPz3mdkqjxxQ';
+const TG_BOT_TOKEN = '8738069114:AAHzk7-y8i15FFWDuin9DVAc0v2C8LKrx5A';
 const TG_CHAT_ID = '404578015';
 const CAFE_WA = '996500350565';
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f2ece0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='52' fill='%23c27941'%3E%F0%9F%8D%BD%3C/text%3E%3C/svg%3E";
@@ -197,7 +197,16 @@ function isQrTableSession() { return orderType === 'cafe' && tableNum !== null; 
 const $ = id => document.getElementById(id);
 const t = key => i18n[lang]?.[key] ?? i18n.ru[key] ?? key;
 
-function loadCart() { try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch { cart = []; } }
+function loadCart() { 
+  try { 
+    cart = JSON.parse(localStorage.getItem('cart')) || []; 
+    cart = cart.map(item => ({ 
+      ...item, 
+      qty: Number(item.qty) || 1, 
+      price: Number(item.price) || 0 
+    }));
+  } catch { cart = []; } 
+}
 function saveCart() { try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { } }
 
 function formatPhone(input) {
@@ -245,7 +254,7 @@ function applyLang() {
 function addItem(item, variant) {
   const wasEmpty = cart.length === 0;
   const cid = variant ? `${item.id}_${variant.label}` : String(item.id);
-  const price = variant ? variant.price : item.price;
+  const price = Number(variant ? variant.price : item.price) || 0;
   const suffix = variant ? ` (${variant.label})` : '';
   const name = (lang === 'ru' ? item.name : (item.nameKg || item.name)) + suffix;
   const existing = cart.find(c => c.cid === cid);
@@ -271,7 +280,7 @@ function removeItem(cid) {
 }
 
 function updateCartBadge() {
-  const total = cart.reduce((s, i) => s + i.qty, 0);
+  const total = cart.reduce((s, i) => s + (Number(i.qty) || 0), 0);
   ['cartBadge', 'bottomBadge'].forEach(id => {
     const el = $(id); if (!el) return;
     el.textContent = total; el.style.display = total > 0 ? 'flex' : 'none';
@@ -282,8 +291,8 @@ function updateCartBadge() {
 function updateCartSummary() {
   const bar = $('cartSummaryBar'); if (!bar) return;
   if (!cart.length) { bar.style.display = 'none'; return; }
-  const totalCount = cart.reduce((s, i) => s + i.qty, 0);
-  const totalSum = cart.reduce((s, i) => s + i.qty * i.price, 0);
+  const totalCount = cart.reduce((s, i) => s + (Number(i.qty) || 0), 0);
+  const totalSum = cart.reduce((s, i) => s + (Number(i.qty) || 0) * (Number(i.price) || 0), 0);
   const txtEl = $('cartSummaryText'); const priceEl = $('cartSummaryPrice');
   if (txtEl) {
     const word = lang === 'ru'
@@ -310,7 +319,7 @@ function renderCartItems() {
   }
   empty.style.display = 'none'; totWrap.style.display = ''; wrap.innerHTML = ''; let total = 0;
   cart.forEach(item => {
-    const sub = item.price * item.qty; total += sub;
+    const sub = (Number(item.price) || 0) * (Number(item.qty) || 0); total += sub;
     const row = document.createElement('div'); row.className = 'cart-row';
     row.innerHTML = `
       <img class="cart-row-img" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='${PLACEHOLDER}'">
@@ -463,7 +472,7 @@ function buildOrderSummary() {
   const el = $('orderSummary'); if (!el) return;
   let html = ''; let total = 0;
   cart.forEach(item => {
-    const sub = item.price * item.qty; total += sub;
+    const sub = (Number(item.price) || 0) * (Number(item.qty) || 0); total += sub;
     html += `<div class="order-summary-row"><span>${item.name} × ${item.qty}</span><span>${sub} ${t('currency')}</span></div>`;
   });
   html += `<div class="order-summary-row"><span>${t('cart-total')}</span><span>${total} ${t('currency')}</span></div>`;
@@ -524,7 +533,7 @@ function buildOrderText(name, phone, comment, payment) {
   let total = 0;
 
   cart.forEach(item => {
-    const sub = item.price * item.qty;
+    const sub = (Number(item.price) || 0) * (Number(item.qty) || 0);
     total += sub;
     lines += `• ${item.name} × ${item.qty} — <b>${sub} ${t('currency')}</b>\n`;
   });
