@@ -615,16 +615,9 @@ async function submitOrder(e) {
 
   cart = []; saveCart(); updateCartBadge(); renderMenu(); closeModal('orderModal');
 
-  // ✅ Красивая модалка вместо alert
-  if (sent) {
-    openModal('successModal');
-  } else {
-    // Резерв — WhatsApp если Telegram не ср  аботал
-    const waText = text.replace(/<[^>]*>/g, '');
-    window.open(`https://wa.me/${CAFE_WA}?text=${encodeURIComponent(waText)}`, '_blank');
-    openModal('successModal');
-  }
-
+  // ✅ Все заказы только в Telegram бота
+  openModal('successModal');
+  
   if (btn) { btn.disabled = false; btn.textContent = t('order-submit'); }
 }
 
