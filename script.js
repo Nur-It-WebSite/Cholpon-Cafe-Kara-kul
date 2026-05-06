@@ -166,13 +166,8 @@ const translations = {
     'repeat-order-hint': 'Маалыматтар сакталды. Зарыл болсо комментарий кошуңуз.',
   }
 };
-'use strict';
 
-// ── CONSTANTS ─────────────────────────────────────────────
-const TG_BOT_TOKEN = '8775508464:AAELivIGkjIE-1ukRNzgDDzoPz3mdkqjxxQ';
-const TG_CHAT_ID = '404578015';
-const CAFE_WA = '996500350565';
-const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f2ece0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='52' fill='%23c27941'%3E%F0%9F%8D%BD%3C/text%3E%3C/svg%3E";
+const i18n = translations;
 
 // ── STATE ─────────────────────────────────────────────────
 let lang = localStorage.getItem('lang') || 'ru';
@@ -200,22 +195,9 @@ function isQrTableSession() { return orderType === 'cafe' && tableNum !== null; 
 
 // ── HELPERS ───────────────────────────────────────────────
 const $ = id => document.getElementById(id);
-const t = key => (typeof i18n !== 'undefined' && i18n[lang]?.[key]) ?? (typeof translations !== 'undefined' && translations[lang]?.[key]) ?? key;
+const t = key => i18n[lang]?.[key] ?? i18n.ru[key] ?? key;
 
-function loadCart() {
-  try {
-    const raw = JSON.parse(localStorage.getItem('cart')) || [];
-    // Фильтруем битые записи с undefined/NaN сразу при загрузке
-    cart = raw.filter(item =>
-      item &&
-      item.cid !== undefined &&
-      item.name && item.name !== 'undefined' &&
-      !isNaN(Number(item.price)) &&
-      item.price !== undefined &&
-      item.price !== null
-    );
-  } catch { cart = []; }
-}
+function loadCart() { try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch { cart = []; } }
 function saveCart() { try { localStorage.setItem('cart', JSON.stringify(cart)); } catch { } }
 
 function formatPhone(input) {
@@ -242,7 +224,7 @@ function applyTheme() {
   document.documentElement.setAttribute('data-theme', theme);
   const moon = $('iconMoon'); const sun = $('iconSun');
   if (moon) moon.style.display = theme === 'dark' ? 'none' : '';
-  if (sun)  sun.style.display  = theme === 'dark' ? '' : 'none';
+  if (sun) sun.style.display = theme === 'dark' ? '' : 'none';
 }
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
   if (!localStorage.getItem('theme')) { theme = e.matches ? 'dark' : 'light'; applyTheme(); }
@@ -262,38 +244,13 @@ function applyLang() {
 // ── CART LOGIC ────────────────────────────────────────────
 function addItem(item, variant) {
   const wasEmpty = cart.length === 0;
-
-  // ИСПРАВЛЕНО: защита от undefined цены
-  const price = variant
-    ? Number(variant.price) || 0
-    : Number(item.price) || 0;
-
-  // Если цена не определена и есть варианты — открыть выбор
-  if (!price && item.variants?.length) {
-    openVariantModal(item);
-    return;
-  }
-
-  const cid    = variant ? `${item.id}_${variant.label}` : String(item.id);
+  const cid = variant ? `${item.id}_${variant.label}` : String(item.id);
+  const price = variant ? variant.price : item.price;
   const suffix = variant ? ` (${variant.label})` : '';
-  // ИСПРАВЛЕНО: защита от undefined имени
-  const rawName = lang === 'ru' ? item.name : (item.nameKg || item.name);
-  const name = (rawName || 'Блюдо') + suffix;
-
+  const name = (lang === 'ru' ? item.name : (item.nameKg || item.name)) + suffix;
   const existing = cart.find(c => c.cid === cid);
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({
-      cid,
-      id:    item.id,
-      name,
-      price,                       // гарантированно число
-      image: item.image || '',
-      qty:   1
-    });
-  }
-
+  if (existing) { existing.qty++; }
+  else { cart.push({ cid, id: item.id, name, price, image: item.image, qty: 1 }); }
   saveCart(); updateCartBadge(); updateCartSummary(); renderMenu();
   showToast(`${t('toast-added')} ${name}`);
   if (wasEmpty) highlightCartEntry();
@@ -305,8 +262,7 @@ function increaseQty(cid) {
 }
 function decreaseQty(cid) {
   const item = cart.find(c => c.cid === cid); if (!item) return;
-  item.qty--;
-  if (item.qty <= 0) cart = cart.filter(c => c.cid !== cid);
+  item.qty--; if (item.qty <= 0) cart = cart.filter(c => c.cid !== cid);
   saveCart(); updateCartBadge(); renderMenu(); renderCartItems();
 }
 function removeItem(cid) {
@@ -315,7 +271,7 @@ function removeItem(cid) {
 }
 
 function updateCartBadge() {
-  const total = cart.reduce((s, i) => s + (Number(i.qty) || 0), 0);
+  const total = cart.reduce((s, i) => s + i.qty, 0);
   ['cartBadge', 'bottomBadge'].forEach(id => {
     const el = $(id); if (!el) return;
     el.textContent = total; el.style.display = total > 0 ? 'flex' : 'none';
@@ -323,21 +279,15 @@ function updateCartBadge() {
   updateCartSummary();
 }
 
-// ИСПРАВЛЕНО: защита от NaN в сумме
 function updateCartSummary() {
   const bar = $('cartSummaryBar'); if (!bar) return;
   if (!cart.length) { bar.style.display = 'none'; return; }
-
-  const totalCount = cart.reduce((s, i) => s + (Number(i.qty) || 0), 0);
-  const totalSum   = cart.reduce((s, i) => s + (Number(i.qty) || 0) * (Number(i.price) || 0), 0);
-
-  const txtEl   = $('cartSummaryText');
-  const priceEl = $('cartSummaryPrice');
-
+  const totalCount = cart.reduce((s, i) => s + i.qty, 0);
+  const totalSum = cart.reduce((s, i) => s + i.qty * i.price, 0);
+  const txtEl = $('cartSummaryText'); const priceEl = $('cartSummaryPrice');
   if (txtEl) {
     const word = lang === 'ru'
-      ? (totalCount === 1 ? 'блюдо' : (totalCount >= 2 && totalCount <= 4 ? 'блюда' : 'блюд'))
-      : 'тамак';
+      ? (totalCount === 1 ? 'блюдо' : (totalCount >= 2 && totalCount <= 4 ? 'блюда' : 'блюд')) : 'тамак';
     txtEl.textContent = `${totalCount} ${word}`;
   }
   if (priceEl) priceEl.textContent = `${totalSum} ${t('currency')}`;
@@ -351,66 +301,35 @@ function highlightCartEntry() {
   btn.classList.add('pulse-cart'); setTimeout(() => btn.classList.remove('pulse-cart'), 1200);
 }
 
-// ИСПРАВЛЕНО: фильтрация битых записей + защита от NaN
 function renderCartItems() {
-  const wrap    = $('cartItems');
-  const empty   = $('cartEmpty');
-  const totWrap = $('cartTotalWrap');
-  const totEl   = $('cartTotalPrice');
+  const wrap = $('cartItems'); const empty = $('cartEmpty');
+  const totWrap = $('cartTotalWrap'); const totEl = $('cartTotalPrice');
   if (!wrap) return;
-
-  // Фильтруем bitые записи
-  cart = cart.filter(item =>
-    item &&
-    item.cid !== undefined &&
-    item.name && item.name !== 'undefined' &&
-    !isNaN(Number(item.price)) &&
-    item.price !== undefined &&
-    item.price !== null
-  );
-
   if (cart.length === 0) {
-    wrap.innerHTML = '';
-    if (empty)   empty.style.display   = '';
-    if (totWrap) totWrap.style.display = 'none';
-    validateOrder();
-    return;
+    wrap.innerHTML = ''; empty.style.display = ''; totWrap.style.display = 'none'; validateOrder(); return;
   }
-
-  if (empty)   empty.style.display   = 'none';
-  if (totWrap) totWrap.style.display = '';
-  wrap.innerHTML = '';
-  let total = 0;
-
+  empty.style.display = 'none'; totWrap.style.display = ''; wrap.innerHTML = ''; let total = 0;
   cart.forEach(item => {
-    const qty   = Number(item.qty)   || 0;
-    const price = Number(item.price) || 0;
-    const sub   = price * qty;
-    total += sub;
-
-    const row = document.createElement('div');
-    row.className = 'cart-row';
+    const sub = item.price * item.qty; total += sub;
+    const row = document.createElement('div'); row.className = 'cart-row';
     row.innerHTML = `
-      <img class="cart-row-img" src="${item.image || ''}" alt="${item.name}"
-           loading="lazy" onerror="this.src='${PLACEHOLDER}'">
+      <img class="cart-row-img" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='${PLACEHOLDER}'">
       <div class="cart-row-info">
         <div class="cart-row-name">${item.name}</div>
-        <div class="cart-row-price">${price} ${t('currency')}</div>
+        <div class="cart-row-price">${item.price} ${t('currency')}</div>
       </div>
       <button class="cart-row-del" onclick="removeItem('${item.cid}')" aria-label="${t('remove')}">×</button>
       <div class="cart-row-bottom">
         <div class="qty-ctrl">
           <button class="qty-btn" onclick="decreaseQty('${item.cid}')">−</button>
-          <span class="qty-val">${qty}</span>
+          <span class="qty-val">${item.qty}</span>
           <button class="qty-btn" onclick="increaseQty('${item.cid}')">+</button>
         </div>
         <span class="cart-row-total">${sub} ${t('currency')}</span>
       </div>`;
     wrap.appendChild(row);
   });
-
-  if (totEl) totEl.textContent = `${total} ${t('currency')}`;
-  validateOrder();
+  totEl.textContent = `${total} ${t('currency')}`; validateOrder();
 }
 
 // ── MENU RENDER ───────────────────────────────────────────
@@ -421,15 +340,10 @@ function renderMenu() {
   else if (activeCategory === 'hits') filtered = menuData.filter(i => i.isHit);
   else filtered = menuData.filter(i => i.category === activeCategory);
   filtered.forEach(item => grid.appendChild(createCard(item)));
-
   if ('IntersectionObserver' in window) {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          const img = e.target;
-          if (img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
-          obs.unobserve(img);
-        }
+        if (e.isIntersecting) { const img = e.target; if (img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; } obs.unobserve(img); }
       });
     }, { rootMargin: '200px 0px' });
     grid.querySelectorAll('img[data-src]').forEach(img => obs.observe(img));
@@ -442,23 +356,17 @@ function createCard(item) {
   const card = document.createElement('div'); card.className = 'menu-card';
   const name = lang === 'ru' ? item.name : (item.nameKg || item.name);
   const desc = lang === 'ru' ? item.description : (item.descriptionKg || item.description);
-
   let priceStr;
   if (item.variants?.length) {
-    const prices = item.variants.map(v => Number(v.price) || 0);
+    const prices = item.variants.map(v => v.price);
     const mn = Math.min(...prices), mx = Math.max(...prices);
     priceStr = mn === mx ? `${mn}` : `${mn}–${mx}`;
-  } else {
-    priceStr = `${Number(item.price) || 0}`;
-  }
-
+  } else { priceStr = `${item.price}`; }
   const existing = !item.variants?.length && cart.find(c => c.id === item.id && c.cid === String(item.id));
   const qty = existing ? existing.qty : 0;
-
   card.innerHTML = `
     <div class="card-img-wrap">
-      <img class="card-img" src="${PLACEHOLDER}" data-src="${item.image || ''}" alt="${name}"
-           loading="lazy" decoding="async"
+      <img class="card-img" src="${PLACEHOLDER}" data-src="${item.image}" alt="${name}" loading="lazy" decoding="async"
            onerror="this.src='${PLACEHOLDER}';this.removeAttribute('data-src')">
     </div>
     <div class="card-body">
@@ -469,25 +377,19 @@ function createCard(item) {
       <div class="card-price">${priceStr} <small>${t('currency')}</small></div>
       <div class="card-actions">
         ${item.variants?.length
-          ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
-          : qty === 0
-            ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
-            : `<div class="qty-ctrl">
-                <button class="qty-btn" onclick="decreaseQty('${item.id}');event.stopPropagation()">−</button>
-                <span class="qty-val">${qty}</span>
-                <button class="qty-btn" onclick="increaseQty('${item.id}');event.stopPropagation()">+</button>
-              </div>`
-        }
+      ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
+      : qty === 0
+        ? `<button class="btn-add" onclick="handleAddToCart(${item.id},event)">${t('add-to-cart')}</button>`
+        : `<div class="qty-ctrl">
+              <button class="qty-btn" onclick="decreaseQty('${item.id}');event.stopPropagation()">−</button>
+              <span class="qty-val">${qty}</span>
+              <button class="qty-btn" onclick="increaseQty('${item.id}');event.stopPropagation()">+</button>
+            </div>`}
       </div>
     </div>`;
-
-  card.addEventListener('click', e => {
-    if (e.target.closest('.card-actions')) return;
-    showDishDetail(item.id);
-  });
+  card.addEventListener('click', e => { if (e.target.closest('.card-actions')) return; showDishDetail(item.id); });
   return card;
 }
-
 function handleAddToCart(id, e) {
   e.stopPropagation();
   const item = menuData.find(i => i.id === id); if (!item) return;
@@ -510,45 +412,28 @@ function showDishDetail(id) {
   const name = lang === 'ru' ? dish.name : (dish.nameKg || dish.name);
   const desc = lang === 'ru' ? dish.description : (dish.descriptionKg || dish.description);
   const ings = lang === 'ru' ? (dish.ingredients || []) : (dish.ingredientsKg || dish.ingredients || []);
-
   let priceText;
-  if (dish.variants?.length) {
-    const minP = Math.min(...dish.variants.map(v => Number(v.price) || 0));
-    priceText = `от ${minP} ${t('currency')}`;
-  } else {
-    priceText = `${Number(dish.price) || 0} ${t('currency')}`;
-  }
-
-  $('dishModalTitle').textContent = name;
-  $('dishName').textContent       = name;
-  $('dishDesc').textContent       = desc || '';
-  $('dishPrice').textContent      = priceText;
-  $('dishIngList').innerHTML      = ings.map(i => `<li>${i}</li>`).join('');
-
+  if (dish.variants?.length) priceText = `от ${Math.min(...dish.variants.map(v => v.price))} ${t('currency')}`;
+  else priceText = `${dish.price} ${t('currency')}`;
+  $('dishModalTitle').textContent = name; $('dishName').textContent = name;
+  $('dishDesc').textContent = desc || ''; $('dishPrice').textContent = priceText;
+  $('dishIngList').innerHTML = ings.map(i => `<li>${i}</li>`).join('');
   const images = dish.images?.length ? dish.images : [dish.image];
   slideIndex = 0;
   const slider = $('dishSlider'); const dots = $('slideDots');
   slider.innerHTML = ''; dots.innerHTML = '';
-
   images.forEach((src, i) => {
     const slide = document.createElement('div'); slide.className = 'slide-item';
-    slide.innerHTML = `<img src="${src}" alt="${name}" loading="lazy"
-      onerror="this.src='${PLACEHOLDER}'"
-      onclick="openLightbox('${src.replace(/'/g, "\\'")}','${name.replace(/'/g, "\\'")}')">`;
+    slide.innerHTML = `<img src="${src}" alt="${name}" loading="lazy" onerror="this.src='${PLACEHOLDER}'" onclick="openLightbox('${src.replace(/'/g, "\\'")}','${name.replace(/'/g, "\\'")}')">`;
     slider.appendChild(slide);
     const dot = document.createElement('button');
-    dot.className = `slide-dot${i === 0 ? ' active' : ''}`;
-    dot.setAttribute('aria-label', `Фото ${i + 1}`);
-    dot.addEventListener('click', () => { slideIndex = i; updateSlider(); });
-    dots.appendChild(dot);
+    dot.className = `slide-dot${i === 0 ? ' active' : ''}`; dot.setAttribute('aria-label', `Фото ${i + 1}`);
+    dot.addEventListener('click', () => { slideIndex = i; updateSlider(); }); dots.appendChild(dot);
   });
-
   const hasMult = images.length > 1;
-  $('slidePrev').style.display = hasMult ? '' : 'none';
-  $('slideNext').style.display = hasMult ? '' : 'none';
+  $('slidePrev').style.display = hasMult ? '' : 'none'; $('slideNext').style.display = hasMult ? '' : 'none';
   dots.style.display = hasMult ? '' : 'none';
-  updateSlider();
-  openModal('dishModal');
+  updateSlider(); openModal('dishModal');
 }
 
 function updateSlider() {
@@ -562,14 +447,11 @@ function updateSlider() {
 // ── VARIANT MODAL ─────────────────────────────────────────
 function openVariantModal(item) {
   const name = lang === 'ru' ? item.name : (item.nameKg || item.name);
-  $('variantTitle').textContent = name;
-  $('variantList').innerHTML = '';
+  $('variantTitle').textContent = name; $('variantList').innerHTML = '';
   (item.variants || []).forEach(v => {
     const btn = document.createElement('button'); btn.className = 'var-btn';
-    const imgHtml = v.image
-      ? `<img class="var-img" src="${v.image}" alt="${v.label}" loading="lazy" onerror="this.style.display='none'">`
-      : '';
-    btn.innerHTML = `${imgHtml}<span class="var-label">${v.label}</span><span class="var-price">${Number(v.price) || 0} ${t('currency')}</span>`;
+    const imgHtml = v.image ? `<img class="var-img" src="${v.image}" alt="${v.label}" loading="lazy" onerror="this.style.display='none'">` : '';
+    btn.innerHTML = `${imgHtml}<span class="var-label">${v.label}</span><span class="var-price">${v.price} ${t('currency')}</span>`;
     btn.addEventListener('click', () => { addItem(item, v); closeModal('variantModal'); });
     $('variantList').appendChild(btn);
   });
@@ -581,10 +463,8 @@ function buildOrderSummary() {
   const el = $('orderSummary'); if (!el) return;
   let html = ''; let total = 0;
   cart.forEach(item => {
-    const qty   = Number(item.qty)   || 0;
-    const price = Number(item.price) || 0;
-    const sub = price * qty; total += sub;
-    html += `<div class="order-summary-row"><span>${item.name} × ${qty}</span><span>${sub} ${t('currency')}</span></div>`;
+    const sub = item.price * item.qty; total += sub;
+    html += `<div class="order-summary-row"><span>${item.name} × ${item.qty}</span><span>${sub} ${t('currency')}</span></div>`;
   });
   html += `<div class="order-summary-row"><span>${t('cart-total')}</span><span>${total} ${t('currency')}</span></div>`;
   el.innerHTML = html;
@@ -594,128 +474,123 @@ function validateOrder() {
   const btn = $('submitOrderBtn'); if (!btn) return;
   if (isQrTableSession() && tableGuestData) {
     const pay = document.querySelector('input[name="payment"]:checked');
-    const ok = cart.length > 0 && !!pay;
-    btn.disabled = !ok; btn.classList.toggle('pulse', ok);
-    return;
+    const ok = cart.length > 0 && !!pay; btn.disabled = !ok; btn.classList.toggle('pulse', ok); return;
   }
-  const name  = $('custName')?.value.trim();
+  const name = $('custName')?.value.trim();
   const phone = $('custPhone')?.value.replace(/\s/g, '');
-  const pay   = document.querySelector('input[name="payment"]:checked');
-  const ok    = cart.length > 0 && name?.length > 0 && isValidPhone(phone) && !!pay;
+  const pay = document.querySelector('input[name="payment"]:checked');
+  const ok = cart.length > 0 && name?.length > 0 && isValidPhone(phone) && !!pay;
   btn.disabled = !ok; btn.classList.toggle('pulse', ok);
 }
 
 function showOrderForm() {
   if (cart.length === 0) { alert(t('alert-cart-empty')); return; }
   const orderForm = $('orderForm'); if (orderForm) orderForm.reset();
-  const guestFieldsWrap = $('guestFields');
-  const repeatHint      = $('repeatOrderHint');
-
+  const guestFieldsWrap = $('guestFields'); const repeatHint = $('repeatOrderHint');
   if (isQrTableSession() && tableGuestData) {
     if (guestFieldsWrap) guestFieldsWrap.style.display = 'none';
-    if (repeatHint)      repeatHint.style.display      = '';
+    if (repeatHint) repeatHint.style.display = '';
   } else {
     if (guestFieldsWrap) guestFieldsWrap.style.display = '';
-    if (repeatHint)      repeatHint.style.display      = 'none';
+    if (repeatHint) repeatHint.style.display = 'none';
     if (orderType === 'delivery' && deliveryInfo) {
       const n = $('custName'), p = $('custPhone'), a = $('custAddr');
-      if (n) n.value = deliveryInfo.name    || '';
-      if (p) p.value = deliveryInfo.phone   || '';
+      if (n) n.value = deliveryInfo.name || '';
+      if (p) p.value = deliveryInfo.phone || '';
       if (a) a.value = deliveryInfo.address || '';
     }
   }
-
   const af = $('addrField'); if (af) af.style.display = orderType === 'delivery' ? '' : 'none';
-  const pc = $('payCard');   if (pc) pc.style.display = orderType === 'delivery' ? 'none' : '';
-  const qr = $('mbankQr');   if (qr) qr.style.display = 'none';
-
+  const pc = $('payCard'); if (pc) pc.style.display = orderType === 'delivery' ? 'none' : '';
+  const qr = $('mbankQr'); if (qr) qr.style.display = 'none';
   document.querySelectorAll('.pay-opt').forEach(o => o.classList.remove('selected'));
   document.querySelectorAll('input[name="payment"]').forEach(r => r.checked = false);
-
-  buildOrderSummary(); validateOrder();
-  closeModal('cartModal'); openModal('orderModal');
+  buildOrderSummary(); validateOrder(); closeModal('cartModal'); openModal('orderModal');
 }
-
 function buildOrderText(name, phone, comment, payment) {
-  const title = lang === 'ru' ? 'Новый заказ' : 'Жаңы заказ';
+  const title = lang === 'ru'
+    ? 'Новый заказ'
+    : 'Жаңы заказ';
+
   let lines = `<b>🍽 ${title}</b>\n`;
 
+  // 👉 ВСТАВЛЯЕМ СЮДА (сразу после заголовка)
   if (orderType === 'cafe' && tableNum) {
     lines += `📍 Стол №${tableNum}\n`;
   }
+
   lines += `━━━━━━━━━━━━━━━━\n`;
 
   let total = 0;
+
   cart.forEach(item => {
-    const qty   = Number(item.qty)   || 0;
-    const price = Number(item.price) || 0;
-    const sub   = price * qty;
+    const sub = item.price * item.qty;
     total += sub;
-    lines += `• ${item.name} × ${qty} — <b>${sub} ${t('currency')}</b>\n`;
+    lines += `• ${item.name} × ${item.qty} — <b>${sub} ${t('currency')}</b>\n`;
   });
 
   lines += `━━━━━━━━━━━━━━━━\n`;
   lines += `💰 <b>${t('cart-total')} ${total} ${t('currency')}</b>\n`;
   lines += `━━━━━━━━━━━━━━━━\n`;
+
   lines += `👤 <b>${name}</b>\n📞 +996 ${phone}\n`;
 
   if (payment) {
-    const pm = payment === 'cash'
-      ? t('payment-cash')
-      : payment === 'card'
-        ? t('payment-card')
-        : 'MBank';
+    const pm =
+      payment === 'cash'
+        ? t('payment-cash')
+        : payment === 'card'
+          ? t('payment-card')
+          : 'MBank';
     lines += `💳 ${pm}\n`;
   }
 
   if (orderType === 'pickup') {
     lines += `📍 ${lang === 'ru' ? 'Самовывоз' : 'Өзү алып кетүү'}\n`;
   }
+
   if (orderType === 'delivery' && deliveryInfo?.address) {
     lines += `🚗 ${lang === 'ru' ? 'Доставка' : 'Жеткирүү'}: ${deliveryInfo.address}\n`;
   }
+
   if (comment?.trim()) {
     lines += `\n📝 <i>${comment.trim()}</i>`;
   }
+
   return lines;
 }
-
 // ── SEND TO TELEGRAM ──────────────────────────────────────
 async function sendToTelegram(text) {
+  // Стол → группа, Самовывоз/Доставка → личка
   const chatId = (orderType === 'cafe') ? '404578015' : '7994163787';
   try {
     const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
     const res = await fetch(url, {
-      method:  'POST',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
     });
     const data = await res.json();
     return data.ok;
   } catch (err) { console.error('Telegram error:', err); return false; }
 }
-
 // ── SUBMIT ORDER ──────────────────────────────────────────
 async function submitOrder(e) {
   e.preventDefault();
   let name, rawPhone, phone;
 
   if (isQrTableSession() && tableGuestData) {
-    name = tableGuestData.name;
-    rawPhone = tableGuestData.phone;
-    phone = rawPhone.replace(/\s/g, '');
+    name = tableGuestData.name; rawPhone = tableGuestData.phone; phone = rawPhone.replace(/\s/g, '');
   } else {
-    name     = $('custName')?.value.trim();
-    rawPhone = $('custPhone')?.value.trim();
-    phone    = rawPhone.replace(/\s/g, '');
-    if (!name)              { alert(t('alert-fill-fields'));   return; }
+    name = $('custName')?.value.trim(); rawPhone = $('custPhone')?.value.trim(); phone = rawPhone.replace(/\s/g, '');
+    if (!name) { alert(t('alert-fill-fields')); return; }
     if (!isValidPhone(phone)) { alert(t('alert-invalid-phone')); return; }
     if (isQrTableSession()) saveTableGuestData(name, rawPhone);
   }
 
   const comment = $('custComment')?.value.trim() || '';
   const payment = document.querySelector('input[name="payment"]:checked')?.value || '';
-  const addr    = $('custAddr')?.value.trim() || '';
+  const addr = $('custAddr')?.value.trim() || '';
   if (!cart.length) { alert(t('alert-cart-empty')); return; }
 
   if (orderType === 'delivery') {
@@ -731,9 +606,11 @@ async function submitOrder(e) {
 
   cart = []; saveCart(); updateCartBadge(); renderMenu(); closeModal('orderModal');
 
+  // ✅ Красивая модалка вместо alert
   if (sent) {
     openModal('successModal');
   } else {
+    // Резерв — WhatsApp если Telegram не ср  аботал
     const waText = text.replace(/<[^>]*>/g, '');
     window.open(`https://wa.me/${CAFE_WA}?text=${encodeURIComponent(waText)}`, '_blank');
     openModal('successModal');
@@ -753,15 +630,14 @@ function closeLightbox() {
 }
 
 // ── ORDER TYPE FLOW ───────────────────────────────────────
-function lockScroll()   { document.body.classList.add('locked'); }
+function lockScroll() { document.body.classList.add('locked'); }
 function unlockScroll() { document.body.classList.remove('locked'); }
-
 function setOrderType(type) {
   orderType = type;
   closeModal('orderTypeModal'); closeModal('tableModal'); closeModal('deliveryModal');
-  unlockScroll();
-  document.body.classList.toggle('browse', type === 'browse');
+  unlockScroll(); document.body.classList.toggle('browse', type === 'browse');
 
+  // Если был отложенный товар — добавить его
   if (pendingAddItemId !== null) {
     const item = menuData.find(i => i.id === pendingAddItemId);
     pendingAddItemId = null;
@@ -771,30 +647,25 @@ function setOrderType(type) {
     }
   }
 }
-
 function initOrderTypeModal() {
   try {
-    const params      = new URLSearchParams(window.location.search);
-    const tableParam  = params.get('table');
+    const params = new URLSearchParams(window.location.search);
+    const tableParam = params.get('table');
     if (tableParam) {
       const tableNumber = parseInt(tableParam, 10);
       if (!isNaN(tableNumber) && tableNumber >= 1) {
         tableNum = tableNumber; orderType = 'cafe';
-        showToast(`${t('toast-table')}${tableNumber}`);
-        return;
+        showToast(`${t('toast-table')}${tableNumber}`); return;
       }
     }
-  } catch (error) { console.error('Error parsing table number:', error); }
+  } catch (error) { console.error("Error parsing table number:", error); }
 }
 
 function buildTableGrid() {
   const grid = $('tableGrid'); if (!grid) return; grid.innerHTML = '';
   for (let i = 1; i <= 11; i++) {
     const btn = document.createElement('button'); btn.className = 'tbl-btn'; btn.textContent = i;
-    btn.addEventListener('click', () => {
-      tableNum = i; setOrderType('cafe');
-      showToast(`${t('toast-table')}${i}`);
-    });
+    btn.addEventListener('click', () => { tableNum = i; setOrderType('cafe'); showToast(`${t('toast-table')}${i}`); });
     grid.appendChild(btn);
   }
 }
@@ -807,12 +678,11 @@ function initScrollHeader() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const y = window.scrollY;
-        if (y < 50)           header.classList.remove('hide');
+        if (y < 50) header.classList.remove('hide');
         else if (y > lastY + 8) header.classList.add('hide');
         else if (y < lastY - 8) header.classList.remove('hide');
         lastY = y; ticking = false;
-      });
-      ticking = true;
+      }); ticking = true;
     }
   }, { passive: true });
 }
@@ -839,20 +709,17 @@ document.addEventListener('DOMContentLoaded', () => {
   try { const saved = localStorage.getItem('deliveryInfo'); if (saved) deliveryInfo = JSON.parse(saved); } catch { }
 
   $('themeToggle')?.addEventListener('click', () => {
-    theme = theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', theme); applyTheme();
+    theme = theme === 'light' ? 'dark' : 'light'; localStorage.setItem('theme', theme); applyTheme();
   });
 
   $('langToggle')?.addEventListener('click', () => {
-    lang = lang === 'ru' ? 'kg' : 'ru';
-    localStorage.setItem('lang', lang); applyLang(); renderMenu(); renderCartItems();
+    lang = lang === 'ru' ? 'kg' : 'ru'; localStorage.setItem('lang', lang); applyLang(); renderMenu(); renderCartItems();
   });
 
   document.querySelectorAll('.lang-pill').forEach(pill => {
     pill.classList.toggle('active', pill.dataset.lang === lang);
     pill.addEventListener('click', () => {
-      lang = pill.dataset.lang;
-      localStorage.setItem('lang', lang); applyLang(); renderMenu();
+      lang = pill.dataset.lang; localStorage.setItem('lang', lang); applyLang(); renderMenu();
       document.querySelectorAll('.lang-pill').forEach(p => p.classList.toggle('active', p.dataset.lang === lang));
     });
   });
@@ -860,8 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = $('menuToggle'); const mainNav = $('mainNav');
   menuToggle?.addEventListener('click', () => {
     const open = mainNav.classList.toggle('open');
-    menuToggle.classList.toggle('open', open);
-    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.classList.toggle('open', open); menuToggle.setAttribute('aria-expanded', String(open));
   });
   document.addEventListener('click', e => {
     if (mainNav && menuToggle && !mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
@@ -869,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  $('viewMenuBtn')?.addEventListener('click',    () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
+  $('viewMenuBtn')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
   $('viewContactBtn')?.addEventListener('click', () => $('contact')?.scrollIntoView({ behavior: 'smooth' }));
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -880,21 +746,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  $('cartBtn')?.addEventListener('click',           () => { renderCartItems(); openModal('cartModal'); });
-  $('bnMenu')?.addEventListener('click',            () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
-  $('bnCart')?.addEventListener('click',            () => { renderCartItems(); openModal('cartModal'); });
+  $('cartBtn')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
+  $('bnMenu')?.addEventListener('click', () => $('menu')?.scrollIntoView({ behavior: 'smooth' }));
+  $('bnCart')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
   $('cartSummaryCheckout')?.addEventListener('click', () => { renderCartItems(); openModal('cartModal'); });
 
   $('closeCartModal')?.addEventListener('click', () => closeModal('cartModal'));
   $('clearCartBtn')?.addEventListener('click', () => {
-    if (confirm(t('confirm-clear'))) {
-      cart = []; saveCart(); updateCartBadge(); renderCartItems(); renderMenu();
-    }
+    if (confirm(t('confirm-clear'))) { cart = []; saveCart(); updateCartBadge(); renderCartItems(); renderMenu(); }
   });
   $('checkoutBtn')?.addEventListener('click', showOrderForm);
 
   $('closeOrderModal')?.addEventListener('click', () => closeModal('orderModal'));
-  $('cancelOrderBtn')?.addEventListener('click',  () => closeModal('orderModal'));
+  $('cancelOrderBtn')?.addEventListener('click', () => closeModal('orderModal'));
 
   const custPhone = $('custPhone');
   if (custPhone) custPhone.addEventListener('input', () => { formatPhone(custPhone); validateOrder(); });
@@ -908,33 +772,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!activeDishId) return;
     const dish = menuData.find(i => i.id === activeDishId); if (!dish) return;
     closeModal('dishModal');
-    if (dish.variants?.length) openVariantModal(dish);
-    else addItem(dish, null);
+    if (dish.variants?.length) openVariantModal(dish); else addItem(dish, null);
   });
 
   $('closeVariantModal')?.addEventListener('click', () => closeModal('variantModal'));
   $('lightboxClose')?.addEventListener('click', closeLightbox);
   $('lightbox')?.addEventListener('click', e => { if (e.target === $('lightbox')) closeLightbox(); });
 
-  $('otCafe')?.addEventListener('click',     () => { closeModal('orderTypeModal'); openModal('tableModal'); });
-  $('otPickup')?.addEventListener('click',   () => setOrderType('pickup'));
+  $('otCafe')?.addEventListener('click', () => { closeModal('orderTypeModal'); openModal('tableModal'); });
+  $('otPickup')?.addEventListener('click', () => setOrderType('pickup'));
   $('otDelivery')?.addEventListener('click', () => { closeModal('orderTypeModal'); openModal('deliveryModal'); });
 
-  $('closeTableModal')?.addEventListener('click',    () => { closeModal('tableModal');    openModal('orderTypeModal'); });
+  $('closeTableModal')?.addEventListener('click', () => { closeModal('tableModal'); openModal('orderTypeModal'); });
   $('closeDeliveryModal')?.addEventListener('click', () => { closeModal('deliveryModal'); openModal('orderTypeModal'); });
-  $('backToOrderType')?.addEventListener('click',    () => { closeModal('deliveryModal'); openModal('orderTypeModal'); });
+  $('backToOrderType')?.addEventListener('click', () => { closeModal('deliveryModal'); openModal('orderTypeModal'); });
 
   const dlvPhone = $('dlvPhone');
   if (dlvPhone) dlvPhone.addEventListener('input', () => formatPhone(dlvPhone));
 
   $('deliveryForm')?.addEventListener('submit', e => {
     e.preventDefault();
-    const name    = $('dlvName')?.value.trim();
-    const phone   = $('dlvPhone')?.value.trim();
+    const name = $('dlvName')?.value.trim(); const phone = $('dlvPhone')?.value.trim();
     const address = $('dlvAddress')?.value.trim();
-    if (!name || !isValidPhone(phone.replace(/\s/g, '')) || !address) {
-      alert(t('alert-fill-fields')); return;
-    }
+    if (!name || !isValidPhone(phone.replace(/\s/g, '')) || !address) { alert(t('alert-fill-fields')); return; }
     deliveryInfo = { name, phone, address };
     try { localStorage.setItem('deliveryInfo', JSON.stringify(deliveryInfo)); } catch { }
     setOrderType('delivery');
@@ -958,8 +818,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── EXPOSE GLOBALS ────────────────────────────────────────
-window.decreaseQty    = decreaseQty;
-window.increaseQty    = increaseQty;
-window.removeItem     = removeItem;
+window.decreaseQty = decreaseQty;
+window.increaseQty = increaseQty;
+window.removeItem = removeItem;
 window.handleAddToCart = handleAddToCart;
-window.openLightbox   = openLightbox;
+window.openLightbox = openLightbox;
